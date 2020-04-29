@@ -1,0 +1,115 @@
+extends ../layout/main
+block variable
+	-
+		var catSlaider = [	
+			{ 
+				img: './assets/images/home/cat-1.png',
+				title: 'VODA UA у пластиковій пляшці',
+				type: 'негазована 1,5л',
+				price: '₴ 12.00',
+				link: "#"
+			},
+			{ 
+				img: './assets/images/home/cat-2.png',
+				title: 'VODA UA у скляній пляшці',
+				type: 'газована 0,5л',
+				price: '₴ 16.00',
+				link: "#"
+			},
+			{ 
+				img: './assets/images/home/cat-3.png',
+				title: 'VODA UA у скляній пляшці',
+				type: 'негазована 0,5л',
+				price: '₴ 16.00',
+				link: "#"
+			},
+			{ 
+				img: './assets/images/home/cat-1.png',
+				title: 'тест',
+				type: 'тест',
+				price: 'тест',
+				link: "#"
+			},
+		];
+	
+block meta
+	title= 'Home'
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/home.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.section-slaider
+		.first-slide-home.section-slaider__item.slide-content
+			.wrap
+				.first-slide-content__1.slide-content-1
+					ul.slider-breadcrumds-list
+						li.slider-breadcrumds-item.slider-breadcrumds-item--active качество
+						li.slider-breadcrumds-item Экологичность
+						li.slider-breadcrumds-item Сервис
+					+img('home/bucket.png').slide-content__bucket
+				.first-slide-content__2.slide-content-2 
+					span.slide-content__counter
+						span 1
+						span /
+						span 3
+			.first-slide-content__3.slide-content-3
+				.img-overlay
+					+img('home/slide_1.jpg').img-overlay__bg
+				h3.slide-content__title.js-slide-content__title Превосходное качество
+				p.slide-content__text Качество — совокупность минимально допустимых требований к продукции, обусловливающих её пригодность удовлетворять определённые потребности
+				a(href="#").link--resset.slide-content__btn Подробнее
+
+
+
+
+		.second-slide-home.section-slaider__item.slide-content
+			.wrap
+				.second-slide-content__1.slide-content-1
+					.img-overlay
+						+img('home/slide_2.jpg').img-overlay__bg
+				.second-slide-content__2.slide-content-2 
+					span.slide-content__counter
+						span 2
+						span /
+						span 3
+			.second-slide-content__3.slide-content-3
+				h3.slide-content__title.js-second__title Экологические материалы
+				p.slide-content__text Качество — совокупность минимально допустимых требований к продукции, обусловливающих её пригодность удовлетворять определённые потребности
+				+btn('Подробнее').slide-content__btn Узнать больше
+
+				
+				
+				
+				
+		.third-slide-home.section-slaider__item.slide-content
+			.wrap
+				.third-slide-content__1.slide-content-1
+					ul.slider-breadcrumds-list
+						li.slider-breadcrumds-item.slider-breadcrumds-item--active качество
+						li.slider-breadcrumds-item Экологичность
+						li.slider-breadcrumds-item Сервис
+					+img('home/bucket.png').slide-content__bucket
+				.first-slide-content__2.slide-content-2 
+					span.slide-content__counter
+						span 3
+						span /
+						span 3
+			.third-slide-content__3.slide-content-3
+				.img-overlay
+					+img('home/slide_3.jpg').img-overlay__bg
+				h3.slide-content__title.js-third-title Первоклассный сервис
+				p.slide-content__text Качество — совокупность минимально допустимых требований к продукции, обусловливающих её пригодность удовлетворять определённые потребности
+				+btn('Подробнее').slide-content__btn Подробнее
+		
