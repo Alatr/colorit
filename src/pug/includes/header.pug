@@ -1,2 +1,107 @@
-
-
+block variable
+	-
+		var submenu_1 = [{
+				link: "#",
+				img: 'menu/1_1.jpg',
+				title: 'Интерьерные краски',
+			},
+			{ 
+				link: "#",
+				img: 'menu/1_2.jpg',
+				title: 'Средства подготовки поверхности',
+			},
+			{ 
+				link: "#",
+				img: 'menu/1_3.jpg',
+				title: 'Клея для стеклообоев',
+			},
+			{ 
+				link: "#",
+				img: 'menu/1_4.jpg',
+				title: 'Шпатлевки и сухие смеси',
+			},
+			{ 
+				link: "#",
+				img: 'menu/1_5.jpg',
+				title: 'Лаки и эмали',
+			},
+		];
+		var submenu_2 = [{
+				link: "#",
+				img: 'menu/2_1.jpg',
+				title: 'Калькулятор расхода краски',
+			},
+			{ 
+				link: "#",
+				img: 'menu/2_2.jpg',
+				title: 'Подбор цвета',
+			}
+		];
+		var submenu_4 = [{
+				link: "#",
+				img: 'menu/4_1.jpg',
+				title: 'Новости',
+			},
+			{ 
+				link: "#",
+				img: 'menu/4_2.jpg',
+				title: 'Объекты',
+			},
+			{ 
+				link: "#",
+				img: 'menu/4_3.jpg',
+				title: 'Акции',
+			},
+		];
+.container
+	.row-row
+		ul.header-menu
+			li.header-menu-item
+				a(href="#").header-menu-item__title Компания
+			li.header-menu-item
+				a(href="#").header-menu-item__title Продукция
+				ul.header-submenu.header-submenu-test
+					each v in submenu_1
+						li
+							a(href= v.link).header-submenu-item
+								.header-submenu-item__img
+									+img(v.img)
+								h5.header-submenu-item__title= v.title
+			li.header-menu-item
+				a(href="#").header-menu-item__title Сервисы
+				ul.header-submenu
+					each v in submenu_2 
+						li
+							a(href= v.link).header-submenu-item
+								.header-submenu-item__img
+									+img(v.img)
+								h5.header-submenu-item__title= v.title
+			li.header-menu-item
+				a(href="#").header-menu-item__title советы
+			li.header-menu-item.header-menu-item__logo
+				+img('logo.svg')
+			li.header-menu-item
+				a(href="#").header-menu-item__title инфо
+				ul.header-submenu
+					each v in submenu_4
+						li
+							a(href= v.link).header-submenu-item
+								.header-submenu-item__img
+									+img(v.img)
+								h5.header-submenu-item__title= v.title
+			li.header-menu-item
+				a(href="#").header-menu-item__title Где Купить
+		a(href="tel:+1234567890").header-phone
+			+img('phone_icon.svg').header-phone__icon
+			span.header-phone__text.header__text 1 234 567 890
+		.lang-list-vertical-wrap
+			ul.lang-list-vertical
+				li.lang-list-vertical__item.lang-list__item--active
+					a(href='#').header__text укр
+				li.lang-list-vertical__item
+					a(href='#').header__text рус
+				li.lang-list-vertical__item.active
+					a(href='#').header__text eng
+			+svg('arr')
+		button(type="button").header-search.btn--res
+			+img('search.svg')

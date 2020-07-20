@@ -2,6 +2,10 @@
 .wow:not(#some){
 	opacity: 0;
 }
+.btn--res {
+	background: transparent;
+	border: none;
+}
 
 .visually-hidden {
   position: absolute;
