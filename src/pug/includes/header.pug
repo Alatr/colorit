@@ -58,16 +58,43 @@ block variable
 		ul.header-menu
 			li.header-menu-item
 				a(href="#").header-menu-item__title Компания
-			li.header-menu-item
+			li.has-submenu.header-menu-item
 				a(href="#").header-menu-item__title Продукция
-				ul.header-submenu.header-submenu-test
-					each v in submenu_1
+				ul.header-submenu
+					each v, i in submenu_1
 						li
 							a(href= v.link).header-submenu-item
 								.header-submenu-item__img
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
-			li.header-menu-item
+							if i == 1
+								ul.type-prod-list
+									li.type-prod-list-item.bgc--white.width--midlle
+										a(href="#")
+											+svg('3').type-prod-list-item__icon
+											span.type-prod-list-item__text Грунтовки
+									li.type-prod-list-item.bgc--red.width--midlle
+										a(href="#")
+											+svg('4').type-prod-list-item__icon
+											span.type-prod-list-item__text.color--wc Шпатлевки
+									li.type-prod-list-item.bgc--blue.width--midlle
+										a(href="#")
+											+svg('5').type-prod-list-item__icon.fill--none
+											span.type-prod-list-item__text.color--wc Сухие смеси
+							else if i == 0
+								ul.type-prod-list
+									li.type-prod-list-item.bgc--white
+										a(href="#")
+											+svg('1').type-prod-list-item__icon
+											span.type-prod-list-item__text Home линейка
+									li.type-prod-list-item.bgc--blue
+										a(href="#")
+											+svg('2').type-prod-list-item__icon
+											span.type-prod-list-item__text.color--wc Professional линейка
+							else
+
+					li.overlay
+			li.has-submenu.header-menu-item
 				a(href="#").header-menu-item__title Сервисы
 				ul.header-submenu
 					each v in submenu_2 
@@ -80,7 +107,7 @@ block variable
 				a(href="#").header-menu-item__title советы
 			li.header-menu-item.header-menu-item__logo
 				+img('logo.svg')
-			li.header-menu-item
+			li.has-submenu.header-menu-item
 				a(href="#").header-menu-item__title инфо
 				ul.header-submenu
 					each v in submenu_4
@@ -98,10 +125,12 @@ block variable
 			ul.lang-list-vertical
 				li.lang-list-vertical__item.lang-list__item--active
 					a(href='#').header__text укр
-				li.lang-list-vertical__item
-					a(href='#').header__text рус
 				li.lang-list-vertical__item.active
+					a(href='#').header__text рус
+				li.lang-list-vertical__item
 					a(href='#').header__text eng
 			+svg('arr')
 		button(type="button").header-search.btn--res
 			+img('search.svg')
+		button(type="button").header-menu-btn.btn--res
+			+svg('menu')

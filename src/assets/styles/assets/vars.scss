@@ -6,10 +6,36 @@ $mc: #FF7556;
 $mc2: #17315B;
 $mc3: #9AB4C1;
 
-$wc: #FBFBFB;
+$wc: #F6F7FC;
 $bc: #292C35;
 
 $mc4: #4F90B6;
 $gray:rgb(135, 135, 151);
 $text: #22223E;
 $bc2: #000;
+
+
+:root {
+	--header_h: 66px;
+	--sidebar_w: 90px;
+}
+
+
+
+@include to(700px){
+	:root {
+		--header_h: 44px;
+	}
+
+}
+@include to(768px){
+	:root {
+		--sidebar_w: 64px;
+	}
+}
+@include to(700px){
+	:root {
+		--sidebar_w: 0px;
+	}
+}
+
