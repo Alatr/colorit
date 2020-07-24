@@ -1,0 +1,70 @@
+.menu.js-menu
+	.menu__header
+		h5.menu-title Меню
+		button(type="button").js-menu-btn-close.menu-btn-close.btn--res
+			+svg('close')
+	.menu__body.custom-scroll
+		ul.menu-list-mobile
+			li.menu-item-mobile--0.menu-item-mobile
+				a(href="#").menu-item-link-mobile Компания
+			li.menu-item-mobile--2.menu-item-mobile
+				a(href="#").menu-item-link-mobile Продукция
+				each j, ii in ['Home линейка', 'Professional линейка','Средства подготовки поверхности','Сухие и готовые шпатлевки', 'Клея для стекло обоев', 'Лаки и Эмали']
+					if ii == 0
+						.dropdown-menu
+							button(type="button").dropdown-menu__btn.btn--res.dropdown-btn.js-dropdown-btn
+								span.dropdown-btn__text= j
+								+svg('arr').dropdown-btn__icon
+							ul.dropdown-menu-list.js-dropdown-menu-list.active
+								each v in ['Kolorit Argentic', 'Kolorit Legenda', 'Kolorit Family', 'Kolorit Idol', 'Kolorit Dynasty', 'Kolorit History']
+									li.dropdown-menu-item
+										a(href="#").dropdown-menu-item__link= v
+					else
+						.dropdown-menu
+							button(type="button").dropdown-menu__btn.btn--res.dropdown-btn.js-dropdown-btn
+								span.dropdown-btn__text= j
+								+svg('arr').dropdown-btn__icon
+							ul.dropdown-menu-list.js-dropdown-menu-list
+								each v in ['Kolorit Argentic', 'Kolorit Legenda', 'Kolorit Family', 'Kolorit Idol', 'Kolorit Dynasty', 'Kolorit History']
+									li.dropdown-menu-item
+										a(href="#").dropdown-menu-item__link= v
+			li.menu-item-mobile--1.menu-item-mobile
+				a(href="#").menu-item-link-mobile Сервисы
+				ul.menu-sublist-mobile
+					each v in ['Калькулятор расхода краски', 'Подбор цвета']
+						li.menu-subitem-mobile
+							a(href="#").menu-subitem-link-mobile= v
+			li.menu-item-mobile--3.menu-item-mobile
+				a(href="#").menu-item-link-mobile Советы
+			li.menu-item-mobile--4.menu-item-mobile
+				h3.menu-item-link-mobile Инфо
+				ul.menu-sublist-mobile
+					each v in ['Новости', 'Объекты', 'Акции']
+						li.menu-subitem-mobile
+							a(href="#").menu-subitem-link-mobile= v
+			li.menu-item-mobile--5.menu-item-mobile
+				a(href="#").menu-item-link-mobile Где купить
+	.menu__footer
+		a(href="tel:+1234567890").header-phone
+			+img('phone_icon.svg').header-phone__icon
+			span.header-phone__text.header__text 1 234 567 890
+		.lang-list-vertical-wrap
+			ul.lang-list-vertical
+				li.lang-list-vertical__item.lang-list__item--active
+					a(href='#').header__text укр
+				li.lang-list-vertical__item.active
+					a(href='#').header__text рус
+				li.lang-list-vertical__item
+					a(href='#').header__text eng
+			+svg('arr')
+		ul.social-list
+			li.social-item
+				a(href="#")
+					+svg('insta')
+			li.social-item
+				a(href="#")
+					+svg('you')
+			li.social-item
+				a(href="#")
+					+svg('face')
+		
