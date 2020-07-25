@@ -1,3 +1,5 @@
+
+
 .menu.js-menu
 	.menu__header
 		h5.menu-title Меню
@@ -9,23 +11,19 @@
 				a(href="#").menu-item-link-mobile Компания
 			li.menu-item-mobile--2.menu-item-mobile
 				a(href="#").menu-item-link-mobile Продукция
-				each j, ii in ['Home линейка', 'Professional линейка','Средства подготовки поверхности','Сухие и готовые шпатлевки', 'Клея для стекло обоев', 'Лаки и Эмали']
-					if ii == 0
-						.dropdown-menu
-							button(type="button").dropdown-menu__btn.btn--res.dropdown-btn.js-dropdown-btn
-								span.dropdown-btn__text= j
-								+svg('arr').dropdown-btn__icon
+				each j, ii in menuObj
+					.dropdown-menu
+						button(type="button").dropdown-menu__btn.btn--res.dropdown-btn.js-dropdown-btn
+							span.dropdown-btn__text= j.title
+							+svg('arr').dropdown-btn__icon
+						if ii == 0
 							ul.dropdown-menu-list.js-dropdown-menu-list.active
-								each v in ['Kolorit Argentic', 'Kolorit Legenda', 'Kolorit Family', 'Kolorit Idol', 'Kolorit Dynasty', 'Kolorit History']
+								each v in j.sub
 									li.dropdown-menu-item
 										a(href="#").dropdown-menu-item__link= v
-					else
-						.dropdown-menu
-							button(type="button").dropdown-menu__btn.btn--res.dropdown-btn.js-dropdown-btn
-								span.dropdown-btn__text= j
-								+svg('arr').dropdown-btn__icon
+						else
 							ul.dropdown-menu-list.js-dropdown-menu-list
-								each v in ['Kolorit Argentic', 'Kolorit Legenda', 'Kolorit Family', 'Kolorit Idol', 'Kolorit Dynasty', 'Kolorit History']
+								each v in j.sub
 									li.dropdown-menu-item
 										a(href="#").dropdown-menu-item__link= v
 			li.menu-item-mobile--1.menu-item-mobile

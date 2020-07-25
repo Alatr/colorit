@@ -1,15 +1,6 @@
 extends ../layout/main
 block variable
-	-
-		var catSlaider = [	
-			{ 
-				img: './assets/images/home/cat-1.png',
-				title: 'VODA UA у пластиковій пляшці',
-				type: 'негазована 1,5л',
-				price: '₴ 12.00',
-				link: "#"
-			},
-		];
+
 	
 block meta
 	title= 'Home'
@@ -86,6 +77,77 @@ block content
 					a(href="tel:+1234567890").header-phone
 						+svg('phone').header-phone__icon
 						span.header-phone__text.header__text 1 234 567 890
+	
+
+
+
+	
+	.discounts
+		.page-container
+			.row
+				.discounts-navbar
+					.discounts-navbar-content__counter
+						span Акция &nbsp;
+						span.js-discounts-slick__cnt 1
+						span /
+						span.js-discounts-slick__all 6
+
+					.discounts-navbar-btn-wrap
+						button(type="button").btn--res.slider-btn.js-main-sl-arr-prev
+							+svg('arr-small-right')
+						button(type="button").btn--res.slider-btn.js-main-sl-arr-next
+							+svg('arr-small-left')
+				.discounts-conent
+					.discounts-conent__img
+						+img('temp/1.jpg')
+					h3.discounts-conent__title Скидка 20% на интерьерные краски
+					p.discounts-conent__text В первый месяц весны приобретение фасадных красок Fasilit и Sokelit обойдется вам дешевле на 30%!
+					a(href="#").discounts-conent__btn Подробнее
+
+
+	.page-container
+		ul.row.page-list
+			each vq, jq in pageItm
+				li.page-list-item
+					a
+						h4.page-list-item__title= vq.title
+						+svg('p'+jq+'').page-list-item__img
+						.page-list-item__btn= vq.btn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	//- .section-slaider-wrap
 	//- 	ul.slider-breadcrumds-list
 	//- 		li.slider-breadcrumds-item.slider-breadcrumds-item--active качество

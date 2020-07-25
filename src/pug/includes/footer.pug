@@ -1,6 +1,74 @@
-.container
-	.row
-		.footer__copy 
-			p © Усі права захищено. Saga Apartments
-		a(href='https://smarto.agency/' rel="nofollow" target="_blank").footer__link
-			img(src='./assets/images/smarto.svg' alt="" title="")
+.footer-subscribe
+	.container
+		.row
+			.footer-subscribe__l
+				.footer-subscribe__subtitle Чтоб всегда быть в наших новостей курсе, подпишитесь на нашу
+				.footer-subscribe__title Рассылку
+			.footer-subscribe__r
+				form.footer-subscribe-form
+					input(type="text" required placeholder="Имя*").footer-subscribe-form__input
+					input(type="email" required placeholder="E-mail*").footer-subscribe-form__input
+					button.btn--res.footer-subscribe-form__btn Отправить
+.footer-menu
+	.container
+			ul.row.footer-menu.list
+				each j, ii in menuObj
+					li.footer-menu-item
+						a(href="#").footer-menu-item__link= j.title
+						ul.footer-submenu-list
+							each v in j.sub
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link= v
+				li.footer-menu-item
+					a(href="#").footer-menu-item__link компания
+					a(href="#").footer-menu-item__link советы
+					a(href="#").footer-menu-item__link где купить
+				li.footer-menu-item
+					a(href="#").footer-menu-item__link сервисы
+					ul.footer-submenu-list
+						each v in ['Калькулятор краски', 'Подбор цвета']
+							li.footer-submenu-item
+								a(href="#").footer-submenu-item__link= v
+				li.footer-menu-item
+					a(href="#").footer-menu-item__link Инфо
+					ul.footer-submenu-list
+						each v in ['Акции', 'Новости', 'Объекты']
+							li.footer-submenu-item
+								a(href="#").footer-submenu-item__link= v
+				li.footer-menu-item.footer-menu-item--fat
+					ul.footer-menu-info-list
+						li.footer-menu-info-item
+							span.footer-menu-info-item__icon
+								+svg('f1')
+							.footer-menu-info-item__text
+								p.footer-text ООО «Краски Колорит»
+								p.footer-text 08130 Киевская область, Петропавловская Борщаговка, ул. Садовая, 49 
+									a.footer-text(href="tel:+380442377112") +38 044 237 71 12
+						li.footer-menu-info-item
+							span.footer-menu-info-item__icon
+								+svg('f2')
+							.footer-menu-info-item__text
+								p.footer-text Унитарное предприятие «Краски Колорит» Республика Беларусь Минск, 220036 пр-т Дзержинского д. 5, офис 4405 Тел.
+									a.footer-text(href="tel:+375173281868") +375 17 328 18 68; 
+									a.footer-text(href="tel:+375291525555") +375 29 152 55 55
+						li.footer-menu-info-item
+							span.footer-menu-info-item__icon
+								+svg('f3')
+							.footer-menu-info-item__text
+								p.footer-menu-info-item__title Подписаться на рассылку:
+								form.subscribe-form
+									input(type="email" required placeholder="E-mail").subscribe-form__input-email
+									button.btn--res.subscribe-form__submit
+										+svg('form_submit')
+			a(href="tel:0800508908").footer-menu-tel 0 800 508 908
+				+svg('helloy')
+					
+.footer-copy
+	.container
+		.row
+			p.footer__copy.footer-text © 2020 ООО «Краски Колорит»
+			a(href="#").footer-text.tablet--hidden Политика конфиденциальности
+			a(href="#").footer-text.tablet--hidden Правила пользования сайтом
+			a(href='https://smarto.agency/' rel="nofollow" target="_blank").footer-text.footer-logo-dev
+				span Разработано
+				img(src='./assets/images/smarto.svg' alt="smart-orange" title="smart-orange")
