@@ -1,0 +1,34 @@
+extends ../layout/main
+block variable
+	-
+
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/home.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+		ul.news-list.row
+			each v in [1,1,1,1]
+				li
+					a.news-item
+						.news-item__img
+							+img('temp/12.jpg')
+						h4.news-item__title 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+						.news-item__time 17.03.2010
+

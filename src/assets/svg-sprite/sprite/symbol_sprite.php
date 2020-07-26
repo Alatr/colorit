@@ -24,6 +24,14 @@
 			<path d="M3 4L.402.25h5.196L3 4z" fill="#C11426"></path>
 		</symbol>
 	
+		<symbol id="icon-arr-circ-diff" viewBox="0 0 40 40">
+			<path d="M20 6.167c7.64 0 13.833 6.193 13.833 13.833 0 7.64-6.193 13.833-13.833 13.833-7.64 0-13.833-6.193-13.833-13.833C6.167 12.36 12.36 6.167 20 6.167z" stroke="#17315B" stroke-width=".333"></path><circle cx="20" cy="20" r="19.836" transform="rotate(-90 20 20)" stroke="#9AB4C1" stroke-width=".328"></circle><path d="M25 19.8l-1.8 1.8V18l1.8 1.8z" fill="#C11426"></path><path d="M16 19.8h9m0 0l-1.8 1.8V18l1.8 1.8z" stroke="#C11426" stroke-width=".6"></path>
+		</symbol>
+	
+		<symbol id="icon-arr-circ-white" viewBox="0 0 40 40">
+			<path d="M20 6.167c7.64 0 13.833 6.193 13.833 13.833 0 7.64-6.193 13.833-13.833 13.833-7.64 0-13.833-6.193-13.833-13.833C6.167 12.36 12.36 6.167 20 6.167z" stroke="#F0F1F8" stroke-width=".333"></path><circle cx="20" cy="20" r="19.836" transform="rotate(-90 20 20)" stroke="#F8B3A4" stroke-width=".328"></circle><path d="M25 19.8l-1.8 1.8V18l1.8 1.8z" fill="#F6F7FC"></path><path d="M16 19.8h9m0 0l-1.8 1.8V18l1.8 1.8z" stroke="#F6F7FC" stroke-width=".6"></path>
+		</symbol>
+	
 		<symbol id="icon-arr-small-left" viewBox="0 0 16 10">
 			<path d="M1 5l3 3V2L1 5z" fill="#C11426"></path><path d="M16 5H1m0 0l3 3V2L1 5z" stroke="#C11426"></path>
 		</symbol>

@@ -269,9 +269,11 @@
 	font-weight: 500;
 	font-size: 24px;
 	line-height: lh(24, 40);
+	a{
 
-	color: #C11426;
-	text-decoration: none;
+		color: #C11426;
+		text-decoration: none;
+	}
 	svg{
 		position: absolute;
 		top: 0;
