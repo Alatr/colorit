@@ -28,6 +28,14 @@
 			<path d="M20 6.167c7.64 0 13.833 6.193 13.833 13.833 0 7.64-6.193 13.833-13.833 13.833-7.64 0-13.833-6.193-13.833-13.833C6.167 12.36 12.36 6.167 20 6.167z" stroke="#17315B" stroke-width=".333"></path><circle cx="20" cy="20" r="19.836" transform="rotate(-90 20 20)" stroke="#9AB4C1" stroke-width=".328"></circle><path d="M25 19.8l-1.8 1.8V18l1.8 1.8z" fill="#C11426"></path><path d="M16 19.8h9m0 0l-1.8 1.8V18l1.8 1.8z" stroke="#C11426" stroke-width=".6"></path>
 		</symbol>
 	
+		<symbol id="icon-arr-circ-sec" viewBox="0 0 50 50">
+			<path d="M24.8 30L23 28.2h3.6L24.8 30z" fill="#F6F7FC"></path><path d="M24.8 21v9m0 0L23 28.2h3.6L24.8 30z" stroke="#F6F7FC" stroke-width=".6"></path><circle cx="25" cy="25" r="24.5" stroke="#F7EEEE"></circle>
+		</symbol>
+	
+		<symbol id="icon-arr-circ-sec_1" viewBox="0 0 52 52">
+			<path d="M26.305 21.005l1.762 1.838-1.8-.038-1.8-.038 1.838-1.762z" fill="#F6F7FC"></path><path d="M26.116 30.003l.19-8.998m0 0l1.761 1.838-3.6-.076 1.838-1.762z" stroke="#F6F7FC" stroke-width=".6"></path><circle cx="26" cy="26" r="24.5" transform="rotate(-178.792 26 26)" stroke="#F7EEEE"></circle>
+		</symbol>
+	
 		<symbol id="icon-arr-circ-white" viewBox="0 0 40 40">
 			<path d="M20 6.167c7.64 0 13.833 6.193 13.833 13.833 0 7.64-6.193 13.833-13.833 13.833-7.64 0-13.833-6.193-13.833-13.833C6.167 12.36 12.36 6.167 20 6.167z" stroke="#F0F1F8" stroke-width=".333"></path><circle cx="20" cy="20" r="19.836" transform="rotate(-90 20 20)" stroke="#F8B3A4" stroke-width=".328"></circle><path d="M25 19.8l-1.8 1.8V18l1.8 1.8z" fill="#F6F7FC"></path><path d="M16 19.8h9m0 0l-1.8 1.8V18l1.8 1.8z" stroke="#F6F7FC" stroke-width=".6"></path>
 		</symbol>

@@ -259,6 +259,12 @@
 		/* вайт */
 
 		color: #F6F7FC;
+		@include to(992px){
+			width: 180px;
+			height: 40px;
+			font-size: 12px;
+			
+		}
 	}
 }
 

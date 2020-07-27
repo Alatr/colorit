@@ -447,7 +447,7 @@
 			
 // 		}, 1000);
 
-const sl_main = $('.js-main-section-sl')
+const sl_main = $('.js-main-section-sl');
 
 sl_main.on('init', function (event, slick, currentSlide, nextSlide) {
 	$('.js-current-slick__all').text(slick.slideCount);
@@ -476,3 +476,100 @@ sl_main.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+const sl_discounts = $('.js-discounts-slider-conent');
+
+sl_discounts.on('init', function (event, slick, currentSlide, nextSlide) {
+	$('.js-discounts-slick__all').text(slick.slideCount);
+});
+
+sl_discounts.slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: false,
+	arrows: false,
+	infinite: false,
+	fade: true,
+});
+
+$('.js-discount-sl-arr-next').click(function () {
+	sl_discounts.slick('slickPrev');
+})
+
+$('.js-discount-sl-arr-prev').click(function () {
+	sl_discounts.slick('slickNext');
+});
+
+sl_discounts.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+	$('.js-discounts-slick__cnt').text(currentSlide + 1)
+});
+
+
+
+
+
+
+
+
+const sl_advice = $('.home-advice-sl-wrap');
+
+
+sl_advice.slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: false,
+	arrows: false,
+	infinite: false,
+	fade: true,
+});
+
+$('.js-advice-sl-arr-next').click(function () {
+	sl_advice.slick('slickPrev');
+})
+
+$('.js-advice-sl-arr-prev').click(function () {
+	sl_advice.slick('slickNext');
+});
+
+sl_advice.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+	$('.js-advice-number').text(currentSlide + 1)
+});
+
+
+
+
+
+
+
+
+
+
+const sl_features = $('.js-section-slaider');
+
+sl_features.slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: false,
+	arrows: false,
+	infinite: false,
+	fade: true,
+});
+
+
+$('.js-sec-sl-btn-wrap--prev').click(function () {
+	sl_features.slick('slickPrev');
+})
+
+$('.js-sec-sl-btn-wrap--next').click(function () {
+	sl_features.slick('slickNext');
+});
