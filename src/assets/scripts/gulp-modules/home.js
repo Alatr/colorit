@@ -550,26 +550,28 @@ sl_advice.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 
 
 
+console.log(screen.width !== 700);
+if (screen.width > 700) {
+	
+	const sl_features = $('.js-section-slaider');
+	
+	sl_features.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		infinite: false,
+		fade: true,
+	});
+	
+	
+	$('.js-sec-sl-btn-wrap--prev').click(function () {
+		sl_features.slick('slickPrev');
+	})
+	
+	$('.js-sec-sl-btn-wrap--next').click(function () {
+		sl_features.slick('slickNext');
+	});
+}
 
 
-
-
-const sl_features = $('.js-section-slaider');
-
-sl_features.slick({
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	dots: false,
-	arrows: false,
-	infinite: false,
-	fade: true,
-});
-
-
-$('.js-sec-sl-btn-wrap--prev').click(function () {
-	sl_features.slick('slickPrev');
-})
-
-$('.js-sec-sl-btn-wrap--next').click(function () {
-	sl_features.slick('slickNext');
-});
