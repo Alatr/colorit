@@ -550,7 +550,6 @@ sl_advice.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 
 
 
-console.log(screen.width !== 700);
 if (screen.width > 700) {
 	
 	const sl_features = $('.js-section-slaider');

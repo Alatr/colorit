@@ -6,6 +6,35 @@
 	};
 	loader();
 
+if (screen.width <= 1024) {
+	$('.has-submenu .header-menu-item__title').on('click', function (e) {
+		e.preventDefault();
+	})
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	$('.js-dropdown-btn').on('click', function(e) {
 		

@@ -20,7 +20,7 @@ block header
 
 block content
 	.main-section
-		.main-section-navbar.brd
+		.main-section-navbar
 			.current-slick
 				span.js-current-slick__cnt 1
 				span /
@@ -32,52 +32,17 @@ block content
 			button(type="button").btn--res.slider-btn.js-main-sl-arr-next
 				+svg('arr-small-left')
 		.main-section-sl.js-main-section-sl
-			.main-section-sl__1.main-section-sl-1
-				.main-section-sl-wrap
-					h4.main-section-sl__title Особое ощущение вашего дома
-					p.main-section-sl__subtitle Лаки и краски со скандинавской генетикой
-				.main-section-sl-1__main-img
-					//- +img('sl/sl_1/1.jpg')
-					picture
-						source(srcset="./assets/images/sl/sl_1/1@320.jpg" media="(max-width: 700px)") 
-						source(srcset="./assets/images/sl/sl_1/1@768.jpg" media="(max-width: 768px)") 
-						img(src="./assets/images/sl/sl_1/1.jpg" alt="MDN")
-				+img('sl/sl_1/2.png').main-section-sl-1__main-img-2
-				.main-section-sl-1__btn.main-section-sl-1-btn
-					+img('sl/arrow.svg').main-section-sl-1-btn__icon
-					span.main-section-sl-1-btn__text Читать о компании
-				.mouse-tip.mouse-tip--gray
-					+svg('mouse').mouse-tip__icon
-					.mouse-tip__text используйте скролл
-				.hot-line.hot-line--darken
-					.hot-line__text Горячая линия
-					a(href="tel:+1234567890").header-phone
-						+svg('phone').header-phone__icon
-						span.header-phone__text.header__text 1 234 567 890
-			.main-section-sl__1.main-section-sl-1
-				.main-section-sl-wrap
-					h4.main-section-sl__title Особое ощущение вашего дома
-					p.main-section-sl__subtitle Лаки и краски со скандинавской генетикой
-				.main-section-sl-1__main-img
-					//- +img('sl/sl_1/1.jpg')
-					picture
-						source(srcset="./assets/images/sl/sl_1/1@320.jpg" media="(max-width: 700px)") 
-						source(srcset="./assets/images/sl/sl_1/1@768.jpg" media="(max-width: 768px)") 
-						img(src="./assets/images/sl/sl_1/1.jpg" alt="MDN")
-				+img('sl/sl_1/2.png').main-section-sl-1__main-img-2
-				.main-section-sl-1__btn.main-section-sl-1-btn
-					+img('sl/arrow.svg').main-section-sl-1-btn__icon
-					span.main-section-sl-1-btn__text Читать о компании
-				.mouse-tip.mouse-tip--gray
-					+svg('mouse').mouse-tip__icon
-					.mouse-tip__text используйте скролл
-				.hot-line.hot-line--darken
-					.hot-line__text Горячая линия
-					a(href="tel:+1234567890").header-phone
-						+svg('phone').header-phone__icon
-						span.header-phone__text.header__text 1 234 567 890
-	
-
+			each v in [1,2,3,4,5,6]
+				.main-section-sl__1.main-section-sl-1
+					.main-section-sl-1__main-img
+						picture
+							source(srcset="./assets/images/sl/sl_1/"+v+"@1440.jpg" media="(max-width: 1440px)") 
+							img(src="./assets/images/sl/sl_1/"+v+".jpg" alt="MDN")
+					.hot-line.hot-line--darken
+						.hot-line__text Горячая линия
+						a(href="tel:+1234567890").header-phone
+							+svg('phone').header-phone__icon
+							span.header-phone__text.header__text 1 234 567 890
 
 	.container-section-slaider-wrap
 		.section-slaider-wrap
@@ -269,7 +234,7 @@ block content
 					each v in [1,2,3]
 						.home-advice-sl
 							.home-advice-sl__img
-								+img('temp/2.jpg')
+								+img('temp/1.jpg')
 							.home-advice-sl-content
 								h3.home-advice-sl__title Ближе к природе: интерьер в экостиле
 								p.home-advice-sl__text Поездка на природу – любимый отдых многих жителей каменных джунглей. Чистый и свежий воздух расслабляет, а превосходные пейзажи...

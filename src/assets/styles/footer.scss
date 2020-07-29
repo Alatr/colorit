@@ -1,5 +1,5 @@
 .footer-copy{
-	background-color: rgba(44,54,93, 0.05);
+	background: #F6F7FC;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	.row{
 		justify-content: space-between;
@@ -88,7 +88,7 @@
 }
 
 .footer-menu-info-item{
-	margin-bottom: 13px;
+	margin-bottom: 33px;
 	display: flex;
 	align-items: center;
 	&__icon{
@@ -177,9 +177,10 @@
 
 .footer-subscribe{
 	background: #17315B;
+
 	.row{
 		padding-top: 50px;
-		padding-bottom: 40px;
+		padding-bottom: 54px;
 		justify-content: center;
 		@include to(700px){
 			flex-direction: column;
@@ -191,16 +192,17 @@
 		@include col();
 	}
 	.footer-subscribe__l{
-		@include shift-right(1);
 		@include size(4);
 		@include to(700px){
 			@include size(10)
 		}
 	}
 	.footer-subscribe__r{
-
+		@include shift-right(1);
+		
 		@include size(4);
 		@include to(992px){
+			@include shift-right(0);
 			@include size(5);
 
 		}
@@ -266,6 +268,7 @@
 		}
 	}
 	&__btn{
+		margin-top: 10px;
 		margin-left: auto;
 		width: 210px;
 		height: 48px;
@@ -289,6 +292,7 @@
 		}
 		@include to(700px){
 			width: 100%;
+			height: 44px;
 		}
 	}
 }
