@@ -10,21 +10,28 @@
 					input(type="email" required placeholder="E-mail*").footer-subscribe-form__input
 					button.btn--res.footer-subscribe-form__btn Отправить
 .footer-menu
+	button.btn--res
+		+svg('up').up-btn.js-up-btn
 	.container
 			ul.row.footer-menu.list
 				each j, ii in menuObj
 					li.footer-menu-item
-						a(href="#").footer-menu-item__link= j.title
+						a(href="#").footer-menu-item__link
+							span= j.title
 						ul.footer-submenu-list
 							each v in j.sub
 								li.footer-submenu-item
 									a(href="#").footer-submenu-item__link= v
 				li.footer-menu-item
-					a(href="#").footer-menu-item__link.item-maggin-bottom компания
-					a(href="#").footer-menu-item__link.item-maggin-bottom советы
-					a(href="#").footer-menu-item__link.item-maggin-bottom где купить
+					a(href="#").footer-menu-item__link.item-maggin-bottom
+						span компания
+					a(href="#").footer-menu-item__link.item-maggin-bottom
+						span советы
+					a(href="#").footer-menu-item__link.item-maggin-bottom
+						span где купить
 				li.footer-menu-item
-					a(href="#").footer-menu-item__link сервисы
+					a(href="#").footer-menu-item__link
+						span сервисы
 					ul.footer-submenu-list
 						each v in ['Калькулятор краски', 'Подбор цвета']
 							li.footer-submenu-item
@@ -35,7 +42,7 @@
 						each v in ['Акции', 'Новости', 'Объекты']
 							li.footer-submenu-item
 								a(href="#").footer-submenu-item__link= v
-				li.footer-menu-item.footer-menu-item--fat
+				li.footer-menu-item.footer-menu-item--fat.menu-mob-show-fat.col--12.order--last
 					ul.footer-menu-info-list
 						li.footer-menu-info-item
 							span.footer-menu-info-item__icon
@@ -63,7 +70,28 @@
 						li.footer-menu-tel
 							a(href="tel:0800508908") 0 800 508 908
 								+svg('helloy')
-					
+
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link Меню
+						ul.footer-submenu-list
+							each v in ['Компания', 'Продукция', 'Сервисы']
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link= v
+
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link.mob1--hidden menu
+						ul.footer-submenu-list
+							each v in ['Советы', 'Инфо', 'Где купить']
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link= v
+									
+				li.footer-menu-item.col--12.menu-mob-show-fat
+					a(href="#").footer-menu-item__link Полезные ссылки
+						ul.footer-submenu-list
+							each v in ['kolorit-argentum-protect.com','www.tikkurila.ua','vivacolor.ua','farba-sevice.com']
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link.underline--mob
+										span= v
 .footer-copy
 	.container
 		.row

@@ -11,6 +11,13 @@ if (screen.width <= 1024) {
 		e.preventDefault();
 	})
 }
+
+
+	$(".js-up-btn").click(function () {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	});
 	
 	
 	

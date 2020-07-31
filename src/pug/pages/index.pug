@@ -43,16 +43,38 @@ block content
 						a(href="tel:+1234567890").header-phone
 							+svg('phone').header-phone__icon
 							span.header-phone__text.header__text 1 234 567 890
-
+		.main-section-sl--mob
+			.main-section-sl__1.main-section-sl-1
+				.main-section-sl-wrap
+					h4.main-section-sl__title Особое ощущение<br> вашего дома
+					p.main-section-sl__subtitle Лаки и краски со скандинавской генетикой
+				.main-section-sl-1__main-img
+					//- +img('sl/sl_1/1.jpg')
+					picture
+						source(srcset="./assets/images/sl/sl_1/1@320.jpg" media="(max-width: 700px)") 
+						source(srcset="./assets/images/sl/sl_1/1@768.jpg" media="(max-width: 768px)") 
+						img(src="./assets/images/sl/sl_1/1m.jpg" alt="")
+				+img('sl/sl_1/2.png').main-section-sl-1__main-img-2
+				.main-section-sl-1__btn.main-section-sl-1-btn
+					+img('sl/arrow.svg').main-section-sl-1-btn__icon
+					span.main-section-sl-1-btn__text Читать о компании
+				.mouse-tip.mouse-tip--gray
+					+svg('mouse').mouse-tip__icon
+					.mouse-tip__text используйте скролл
+				.hot-line.hot-line--darken
+					.hot-line__text Горячая линия
+					a(href="tel:+1234567890").header-phone
+						+svg('phone').header-phone__icon
+						span.header-phone__text.header__text 1 234 567 890
 	.container-section-slaider-wrap
 		.section-slaider-wrap
 			.section-slaider.js-section-slaider
 				// start
 				.first-slide-home.section-slaider__item.slide-content
 					ul.slider-breadcrumds-list
-						li.slider-breadcrumds-item.slider-breadcrumds-item--active качество
-						li.slider-breadcrumds-item Экологичность
-						li.slider-breadcrumds-item Сервис
+						li(data-sl_bread="0").js-sl-breadcrumds.slider-breadcrumds-item.slider-breadcrumds-item--active качество
+						li(data-sl_bread="1").js-sl-breadcrumds.slider-breadcrumds-item Экологичность
+						li(data-sl_bread="2").js-sl-breadcrumds.slider-breadcrumds-item Сервис
 					.wrap
 						.first-slide-content__1.slide-content-1
 							+img('home/bucket.png').slide-content__bucket
@@ -103,9 +125,9 @@ block content
 							button(type="button").btn--res.js-sec-sl-btn-wrap--prev
 								+svg('arr-circ-sec_1')
 						ul.slider-breadcrumds-list
-							li.slider-breadcrumds-item качество
-							li.slider-breadcrumds-item.slider-breadcrumds-item--active Экологичность
-							li.slider-breadcrumds-item Сервис
+							li(data-sl_bread="0").js-sl-breadcrumds.slider-breadcrumds-item качество
+							li(data-sl_bread="1").js-sl-breadcrumds.slider-breadcrumds-item.slider-breadcrumds-item--active Экологичность
+							li(data-sl_bread="2").js-sl-breadcrumds.slider-breadcrumds-item Сервис
 						+img('temp/q2.png').slide-content__bucket
 						
 						h3.slide-content__title.js-second__title Безопасность и Экологичность
@@ -122,9 +144,9 @@ block content
 					.wrap
 						.third-slide-content__1.slide-content-1
 							ul.slider-breadcrumds-list
-								li.slider-breadcrumds-item качество
-								li.slider-breadcrumds-item Экологичность
-								li.slider-breadcrumds-item.slider-breadcrumds-item--active Сервис
+								li(data-sl_bread="0").js-sl-breadcrumds.slider-breadcrumds-item качество
+								li(data-sl_bread="1").js-sl-breadcrumds.slider-breadcrumds-item Экологичность
+								li(data-sl_bread="2").js-sl-breadcrumds.slider-breadcrumds-item.slider-breadcrumds-item--active Сервис
 							+img('temp/q3.png').slide-content__bucket
 						.third-slide-content__2.slide-content-2 
 							span.slide-content__counter
@@ -172,7 +194,9 @@ block content
 							+img('temp/o522.png')
 				li
 					a(href="#").home-news__link.link-arrow-type
-						+svg('arr-circ-white').link-arrow-type__icon
+						.circle-btn
+							.circle-btn-inner
+								+svg('qww')
 						span.link-arrow-type__text Смотреть всю продукцию
 
 	.page-container
@@ -212,8 +236,12 @@ block content
 			.row
 				.section-navbar
 					.section-note 21 марта 2019
-				.home-news__title
+				a(href="#").home-news__title
 					span Итоги выставки KYIVBILD 2020: В центре внимание — стенд KOLORIT
+					.home-news-title__btn
+						.home-news-title__btn-inner
+							+svg('qw')
+
 				a(href="#").home-news__link.link-arrow-type
 					+svg('arr-circ-white').link-arrow-type__icon
 					.link-arrow-type__text Больше новостей
@@ -223,18 +251,18 @@ block content
 				.section-navbar
 					.section-note-wrap
 							.section-note Совет №
-								span.js-advice-number 13
-							.section-subnote Работа с цветом Ближе к природе: интерьер в экостиле
+								span.js-advice-number 1
+							.section-subnote.js-section-subnote Работа с цветом
 					.advice-navbar-btn-wrap
 						button(type="button").btn--res.slider-btn.js-advice-sl-arr-prev
 							+svg('arr-small-right')
 						button(type="button").btn--res.slider-btn.js-advice-sl-arr-next
 							+svg('arr-small-left')
 				.home-advice-sl-wrap
-					each v in [1,2,3]
-						.home-advice-sl
+					each v, j in ['./assets/images/home/slide_1.jpg', './assets/images/home/slide_2.jpg', './assets/images/home/slide_3.jpg']
+						.home-advice-sl(data-tag="lesson_"+j+"" data-img=v)
 							.home-advice-sl__img
-								+img('temp/1.jpg')
+								img(src= v)
 							.home-advice-sl-content
 								h3.home-advice-sl__title Ближе к природе: интерьер в экостиле
 								p.home-advice-sl__text Поездка на природу – любимый отдых многих жителей каменных джунглей. Чистый и свежий воздух расслабляет, а превосходные пейзажи...
@@ -242,6 +270,7 @@ block content
 								a(href="#").home-advice-sl__link
 									+svg('arr-circ-diff')
 									span Все советы
+							img(src= v).advise-next-sl
 	a(href="#").home-news__link.link-arrow-type.all-advice.tablet--hiddenn
 		+svg('arr-circ-white').link-arrow-type__icon
 		.link-arrow-type__text Все советы

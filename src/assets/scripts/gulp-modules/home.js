@@ -487,6 +487,8 @@ sl_main.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 
 
 
+
+
 const sl_discounts = $('.js-discounts-slider-conent');
 
 sl_discounts.on('init', function (event, slick, currentSlide, nextSlide) {
@@ -522,6 +524,8 @@ sl_discounts.on('afterChange', function (event, slick, currentSlide, nextSlide) 
 
 
 const sl_advice = $('.home-advice-sl-wrap');
+const sl_advice_subnote = $('.js-section-subnote');
+const sl_advice_next_img = $('.advise-next-sl');
 
 
 sl_advice.slick({
@@ -542,8 +546,16 @@ $('.js-advice-sl-arr-prev').click(function () {
 });
 
 sl_advice.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-	$('.js-advice-number').text(currentSlide + 1)
+	$('.js-advice-number').text(currentSlide + 1);
+	
+	sl_advice_subnote.text($(slick.$slides[currentSlide]).data().tag);
 });
+
+
+
+// $('.home-advice-sl').each((i, el)=>{
+// 	$(el).data().img
+// })
 
 
 
@@ -571,6 +583,12 @@ if (screen.width > 700) {
 	$('.js-sec-sl-btn-wrap--next').click(function () {
 		sl_features.slick('slickNext');
 	});
+
+	$('.js-sl-breadcrumds').on('click', function (e) {
+		// sl_features.slickGoTo(1);
+		// console.log($(this).data().sl_bread);
+		sl_features.slick('slickGoTo', $(this).data().sl_bread, true);
+	})
 }
 
 
