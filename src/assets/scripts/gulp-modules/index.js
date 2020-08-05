@@ -52,39 +52,119 @@ if (screen.width <= 1024) {
 
 
 
-	let stageModalIsOpen = false;
-	const $modal = $('.js-menu');
+
+	
+	/**********************************/
+/*
+* modal start
+*/
+
+class showModal {
+	constructor(obj) {
+		this.popup = obj.popup;
+		this.openBtn = obj.openBtn;
+		this.closeBtn = obj.closeBtn;
+		this.status = false;
+		
+
+		this.init()
+	}
+		
+		
+			open() {
+				$(this.popup).css("display", "flex").hide().fadeToggle();
+				this.status = true;
+			};
+		
+			close() {
+				$(this.popup).fadeOut(300);
+				this.status = false;
+		
+			};
+		
+			toggle() {
+				if (this.status) {
+					$body.removeClass('modal-active');
+					console.log(this.close);
+					this.close();
+				} else {
+					$body.addClass('modal-active');
+					this.open();
+				}
+			}
+
+			listeners(){
+				const self = this
+				$body.on('click', `${this.closeBtn}, ${this.openBtn}`, function (e) {
+					self.toggle();
+				});
+			}
 
 
+			init() {
+				this.listeners();
 
-
-
-	function openStageModal() {
-		$modal.css("display", "flex").hide().fadeToggle();
-		stageModalIsOpen = true;
-	};
-
-	function closeStageModal() {
-		$modal.fadeOut(300);
-		stageModalIsOpen = false;
-
-	};
-
-	function toggleStageModal() {
-		if (stageModalIsOpen) {
-			$body.removeClass('modal-active');
-			closeStageModal();
-		} else {
-			$body.addClass('modal-active');
-			openStageModal();
-		}
+			}
+		
 	}
 
-	$body.on('click', '.js-header-menu-btn, .js-menu-btn-close', function () {
-		toggleStageModal();
+
+	const form_1 = new showModal({
+		popup: '.js-modal-form-popup_1',
+		closeBtn: '.js-form_cons_close',
+		openBtn: '.js-open-consult'
+	});
+
+	const form_2 = new showModal({
+		popup: '.js-modal-form-popup_2',
+		closeBtn: '.js-form_delivery_close',
+		openBtn: '.js-open-delivery'
 	});
 
 
+
+
+
+
+
+let stageModalIsOpen = false;
+const $modal = $('.js-menu');
+
+
+
+
+
+function openStageModal() {
+	$modal.css("display", "flex").hide().fadeToggle();
+	stageModalIsOpen = true;
+};
+
+function closeStageModal() {
+	$modal.fadeOut(300);
+	stageModalIsOpen = false;
+	
+};
+
+function toggleStageModal() {
+	if (stageModalIsOpen) {
+		$body.removeClass('modal-active');
+		closeStageModal();
+	} else {
+		$body.addClass('modal-active');
+		openStageModal();
+	}
+}
+
+$body.on('click', '.js-header-menu-btn, .js-menu-btn-close', function () {
+	toggleStageModal();
+});
+
+
+
+/*
+* modal end
+*/
+/**********************************/
 
 
 })(jQuery);

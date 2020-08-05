@@ -3,7 +3,7 @@
 	opacity: 0;
 }
 .underline-link{
-	display: inline-flex;
+	display: inline-block;
 }
 .underline-link span{
 	text-decoration: none;
@@ -12,6 +12,7 @@
 	background-repeat: no-repeat;
 	background-size: 100% 1px;
 	transition: background-size .3s;
+	transition: all 0.3s;
 }
 .btn--res {
 	background: transparent;

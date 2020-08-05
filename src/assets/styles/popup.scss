@@ -4,15 +4,24 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 	padding: 97px 80px 88px 80px;
-	display: flex;
-	width: 900px;
-	height: 580px;
+	display: none;
+	max-width: 900px;
+	width: 100%;
+	min-height: 580px;
 	background: #F6F7FC;
 	box-shadow: 0px 5px 40px rgba(23, 49, 91, 0.05);
-	z-index: 5;
-
-
-	display: none;
+	z-index: 15;
+	@include to(992px){
+		max-width: 724px;
+		width: 90%;
+		padding: 97px 80px 88px 62px;
+	}
+	@include to(700px){
+		padding: 51px 33px 33px 33px;
+		flex-direction: column;
+		align-items: center;
+		min-height: 480px;
+	}
 }
 .js-modal-form__btn-close{
 	position: absolute;
@@ -25,11 +34,31 @@
 		height: 100%;
 		fill: none;
 	}
+	@include to(700px){
+		width: 28px;
+		height: 28px;
+
+	}
 }
 
-.modal-form-popup__title,
+.modal-form-popup__title{
+
+	width: 55%;
+	@include to(768px){
+		width: 45%;
+	}
+	@include to(700px){
+		width: 100%;
+	}
+}
 .modal-form {
-	width: 50%;
+	width: 45%;
+	@include to(768px){
+		width: 55%;
+	}
+	@include to(700px){
+		width: 100%;
+	}
 }
 .modal-form-popup__title{
 	font-weight: bold;
@@ -37,16 +66,28 @@
 	line-height: lh(55, 45);
 	padding-right: 67px;
 	color: #000C31;
+	@include to(992px){
+		font-size: 32px;
+	}
+	@include to(700px){
+		margin-bottom: 24px;
+		font-size: 24px;
+	}
 }
 
+.margin-top--more:not(#k) {
+	margin-top: 36px;
+	margin-bottom: 73px;
+	@include to(700px){
+		margin-top: 35px;
+		margin-bottom: 30px;
+	}
+}
 .modal-form{
 	display: flex;
 	flex-direction: column;
-	input:last-child{
-		margin-top: 50px;
-	}
 		&__input {
-			margin-bottom: 40px;
+			margin-bottom: 33px;
 			height: 32px;
 			width: 100%;
 			font-size: 12px;
@@ -55,7 +96,9 @@
 			border-bottom: 1px solid rgba(154, 180, 193, 0.5);
 			color: #17315B;
 			background-color: transparent;
-			
+			@include to(700px){
+				margin-bottom: 25px;
+			}
 			&::placeholder {
 				color: #17315B;
 			}
@@ -89,7 +132,7 @@
 				font-weight: 500;
 				font-size: 15px;
 				letter-spacing: 0.08em;
-
+				font-weight: 500;
 				/* вайт */
 
 				color: #000C31;
@@ -102,7 +145,8 @@
 				}
 
 				@include to(700px) {
-					width: 100%;
+					margin: 0 auto;
+					width: 200px;
 					height: 44px;
 				}
 			}

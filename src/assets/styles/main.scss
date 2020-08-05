@@ -46,9 +46,9 @@
 	@include to(1440px) {
 		margin: 0 37px 0 0;
 	}
-
-	@include to(576px) {
-		font-size: 18px;
+	@include to(768px){
+		margin: 0 5px 0 0;
+		font-size: 14px;
 	}
 
 
@@ -68,7 +68,10 @@
 
 .breadcrumbs-item {
 	margin: 0 20px;
+	@include to(768px){
+		margin: 0 17px;
 
+	}
 	&__link {
 		position: relative;
 		line-height: 1em;

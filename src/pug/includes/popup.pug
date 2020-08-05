@@ -1,10 +1,21 @@
-.modal-form-popup.js-modal-form-popup
-	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res
+.modal-form-popup.js-modal-form-popup_1
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_cons_close
 		+svg('close')
 	.modal-form-popup__title Выездная консультация
-	.modal-form
+	form.modal-form
 		input(type="text" required placeholder="Телефон*").modal-form__input
 		input(type="email" required placeholder="E-mail*").modal-form__input
 		input(type="text" required placeholder="Город*").modal-form__input
-		input(type="text" placeholder="Детали запроса").modal-form__input
+		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить
+
+.modal-form-popup.js-modal-form-popup_2
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_delivery_close
+		+svg('close')
+	.modal-form-popup__title Бесплатная доставка
+	form.modal-form
+		input(type="text" required placeholder="Телефон*").modal-form__input
+		input(type="email" required placeholder="E-mail*").modal-form__input
+		input(type="text" required placeholder="Город*").modal-form__input
+		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить

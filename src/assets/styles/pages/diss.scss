@@ -4,23 +4,104 @@
 */
 .news-list.row{
 	padding-top: 30px;
-	padding-bottom: 80px;
+	padding-bottom: 50px;
+	@include shift(1);
+	@include to(1024px){
+		padding-top: 20px;
+		@include shift(0);
+
+	}
 	li{
 		@include col();
 		@include size(4);
+		@include to(768px){
+			@include size(6);
+		}
+		@include to(576px){
+			@include size(12);
+		}
 
 	}
 }
-	.news-item{
+.news-item-btn{
+	margin-top: 18px;
+	@include to(576px){
+		margin-top: 12px;
+
+	}
+	.circle-btn{
+		transform: translateX(-15px);
+		opacity: 0;
+					transition: transform 0.2s cubic-bezier(0.45, 0.2, 0.36, 1) 0.2s, opacity 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.2s;
+					@include to(768px){
+						opacity: 1;
+						transform: translateX(0);
+						transition: none;
+					}
+	}
+	.news-item-btn__text {
+		transform: translateX(-15px);
+		opacity: 0;
+					transition: transform 0.2s cubic-bezier(0.45, 0.2, 0.36, 1) 0.3s, opacity 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.3s;
+		
+					@include to(768px){
+						opacity: 1;
+						transform: translateX(0);
+						transition: none;
+					}
+	}
+}
+.circle-btn-inner.dark-ico svg{
+	fill: #17315B;
+	stroke: #17315B;
+}
+.news-item-btn__text{
+	display: flex;
+	margin: 0 22px 0;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: lh(18, 12);
+	letter-spacing: 0.08em;
+	
+	color: #C11426;
+}
+.news-item{
+	margin-bottom: 54px;
+	display: flex;
+	flex-direction: column;
+	@include to(700px){
 		margin-bottom: 30px;
-		display: flex;
-		flex-direction: column;
+	}
+	&:hover{
+		.circle-btn{
+			transform: translateX(0);
+			opacity: 1;
+			transition: transform 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.2s, opacity 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.2s;
+		}
+		.news-item-btn__text {
+			transform: translateX(0);
+			opacity: 1;
+			transition: transform 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.3s, opacity 0.35s cubic-bezier(0.45, 0.2, 0.36, 1) 0.3s;
+			
+		}
+		.underline-link span{
+	background-image: linear-gradient(#C11426, #C11426);
+	color: #C11426;
+
+		}
+		.news-item__img img{
+			transform: scale(1.1);
+		}
+
+		}
 		&__img{
 			margin-bottom: 16px;
 			height: 185px;
+			overflow: hidden;
 			img{
 				height: 100%;
 				object-fit: cover;
+				transition: all 0.6s cubic-bezier(0.45, 0.2, 0.36, 1);
 			}
 		}
 		&__title{

@@ -34,7 +34,7 @@ block content
 		.main-section-sl.js-main-section-sl
 			each v in [1,2,3,4,5,6]
 				.main-section-sl__1.main-section-sl-1
-					.main-section-sl-1__main-img
+					a(href="#").main-section-sl-1__main-img
 						picture
 							source(srcset="./assets/images/sl/sl_1/"+v+"@1440.jpg" media="(max-width: 1440px)") 
 							img(src="./assets/images/sl/sl_1/"+v+".jpg" alt="MDN")
@@ -203,10 +203,21 @@ block content
 		ul.row.page-list
 			each vq, jq in pageItm
 				li.page-list-item
-					a
-						h4.page-list-item__title= vq.title
-						+svg('p'+jq+'').page-list-item__img
-						.page-list-item__btn= vq.btn
+					if jq == 2
+						.page-list-item-btn.js-open-consult.btn--res
+							h4.page-list-item__title= vq.title
+							+svg('p'+jq+'').page-list-item__img
+							.page-list-item__btn= vq.btn
+					else if jq == 3
+						.page-list-item-btn.js-open-delivery.btn--res
+							h4.page-list-item__title= vq.title
+							+svg('p'+jq+'').page-list-item__img
+							.page-list-item__btn= vq.btn
+					else
+						a(href="#")
+							h4.page-list-item__title= vq.title
+							+svg('p'+jq+'').page-list-item__img
+							.page-list-item__btn= vq.btn
 	.discounts.bg-overlay
 		.page-container 
 			.row
@@ -270,7 +281,6 @@ block content
 								a(href="#").home-advice-sl__link
 									+svg('arr-circ-diff')
 									span Все советы
-							img(src= v).advise-next-sl
 	a(href="#").home-news__link.link-arrow-type.all-advice.tablet--hiddenn
 		+svg('arr-circ-white').link-arrow-type__icon
 		.link-arrow-type__text Все советы

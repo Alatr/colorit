@@ -919,7 +919,8 @@ span.word-animate{
 		}
 	}
 
-	a{
+	a,
+	.page-list-item-btn {
 		padding: 40px 16% 30px;
 		min-height: 360px;
 		display: flex;
@@ -928,6 +929,7 @@ span.word-animate{
 		box-shadow: 0px 15px 35px rgba(154, 180, 193, 0.3);
 		align-items: center;
 		transition: all 0.3s;
+		text-decoration: none;
 		@include to(992px){
 			padding: 28px 15px 30px;
 			min-height: 233px;
@@ -936,6 +938,7 @@ span.word-animate{
 			padding: 20px 6px 25px;
 		}
 		&:hover{
+			cursor: pointer;
 			transform: scale(1.05);
 			.page-list-item__btn{
 				background-color: #C11426;
@@ -1029,6 +1032,12 @@ span.word-animate{
 		content: "";
 		background: #C11426;
 		z-index: 0;
+		@include from(1440px){
+			width: 39%;
+		}
+		@include from(1920px){
+			width: 40%;
+		}
 		@include to(700px){
 			display: none;
 		}
