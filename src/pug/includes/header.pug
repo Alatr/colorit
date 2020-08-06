@@ -59,7 +59,7 @@ block variable
 			li.header-menu-item
 				a(href="#").header-menu-item__title Компания
 			li.has-submenu.header-menu-item
-				a(href="#").header-menu-item__title Продукция
+				a(href= pagesLink[0].products).header-menu-item__title Продукция
 				ul.header-submenu
 					each v, i in submenu_1
 						li
