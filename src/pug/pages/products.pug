@@ -10,7 +10,6 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
-	script(src='./assets/scripts/home.js')
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -23,15 +22,47 @@ block header
 block content
 	.container
 		include ../includes/breadcrumbs.pug
+		style.
+			.products-item:nth-child(1) .products-item-l {
+				background-image: url('assets/images/temp/z1.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(1) .products-item-l {
+					background-image: none;
+				}
+			}
+
+
+			.products-item:nth-child(3) .products-item-l {
+				background-image: url('assets/images/temp/z3.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(3) .products-item-l {
+					background-image: none;
+				}
+			}
+
+			.products-item:nth-child(5) .products-item-l {
+				background-image: url('assets/images/temp/z5.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(5) .products-item-l {
+					background-image: none;
+				}
+			}
+
+
 		ul.products-list
 			//- ---------------------
 			li.products-item
 				.products-item__logo.products-item__logo--right
 					+img('logo.svg')
+				.products-mobile-img
+					+img('prod/w1.jpg')
 				.products-item-l
 					.products-item__title Линейка Home
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')
@@ -47,7 +78,7 @@ block content
 				.products-item-l
 					.products-item__title Professional линейка
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')
@@ -61,11 +92,13 @@ block content
 			li.products-item
 				.products-item__logo.products-item__logo--right
 					+img('logo.svg')
+				.products-mobile-img
+					+img('prod/w3.jpg')
 				.products-item-l
 					.products-item__title Средства подготовки<br> поверхности
 					+img('prod/z1_3.png').products-item__decor-img
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')
@@ -79,7 +112,7 @@ block content
 					.products-item__title Сухие и готовые<br> шпатлевки
 					+img('prod/z1_4.png').products-item__decor-img
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')
@@ -91,11 +124,13 @@ block content
 			li.products-item
 				.products-item__logo.products-item__logo--right
 					+img('logo.svg')
+				.products-mobile-img
+					+img('prod/w5.jpg')
 				.products-item-l
 					+img('prod/z1_5.png').products-item__decor-img
 					.products-item__title Клея для<br> стекло обоев
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')
@@ -108,7 +143,7 @@ block content
 				.products-item-l
 					.products-item__title Лаки и Эмали
 					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
-					a(href="#").products-item__link.products-item-link
+					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
 								+svg('qww')

@@ -1,0 +1,98 @@
+extends ../layout/main
+block variable
+	-
+
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+		style.
+			.products-item:nth-child(1) .products-item-l {
+				background-image: url('assets/images/temp/z1.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(1) .products-item-l {
+					background-image: none;
+				}
+			}
+
+
+			.products-item:nth-child(3) .products-item-l {
+				background-image: url('assets/images/temp/z3.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(3) .products-item-l {
+					background-image: none;
+				}
+			}
+
+			.products-item:nth-child(5) .products-item-l {
+				background-image: url('assets/images/temp/z5.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-item:nth-child(5) .products-item-l {
+					background-image: none;
+				}
+			}
+
+
+		ul.products-list.products-list--margin-bt
+			//- ---------------------
+			li.products-item
+				.products-mobile-img
+					+img('prod/w1.jpg')
+				.products-item-l
+					.products-item__title Линейка Home
+					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+		
+					+img('prod/z1_1.png').products-item__decor-img
+					
+				
+			//- ---------------------
+		ul.products-list
+			//- ---------------------
+			li.products-single-item
+				.products-single-item__logo
+					+img('logo.svg')
+				.products-single-item-l(style="background-color: #EFEAEE")
+					.products-single-item__title(style="color: #000C31") Это короткий чудесный заголовок
+					.products-single-item__text(style="color: #586386") Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем. Компания Kolorit - бренд лакокрасочных материалов
+					a(href="#" style="border-color: #9AB4C1").products-single-item__link.products-single-item-link
+						span.products-single-item-link__text(style="color: #000C31") Перейти
+					+img('prod-single/ee1.png').products-single-item__decor-img
+				.products-single-item-r.products-single-item__img
+					+img('prod-single/e1.jpg')
+					
+				
+			//- ---------------------
+			//- ---------------------
+			li.products-single-item
+				.products-single-item__logo
+					+img('logo.svg')
+				.products-single-item-l(style="background-color: #C8CBC0")
+					.products-single-item__title(style="color: #000C31") Это короткий чудесный заголовок
+					.products-single-item__text(style="color: #000C31") Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем. Компания Kolorit - бренд лакокрасочных материалов
+					a(href="#" style="border-color: #fff").products-single-item__link.products-single-item-link
+						span.products-single-item-link__text(style="color: #000C31") Перейти
+					+img('prod-single/ee1.png').products-single-item__decor-img
+				.products-single-item-r.products-single-item__img
+					+img('prod-single/e1.jpg')
+					
+				
+			//- ---------------------
