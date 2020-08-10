@@ -1,0 +1,94 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Kolorit Legenda'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'Продукция',
+					link: pagesLink[0].products
+				},
+				{
+					label: 'линейка home',
+					link: pagesLink[0].productsSingle
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/prod-card.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+	.products-card-banner(style="background-image: url('assets/images/prod-single/1.jpg');")
+		.container
+			.products-card-banner__title(style="color: #F6F7FC") Kolorit Legenda
+			.products-card-banner__text(style="color: #F6F7FC") Kolorit Legenda - флагман линейки Home. Ее глубокоматовый блеск позволяет изящно подчеркнуть фактуру поверхности. Расширенная палитра цветов, позволяет подчеркнуть исключительность вашего интерьера. Идеальна для гостинных, спален и других помещений, в которых цвет и фактура имеет значение, а высший класс истирания делает покрытие долговечным и стойким.
+			ul.products-card-banner__hash.products-card-banner-hash
+				li.products-card-banner-hash__item #идеально гладкая поверхность
+				li.products-card-banner-hash__item #глубокоматовая
+				li.products-card-banner-hash__item #изящное финишное покрытие
+	.container
+		.products-card-block
+			.products-card-block__l
+				.products-card-block__title Kolorit Legenda
+				.products-card-block-img-wrap
+					+img('prod-single/ee1.png').img-prod
+					ul.products-card-block-info
+						each v in [1,1,1]
+							//- ----------
+							li.products-card-block-info-item
+								+img('prod-single/s1.svg').products-card-block-info-item__ico
+								.products-card-block-info-item-descr
+									+svg('vopr')
+									p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+							//- ----------
+						//- ----------
+						li.products-card-block-info-item.products-card-block-info-item--long
+							+img('prod-single/svv.svg').products-card-block-info-item__ico
+							.products-card-block-info-item-descr
+								+svg('vopr')
+								p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+						//- ----------
+						li.products-card-block-info-item.products-card-block-info-item--long
+							+img('prod-single/svv.svg').products-card-block-info-item__ico
+							.products-card-block-info-item-descr
+								+svg('vopr')
+								p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+						//- ----------
+			.products-card-block__r
+				ul.products-card-block-list
+					each v, j in ['Cтепень блеска','Разбавляется водой','Устойчивая к частому мытью','Расход 12м2','Тонировка по системе Avatint Tikkurila','Для сухих и влажных помещений','50000 цветов','Подходит для нанесения: кистью, валиком, краскопультом.','Для внутреннего применения (для стен и потолков)']
+						li.products-card-block-item
+							+svg('in'+j).products-card-block-item__ico
+							span.products-card-block-item__text= v
+				.products-card-block__btn-wrap
+					a.calc-link(href="#") Калькулятор краски
+					a.color-choice-link(href="#") Выбрать цвет
+					a.buy-color-link.underline-link(href="#")
+						span.red Где купить краску?
+		.products-card-tab
+			ul.products-card-tab-btns
+				each v in ['Область и объекты применения','Технические характеристики', 'документы', 'Инструкция по применению']
+					li.products-card-tab-btns-item
+						button(type="button").products-card-tab-btn.js-products-card-tab-btn.btn--res= v
+			ul.products-card-tab-content
+				each v, j in ['Область и объекты применения','Технические характеристики', 'документы', 'Инструкция по применению']
+					li.js-products-card-tab-content-item.products-card-tab-content-item= j

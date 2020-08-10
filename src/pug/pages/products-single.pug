@@ -1,6 +1,17 @@
 extends ../layout/main
-block variable
+block variable1
 	-
+		var title_page = 'Линейка home'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'Продукция',
+					link: pagesLink[0].products
+				},
+			];
 
 		
 block meta
@@ -73,7 +84,7 @@ block content
 				.products-single-item-l(style="background-color: #EFEAEE")
 					.products-single-item__title(style="color: #000C31") Это короткий чудесный заголовок
 					.products-single-item__text(style="color: #586386") Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем. Компания Kolorit - бренд лакокрасочных материалов
-					a(href="#" style="border-color: #9AB4C1").products-single-item__link.products-single-item-link
+					a(href=pagesLink[0].productsCard style="border-color: #9AB4C1").products-single-item__link.products-single-item-link
 						span.products-single-item-link__text(style="color: #000C31") Перейти
 					+img('prod-single/ee1.png').products-single-item__decor-img
 				.products-single-item-r.products-single-item__img

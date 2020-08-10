@@ -14,6 +14,9 @@
 	transition: background-size .3s;
 	transition: all 0.3s;
 }
+.underline-link span.red{
+	background-image: linear-gradient(#C11426, #C11426);
+}
 .btn--res {
 	background: transparent;
 	border: none;

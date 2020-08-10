@@ -28,6 +28,7 @@
 @import './pages/diss';
 @import './pages/products';
 @import './pages/products-single';
+@import './pages/products-card';
 
 
 
@@ -37,17 +38,15 @@
 * breadcrumbs start
 */
 .main-title {
-	margin: 0 27px 0 0;
+	margin: 0 20px 0 0;
 	line-height: 1.1em;
-	color: #34293D;
+	color: #000C31;
 	font-family: $default-font2;
 	white-space: nowrap;
 	transform: translateY(-3px);
-
+	font-weight: 500;
 	font-size: 18px;
-	@include to(1440px) {
-		margin: 0 37px 0 0;
-	}
+
 	@include to(768px){
 		margin: 0 5px 0 0;
 		font-size: 14px;
