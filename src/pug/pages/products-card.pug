@@ -23,6 +23,7 @@ block meta
 block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
+	script(src='https://www.youtube.com/iframe_api')
 	script(src='./assets/scripts/index.js')
 	script(src='./assets/scripts/prod-card.js')
 block footer
@@ -90,5 +91,39 @@ block content
 					li.products-card-tab-btns-item
 						button(type="button").products-card-tab-btn.js-products-card-tab-btn.btn--res= v
 			ul.products-card-tab-content
-				each v, j in ['Область и объекты применения','Технические характеристики', 'документы', 'Инструкция по применению']
-					li.js-products-card-tab-content-item.products-card-tab-content-item= j
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll
+					ul.usage-area-list
+						each v in [1,1,1,1,1]
+							//------------
+							li.usage-area-item
+								h5.usage-area-item__key Идеально для:
+								p.usage-area-item__text первичной и ремонтной окраски стен и потолков в гостиных, спальнях.
+							//------------
+							//------------
+							li.usage-area-item
+								h5.usage-area-item__key Хорошо подходит для:
+								p.usage-area-item__text детских комнатах, кухонь, ванных (за исключением мест прямого попадания воды) и др. жилых помещений, а также в помещениях с высокой эксплуатационной нагрузкой (например, детские сады, учебные заведения, санаторнокурортные, гостиничные, офисные помещения, магазины и т.п.).
+							//------------
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 1
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 2
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 3
+		.row.products-card-form-row
+			.products-card-form
+				.products-card-form-title-wrap
+					h4.products-card-form__title Запрос просчета
+					p.products-card-form__subtitle Если вам нужна помощь в просчете необходимого количества материалов, вы не знаете, какой продукт идеально подойдет под вашу задачу - наши специалисты готовы помочь вам сделать правильный выбор и пасчеты!
+				form.modal-form
+					input(type="text" required placeholder="Телефон*").modal-form__input
+					input(type="email" required placeholder="E-mail*").modal-form__input
+					input(type="text" required placeholder="Город*").modal-form__input
+					input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+					button.btn--res.modal-form__btn Отправить
+		each v,j in ['eu5aGhqksbY']
+			.row.products-card-video-row.js-prod-video(data-id= v)
+				.products-card-video
+					.products-card-video-wrap
+						.player(id='player'+j)
+				.products-card-video-nav
+					.products-card-video-nav__title Ролик о КРАСКЕ KOLORIT LEGENDA
+					.products-card-video-nav__decor    
+					.products-card-video-nav__time.js-products-card-video-nav__time 
