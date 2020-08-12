@@ -125,5 +125,59 @@ block content
 						.player(id='player'+j)
 				.products-card-video-nav
 					.products-card-video-nav__title Ролик о КРАСКЕ KOLORIT LEGENDA
-					.products-card-video-nav__decor    
-					.products-card-video-nav__time.js-products-card-video-nav__time 
+					.products-card-video-nav__decor
+					.products-card-video-nav__time.js-products-card-video-nav__time 0:00
+	.products-card-cta
+		.container
+			.row
+				.products-card-cta__title Где купить?
+				.products-card-cta__subtitle Краски KOLORIT можно купить в любом регионе Украины
+				a(href="#").products-card-cta__link.link-arrow-type
+					.circle-btn
+						.circle-btn-inner
+							+svg('qww')
+					span.link-arrow-type__text Cписок<br> магазинов
+	.container
+		.row.products-card-same-sl-row
+			.products-card-same-sl
+				.products-card-same-sl__title Вам могут понадобиться
+				.products-card-same-sl-slider-wrap
+					.products-card-same-sl-navbar-btn-wrap
+						button(type="button").btn--res.slider-btn.js-products-card-same-sl-slider-prev
+							+svg('arr-small-right')
+						button(type="button").btn--res.slider-btn.js-products-card-same-sl-slider-next
+							+svg('arr-small-left')
+					.products-card-same-sl-slider.js-products-card-same-sl-slider
+						each v in [1,1,1,1,1,1]
+							a(href="#").products-card-same-sl-slider-item
+								.products-card-same-sl-slider-item__img
+									+img('temp/vv.png')
+								.products-card-same-sl-slider-item__title Грунтовка Reaflex 50
+	.products-card-advice-sl-container-wrap
+		.container
+			.row.products-card-advice-sl-row
+				.products-card-advice-sl
+					.products-card-advice-sl__title Советы по применению
+					.products-card-advice-sl-slider-wrap
+						.products-card-advice-sl-navbar-btn-wrap
+							button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+								+svg('arr-small-right')
+							button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+								+svg('arr-small-left')
+						ul.products-card-advice-sl-slider.js-products-card-advice-sl-slider
+							each v in [1,1,1,1,1,1]
+								li.advice-sl-slider-li
+									a.news-item
+										.news-item__img
+											+img('temp/12.jpg')
+										.advice-item__subtitle
+											.advice-item__subtitle__num СОВЕТ №1
+											.advice-item__subtitle__text Работа с цветом
+										h4.news-item__title.underline-link
+											span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+										.news-item__time 17.03.2010
+										.news-item-btn.link-arrow-type
+											.circle-btn
+												.circle-btn-inner.dark-ico
+													+svg('qww')
+											.news-item-btn__text Подробнее

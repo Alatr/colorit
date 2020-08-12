@@ -60,6 +60,45 @@
 
 	
 
+	const sl_main = $('.js-products-card-same-sl-slider');
+
+
+
+	sl_main.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		infinite: false,
+	});
+
+	$('.js-products-card-same-sl-slider-next').click(function () {
+		sl_main.slick('slickPrev');
+	})
+
+	$('.js-products-card-same-sl-slider-prev').click(function () {
+		sl_main.slick('slickNext');
+	});
+
+	const sl_main_advice = $('.js-products-card-advice-sl-slider');
+
+
+
+	sl_main_advice.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		infinite: false,
+	});
+
+	$('.js-products-card-advice-sl-slider-next').click(function () {
+		sl_main_advice.slick('slickPrev');
+	})
+
+	$('.js-products-card-advice-sl-slider-prev').click(function () {
+		sl_main_advice.slick('slickNext');
+	});
 
 
 
