@@ -77,6 +77,47 @@
 		line-height: 1.8em;
 		color: #586386;
 	}
+
+	&__banner{
+		background-color:  #17315B;
+		box-shadow: 0px 5px 20px rgba(23, 49, 91, 0.1);
+		padding: 65px 0;
+		&-row{
+			justify-content: center;
+		}
+		&-inner{
+			@include col();
+			@include size(10);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&-title{
+			font-weight: 500;
+			font-size: 28px;
+			line-height: 1.4em;
+			color: #F6F7FC;
+			max-width: 220px;
+		}
+		&-text{
+			font-size: 12px;
+			line-height: 1.8em;
+			color: #9AB4C1;
+			max-width: 340px;
+		}
+		.link-with-circle{
+			&__circle{
+				border-color: #9AB4C1;
+			}
+			&__circle-inner{
+				border-color: #F0F1F8;
+			}
+			&__text{
+				color: #F0F1F8;
+				max-width: 90px;
+			}
+		}
+	}
 }
 
 .company-second-sec{
@@ -243,9 +284,50 @@
 	&_3{
 		.company-advantages__inner{
 			overflow: hidden;
+			justify-content: flex-start;
+			padding-top: 52px;
+		}
+		.company-advantages__number{
+			margin-bottom: 35px;
+		}
+		.link-with-circle{
+			margin-top: 55px;
+			&__text{
+				max-width: 125px;
+			}
 		}
 		
 	}
+	&_4{
+		.company-advantages__big-img{
+			left: 0;
+			right: auto;
+		}
+		.company-advantages__inner{
+			margin-left: auto;
+		}
+		.link-with-circle{
+			margin-top: 60px;
+			&__text{
+				max-width: 156px;
+			}
+		}
+		.company-advantages__number{
+			position: absolute;
+			top: 40px;
+			right: 0;
+		}
+		.company-advantages__small-title_safety{
+			margin-right: 40px;
+			margin-bottom: 20px;
+		}
+		.company-advantages__logo{
+			max-width: 215px;
+			margin-top: 65px;
+		}
+	}
+
+	
 	
 
 }
