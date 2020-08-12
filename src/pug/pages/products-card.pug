@@ -76,9 +76,9 @@ block content
 						//- ----------
 			.products-card-block__r
 				ul.products-card-block-list
-					each v, j in ['Cтепень блеска','Разбавляется водой','Устойчивая к частому мытью','Расход 12м2','Тонировка по системе Avatint Tikkurila','Для сухих и влажных помещений','50000 цветов','Подходит для нанесения: кистью, валиком, краскопультом.','Для внутреннего применения (для стен и потолков)']
+					each v, yy in ['Cтепень блеска','Разбавляется водой','Устойчивая к частому мытью','Расход 12м2','Тонировка по системе Avatint Tikkurila','Для сухих и влажных помещений','50000 цветов','Подходит для нанесения: кистью, валиком, краскопультом.','Для внутреннего применения (для стен и потолков)']
 						li.products-card-block-item
-							+svg('in'+j).products-card-block-item__ico
+							+svg('in'+yy).products-card-block-item__ico
 							span.products-card-block-item__text= v
 				.products-card-block__btn-wrap
 					a.calc-link(href="#") Калькулятор краски
