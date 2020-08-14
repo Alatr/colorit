@@ -1,0 +1,74 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Советы'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'инфоцентр',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/advice.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+		.advice-tab
+			ul.advice-tab-btns
+				each v in ['Все советы','Вдохновение', 'Советы по ремонту', 'Правила работы с покрытиями']
+					li.advice-tab-btns-item
+						button(type="button").advice-tab-btn.js-advice-tab-btn.btn--res= v
+			ul.advice-tab-content
+				li.js-advice-tab-content-item.advice-tab-content-item.custom-scroll
+					ul.news-list.row
+						each v in [1,1,1,1,1,1]
+							li
+								a.news-item
+									.news-item__img
+										+img('temp/12.jpg')
+									.advice-item__subtitle
+										.advice-item__subtitle__num СОВЕТ №1
+										.advice-item__subtitle__text Работа с цветом
+									h4.news-item__title.underline-link
+										span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+									.news-item__time 17.03.2010
+									.news-item-btn.link-arrow-type
+										.circle-btn
+											.circle-btn-inner.dark-ico
+												+svg('qww')
+										.news-item-btn__text Читать совет
+					nav.navigation.pagination(role="navigation")
+						.nav-links
+							a.prev.page-numbers(href="#" title="Предыдущая страница")
+								+svg('arrow')
+							span.page-numbers.current 1
+							a.page-numbers(href="#") 2
+							span.page-numbers.dots …
+							a.page-numbers(href="#") 86
+							a.page-numbers(href="#") 87
+							a.next.page-numbers(href="#" title="Следующая страница")
+								+svg('arrow')
+				li.brd.js-advice-tab-content-item.advice-tab-content-item.custom-scroll 1
+				li.brd.js-advice-tab-content-item.advice-tab-content-item.custom-scroll 2
+				li.brd.js-advice-tab-content-item.advice-tab-content-item.custom-scroll 3
+

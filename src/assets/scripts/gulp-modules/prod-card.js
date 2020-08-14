@@ -1,53 +1,7 @@
 
 
 (function ($) {
-	class Tab {
-		constructor(obj){
-			this.btn = obj.$btn
-			this.content = obj.$content
 
-			this.btnActiveClass = obj.btnActiveClass
-			this.contentActiveClass = obj.contentActiveClass
-			this.active = obj.active
-			this.data = {
-				btnDataName: 'data-indx'
-			}
-
-
-			this.init()
-		}
-
-		setStyles() {
-			this.btn.each((i, el)=>{
-				$(el).attr(this.data.btnDataName, i);
-			});
-			this.btn.eq(this.active).addClass(this.btnActiveClass);
-			this.content.eq(this.active).addClass(this.contentActiveClass);
-		}
-	
-
-			init() {
-				this.setStyles();
-				this.listeners();
-
-			}
-	}
-
-	Tab.prototype.listeners = function(callback = function(){}) {
-			const self = this;
-			this.btn.on('click', function(){
-				const inx = $(this).attr(self.data.btnDataName);
-				//btn
-				self.btn.removeClass(self.btnActiveClass);
-				self.btn.eq(inx).addClass(self.btnActiveClass);
-				//contents
-				self.content.removeClass(self.contentActiveClass);
-				self.content.eq(inx).addClass(self.contentActiveClass);
-
-				// ajax
-				callback();
-			});
-		}
 
 
 		const tab = new Tab({
@@ -60,6 +14,65 @@
 
 	
 
+	const sl_main = $('.js-products-card-same-sl-slider');
+
+
+
+	sl_main.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		infinite: false,
+		responsive: [
+			{
+				breakpoint: 701,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			},
+		]
+	});
+
+	$('.js-products-card-same-sl-slider-next').click(function () {
+		sl_main.slick('slickPrev');
+	})
+
+	$('.js-products-card-same-sl-slider-prev').click(function () {
+		sl_main.slick('slickNext');
+	});
+
+	const sl_main_advice = $('.js-products-card-advice-sl-slider');
+
+
+if (screen.width > 700) {
+	
+	sl_main_advice.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		infinite: false,
+		responsive: [
+			{
+				breakpoint: 993,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				}
+			},
+		]
+	});
+
+	$('.js-products-card-advice-sl-slider-next').click(function () {
+		sl_main_advice.slick('slickPrev');
+	})
+
+	$('.js-products-card-advice-sl-slider-prev').click(function () {
+		sl_main_advice.slick('slickNext');
+	});
+}
 
 
 

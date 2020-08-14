@@ -38,17 +38,17 @@ block variable
 			}
 		];
 		var submenu_4 = [{
-				link: "#",
+				link: pagesLink[0].news,
 				img: 'menu/4_1.jpg',
 				title: 'Новости',
 			},
 			{ 
-				link: "#",
+				link: pagesLink[0].object,
 				img: 'menu/4_2.jpg',
 				title: 'Объекты',
 			},
 			{ 
-				link: "#",
+				link: pagesLink[0].discounts,
 				img: 'menu/4_3.jpg',
 				title: 'Акции',
 			},
@@ -104,7 +104,7 @@ block variable
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
 			li.header-menu-item
-				a(href="#").header-menu-item__title советы
+				a(href=pagesLink[0].advice).header-menu-item__title советы
 			li.header-menu-item.header-menu-item__logo
 				a(href="/")
 					+img('logo.svg')
@@ -113,10 +113,11 @@ block variable
 				ul.header-submenu
 					each v in submenu_4
 						li
-							a(href= v.link).header-submenu-item
+							a(href=v.link).header-submenu-item
 								.header-submenu-item__img
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
+					li.overlay
 			li.header-menu-item
 				a(href="#").header-menu-item__title Где Купить
 		a(href="tel:+1234567890").header-phone

@@ -1,4 +1,97 @@
 @@include('./libs.js');
+
+class Tab {
+	constructor(obj) {
+		this.btn = obj.$btn
+		this.content = obj.$content
+
+		this.btnActiveClass = obj.btnActiveClass
+		this.contentActiveClass = obj.contentActiveClass
+		this.active = obj.active
+		this.data = {
+			btnDataName: 'data-indx'
+		}
+
+
+		this.init()
+	}
+
+	setStyles() {
+		this.btn.each((i, el) => {
+			$(el).attr(this.data.btnDataName, i);
+		});
+		this.btn.eq(this.active).addClass(this.btnActiveClass);
+		this.content.eq(this.active).addClass(this.contentActiveClass);
+	}
+
+
+	init() {
+		this.setStyles();
+		this.listeners();
+
+	}
+}
+
+Tab.prototype.listeners = function (callback = function () {}) {
+	const self = this;
+	this.btn.on('click', function () {
+		const inx = $(this).attr(self.data.btnDataName);
+		//btn
+		self.btn.removeClass(self.btnActiveClass);
+		self.btn.eq(inx).addClass(self.btnActiveClass);
+		//contents
+		self.content.removeClass(self.contentActiveClass);
+		self.content.eq(inx).addClass(self.contentActiveClass);
+
+		// ajax
+		callback();
+	});
+}
+
+console.log(Tab);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (function ($) {
 	const $body = $('body');
 	var loader = function () {

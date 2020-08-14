@@ -36,9 +36,21 @@ block header
 
 
 block content
+
+
 	.container
 		include ../includes/breadcrumbs.pug
-	.products-card-banner(style="background-image: url('assets/images/prod-single/1.jpg');")
+		style.
+			.products-card-banner {
+				background-image: url('assets/images/prod-single/1.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-card-banner {
+					background-image: none;
+				}
+			}
+	.products-card-banner-mobile(style="background-image: url('assets/images/prod-single/1.jpg');")
+	.products-card-banner
 		.container
 			.products-card-banner__title(style="color: #F6F7FC") Kolorit Legenda
 			.products-card-banner__text(style="color: #F6F7FC") Kolorit Legenda - флагман линейки Home. Ее глубокоматовый блеск позволяет изящно подчеркнуть фактуру поверхности. Расширенная палитра цветов, позволяет подчеркнуть исключительность вашего интерьера. Идеальна для гостинных, спален и других помещений, в которых цвет и фактура имеет значение, а высший класс истирания делает покрытие долговечным и стойким.
@@ -78,7 +90,7 @@ block content
 				ul.products-card-block-list
 					each v, yy in ['Cтепень блеска','Разбавляется водой','Устойчивая к частому мытью','Расход 12м2','Тонировка по системе Avatint Tikkurila','Для сухих и влажных помещений','50000 цветов','Подходит для нанесения: кистью, валиком, краскопультом.','Для внутреннего применения (для стен и потолков)']
 						li.products-card-block-item
-							+svg('in'+yy).products-card-block-item__ico
+							+img('prod_ico/in'+yy+'.svg').products-card-block-item__ico
 							span.products-card-block-item__text= v
 				.products-card-block__btn-wrap
 					a.calc-link(href="#") Калькулятор краски
@@ -125,5 +137,59 @@ block content
 						.player(id='player'+j)
 				.products-card-video-nav
 					.products-card-video-nav__title Ролик о КРАСКЕ KOLORIT LEGENDA
-					.products-card-video-nav__decor    
-					.products-card-video-nav__time.js-products-card-video-nav__time 
+					.products-card-video-nav__decor
+					.products-card-video-nav__time.js-products-card-video-nav__time 0:00
+	.products-card-cta
+		.container
+			.row
+				.products-card-cta__title Где купить?
+				.products-card-cta__subtitle Краски KOLORIT можно купить в любом регионе Украины
+				a(href="#").products-card-cta__link.link-arrow-type
+					.circle-btn
+						.circle-btn-inner
+							+svg('qww')
+					span.link-arrow-type__text Cписок<br> магазинов
+	.container
+		.row.products-card-same-sl-row
+			.products-card-same-sl
+				.products-card-same-sl__title Вам могут понадобиться
+				.products-card-same-sl-slider-wrap
+					.products-card-same-sl-navbar-btn-wrap
+						button(type="button").btn--res.slider-btn.js-products-card-same-sl-slider-prev
+							+svg('arr-small-right')
+						button(type="button").btn--res.slider-btn.js-products-card-same-sl-slider-next
+							+svg('arr-small-left')
+					.products-card-same-sl-slider.js-products-card-same-sl-slider
+						each v in [1,1,1,1,1,1]
+							a(href="#").products-card-same-sl-slider-item
+								.products-card-same-sl-slider-item__img
+									+img('temp/vv.png')
+								.products-card-same-sl-slider-item__title Грунтовка Reaflex 50
+	.products-card-advice-sl-container-wrap
+		.container
+			.row.products-card-advice-sl-row
+				.products-card-advice-sl
+					.products-card-advice-sl__title Советы по применению
+					.products-card-advice-sl-slider-wrap
+						.products-card-advice-sl-navbar-btn-wrap
+							button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+								+svg('arr-small-right')
+							button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+								+svg('arr-small-left')
+						ul.products-card-advice-sl-slider.js-products-card-advice-sl-slider
+							each v in [1,1,1,1,]
+								li.advice-sl-slider-li
+									a.news-item
+										.news-item__img
+											+img('temp/12.jpg')
+										.advice-item__subtitle
+											.advice-item__subtitle__num СОВЕТ №1
+											.advice-item__subtitle__text Работа с цветом
+										h4.news-item__title.underline-link
+											span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+										.news-item__time 17.03.2010
+										.news-item-btn.link-arrow-type
+											.circle-btn
+												.circle-btn-inner.dark-ico
+													+svg('qww')
+											.news-item-btn__text Подробнее

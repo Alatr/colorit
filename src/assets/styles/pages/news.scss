@@ -1,0 +1,14 @@
+.news-up-btn {
+	position: absolute;
+	bottom: 7px;
+	right: 20px;
+	@include to(700px){
+		display: none;
+	}
+}
+
+.position--relative{
+	position: relative;
+}
+
+
