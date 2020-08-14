@@ -77,47 +77,6 @@
 		line-height: 1.8em;
 		color: #586386;
 	}
-
-	&__banner{
-		background-color:  #17315B;
-		box-shadow: 0px 5px 20px rgba(23, 49, 91, 0.1);
-		padding: 65px 0;
-		&-row{
-			justify-content: center;
-		}
-		&-inner{
-			@include col();
-			@include size(10);
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-		&-title{
-			font-weight: 500;
-			font-size: 28px;
-			line-height: 1.4em;
-			color: #F6F7FC;
-			max-width: 220px;
-		}
-		&-text{
-			font-size: 12px;
-			line-height: 1.8em;
-			color: #9AB4C1;
-			max-width: 340px;
-		}
-		.link-with-circle{
-			&__circle{
-				border-color: #9AB4C1;
-			}
-			&__circle-inner{
-				border-color: #F0F1F8;
-			}
-			&__text{
-				color: #F0F1F8;
-				max-width: 90px;
-			}
-		}
-	}
 }
 
 .company-second-sec{
@@ -243,21 +202,21 @@
 		position: absolute;
 		bottom: 0;
 		left: 0px;
-		height: 25%;
+		overflow: hidden;
+		
 	}
 	&__kolorit-bg-img{
-		position: relative;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
+		height:210px;
+		width: 1155px;
+		max-width: none;
+		transform: translateX(-35px);
 	}
 	&_1{
 		padding-top: 45px;
 
 	}
 	&_2{
+		background-color: #fff;
 		.company-advantages__big-img{
 			left: 0;
 			right: auto;
@@ -299,6 +258,7 @@
 		
 	}
 	&_4{
+		background-color: #fff;
 		.company-advantages__big-img{
 			left: 0;
 			right: auto;
@@ -329,5 +289,388 @@
 
 	
 	
+
+}
+
+.company-principles{
+	padding-top: 100px;
+
+	&__title{
+		max-width: 510px;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 60px;
+	}
+	&__info-block{
+		@include col();
+		@include size(4);
+		&-top{
+			display: flex;
+			align-items: center ;
+			margin-bottom: 20px;
+		}
+		&-img{
+			max-width: 60px;
+			margin-right: 25px;
+		}
+		&-content{
+			transition: all 0.5s;
+			max-width: 340px;
+			position: relative;
+			overflow: hidden;
+		}
+		&-text-collapse{
+			height: 88px;
+			margin-bottom: 30px;
+			transition: all 0.5s;
+			position: relative;
+			overflow: hidden;
+			z-index: -1;
+			&::-webkit-scrollbar{
+				width: 1px;
+				
+			}
+			&::-webkit-scrollbar-thumb{
+				background-color: #C11426
+			}
+			&::-webkit-scrollbar-track-piece{
+				background-color: #fff;
+			}
+			&-overlay{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background: linear-gradient(360deg, #FFFFFF 34.15%, rgba(255, 255, 255, 0) 203.66%);
+				width: calc(100% - 10px);
+				height: 82px;
+				z-index: 5;
+			}
+			&_active{
+				height: 265px;
+				overflow-y: scroll;
+				z-index: 1;
+				
+			}
+			.company__text + .company__text{
+				margin-top: 15px;
+			}
+		}
+		&-cross{
+			cursor: pointer;
+			display: inline-block;
+			opacity: 1;
+			transition: all 0.5s;
+
+		}
+		
+		
+	}
+	&__inner{
+		position: relative;
+		min-height: calc(100vh - 66px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__bottom{
+		// position: absolute;
+		// bottom: 0;
+		// left: 0;
+		flex-grow: 1;
+		width: 100%;
+		height: 389px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-position: center bottom;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.link-with-circle{
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		bottom: 75px;
+		span{
+			margin-left: 0;
+			max-width: 190px;
+			margin-bottom: 16px;
+		}
+	}
+}
+
+
+.company-partners{
+	background-color: #F6F7FC;
+	&__title-row{
+		justify-content: center;
+	}
+	&__row{
+		position: relative;
+		&:after{
+			content: '';
+			width: 1px;
+			height: calc(100% - 75px);
+			background-color: #9AB4C1;
+			position: absolute;
+			left: 50%;
+			top: 0
+		}
+	}
+	&__inner{
+		padding-top: 90px;
+		padding-bottom: 55px;
+		
+	}
+	&__subtitle{
+		@include col();
+		@include size(10);
+		margin-bottom: 50px;
+		color: #C11426;
+	}
+	&__info-block{
+		@include col();
+		@include size(4);
+		@include shift-left(1);
+		@include shift-right(1);
+		margin-bottom: 75px;
+		&-top{
+			height: 50px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 12px;
+		}
+		&-logo.emballator{
+			max-width: 140px;
+		}
+		&-logo.basf{
+			max-width: 115px;
+		}
+		&-logo.venator{
+			max-width: 130px;
+		}
+		&-logo.dow{
+			max-width: 120px;
+		}
+		&-subtitle{
+			margin-bottom: 5px;
+			color: #9AB4C1;
+			display: block;
+		}
+	}
+}
+
+.company-banner{
+	background-color:  #17315B;
+	box-shadow: 0px 5px 20px rgba(23, 49, 91, 0.1);
+	padding: 65px 0;
+	&__row{
+		justify-content: center;
+	}
+	&__inner{
+		@include col();
+		@include size(10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__title{
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.4em;
+		color: #F6F7FC;
+		max-width: 220px;
+	}
+	&__text{
+		font-size: 12px;
+		line-height: 1.8em;
+		color: #9AB4C1;
+		max-width: 340px;
+	}
+	.link-with-circle{
+		&__circle{
+			border-color: #9AB4C1;
+		}
+		&__circle-inner{
+			border-color: #F0F1F8;
+		}
+		&__text{
+			color: #F0F1F8;
+			max-width: 90px;
+		}
+	}
+}
+
+.company-trophy{
+	&__title-row{
+		justify-content: center;
+	}
+	&__row{
+		position: relative;
+		justify-content: center;
+	}
+	&__inner{
+		padding-top: 100px;
+		padding-bottom: 100px;
+		
+	}
+	&__subtitle{
+		@include col();
+		@include size(10);
+		margin-bottom: 50px;
+		color: #C11426;
+	}
+	&__info-block{
+		@include col();
+		@include size(4);
+		margin-bottom: 42px;
+		.company__text{
+			max-width: 285px;
+		}
+		&-top{
+			height: 50px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 25px;
+			height: 95px;
+		}
+		&-logo{
+			width: auto;
+			margin-right: 35px;
+		}
+		&-subtitle{
+			margin-bottom: 5px;
+			color: #9AB4C1;
+			display: block;
+		}
+		&-title{
+			font-weight: 500;
+			text-transform: uppercase;
+			font-size: 14px;
+			line-height: 1.7em;
+			color: #17315B;
+			max-width: 160px;
+		}
+	}
+	&__link-block{
+		@include col();
+		@include size(4);
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		margin-bottom: 42px;
+	}
+	&__content-wrapper{
+		@include col();
+		@include size(10);
+	}
+	.link-with-circle{
+		&__text{
+			max-width: 190px;
+		}
+	}
+}
+
+.docs-slider{
+	&__card-wrapper{
+		width: 172px;
+	}
+	&__card{
+		padding: 8px;
+		background-color: #17315B;
+		width: 100%;
+		height: 232px;
+	}
+	&__card-inner{
+		width: 100%;
+		height: 100%;
+		border: 1px solid rgba(154, 180, 193, 0.6);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px;
+	}
+	&__card-top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&__doc-icon{
+		max-width: 52px;
+		height: 58px;
+	}
+	&__file-size{
+		margin-top: 15px;
+		font-size: 10px;
+		line-height: 1.5em;
+		color: #F0F1F8;
+		text-transform: uppercase;
+	}
+	&__card-text{
+		font-size: 14px;
+		line-height: 1.8em;
+		color: #AAC0C9;
+	}
+	&__bottom{
+		padding: 8px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__download-icon{
+		width: 12px;
+		height: 15px;
+	}
+	&__filename{
+		max-width: 140px;
+		font-size: 12px;
+		line-height: 1.8em;
+		color: #000C31;
+		
+	}
+	&__download-link{
+		margin-top: 15px;
+	}
+}
+
+.company-docs{
+	background-color: #F0F1F8;
+	.icon--docs-arrow-prev, .icon--docs-arrow-next{
+		width: 15px;
+		height: 15px;
+	}
+	&__arrows{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 125px;
+	}
+	&__inner{
+		padding-top: 90px;
+		padding-bottom: 110px;
+		display: flex;
+		min-width: 0;
+	}
+	&__slider{
+		min-width: 0;
+	}
+	&__slider-wrapper{
+		min-width: 0;
+	}
+	&__arrow{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #FBFBFB;
+		box-shadow: 0px 15px 35px rgba(188, 190, 195, 0.3);
+	}
 
 }

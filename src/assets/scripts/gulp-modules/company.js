@@ -2,7 +2,27 @@
 
 (function ($) {
 
+	$('.company-principles__info-block-cross').on('click', function(){
+		$(this).prev().addClass('company-principles__info-block-text-collapse_active')
+		// $('.company-principles__info-block-text-collapse').addClass('company-principles__info-block-text-collapse_active')
+	})
 
+	$(document).on('click', function(e){
+		if (!$('.company-principles__info-block').is(e.target) && $('.company-principles__info-block').has(e.target).length === 0){
+			$('.company-principles__info-block-text-collapse').removeClass('company-principles__info-block-text-collapse_active')
+		}
+	})
+
+	$('.js-docs-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		infinity: true
+	})
+
+	$('.js-docs-arrow-prev').on('click', function(){
+		$('.js-docs-slider').slick('slickNext')
+	})
 
 })(jQuery);
 

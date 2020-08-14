@@ -143,7 +143,7 @@ block content
 									span.link-with-circle__text Перейти к подбору цвета
 							.company-advantages__kolorit-bg-img-wrapper
 								+img('company/KOLORIT.svg').company-advantages__kolorit-bg-img
-				.company-advantages__big-img(style="background-image: url('assets/images/company/advantages1.jpg');")
+				.company-advantages__big-img(style="background-image: url('assets/images/company/advantages3.jpg');")
 		.company-advantages.company-advantages_4
 			.company-advantages__big-img(style="background-image: url('assets/images/company/advantages4.jpg');")
 			.company-advantages__content
@@ -156,13 +156,13 @@ block content
 							p.company-advantages__text.company__text Пигментная паста влияет на качество краски точно так же, как и основа. Поэтому мы используем только безопасные красители, которые не содержат VOC.
 							p.company-advantages__text.company__text Kolorit рекомендует использовать профессиональную тонировку, предусмотренную производителем. Только так цвет остается стойким. Мы подобрали формулы красок и паст друг под друга, чтобы попадание в цвет было точным, а покрытие идеальным.
 							+img('company/advantages4-logo.svg').company-advantages__logo
-		.company__banner
+		.company-banner
 			.container
-				.company__banner-row.row
-					.company__banner-inner
-						h3.company__banner-title Более 50 млн литров краски
-						span.company__banner-text Входит в состав FarbaHouse Group и представлена в более 300 городов Украины
-						a(href="#").link-with-circle.banner__link-with-circle
+				.company-banner__row.row
+					.company-banner__inner
+						h3.company-banner__title Более 50 млн литров краски
+						span.company-banner__text Входит в состав FarbaHouse Group и представлена в более 300 городов Украины
+						a(href="#").link-with-circle.company-banner__link-with-circle
 							.link-with-circle__circle
 								.link-with-circle__circle-inner
 									<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -170,5 +170,206 @@ block content
 										<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
 									</svg>
 							span.link-with-circle__text Подобрать цвет
+		.company-principles
+			.container
+				.company-principles__inner
+					.company-principles__title.company__title Основные принципы нашей работы
+					.row
+						.company-principles__info-block
+							.company-principles__info-block-top
+								+img('company/info-block1.svg').company-principles__info-block-img
+								h4.company-principles__info-block-title.company-advantages__small-title Премиальное сырье
+							.company-principles__info-block-content
+								.company-principles__info-block-text-collapse
+									p.company__text У качества продукции Kolorit скандинавская генетика. Для производства мы используем финские технологии, специально очищенную подготовленную воду и сырьевую базу производителей мирового масштаба: дисперсии BASF, загустители и биоциды DOW и диоксид титана Venator. Так создается абсолютно новый товар европейского уровня и высокого качества.
+									p.company__text В своей лаборатории мы постоянно работаем над совершенствованием рецептур уже существующих продуктов и разрабатываем новые, инновационные. А благодаря шведской таре Emballator наша продукция узнаваема, защищена от подделок и удобна в транспортировке.
+								.company-principles__info-block-cross
+									<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+									</svg>
+						.company-principles__info-block
+							.company-principles__info-block-top
+								+img('company/info-block2.svg').company-principles__info-block-img
+								h4.company-principles__info-block-title.company-advantages__small-title Системность и удобство 
+							.company-principles__info-block-content
+								.company-principles__info-block-text-collapse
+									p.company__text Продукция Kolorit разработана так, что в ней есть материалы для каждого этапа ремонта. Благодаря схожей рецептуре они прекрасно взаимодействуют друг с другом, делая процесс ремонта легким и удобным: - во время нанесения не появляются брызги и пена; - краска хорошо разравнивается по поверхности; - благодаря правильной вязкости материала вы контролируете его нанесение и работу с инструментом.
+									p.company__text Заботясь о вас, мы создали краску под каждый конкретный запрос. Вам остается только определиться со степенью блеска и цветом.
+								//- .company-principles__info-block-text-collapse-overlay
+								.company-principles__info-block-cross
+									<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+									</svg>
+						.company-principles__info-block
+							.company-principles__info-block-top
+								+img('company/info-block3.svg').company-principles__info-block-img
+								h4.company-principles__info-block-title.company-advantages__small-title Собственное производство
+							.company-principles__info-block-content
+								.company-principles__info-block-text-collapse
+									p.company__text Налажено собственное производство краски на современном европейском оборудовании. Для создания материалов мы используем опыт и качественные показатели компании Tikkurila Group, параллельно внедряя лучшие финские технологии.
+									p.company__text Наши технологи проходили стажировку под руководством специалистов европейских компаний, по сей день продолжая обмениваться с ними опытом. Используя собственные производственные мощности, мы знаем, что входит в состав краски, поэтому на 100% уверены в высоком качестве. В собственной лаборатории Kolorit продукция проходит 16 этапов проверки и тестирования
+									p.company__text Наши технологи проходили стажировку под руководством специалистов европейских компаний, по сей день продолжая обмениваться с ними опытом. Используя собственные производственные мощности, мы знаем, что входит в состав краски, поэтому на 100% уверены в высоком качестве. В собственной лаборатории Kolorit продукция проходит 16 этапов проверки и тестирования
+								.company-principles__info-block-cross
+									<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+									</svg>
+					
+
+					.company-principles__bottom(style="background-image: url('./assets/images/company/principles-bg.png')")
+						a(href="#company-partners").link-with-circle
+							span.link-with-circle__text Узнать больше о наших партнерах
+							.link-with-circle__circle
+								.link-with-circle__circle-inner
+									<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M3.2 9L1.4 7.2L3.2 7.2L5 7.2L3.2 9Z" fill="#17315B"/>
+										<path d="M3.2 -5.14989e-07L3.2 9M3.2 9L1.4 7.2L5 7.2L3.2 9Z" stroke="#17315B" stroke-width="0.6"/>
+									</svg>
+		.company-partners#company-partners
+			.container
+				.company-partners__inner
+					.row.company-partners__title-row
+						h3.company-advantages__subtitle.company-partners__subtitle Наши партнеры
+					.row.company-partners__row
+						.company-partners__info-block
+							.company-partners__info-block-top
+								+img('company/partners-logo1.svg').company-partners__info-block-logo.emballator
+							span.company-partners__info-block-subtitle.company__text Emballator, Швеция
+							p.company__text Группа Emballator состоит из десяти компаний и работает в Швеции, Норвегии, Дании, Финляндии и Великобритании. Компании разрабатывают, производят и продают упаковочные решения, которые облегчают жизнь
+						.company-partners__info-block
+							.company-partners__info-block-top
+								+img('company/partners-logo2.svg').company-partners__info-block-logo.basf
+							span.company-partners__info-block-subtitle.company__text Basf, Германия
+							p.company__text В 2015 году BASF праздновал 150 лет со дня своего основания. История компании, показывает, как новые идеи и решения становятся возможными благодаря химии. Концерн располагает 160 дочерними предприятиями в Европе, Америке и Азии.
+						.company-partners__info-block
+							.company-partners__info-block-top
+								+img('company/partners-logo3.svg').company-partners__info-block-logo.venator
+							span.company-partners__info-block-subtitle.company__text Venator, Англия
+							p.company__text Компания Venator специализируется на производстве (импорте, доставке) пигментов и добавок, которые вносят изменения в повседневную жизнь и способствуют более экологичному будущему.
+
+						.company-partners__info-block
+							.company-partners__info-block-top
+								+img('company/partners-logo4.svg').company-partners__info-block-logo.dow
+							span.company-partners__info-block-subtitle.company__text Dow, Швейцария
+							p.company__text Международная химическая компания. Штаб-квартира расположена в США, штат Мичиган. Компания присутствует в 175 странах и имеет около 56 000 сотрудников по всему миру.
+		.company-banner
+			.container
+				.company-banner__row.row
+					.company-banner__inner
+						h3.company-banner__title Где купить?
+						span.company-banner__text Краски KOLORIT можно купить в любом регионе Украины
+						a(href="#").link-with-circle.company-banner__link-with-circle
+							.link-with-circle__circle
+								.link-with-circle__circle-inner
+									<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+										<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+									</svg>
+							span.link-with-circle__text Cписок магазинов
+		.company-trophy
+			.container
+				.company-trophy__inner
+					.row.company-trophy__title-row
+						h3.company-advantages__subtitle.company-trophy__subtitle Награды
+					.row.company-trophy__row 
+						.company-trophy__content-wrapper
+							.row
+								.company-trophy__info-block
+									.company-trophy__info-block-top
+										+img('company/trophy1-render.png').company-trophy__info-block-logo
+										span.company-trophy__info-block-title Европейский знак качества
+									span.company-trophy__info-block-subtitle.company__text Великобритания, 2019
+									p.company__text Награда от Номинационного комитета Европейской Бизнес Ассамблеи (г. Оксфорд, Великобритания) за соответствие качества продукции и услуг европейским стандартам.
+
+								.company-trophy__info-block
+									.company-trophy__info-block-top
+										+img('company/trophy2-render.png').company-trophy__info-block-logo
+										span.company-trophy__info-block-title Золотой символ качества
+									span.company-trophy__info-block-subtitle.company__text Украина, 2013-2018
+									p.company__text Награда подтверждает высокое качество и конкурентоспособность продукции Kolorit на украинском рынке.
+								
+								.company-trophy__info-block
+									.company-trophy__info-block-top
+										+img('company/trophy3-render.png').company-trophy__info-block-logo
+										span.company-trophy__info-block-title Выбор Украины
+									span.company-trophy__info-block-subtitle.company__text Украина, 2018
+									p.company__text Для получения награды учитываются результаты всеукраинского маркетингового исследования, опрос оргкомитета, мнение экспертного совета, опрос высокого жюри и представителей рекламных агентств. Kolorit подтвердил свое право называться лучшим украинским производителем лакокрасочных материалов.
+								
+								.company-trophy__info-block
+									.company-trophy__info-block-top
+										+img('company/trophy4-render.png').company-trophy__info-block-logo
+										span.company-trophy__info-block-title Лидер года 2017
+									span.company-trophy__info-block-subtitle.company__text Украина, 2017
+									p.company__text Kolorit стал призером национального бизнес-рейтинга «Лидер года 2017» и вошел в ТОП 20 предприятий Украины, производящих краски, лаки и подобную продукцию.
+
+								.company-trophy__info-block
+									.company-trophy__info-block-top
+										+img('company/trophy5-render.png').company-trophy__info-block-logo
+										span.company-trophy__info-block-title Бренд года 2013-2018
+									span.company-trophy__info-block-subtitle.company__text Украина, 2013-2018
+									p.company__text Несколько лет подряд потребители отдают предпочтение продукции Kolorit. Мы гордимся этим званием и высоким качеством наших материалов.
+									
+								.company-trophy__link-block
+									a(href="#").link-with-circle.company-banner__link-with-circle
+										.link-with-circle__circle
+											.link-with-circle__circle-inner
+												<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M3.2 9L1.4 7.2L3.2 7.2L5 7.2L3.2 9Z" fill="#17315B"/>
+													<path d="M3.2 -5.14989e-07L3.2 9M3.2 9L1.4 7.2L5 7.2L3.2 9Z" stroke="#17315B" stroke-width="0.6"/>
+												</svg>
+										span.link-with-circle__text Разрешительная документация
+		.company-docs
+			.container
+				.company-docs__inner
+					.company-docs__arrows
+						.company-docs__arrow.js-docs-arrow-prev
+							+svg('docs-arrow-prev')
+						.company-docs__arrow.js-docs-arrow-next
+							+svg('docs-arrow-next')
+					.company-docs__slider-wrapper
+						.company-docs__slider.js-docs-slider.docs-slider
+							.docs-slider__item
+								.docs-slider__card-wrapper
+									.docs-slider__card
+										.docs-slider__card-inner
+											.docs-slider__card-top
+												+svg('doc').docs-slider__doc-icon
+												span.docs-slider__file-size 0.2 MB
+											span.docs-slider__card-text KOLORIT
+									.docs-slider__bottom
+										span.docs-slider__filename Очень хороший сертификат качества 
+										a(href="#").docs-slider__download-link
+											+svg('download').docs-slider__download-icon
+							.docs-slider__item
+								.docs-slider__card-wrapper
+									.docs-slider__card
+										.docs-slider__card-inner
+											.docs-slider__card-top
+												+svg('doc').docs-slider__doc-icon
+												span.docs-slider__file-size 0.2 MB
+											span.docs-slider__card-text KOLORIT
+									.docs-slider__bottom
+										span.docs-slider__filename Очень хороший сертификат качества 
+										a(href="#").docs-slider__download-link
+											+svg('download').docs-slider__download-icon
+							.docs-slider__item
+								.docs-slider__card-wrapper
+									.docs-slider__card
+										.docs-slider__card-inner
+											.docs-slider__card-top
+												+svg('doc').docs-slider__doc-icon
+												span.docs-slider__file-size 0.2 MB
+											span.docs-slider__card-text KOLORIT
+									.docs-slider__bottom
+										span.docs-slider__filename Очень хороший сертификат качества 
+										a(href="#").docs-slider__download-link
+											+svg('download').docs-slider__download-icon
+						a(href="#").link-with-circle.company-docs__link-with-circle
+							.link-with-circle__circle
+								.link-with-circle__circle-inner
+									<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#17315B"/>
+										<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#17315B" stroke-width="0.6"/>
+									</svg>
+							span.link-with-circle__text Узнать о символах на этикетках
 				
 
