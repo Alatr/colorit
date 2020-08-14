@@ -36,9 +36,21 @@ block header
 
 
 block content
+
+
 	.container
 		include ../includes/breadcrumbs.pug
-	.products-card-banner(style="background-image: url('assets/images/prod-single/1.jpg');")
+		style.
+			.products-card-banner {
+				background-image: url('assets/images/prod-single/1.jpg');
+			}
+			@media (max-width: 700px) {
+				.products-card-banner {
+					background-image: none;
+				}
+			}
+	.products-card-banner-mobile(style="background-image: url('assets/images/prod-single/1.jpg');")
+	.products-card-banner
 		.container
 			.products-card-banner__title(style="color: #F6F7FC") Kolorit Legenda
 			.products-card-banner__text(style="color: #F6F7FC") Kolorit Legenda - флагман линейки Home. Ее глубокоматовый блеск позволяет изящно подчеркнуть фактуру поверхности. Расширенная палитра цветов, позволяет подчеркнуть исключительность вашего интерьера. Идеальна для гостинных, спален и других помещений, в которых цвет и фактура имеет значение, а высший класс истирания делает покрытие долговечным и стойким.
@@ -78,7 +90,7 @@ block content
 				ul.products-card-block-list
 					each v, yy in ['Cтепень блеска','Разбавляется водой','Устойчивая к частому мытью','Расход 12м2','Тонировка по системе Avatint Tikkurila','Для сухих и влажных помещений','50000 цветов','Подходит для нанесения: кистью, валиком, краскопультом.','Для внутреннего применения (для стен и потолков)']
 						li.products-card-block-item
-							+svg('in'+yy).products-card-block-item__ico
+							+img('prod_ico/in'+yy+'.svg').products-card-block-item__ico
 							span.products-card-block-item__text= v
 				.products-card-block__btn-wrap
 					a.calc-link(href="#") Калькулятор краски
@@ -165,7 +177,7 @@ block content
 							button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
 								+svg('arr-small-left')
 						ul.products-card-advice-sl-slider.js-products-card-advice-sl-slider
-							each v in [1,1,1,1,1,1]
+							each v in [1,1,1,1,]
 								li.advice-sl-slider-li
 									a.news-item
 										.news-item__img
