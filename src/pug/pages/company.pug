@@ -35,7 +35,7 @@ block content
 			.container
 				h2.company-main-banner__title Вдохновение цветом
 				p.company-main-banner__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем. 
-				a(href="#").link-with-circle
+				a(href="#company-second-sec").link-with-circle
 					.link-with-circle__circle
 						.link-with-circle__circle-inner
 							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@ block content
 							</svg>
 
 					span.link-with-circle__text Узнать больше
-		.company-second-sec
+		.company-second-sec#company-second-sec
 			.container
 				.company-second-sec__row.row
 					.company-second-sec__content-wrapper
@@ -309,7 +309,7 @@ block content
 									p.company__text Несколько лет подряд потребители отдают предпочтение продукции Kolorit. Мы гордимся этим званием и высоким качеством наших материалов.
 									
 								.company-trophy__link-block
-									a(href="#").link-with-circle.company-banner__link-with-circle
+									a(href="#company-docs").link-with-circle.company-banner__link-with-circle
 										.link-with-circle__circle
 											.link-with-circle__circle-inner
 												<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,59 +317,76 @@ block content
 													<path d="M3.2 -5.14989e-07L3.2 9M3.2 9L1.4 7.2L5 7.2L3.2 9Z" stroke="#17315B" stroke-width="0.6"/>
 												</svg>
 										span.link-with-circle__text Разрешительная документация
-		.company-docs
+		.company-docs#company-docs
 			.container
 				.company-docs__inner
-					.company-docs__arrows
-						.company-docs__arrow.js-docs-arrow-prev
-							+svg('docs-arrow-prev')
-						.company-docs__arrow.js-docs-arrow-next
-							+svg('docs-arrow-next')
 					.company-docs__slider-wrapper
-						.company-docs__slider.js-docs-slider.docs-slider
-							.docs-slider__item
-								.docs-slider__card-wrapper
-									.docs-slider__card
-										.docs-slider__card-inner
-											.docs-slider__card-top
-												+svg('doc').docs-slider__doc-icon
-												span.docs-slider__file-size 0.2 MB
-											span.docs-slider__card-text KOLORIT
-									.docs-slider__bottom
-										span.docs-slider__filename Очень хороший сертификат качества 
-										a(href="#").docs-slider__download-link
-											+svg('download').docs-slider__download-icon
-							.docs-slider__item
-								.docs-slider__card-wrapper
-									.docs-slider__card
-										.docs-slider__card-inner
-											.docs-slider__card-top
-												+svg('doc').docs-slider__doc-icon
-												span.docs-slider__file-size 0.2 MB
-											span.docs-slider__card-text KOLORIT
-									.docs-slider__bottom
-										span.docs-slider__filename Очень хороший сертификат качества 
-										a(href="#").docs-slider__download-link
-											+svg('download').docs-slider__download-icon
-							.docs-slider__item
-								.docs-slider__card-wrapper
-									.docs-slider__card
-										.docs-slider__card-inner
-											.docs-slider__card-top
-												+svg('doc').docs-slider__doc-icon
-												span.docs-slider__file-size 0.2 MB
-											span.docs-slider__card-text KOLORIT
-									.docs-slider__bottom
-										span.docs-slider__filename Очень хороший сертификат качества 
-										a(href="#").docs-slider__download-link
-											+svg('download').docs-slider__download-icon
-						a(href="#").link-with-circle.company-docs__link-with-circle
-							.link-with-circle__circle
-								.link-with-circle__circle-inner
-									<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#17315B"/>
-										<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#17315B" stroke-width="0.6"/>
-									</svg>
-							span.link-with-circle__text Узнать о символах на этикетках
-				
+						.company-docs__arrows
+							.company-docs__arrow.js-docs-arrow-prev
+								+svg('docs-arrow-prev')
+							.company-docs__arrow.js-docs-arrow-next
+								+svg('docs-arrow-next')
+						.company-docs__slider-and-link
+							.company-docs__slider.js-docs-slider.docs-slider
+								.docs-slider__item
+									.docs-slider__card-wrapper
+										.docs-slider__card
+											.docs-slider__card-inner
+												.docs-slider__card-top
+													+svg('doc').docs-slider__doc-icon
+													span.docs-slider__file-size 0.2 MB
+												span.docs-slider__card-text KOLORIT
+										.docs-slider__bottom
+											span.docs-slider__filename Очень хороший сертификат качества 
+											a(href="#").docs-slider__download-link
+												+svg('download').docs-slider__download-icon
+								.docs-slider__item
+									.docs-slider__card-wrapper
+										.docs-slider__card
+											.docs-slider__card-inner
+												.docs-slider__card-top
+													+svg('doc').docs-slider__doc-icon
+													span.docs-slider__file-size 0.2 MB
+												span.docs-slider__card-text KOLORIT
+										.docs-slider__bottom
+											span.docs-slider__filename Очень хороший сертификат качества 
+											a(href="#").docs-slider__download-link
+												+svg('download').docs-slider__download-icon
+								.docs-slider__item
+									.docs-slider__card-wrapper
+										.docs-slider__card
+											.docs-slider__card-inner
+												.docs-slider__card-top
+													+svg('doc').docs-slider__doc-icon
+													span.docs-slider__file-size 0.2 MB
+												span.docs-slider__card-text KOLORIT
+										.docs-slider__bottom
+											span.docs-slider__filename Очень хороший сертификат качества 
+											a(href="#").docs-slider__download-link
+												+svg('download').docs-slider__download-icon
+								.docs-slider__item
+									.docs-slider__card-wrapper
+										.docs-slider__card
+											.docs-slider__card-inner
+												.docs-slider__card-top
+													+svg('doc').docs-slider__doc-icon
+													span.docs-slider__file-size 0.2 MB
+												span.docs-slider__card-text KOLORIT
+										.docs-slider__bottom
+											span.docs-slider__filename Очень хороший сертификат качества 
+											a(href="#").docs-slider__download-link
+												+svg('download').docs-slider__download-icon
+							a(href="#").link-with-circle.company-docs__link-with-circle
+								.link-with-circle__circle
+									.link-with-circle__circle-inner
+										<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#17315B"/>
+											<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#17315B" stroke-width="0.6"/>
+										</svg>
+								span.link-with-circle__text Узнать о символах на этикетках
+					.company-docs__docs-block
+						h3.company-docs__title.company-advantages__subtitle Разрешительная документация
+						.company-docs__text-section.company__text 
+							p Цель минимизации потерь материала и количества отходов. Наши ресурсоэффективные операции направлены на более эффективное использование сырья, энергии и воды, а также  сокращение отходов и переработку. Цель минимизации потерь материала и количества отходов. Наши ресурсоэффективные операции направлены на более эффективное.
+						a(href="#").company-docs__button Консультация
 

@@ -14,13 +14,18 @@
 	})
 
 	$('.js-docs-slider').slick({
-		slidesToShow: 1,
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		arrows: false,
-		infinity: true
+		infinity: true,
+		variableWidth: true
 	})
 
 	$('.js-docs-arrow-prev').on('click', function(){
+		$('.js-docs-slider').slick('slickPrev')
+	})
+
+	$('.js-docs-arrow-next').on('click', function(){
 		$('.js-docs-slider').slick('slickNext')
 	})
 
