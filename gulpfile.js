@@ -89,8 +89,9 @@ function watch() {
 function server() {
     browserSync.init({
 				//server: paths.root,
-				notify: false,
-				proxy: "colorit",
+				// notify: false,
+				// proxy: "colorit",
+				server: './dist/'
     });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
