@@ -1,0 +1,51 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Сервисы'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='https://www.youtube.com/iframe_api')
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/services.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+	.services
+		.services-sec1
+			.container
+				.row
+					.services-sec1__block.block-sec1
+						.block-sec1__image-wrapper
+							+img('services/services-block1.jpg')
+						h2.block-sec1__title.services-title Цветовые палитры
+						p.block-sec1__text.services-text Наши цветовые палитрв помогут вам подобрать идеальный оттенок, исходя из вашего дизайн плана. Большое количетсво палитр для разных поверхностей и материалов, а также Удобный фильтр по семейству цветов поможет определиться с цветом
+						a(href="#").block-sec1__btn.services-btn Подобрать цвет
+					.services-sec1__block.block-sec1
+						.block-sec1__image-wrapper
+							+img('services/services-block2.jpg')
+						h2.block-sec1__title.services-title Калькулятор расхода краски
+						p.block-sec1__text.services-text Начали ремонт, но не знаете, какое количество краски необходимо купить? Наш калькулятор поможем вам просчитать необходимое количество краски, исходя из расхода каждого вида продукта, рараметром вашего помещения и типа поверхности
+						a(href="#").block-sec1__btn.services-btn Рассчитать
+
+
+
