@@ -4,7 +4,8 @@ class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
 		this.content = obj.$content
-		this._event = 'changeTab'
+		this.event = obj.event || 'changeTab'
+		
 
 		this.btnActiveClass = obj.btnActiveClass
 		this.contentActiveClass = obj.contentActiveClass
@@ -30,9 +31,8 @@ class Tab {
 	initEvent(callback = function () {}) {
 		const self = this;
 		this.btn.on('click', function (e) {
-			console.log(self.event);
 			const inx = $(this).attr(self.data.btnDataName);
-			PubSub.publish(self._event, {inx} );
+			PubSub.publish(self.event, {inx} );
 			// 
 			callback();
 		});
@@ -52,8 +52,7 @@ class Tab {
 Tab.prototype.listeners = function (callback = function () {}) {
 	const self = this;
 
-	PubSub.subscribe(self._event, function (msg, data) {
-		console.log(data);
+	PubSub.subscribe(self.event, function (msg, data) {
 		//btn
 		self.btn.removeClass(self.btnActiveClass);
 		self.btn.eq(data.inx).addClass(self.btnActiveClass);

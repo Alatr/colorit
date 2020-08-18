@@ -36,31 +36,62 @@ block content
 	.container
 		.row
 			.palette-block
-				.palette-block-header.brd
-					.calculator-item-select-wrap
-						select.palette-item__select.js-palette-item__select
+				.palette-block-header
+					.calculator-item-select-wrap.palette-item-select-wrap
+						select.palette-item__select.js-palette-item__select.calculator-item__select
 							each v, j in ['Symphony', 'Deco Grey', 'RAL Effect', 'RAL Classic', 'VALTTI -  лазури для дерева', 'Лаки для интерьера', 'Краски для мебели', 'Miranol и Unica', 'Почувствуй цвет']
 								if j == 0
 									option.palette-item__select-item(selected="selected")= v
 								else
 									option.palette-item__select-item= v
 				.palette-block-body
+					// ------- item
 					.palette-block-body-item.js-palette-block-body-item
 						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						h1 45
-					.palette-block-body-item.js-palette-block-body-item
-						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						h1 55
-		//- .calculator-tab
-		//- 	ul.calculator-tab-btns
-		//- 		each v in ['стены','потолок', 'предметы интерьера']
-		//- 			li.calculator-tab-btns-item
-		//- 				button(type="button").calculator-tab-btn.js-calculator-tab-btn.btn--res= v
-		//- 	ul.calculator-tab-content
-		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 1
-		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 2
-		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 3
-
+						.palette-tab
+							.calculator-item-select-wrap.palette-color-item-select-wrap
+								select.palette-item__select.js-palette-color-item__select.calculator-item__select
+									each v, j in ['все цвета','Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Синий', 'Фиолетовый', 'Нейтральные', 'Белые и Пастельные', ]
+										if j == 0
+											option.palette-item__select-item(selected="selected")= v
+										else
+											option.palette-item__select-item= v
+							ul.palette-tab-btns
+								each v in ['все цвета','Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Синий', 'Фиолетовый', 'Нейтральные', 'Белые и Пастельные', ]
+									li.palette-tab-btns-item
+										button(type="button").palette-tab-btn.js-palette-color-tab-btn.btn--res= v
+											span.line
+							ul.palette-tab-content
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll
+									each r in [1,1,1]
+										ul.color-list
+											each v in [1,2,3,4,5,6,7,8,9,10,11,12]
+												li.color-item
+													ul.color-shade-list
+														each vd in [1,2,3,4,5,6,7,8,9,10,11,12]
+															li.color-shade-item
+																a(href='#')
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 2
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 3
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 4
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 5
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 6
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 7
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 8
+								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 9
+					// ------- item
+					each l in ['Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Синий', 'Фиолетовый', 'Нейтральные', 'Белые и Пастельные', ]
+						// ------- item
+						.palette-block-body-item.js-palette-block-body-item
+							p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						// ------- item
+	.banner-2
+		.banner-2__l(style="background-image: url('assets/images/1.jpg');")
+			p.underline-link
+				span.banner-2__title Вдохновляйтесь <br> вместе с нами
+		.banner-2__r
+			a(href="button").btn--res.link-arrow-type
+				.circle-btn
+					.circle-btn-inner
+						+svg('qww')
+				.banner-2-btn__text Смотреть список <br> продуктов
