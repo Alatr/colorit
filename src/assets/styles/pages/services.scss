@@ -226,3 +226,24 @@
 		}
 	}
 }
+
+.services-slider{
+	&__control{
+		@include col();
+		@include size(1);
+	}
+	&__arrow{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		box-shadow: 0px 15px 35px rgba(188, 190, 195, 0.3);
+		background: #FBFBFB;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__slider{
+		@include col();
+		@include size(10);
+	}
+}
