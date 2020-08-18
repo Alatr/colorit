@@ -54,7 +54,8 @@
 		});
 
 		$('.company-trophy-slider-js').slick({
-			arrows: false
+			arrows: false,
+			variableWidth: true
 		})
 		$('.js-trophy-arrow-prev').on('click', function(){
 			$('.company-trophy-slider-js').slick('slickPrev')
