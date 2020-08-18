@@ -2,7 +2,89 @@
 
 (function ($) {
 
+	$('.company-principles__info-block-cross').on('click', function(){
+		// $(this).prev().addClass('company-principles__info-block-text-collapse_active')
+		// $('.company-principles__info-block-text-collapse').addClass('company-principles__info-block-text-collapse_active')
+		$(this).parents('.company-principles__info-block').addClass('company-principles__info-block_active')
+	})
 
+	$(document).on('click', function(e){
+		if (!$('.company-principles__info-block').is(e.target) && $('.company-principles__info-block').has(e.target).length === 0){
+			$('.company-principles__info-block').removeClass('company-principles__info-block_active')
+		}
+	})
+
+	$('.js-docs-slider').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		arrows: false,
+		infinity: true,
+		variableWidth: true
+	})
+
+	$('.js-docs-arrow-prev').on('click', function(){
+		$('.js-docs-slider').slick('slickPrev')
+	})
+
+	$('.js-docs-arrow-next').on('click', function(){
+		$('.js-docs-slider').slick('slickNext')
+	})
+
+	if ($(window).width() <= 768){
+		$('.company-advantages__kolorit-bg-img-wrapper').appendTo('.company-advantages__content_js')
+		$('.company-docs__docs-block').appendTo('.company-docs__slider-and-link');
+	}
+
+	if ($(window).width() <= 640){
+		// $('.company-advantages__big-img').prependTo('.company-advantages__inner')
+		$('.company-advantages__big-img').each((index, item) => {
+			$(item).prependTo($('.company-advantages').find('.container')[index]);
+		})
+		$('.company-advantages__big-img').css('height', $('.company-advantages__big-img').width() / 1.36);
+	}
+
+	if ($(window).width() <= 480){
+		$('.company-trophy__link-block').remove();
+
+		$('.company-trophy-slider-js').on("init", function(event, slick){
+			$(".company-trophy__slide-number").text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
+		});
+		$('.company-trophy-slider-js').on("afterChange", function(event, slick, currentSlide){
+			$('.company-trophy__slide-number').text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
+		});
+
+		$('.company-trophy-slider-js').slick({
+			arrows: false
+		})
+		$('.js-trophy-arrow-prev').on('click', function(){
+			$('.company-trophy-slider-js').slick('slickPrev')
+		})
+	
+		$('.js-trophy-arrow-next').on('click', function(){
+			$('.company-trophy-slider-js').slick('slickNext')
+		})
+
+		$('.company-docs__docs-block').appendTo('.company-docs__inner')
+	}
+
+	$(window).resize(function(){
+
+		if ($(window).width() <= 768){
+			if (!$('.company-advantages__kolorit-bg-img-wrapper').hasClass('done')){
+				$('.company-advantages__kolorit-bg-img-wrapper').appendTo('.company-advantages__content_js');
+				$('.company-advantages__kolorit-bg-img-wrapper').addClass('done');
+			}
+			
+		} 
+		if ($(window).width() > 768){
+			if ($('.company-advantages__kolorit-bg-img-wrapper').hasClass('done')){
+				$('.company-advantages__kolorit-bg-img-wrapper').appendTo('.company-advantages__description-block_js');
+				$('.company-advantages__kolorit-bg-img-wrapper').removeClass('done');
+			}
+		}
+		
+	});
+	
 
 })(jQuery);
 

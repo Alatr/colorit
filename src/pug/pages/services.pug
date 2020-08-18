@@ -1,0 +1,94 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Сервисы'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='https://www.youtube.com/iframe_api')
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/services.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+	.services
+		.services-sec1
+			.container
+				.row
+					.services-sec1__block.block-sec1
+						.block-sec1__image-wrapper
+							+img('services/services-block1.jpg')
+						h2.block-sec1__title.services-title Цветовые палитры
+						p.block-sec1__text.services-text Наши цветовые палитрв помогут вам подобрать идеальный оттенок, исходя из вашего дизайн плана. Большое количетсво палитр для разных поверхностей и материалов, а также Удобный фильтр по семейству цветов поможет определиться с цветом
+						a(href="#").block-sec1__btn.services-btn Подобрать цвет
+					.services-sec1__block.block-sec1
+						.block-sec1__image-wrapper
+							+img('services/services-block2.jpg')
+						h2.block-sec1__title.services-title Калькулятор расхода краски
+						p.block-sec1__text.services-text Начали ремонт, но не знаете, какое количество краски необходимо купить? Наш калькулятор поможем вам просчитать необходимое количество краски, исходя из расхода каждого вида продукта, рараметром вашего помещения и типа поверхности
+						a(href="#").block-sec1__btn.services-btn Рассчитать
+	.services-sec2
+		.container
+			.services-sec2__title.services-title Три простых шага для получения краски
+			.row
+				.company-principles__info-block
+					.company-principles__info-block-inner
+						.company-principles__info-block-top
+							+img('services/info-block1.svg').company-principles__info-block-img
+							h4.company-principles__info-block-title.company-advantages__small-title Консультация
+						.company-principles__info-block-content
+							.company-principles__info-block-text-collapse-wrapper.services-text
+								p Где бы вы не нашли наши продукты, можете быть уверенны, что вы получите проыфессиональную консультацию. Все наши специалисты проходят обучение по работе с материалами, проходят обучение с техническими специалистами по характеристикам красок, а так же практические занятия по нанесению продуктов. Наши специалисты безошибочно подберут необходимый продукт по д ваш запрос. Для вашего удобсвта у нас есть консультации в точках продаж, а так же выездные консультации, при заказе которое, к вам на дом/обьект приедет наш специалист, проведет профессиональнуцю консультацию, а там же привезет примеры материалов и цветовые палитры. В наших фирменных точках продаж так же для вашего удобства у нас есть примеры выкрасов всех продуктов, цветовые палитры, а так же дизайнерские столы, на который мы можем показать изменение выбранного цвета, в зависимости от типа освещения.
+					.company-principles__info-block-cross.services-sec2__info-block-cross
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+						</svg>
+					a(href="#").services-btn Заказать услугу
+				.company-principles__info-block
+					.company-principles__info-block-inner
+						.company-principles__info-block-top
+							+img('services/info-block2.svg').company-principles__info-block-img
+							h4.company-principles__info-block-title.company-advantages__small-title Заказ выкрасов
+						.company-principles__info-block-content
+							.company-principles__info-block-text-collapse-wrapper.company__text
+								p Новая услуга от нашего бренда- заказ выкрасов на дом. Все сталкивались с проблемой, когда не уверен, что выбранный цвет будет хорошо смотреться? Для того, чтоб не прогадать с выбором, наши специалисты нанесут выбранный ваши цвет на выкрас размером 1 м, этого впполне достаточно, чтоб оценить влияние вашего типа 
+					.company-principles__info-block-cross.services-sec2__info-block-cross
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+						</svg>
+					a(href="#").services-btn Заказать услугу
+				.company-principles__info-block
+					.company-principles__info-block-inner
+						.company-principles__info-block-top
+							+img('services/info-block3.svg').company-principles__info-block-img
+							h4.company-principles__info-block-title.company-advantages__small-title Бесплатная доставка
+						.company-principles__info-block-content
+							.company-principles__info-block-text-collapse-wrapper.services-text
+								p Налажено собственное производство краски на современном европейском оборудовании. Для создания материалов мы используем опыт и качественные показатели компании Tikkurila Group, параллельно внедряя лучшие финские технологии.
+					.company-principles__info-block-cross.services-sec2__info-block-cross
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
+						</svg>
+					a(href="#").services-btn Заказать услугу
+
+
+
