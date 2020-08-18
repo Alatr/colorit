@@ -1,0 +1,40 @@
+.palette-block{
+	@include col();
+	@include size(12);
+	&-header{
+		background-color: #fff;
+		padding: 20px 65px 20px 95px;
+		box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
+		height: 64px;
+	}
+}
+
+.palette-block-body{
+	position: relative;
+	padding: 45px 30px 75px 30px;
+}
+
+.palette-block-body-item__text{
+	margin-bottom: 45px;
+	max-width: 540px;
+	font-size: 12px;
+	line-height: lh(22, 12);
+	margin-left: min(vw(63), 63px);
+	color: #586386;
+}
+.palette-block-body-item{
+	position: absolute;
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.palette-tab-content-item--active{
+	position: static;
+	pointer-events: auto;
+	visibility: visible;
+	opacity: 1;
+	display: flex;
+	flex-direction: column;
+}

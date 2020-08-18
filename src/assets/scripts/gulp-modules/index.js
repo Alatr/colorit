@@ -4,6 +4,7 @@ class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
 		this.content = obj.$content
+		this._event = 'changeTab'
 
 		this.btnActiveClass = obj.btnActiveClass
 		this.contentActiveClass = obj.contentActiveClass
@@ -17,16 +18,32 @@ class Tab {
 	}
 
 	setStyles() {
-		this.btn.each((i, el) => {
-			$(el).attr(this.data.btnDataName, i);
-		});
 		this.btn.eq(this.active).addClass(this.btnActiveClass);
 		this.content.eq(this.active).addClass(this.contentActiveClass);
 	}
+	setMarkup() {
+		this.btn.each((i, el) => {
+			$(el).attr(this.data.btnDataName, i);
+		});
+	}
 
+	initEvent(callback = function () {}) {
+		const self = this;
+		this.btn.on('click', function (e) {
+			console.log(self.event);
+			const inx = $(this).attr(self.data.btnDataName);
+			PubSub.publish(self._event, {inx} );
+			// 
+			callback();
+		});
+	}
 
 	init() {
+		
+		this.setMarkup();
 		this.setStyles();
+		
+		this.initEvent();
 		this.listeners();
 
 	}
@@ -34,17 +51,21 @@ class Tab {
 
 Tab.prototype.listeners = function (callback = function () {}) {
 	const self = this;
-	this.btn.on('click', function () {
-		const inx = $(this).attr(self.data.btnDataName);
+
+	PubSub.subscribe(self._event, function (msg, data) {
+		console.log(data);
 		//btn
 		self.btn.removeClass(self.btnActiveClass);
-		self.btn.eq(inx).addClass(self.btnActiveClass);
+		self.btn.eq(data.inx).addClass(self.btnActiveClass);
 		//contents
 		self.content.removeClass(self.contentActiveClass);
-		self.content.eq(inx).addClass(self.contentActiveClass);
-
-		// ajax
+		self.content.eq(data.inx).addClass(self.contentActiveClass);
+	
+		// 
 		callback();
+	});
+
+	this.btn.on('click', function () {
 	});
 }
 

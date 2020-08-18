@@ -1,0 +1,66 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Подбор цвета'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'СЕРВИСЫ',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/palette.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+	.container
+		.row
+			.palette-block
+				.palette-block-header.brd
+					.calculator-item-select-wrap
+						select.palette-item__select.js-palette-item__select
+							each v, j in ['Symphony', 'Deco Grey', 'RAL Effect', 'RAL Classic', 'VALTTI -  лазури для дерева', 'Лаки для интерьера', 'Краски для мебели', 'Miranol и Unica', 'Почувствуй цвет']
+								if j == 0
+									option.palette-item__select-item(selected="selected")= v
+								else
+									option.palette-item__select-item= v
+				.palette-block-body
+					.palette-block-body-item.js-palette-block-body-item
+						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						h1 45
+					.palette-block-body-item.js-palette-block-body-item
+						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
+						h1 55
+		//- .calculator-tab
+		//- 	ul.calculator-tab-btns
+		//- 		each v in ['стены','потолок', 'предметы интерьера']
+		//- 			li.calculator-tab-btns-item
+		//- 				button(type="button").calculator-tab-btn.js-calculator-tab-btn.btn--res= v
+		//- 	ul.calculator-tab-content
+		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 1
+		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 2
+		//- 		li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 3
+

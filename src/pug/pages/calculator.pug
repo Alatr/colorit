@@ -1,0 +1,121 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Калькулятор расхода краски'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'СЕРВИСЫ',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/calculator.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+		.calculator-tab
+			ul.calculator-tab-btns
+				each v in ['стены','потолок', 'предметы интерьера']
+					li.calculator-tab-btns-item
+						button(type="button").calculator-tab-btn.js-calculator-tab-btn.btn--res= v
+			ul.calculator-tab-content
+				li.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll
+					ul.row.calculator-list
+						//- ---------------------
+						li.calculator-item.col-4.calculator-item--margin-left
+							.calculator-item__label Выберите продукт*
+							.calculator-item-select-wrap
+								select.calculator-item__select
+									option.calculator-item__select-item(selected="selected") Выбрать
+									option.calculator-item__select-item 1
+									option.calculator-item__select-item 2
+									option.calculator-item__select-item 3
+						li.calculator-item.col-4.calculator-item--margin-right
+							.calculator-item__label Выберите продукт*
+							.calculator-item-select-wrap
+								select.calculator-item__select
+									option.calculator-item__select-item(selected="selected") Выбрать
+									option.calculator-item__select-item 1
+									option.calculator-item__select-item 2
+									option.calculator-item__select-item 3
+						//- ---------------------
+						//- ---------------------
+						li.calculator-item.col-2.calculator-item--margin-left
+							.calculator-item__label Площадь*
+							input(type="text")
+						li.calculator-item.col-2
+							.calculator-item__label Ширина комнаты, м
+							input(type="text")
+						li.calculator-item.col-2
+							.calculator-item__label Длина комнаты, м
+							input(type="text")
+						li.calculator-item.col-2.calculator-item--margin-right
+							.calculator-item__label Высота потолков, м
+							input(type="text")
+						//- ---------------------
+						//- ---------------------
+						li.calculator-item.col-4.calculator-item--margin-left
+							.calculator-item__label Наличие дверей (стандартная древь 2Х0.7 м)
+							.calculator-item-select-wrap
+								select.calculator-item__select
+									option.calculator-item__select-item(selected="selected") Выбрать
+									option.calculator-item__select-item 1
+									option.calculator-item__select-item 2
+									option.calculator-item__select-item 3
+						li.calculator-item.col-4.calculator-item--margin-right
+							.calculator-item__label Наличие окна (стандартное окно 1,5х1 м)
+							.calculator-item-select-wrap
+								select.calculator-item__select
+									option.calculator-item__select-item(selected="selected") Выбрать
+									option.calculator-item__select-item 1
+									option.calculator-item__select-item 2
+									option.calculator-item__select-item 3
+						//- ---------------------
+						//- ---------------------
+						li.calculator-item.col-4.calculator-item--margin-left.calculator-result
+							.calculator-result__title Необходимое количество:
+								span 5.7
+							.calculator-result-wrap
+								span Рекомендуемые два слоя
+								span Окрашиваемая площадь (м2)
+									span 40,0
+						li.calculator-item.col-4.calculator-item--margin-right.calculator-result-btn-wrap
+							button(type="button").btn--res.link-arrow-type
+								.circle-btn
+									.circle-btn-inner
+										+svg('newarr')
+								.calculator-item-btn__text Отправить результаты <br> на почту
+						//- ---------------------
+				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 1
+				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 2
+				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 3
+	.banner-2
+		.banner-2__l(style="background-image: url('assets/images/1.jpg');")
+			p.underline-link
+				span.banner-2__title Вдохновляйтесь <br> вместе с нами
+		.banner-2__r
+			a(href="button").btn--res.link-arrow-type
+				.circle-btn
+					.circle-btn-inner
+						+svg('qww')
+				.banner-2-btn__text Смотреть список <br> продуктов
