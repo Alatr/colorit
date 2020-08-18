@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	text-decoration: none;
+	transition: all 0.3s;
 	&__circle, &__circle-inner{
 		display: flex;
 		align-items: center;
@@ -569,9 +570,12 @@
 				// position: absolute;
 				// width: calc(100% - 10px);
 			}
-			// .company-principles__info-block-cross{
-			// 	opacity: 0;
-			// }
+			.company-principles__info-block-cross{
+				opacity: 0;
+			}
+			.company-principles__btn{
+				opacity: 0;
+			}
 			.company-principles__info-block-text-collapse-wrapper{
 				overflow: visible;
 				height: 300px;
@@ -659,6 +663,10 @@
 			}
 
 		}
+		&__btn{
+			position: relative;
+			z-index: 1;
+		}
 		
 		
 	}
@@ -703,6 +711,7 @@
 		flex-direction: column;
 		position: absolute;
 		bottom: 75px;
+		
 		@include to(768px){
 			display: none;
 		}

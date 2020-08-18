@@ -12,6 +12,10 @@
 		}
 	})
 
+	$('.js-open-consult-services').click(function(){
+		console.log('sdsd')
+	})
+
 	
 
 })(jQuery);
