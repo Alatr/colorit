@@ -27,12 +27,12 @@ block variable
 			},
 		];
 		var submenu_2 = [{
-				link: "#",
+				link: pagesLink[0].calculator,
 				img: 'menu/2_1.jpg',
 				title: 'Калькулятор расхода краски',
 			},
 			{ 
-				link: "#",
+				link: pagesLink[0].palette,
 				img: 'menu/2_2.jpg',
 				title: 'Подбор цвета',
 			}
@@ -103,6 +103,7 @@ block variable
 								.header-submenu-item__img
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
+					li.overlay
 			li.header-menu-item
 				a(href=pagesLink[0].advice).header-menu-item__title советы
 			li.header-menu-item.header-menu-item__logo

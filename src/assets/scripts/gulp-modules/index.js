@@ -1,5 +1,53 @@
 @@include('./libs.js');
+class showModal {
+	constructor(obj) {
+		this.popup = obj.popup;
+		this.openBtn = obj.openBtn;
+		this.closeBtn = obj.closeBtn;
+		this.status = false;
+		this.$body = $('body');
 
+
+		this.init()
+	}
+
+
+	open() {
+		$(this.popup).css("display", "flex").hide().fadeToggle();
+		this.status = true;
+	};
+
+	close() {
+		$(this.popup).fadeOut(300);
+		this.status = false;
+
+	};
+
+	toggle() {
+		if (this.status) {
+			this.$body.removeClass('modal-active');
+			console.log(this.close);
+			this.close();
+		} else {
+			this.$body.addClass('modal-active');
+			this.open();
+		}
+	}
+
+	listeners() {
+		const self = this;
+		this.$body.on('click', `${this.closeBtn}, ${this.openBtn}`, function (e) {
+			self.toggle();
+		});
+	}
+
+
+	init() {
+		this.listeners();
+
+	}
+
+}
 class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
@@ -219,7 +267,7 @@ class showModal {
 
 			}
 		
-	}
+}
 
 
 	const form_1 = new showModal({

@@ -1,21 +1,41 @@
 .palette-block{
 	@include col();
 	@include size(12);
+	margin-top: 27px;
 	margin-bottom: 110px;
+	@include to(992px){
+		margin-top: 8px;
+	}
+@include to(700px){
+	margin-bottom: 0;
+}
 	&-header{
 		background-color: #fff;
-		padding: 20px 65px 20px 95px;
+		padding: 20px 65px 20px 10.3%;
 		box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
 		min-height: 64px;
+		@include to(992px){
+			padding: 20px 65px 20px 6%;
+
+		}
+		@include to(700px){
+			padding: 13px 0 13px 0%;
+			box-shadow: none;
+
+		}
 	}
 }
 
 .palette-block-body{
 	position: relative;
 	box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
-	padding: 45px 30px 75px 30px;
+	padding: 40px 30px 75px 30px;
 	@include to(992px){
-		padding: 30px 30px 75px 30px;
+		padding: 21px 30px 75px 30px;
+
+	}
+	@include to(700px){
+		padding: 12px 0px 75px 0px;
 
 	}
 }
@@ -25,10 +45,15 @@
 	max-width: 540px;
 	font-size: 12px;
 	line-height: lh(22, 12);
-	margin-left: min(vw(63), 63px);
+	margin-left: min(vw(107), 107px);
 	color: #586386;
 	@include to(992px){
-		margin-bottom: 30px;
+		margin-left: 32px;
+		margin-bottom: 27px;
+	}
+	@include to(700px){
+		margin-left: 0px;
+		margin-bottom: 27px;
 	}
 }
 .palette-block-body-item{
@@ -49,6 +74,9 @@
 }
 .palette-item-select-wrap{
 	width: 180px;
+	@include to(700px){
+		width: 100%;
+	}
 	select,
 	input {
 		width: 100%;
@@ -116,6 +144,7 @@
 		background: #F0F1F8;
 		@include to(992px){
 			font-size: 8px;
+			height: 35px;
 		}
 		.line{
 			position: absolute;
@@ -129,6 +158,7 @@
 			display: flex;
 			@include to(992px){
 				width: calc(100% - 12px);
+				height: 3px;
 
 			}
 		}
@@ -168,7 +198,10 @@
 }
 
 .palette-tab-btn--active:not(#h){
-	background-color: #fff;
+	@include from(701px){
+
+		background-color: #fff;
+	}
 }
 
 .color-list{
@@ -190,6 +223,12 @@
 	width: 21px;
 	height: 21px;
 	background: #C84F68;
+	transition: all 0.3s;
+	@include from(993px){
+		&:hover{
+				transform: scale(1.3);
+		}
+	}
 	@include to(1200px){
 		width: min(vw(21), 21px);
 		height: min(vw(21), 21px);

@@ -19,3 +19,31 @@
 		input(type="text" required placeholder="Город*").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
+
+.modal-form-popup.js-modal-form-popup_3.modal-form-popup-result.custom-scroll
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_result_close
+		+svg('close')
+	.result-block-left
+		.modal-form-popup__title Отправить результаты на почту
+		ul.result-block-list
+			li.result-block-item
+				span.result-block-item__val Выбранный продукт:
+				span.result-block-item__key Kolorit
+			li.result-block-item
+				span.result-block-item__val Тип поверхности:
+				span.result-block-item__key потолки
+		.result-block-text-wrap
+			.result-block-text-wrap__title Вам потребуется около 
+				span 5,7
+				| литров краски
+			.result-block-text-wrap__text Рекомендуемые
+				span два слоя 
+			.result-block-text-wrap__text Окрашиваемая площадь (м2)
+				span 40,0
+		.result-block-text-note *Размеры приблизительные и стандартизированные, для получения тосного расчета обратитесь к консультантам Kolorit
+	form.modal-form
+		input(type="text" required placeholder="Телефон*").modal-form__input
+		input(type="email" required placeholder="E-mail*").modal-form__input
+		input(type="text" required placeholder="Город*").modal-form__input
+		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить

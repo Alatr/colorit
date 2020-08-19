@@ -48,7 +48,7 @@ block content
 					// ------- item
 					.palette-block-body-item.js-palette-block-body-item
 						p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
-						.palette-tab
+						.palette-tab 
 							.calculator-item-select-wrap.palette-color-item-select-wrap
 								select.palette-item__select.js-palette-color-item__select.calculator-item__select
 									each v, j in ['все цвета','Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Синий', 'Фиолетовый', 'Нейтральные', 'Белые и Пастельные', ]
@@ -70,7 +70,7 @@ block content
 													ul.color-shade-list
 														each vd in [1,2,3,4,5,6,7,8,9,10,11,12]
 															li.color-shade-item
-																a(href='#')
+																a(href= pagesLink[0].colorSingle)
 								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 2
 								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 3
 								li.js-palette-tab-content-item.palette-color-tab-content-item.custom-scroll 4
