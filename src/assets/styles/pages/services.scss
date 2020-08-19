@@ -71,6 +71,11 @@
 	&__info-block-cross{
 		margin-bottom: 35px;
 	}
+	.company-principles__info-block-bottom{
+		position: absolute;
+		top: 168px;
+		left: 0;
+	}
 }
 
 .services-school{
@@ -284,5 +289,52 @@
 			
 		}
 		
+	}
+}
+
+.services-banner{
+	&__inner{
+		height: 400px;
+		width: 100%;
+		background: #F0F1F8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.services-loyalty{
+	padding: 90px 0;
+	&__row{
+		justify-content: center;
+	}
+	&__banner{
+		@include col();
+		@include size(12);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 5px 40px rgba(23, 49, 91, 0.05);
+		padding: 65px 0 47px;
+	}
+	&__banner-inner{
+		@include col();
+		@include size(10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__link-with-circle{
+		flex-shrink: 0;
+		span{
+			max-width: 90px;
+		}
+	}
+	&__text{
+		max-width: 410px;
+	}
+	&__title{
+		max-width: 232px;
 	}
 }

@@ -593,6 +593,9 @@
 			overflow: hidden;
 			padding: 10px 10px;
 			transition: all 0.3s;
+			@include to(768px){
+				height: auto;
+			}
 		}
 
 		&-top{
@@ -614,6 +617,9 @@
 			overflow: hidden;
 			transition: all 0.5s;
 			padding-right: 10px;
+			@include to(768px){
+				height: auto;
+			}
 			&::-webkit-scrollbar{
 				width: 1px;
 				
