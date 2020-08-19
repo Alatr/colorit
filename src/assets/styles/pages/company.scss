@@ -540,6 +540,15 @@
 		@include to(768px){
 			max-width: 390px;
 		}
+		@include to(480px){
+			font-size: 28px;
+			margin-bottom: 22px;
+		}
+	}
+	&__info-block + &__info-block{
+		@include to(768px){
+			margin-top: 50px;
+		}
 	}
 	&__info-block{
 		@include col();
@@ -595,6 +604,11 @@
 			transition: all 0.3s;
 			@include to(768px){
 				height: auto;
+				display: flex;
+				padding: 0;
+			}
+			@include to(480px){
+				flex-direction: column;
 			}
 		}
 
@@ -602,14 +616,35 @@
 			display: flex;
 			align-items: center ;
 			margin-bottom: 20px;
+			@include to(768px){
+				flex-shrink: 0;
+				align-self: flex-start;
+			}
+			@include to(480px){
+				margin-bottom: 10px;
+			}
 		}
 		&-img{
 			max-width: 60px;
 			margin-right: 25px;
+			@include to(480px){
+				max-width: 52px;
+			}
 		}
 		&-content{
 			transition: all 0.5s;
 			position: relative;
+		}
+		&-title{
+			@include to(768px){
+				margin-bottom: 10px;
+			}
+			@include to(480px){
+				margin-bottom: 0;
+				font-size: 12px;
+				line-height: 1.7em;
+			}
+			
 		}
 		&-text-collapse-wrapper{
 			position: relative;
@@ -619,6 +654,7 @@
 			padding-right: 10px;
 			@include to(768px){
 				height: auto;
+				padding-right: 0;
 			}
 			&::-webkit-scrollbar{
 				width: 1px;
@@ -669,12 +705,6 @@
 			}
 
 		}
-		&__btn{
-			position: relative;
-			z-index: 1;
-		}
-		
-		
 	}
 	&__inner{
 		position: relative;
@@ -689,6 +719,10 @@
 			padding-top: 62px;
 			padding-bottom: 40px;
 			height: auto;
+		}
+		@include to(480px){
+			padding-top: 50px;
+			padding-bottom: 50px;
 		}
 		
 	}
@@ -1080,6 +1114,10 @@
 .icon--docs-arrow-prev, .icon--docs-arrow-next{
 	width: 15px;
 	height: 15px;
+	@include to(768px){
+		width: 12px;
+		height: 12px;
+	}
 	@include to(480px){
 		width: 10px;
 		height: 10px;
@@ -1162,6 +1200,10 @@
 		background-color: #FBFBFB;
 		box-shadow: 0px 15px 35px rgba(188, 190, 195, 0.3);
 		cursor: pointer;
+		@include to(768px){
+			width: 42px;
+			height: 42px;
+		}
 		@include to(480px){
 			width: 34px;
 			height: 34px;

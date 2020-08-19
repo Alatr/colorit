@@ -33,6 +33,14 @@
 	if ($(window).width() <= 768){
 		$('.company-advantages__kolorit-bg-img-wrapper').appendTo('.company-advantages__content_js')
 		$('.company-docs__docs-block').appendTo('.company-docs__slider-and-link');
+
+		
+	}
+	if ($(window).width() <= 768 && $(window).width() > 480){
+		$('.company-principles__info-block-title').each((index, item) => {
+			$(item).prependTo($('.company-principles__info-block-content')[index]);
+			$(item).addClass('done');
+		})
 	}
 
 	if ($(window).width() <= 640){

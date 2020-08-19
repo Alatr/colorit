@@ -57,7 +57,8 @@ block content
 								h4.company-principles__info-block-title.company-advantages__small-title Консультация
 							.company-principles__info-block-content
 								.company-principles__info-block-text-collapse-wrapper.services-text
-									p Где бы вы не нашли наши продукты, можете быть уверенны, что вы получите проыфессиональную консультацию. Все наши специалисты проходят обучение по работе с материалами, проходят обучение с техническими специалистами по характеристикам красок, а так же практические занятия по нанесению продуктов. Наши специалисты безошибочно подберут необходимый продукт по д ваш запрос. Для вашего удобсвта у нас есть консультации в точках продаж, а так же выездные консультации, при заказе которое, к вам на дом/обьект приедет наш специалист, проведет профессиональнуцю консультацию, а там же привезет примеры материалов и цветовые палитры. В наших фирменных точках продаж так же для вашего удобства у нас есть примеры выкрасов всех продуктов, цветовые палитры, а так же дизайнерские столы, на который мы можем показать изменение выбранного цвета, в зависимости от типа освещения.
+									p Где бы вы не нашли наши продукты, можете быть уверенны, что вы получите проыфессиональную консультацию. Все наши специалисты проходят обучение по работе с материалами, проходят обучение с техническими специалистами по характеристикам красок, а так же практические занятия по нанесению продуктов. Наши специалисты безошибочно подберут необходимый продукт по д ваш запрос. 
+									p Для вашего удобсвта у нас есть консультации в точках продаж, а так же выездные консультации, при заказе которое, к вам на дом/обьект приедет наш специалист, проведет профессиональнуцю консультацию, а там же привезет примеры материалов и цветовые палитры. В наших фирменных точках продаж так же для вашего удобства у нас есть примеры выкрасов всех продуктов, цветовые палитры, а так же дизайнерские столы, на который мы можем показать изменение выбранного цвета, в зависимости от типа освещения.
 						.company-principles__info-block-bottom
 							.company-principles__info-block-cross.services-sec2__info-block-cross
 								<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,9 +95,9 @@ block content
 							button.services-btn.company-principles__btn.js-open-consult-services Заказать услугу
 		.services-school
 			.container
-				.row
+				.row.services-school__row
 					.services-school__img-wrapper
-						+img('services/school.jpg').sevices-school__img
+						+img('services/school.jpg').services-school__img
 					.services-school__content
 						h3.services-school__title Школа мастеров Kolorit Academy
 						.services-school__text.services-text
@@ -108,7 +109,9 @@ block content
 			.container
 				.row
 					.services-slider__control
-						span.services-slider__counter.js-services-slider-counter фото 1/7
+						.services-slider__counter-wrapper
+							span.services-slider__counter-wrapper-text фото 
+							span.services-slider__counter.js-services-slider-counter 1/7
 						.services-slider__arrows
 							.services-slider__arrow.js-services-arrow-prev
 								+svg('docs-arrow-prev')
@@ -134,15 +137,16 @@ block content
 					.services-loyalty__banner
 						.services-loyalty__banner-inner
 							h3.services-loyalty__title.services-title Программа лояльности
-							p.services-loyalty__text.services-text Для наших постоянных клиентов и специалистов к своей сфере мы разработали специальную пограмму лояльности, в которой вы сможете: получать необходимые навыки, для правильной раьботы с продуктами, дополнительные скидки на наши продукты, приятные бонусы от сотрудничества с нами. 
-							a(href="#").link-with-circle.services-loyalty__link-with-circle
-								.link-with-circle__circle
-									.link-with-circle__circle-inner
-										<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
-											<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
-										</svg>
-								span.link-with-circle__text Запросить условия
+							.services-loyalty__content-wrapper
+								p.services-loyalty__text.services-text Для наших постоянных клиентов и специалистов к своей сфере мы разработали специальную пограмму лояльности, в которой вы сможете: получать необходимые навыки, для правильной раьботы с продуктами, дополнительные скидки на наши продукты, приятные бонусы от сотрудничества с нами. 
+								a(href="#").link-with-circle.services-loyalty__link-with-circle
+									.link-with-circle__circle
+										.link-with-circle__circle-inner
+											<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+												<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+											</svg>
+									span.link-with-circle__text Запросить условия
 	.services-school-popup.js-services-school-popup
 		.services-school-popup__top
 			.services-school-popup__title.services-title Расписание 
