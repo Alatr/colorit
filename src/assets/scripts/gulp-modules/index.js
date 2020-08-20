@@ -258,6 +258,7 @@ class showModal {
 				const self = this
 				$body.on('click', `${this.closeBtn}, ${this.openBtn}`, function (e) {
 					self.toggle();
+					console.log('click')
 				});
 			}
 
@@ -286,6 +287,19 @@ class showModal {
 		closeBtn: '.js-search-modal-back',
 		openBtn: '.js-header-search'
 	});
+
+	const form_3 = new showModal({
+		popup: '.js-modal-form-popup_services',
+		closeBtn: '.js-close-consult-services',
+		openBtn: '.js-open-consult-services'
+	});
+
+	const form_4 = new showModal({
+		popup: '.js-services-school-popup',
+		closeBtn: '.js-school-popup-close',
+		openBtn: '.js-school-popup-open'
+	});
+
 
 
 

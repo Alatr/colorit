@@ -1,0 +1,98 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Реставрация  эмалированной ванны совими руками'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'инфоцентр',
+					link: '#'
+				},
+				{
+					label: 'советы',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/advice.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+	.advice-open
+		.advice-open__main-img-wrapper
+			+img('advice-open/main.jpg').advice-open__main-img
+		.advice-open-sec
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+						h1.advice-open-title.advice-open-sec__title Реставрация  эмалированной ванны совими руками
+						.advice-open-text.advice-open-sec__text
+							p С течением времени внешний вид ванной теряет свою эстетичность. Появляются следы подтёков, ржавчины, желтизна. Одна из главных причин изнашивания поверхности эмалированной ванны – использование абразивных средств для очистки или средств на основе хлорки.
+							p Но замена ванны — недешёвое удовольствие. Как правило, оно тянет за собой дополнительный ремонт в ванной комнате, что может существенно ударить по вашему карману. Наиболее быстрый и экономный вариант вернуть ванне былой блеск и гладкость – её реставрация своими руками.
+						h2.advice-open-sec-title.advice-open-sec__sec-title Пошаговая инструкция по реставрации эмалированной ванны
+						h3.advice-open-list-title.advice-open-sec__list-title 1. Первое, что вам необходимо сделать — позаботиться о собственной безопасности
+						.advice-open-text.advice-open-sec__text
+							p При реставрационных работах используются достаточно агрессивные химические средства, поэтому обязательно используйте перчатки, очки и респиратор. Постарайтесь обеспечить максимальное проветривание помещения.
+						h3.advice-open-list-title.advice-open-sec__list-title 2. Следующий шаг – подготовка ванной
+						.advice-open-text.advice-open-sec__text
+							p Вам необходимо добиться ровной и при этом слегка шершавой поверхности для лучшего сцепления с новой эмалью. Очищайте ванную при помощи сильного моющего средства, для обезжиривания её поверхности.
+							p Затем приступайте к шлифовке. Для этого воспользуйтесь наждачной бумагой или болгаркой со шлифовальным кругом обработайте поверхность. Участки ванной, поражённые процессами коррозии, обработайте преобразователем ржавчины, а потом снова наждачной бумагой.
+						.advice-open-sec__img-wrapper
+							+img('advice-open/img1.jpg')
+						.advice-open-text.advice-open-sec__text
+							p Проведите тест для определения качества подготовки поверхности. Если вода со стен стекает каплями, значит ванная требует повторной очистки.
+							p Не забудьте удалить строительный мусор и пропылесосить поверхность для удаления пыли. Наполните ванную горячей водой на 10-15 минут. На тёплую поверхность лучше ложится слой эмали. После этого высушите поверхность. Если ванная сохнет медленно, дополнительно просушите её феном.
+						h3.advice-open-list-title.advice-open-sec__list-title 3. Выполните грунтовку ванны
+						.advice-open-text.advice-open-sec__text
+							p Для этого смешайте краску «Reaflex 50» с растворителем. Нанесите смесь валиком или кистью. Произведите окрашивание, но не ранее, чем через 8 часов после грунтовки. Важно: если грунтовка простояла более 2-х суток, то перед повторным нанесением эмали её необходимо еще раз отшлифовать.
+		.advice-open-banner
+			.container
+				.row
+					.advice-open-banner__img-wrapper
+						+img('advice-open/banner.png')
+					.advice-open-banner__content
+						h4.advice-open-banner__title.advice-open-sec-title Грунтовка Reaflex 50
+						p.advice-open-text.advice-open-banner__text Силиконовый грунт для наружных работ, укрепления и пропитывания бетонных, цементно-известковых, гипсокартонных и других впитывающих поверхностей перед нанесением штукатурки, шпатлёвки, водно-дисперсионных красок.
+						.advice-open-banner__content-bottom
+							a(href="#").services-btn.advice-open-banner__btn Подробнее
+							a(href="#").link-with-circle.advice-open-banner__link
+										.link-with-circle__circle
+											.link-with-circle__circle-inner
+												<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+													<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+												</svg>
+										span.link-with-circle__text Где купить
+		.advice-open-sec
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+							h3.advice-open-list-title.advice-open-sec__list-title 4. Переходим к самому главному — нанесению эмали
+							.advice-open-text.advice-open-sec__text
+								p Для этого используйте двухкомпонентную эпоксидную краску «Reaflex 50» финского бренда Tikkurila. Материал создан специально для реставрации эмалированных ванн. Краска наносится кистью, валиком или распылителем. Основное преимущество – прочно сцепляется с поверхностью. Перед применением её нужно смешать с отвердителем. Учитывайте, что жизнеспособность подготовленной краски – примерно 4 часа.
+							.advice-open-sec__img-wrapper
+								+img('advice-open/img2.jpg')
+							.advice-open-text.advice-open-sec__text
+								p Нанесите краску «Reaflex 50» и оставьте примерно на 20 минут. После этого внимательно осмотрите окрашенную поверхность на наличие подтёков. Аккуратно удалите их шпателем или кистью по направлению снизу вверх. Затвердевшие капли удалить уже будет невозможно.
+								p На этом всё – процесс реставрации ванны завершён. Для полного высыхания поверхности лучше выдержать не менее 7 дней. Если вы всё сделали правильно и пользовались только качественными материалами, ваша ванная получит «вторую жизнь» и будет радовать вас своим глянцевым блеском.
+							.advice-open-sec__img-wrapper
+								+img('advice-open/img3.jpg')
