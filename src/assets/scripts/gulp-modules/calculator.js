@@ -17,6 +17,5 @@
 			openBtn: '.js-open-delivery'
 		});
 
-		form_2.toggle()
 
 })(jQuery);

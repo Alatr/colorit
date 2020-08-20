@@ -24,7 +24,7 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
-	script(src='./assets/scripts/palette.js')
+	script(src='./assets/scripts/color-single.js')
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -70,17 +70,17 @@ block content
 							+svg('download1')
 				.color-single-block__r
 					.color-single-block__img(style="background: #B02C3C;")
-						+img('temp/66.png')
+						+img('temp/66.png').js-color-single-block__main-img
 					ul.color-single-block-img-nav
 						each v, j in [1,1,1,1]
 							if j == 0
-								li.color-single-block-img-nav-item.color-single-block-img-nav-item--active(style="border-color: #B02C3C;")
+								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item.color-single-block-img-nav-item--active(style="border-color: #B02C3C;")
 									button(type="button").btn--res
-										+img('temp/66.png')
+										+img('temp/o4.jpg')
 							else
-								li.color-single-block-img-nav-item
+								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item(style="border-color: #B02C3C;")
 									button(type="button").btn--res
-										+img('temp/66.png')
+										+img('temp/o4.jpg')
 		.row
 			.same-color-block
 				.same-color-block__title Похожие цвета

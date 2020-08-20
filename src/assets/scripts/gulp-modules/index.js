@@ -281,6 +281,11 @@ class showModal {
 		closeBtn: '.js-form_delivery_close',
 		openBtn: '.js-open-delivery'
 	});
+	const search = new showModal({
+		popup: '.js-search-modal',
+		closeBtn: '.js-search-modal-back',
+		openBtn: '.js-header-search'
+	});
 
 
 

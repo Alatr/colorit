@@ -47,3 +47,24 @@
 		input(type="text" required placeholder="Город*").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
+
+
+.search-modal.js-search-modal
+	.search-modal-back-block
+		button(type="button").js-search-modal-back.search-modal-back-block__link.link-arrow-type.btn--res
+			.circle-btn
+				.circle-btn-inner
+					+svg('qww')
+			span.link-arrow-type__text НАЗАД
+	.search-modal-content-block
+		.search-modal__title Поиск
+		.search-modal-input
+			input(type="text" placeholder="Введите название...")
+			+svg('search')
+		ul.search-result-list.custom-scroll
+			// max 6 items
+			each v in [1,1,1,1,1,1]
+				li.search-result-item
+					a(href="#").search-result-item__link.underline-link
+						span Реставрация эмалированной ванны своими рукамиhttps://kolorit.ua/restavratsiya-emalirovannoj-vanny-svoimi-rukami/
+					span.search-result-item__text https://kolorit.ua/restavratsiya-emalirovannoj-vanny-svoimi-rukami/https://kolorit.ua/restavratsiya-emalirovannoj-vanny-svoimi-rukami/
