@@ -20,7 +20,8 @@
 	
 	$('.js-services-slider').slick({
 		arrows: false, 
-		variableWidth: false
+		variableWidth: false,
+		infinite: false
 	})
 
 	$('.js-services-arrow-prev').click(function(){

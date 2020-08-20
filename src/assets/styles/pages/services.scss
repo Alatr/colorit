@@ -225,6 +225,7 @@
 	width: 100%;
 	display: none;
 	flex-direction: column;
+	z-index: 100;
 	@include to(640px){
 		padding: 20px 15px 0;
 	}
