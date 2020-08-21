@@ -3,7 +3,6 @@
 	font-size: 45px;
 	line-height: 1.2em;
 	color: #000C31;
-	max-width: 665px;
 	@include to(768px){
 		font-size: 32px;
 		line-height: 1.2em;
@@ -48,13 +47,17 @@
 	}
 }
 .advice-open{
+	.advice-open-title{
+		max-width: 665px;
+	}
 	&__main-img-wrapper{
 		height: 385px;
 		@include to(768px){
-			margin-bottom: 40px;
+			margin-bottom: 30px;
 		}
 		@include to(480px){
 			margin-bottom: 0;
+			height: 210px;
 		}
 	}
 	&__main-img{
@@ -67,7 +70,7 @@
 .advice-open-sec{
 	padding: 60px 0 78px;
 	@include to(768px){
-		padding: 60px 0 60px;
+		padding: 0px 0 60px;
 	}
 	@include to(480px){
 		padding: 30px 0 30px;
@@ -174,5 +177,257 @@
 			margin-bottom: 20px;
 		}
 	
+	}
+}
+
+.object-open{
+	.advice-open-sec{
+		padding-bottom: 0;
+		&_padding-bottom{
+			padding-bottom: 90px;
+			@include to(768px){
+				padding-bottom: 60px;
+			}
+			@include to(480px){
+				padding-bottom: 80px;
+			}
+		
+		}
+	}
+	.advice-open-sec__text{
+		margin-bottom: 0;
+	}
+	.advice-open-sec__inner{
+		@include size-md(10);
+		@include size-sm(12);
+		&_first{
+			@include size-sm(10);
+			@include size-xs(12);
+		}
+	}
+}
+.object-passport{
+	box-shadow: 0px 5px 40px rgba(23, 49, 91, 0.05);
+	margin-bottom: 50px;
+	@include to(768px){
+		margin-bottom: 60px;
+	}
+	@include to(768px){
+		margin-bottom: 50px;
+	}
+	&__top{
+		display: flex;
+		padding: 20px 0;
+		box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
+		position: relative;
+		@include to(480px){
+			text-align: center;
+			padding: 10px 0;
+		}
+		span{
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 1.7em;
+			text-transform: uppercase;
+			@include to(480px){
+				font-size: 10px;
+				line-height: 1.5em;
+				max-width: 150px;
+			}
+		}
+		&::before{
+			content: '';
+			width: 1px;
+			height: 32px;
+			background-color: #F0F1F8;
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			@include to(480px){
+				height: 28px;
+				top: 10px
+			}
+		}
+	}
+	&__main{
+		display: flex;
+		padding: 35px 40px 66px;
+		position: relative;
+		@include to(640px){
+			padding: 35px 15px 66px;
+		}
+		@include to(480px){
+			padding: 25px 10px;
+		}
+		&::before{
+			content: '';
+			width: 1px;
+			height: calc(100% - 100px);
+			background-color: #F0F1F8;
+			position: absolute;
+			top: 35px;
+			left: 50%;
+			@include to(480px){
+				height: calc(100% - 50px);
+				top: 25px;
+			}
+		}
+	}
+	&__col{
+		flex-basis: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		&_right{
+			padding-left: 60px;
+			@include to(640px){
+				padding-left: 15px;
+			}
+			@include to(480px){
+				justify-content: center;
+				padding-left: 8px
+			}
+			.object-passport__item{
+				@include to(480px){
+					flex-direction: column;
+					flex-basis: auto;
+					align-items: flex-start;
+				}
+				.object-passport__item-title{
+					@include to(480px){
+						flex-basis: auto;
+						margin-bottom: 5px;
+						margin-left: 8px;
+					}
+				}
+			}
+			.object-passport__item-title{
+				flex-basis: 85px;
+			}
+			.object-passport__item-text{
+				flex-basis: auto;
+			}
+		}
+	}
+	&__item + &__item{
+		margin-top: 20px;
+	}
+	&__item{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		&-title{
+			color: #000C31;
+			font-size: 10px;
+			line-height: 1.5em;
+			text-transform: uppercase;
+			flex-basis: 40%;
+			@include to(480px){
+				font-size: 8px;
+				line-height: 1.9em;
+				flex-basis: 27%;
+			}
+		}
+		&-text{
+			color: #586386;
+			font-size: 12px;
+			line-height: 1.8em;
+			flex-basis: 60%;
+			@include to(480px){
+				flex-basis: 73%;
+				font-size: 10px;
+				line-height: 1.6em;
+			}
+			&_underline{
+				border-bottom: 1px solid #586386;
+				line-height: 1em;
+				margin-bottom: 5px;
+				@include to(480px){
+					flex-basis: auto;
+				}
+			}
+		}
+	}
+	&__object{
+		display: flex;
+		flex-shrink: 0;
+		@include to(480px){
+			width: 100%;
+			justify-content: space-between;
+		}
+		&-img-wrapper{
+			width: 46px;
+			height: 46px;
+			margin-right: 10px;
+			@include to(480px){
+				margin-right: 0px;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&-content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			&-bottom{
+				display: flex;
+			}
+		}
+	}
+	&__color-box{
+		display: block;
+		width: 7px;
+		height: 7px;
+		align-self: flex-end;
+		margin-left: 7px;
+		margin-bottom: 10px;
+		@include to(480px){
+			width: 5px;
+			height: 5px;
+			margin-left: 0px;
+			margin-bottom: 11px;
+		}
+	}
+}
+
+.object-open-slider{
+	padding: 65px 0;
+	@include to(768px){
+		padding: 45px 0 60px;
+	}
+	@include to(480px){
+		padding: 40px 0 40px;
+	}
+	.services-slider__control{
+		@include col();
+		@include size(2);
+		align-items: center;
+		@include size-sm(1);
+		@include size-xs(2);
+		@include to(768px){
+			align-items: flex-start;
+		}
+	}
+	.services-slider__slider{
+		@include col();
+		@include size(10);
+		@include size-sm(11);
+		@include size-xs(10);
+	}
+	.services-slider__counter-wrapper{
+		left: calc(50% - 25px);
+	}
+	.slick-list{
+		padding: 0 20% 0 0;
+		@include to(768px){
+			padding: 0 10% 0 0;
+		}
+		@include to(480px){
+			padding: 0 0 0 0;
+		}
 	}
 }
