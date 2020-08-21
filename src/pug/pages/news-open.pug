@@ -1,0 +1,152 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Получить всё, не выходя из дома'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'инфоцентр',
+					link: '#'
+				},
+				{
+					label: 'новости',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/open-pg.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+	.news-open
+		.advice-open__main-img-wrapper
+			+img('temp/news-open-bigimage.jpg').advice-open__main-img
+		.advice-open-sec.advice-open-sec_1
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+						.news-open__text-block
+							h1.advice-open-title.advice-open-sec__title Получить всё, не выходя из дома
+							h3.advice-open-list-title.news-open__advice-open-list-title Онлайн-сервисы Kolorit как реальная помощь во время карантина
+							p Сегодня, в связи с ситуацией вокруг опасности заболевания коронавирусом, все большее число торговых центров и магазинов оказываются закрытыми. Большинство мероприятий отменяются, а проекты откладываются на неопределенный срок. Чтобы поддержать своего потребителя и позаботиться о безопасности покупок, компания Kolorit запускает онлайн-сервисы, которые призваны помочь вам спокойно заниматься домашним ремонтом в это непростое время.
+
+		.services-slider.object-open-slider
+			.container
+				.row
+					.services-slider__control
+						.services-slider__counter-wrapper
+							span.services-slider__counter-wrapper-text фото 
+							span.services-slider__counter.js-services-slider-counter 1/7
+						.services-slider__arrows
+							.services-slider__arrow.js-services-arrow-prev
+								+svg('docs-arrow-prev')
+							.services-slider__arrow.js-services-arrow-next
+								+svg('docs-arrow-next')
+					.services-slider__slider.js-services-slider
+						.js-services-slider__item
+							+img('temp/news-open-sliderimage.jpg')
+						.js-services-slider__item
+							+img('temp/news-open-sliderimage.jpg')
+						.js-services-slider__item
+							+img('temp/news-open-sliderimage.jpg')
+						.js-services-slider__item
+							+img('temp/news-open-sliderimage.jpg')
+		.advice-open-sec.advice-open-sec_2
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+						.news-open__text-block
+							h2.advice-open-sec-title.news-open__advice-open-sec-title Онлайн заказ по телефону
+							p Простое и удобное решение. Менеджер колл-центра примет ваш заказ, учитывая все пожелания. Вы получите:
+							ul.news-open__list
+								li советы профессионала по подбору товара
+								li профессиональную консультацию по цвету
+								li расчет необходимого количества под запрос
+							p Чтобы сделать быстрый заказ, звоните по телефону нашей горячей линии:
+							.news-open__phones 
+								span.advice-open-list-title 0 800 508 908
+								span.advice-open-list-title (097) 07 07 092
+		.news-banner
+			.container
+				.row
+					.news-banner__content
+						h2.advice-open-sec-title.news-open__advice-open-sec-title Вызов специалиста
+						.advice-open-text
+							p Удобная опция, если вам трудно определиться с цветом или нужно подобрать продукт под конкретную проблему на месте. Вызванный специалист предоставит вам:
+						ul.news-open__list
+							li широкий выбор цветовых вееров
+							li консультацию по любому продукту
+						.advice-open-text
+							p Если вам нужен совет профессионала, оставляйте запрос на практическую помощь специалиста вместе с онлайн-заказом.
+					.news-banner__img
+						+img('temp/news-open-bannerimage.jpg')
+
+		.advice-open-sec.advice-open-sec_3
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+						.news-open__text-block
+							h2.advice-open-sec-title.news-open__advice-open-sec-title Заказ выкрасов выбранных цветов
+							p Эта новая услуга помогает точно убедиться в правильности выбранного оттенка и протестировать ее у себя дома перед покупкой всего объема краски. По запросу клиента мы колеруем один или несколько цветов, наши специалисты наносят краску на специальный материал и мы доставляем эти выкрасы к вам на дом
+							p После этого вы можете заказать краску конкретно под ваш интерьер, мебель или желаемую гамму помещения и с тем цветом, в котором уверены на 100%. Услуга работает в тестовом режиме, доступна в Киеве и киевской области.
+						.news-open__text-block
+							h2.advice-open-sec-title.news-open__advice-open-sec-title Бесплатная доставка
+							p Не нужно ехать за краской и везти домой все покупки самому. Закажите товары онлайн на сайте farba-service.com, и компания сделает бесплатную доставку прямо к порогу вашего дома. Для вашего удобства сервис действует по всей Украине. Оставляйте вашу заявку до обеда и получайте доставку в тот же день! При заказе после обеда – на следующий день. Если вам нужна более детальная информация, свяжитесь с нами по контактному телефону.
+							p Бренд Kolorit желает вам только безопасных покупок, и предлагает воспользоваться всеми преимуществами своего сервиса. Звоните по номеру нашей горячей линии 0 800 508 908, (097) 07 07 092, чтобы уверенно продолжать ремонт в вашем доме! 
+						.advice-open-sec__bottom-section
+							a(href="./object.html").link-with-circle.advice-open-sec__link
+									.link-with-circle__circle
+										.link-with-circle__circle-inner
+											<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 3.2L2.8 1.4L2.8 3.2L2.8 5L1 3.2Z" fill="#17315B"/>
+												<path d="M10 3.2L1 3.2M1 3.2L2.8 1.4L2.8 5L1 3.2Z" stroke="#17315B" stroke-width="0.6"/>
+											</svg>
+									span.link-with-circle__text К другим объектам
+							time(datetime="17-03-2020").advice-open-sec__date 17.03.2020
+		.products-card-advice-sl-container-wrap
+			.container
+				.row.products-card-advice-sl-row
+					.products-card-advice-sl
+						.products-card-advice-sl__title Похожие объекты
+						.products-card-advice-sl-slider-wrap
+							.products-card-advice-sl-navbar-btn-wrap
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+									+svg('arr-small-right')
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+									+svg('arr-small-left')
+							ul.products-card-advice-sl-slider.js-advice-open-slider
+								each v in [1,1,1,1,]
+									li.advice-sl-slider-li
+										a.news-item
+											.news-item__img
+												+img('temp/12.jpg')
+											.advice-item__subtitle
+												.advice-item__subtitle__num СОВЕТ №1
+												.advice-item__subtitle__text Работа с цветом
+											h4.news-item__title.underline-link
+												span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+											.news-item__time 17.03.2010
+											.news-item-btn.link-arrow-type
+												.circle-btn
+													.circle-btn-inner.dark-ico
+														+svg('qww')
+												.news-item-btn__text Подробнее
