@@ -1,9 +1,59 @@
 @@include('./libs.js');
+class showModal {
+	constructor(obj) {
+		this.popup = obj.popup;
+		this.openBtn = obj.openBtn;
+		this.closeBtn = obj.closeBtn;
+		this.status = false;
+		this.$body = $('body');
 
+
+		this.init()
+	}
+
+
+	open() {
+		$(this.popup).css("display", "flex").hide().fadeToggle();
+		this.status = true;
+	};
+
+	close() {
+		$(this.popup).fadeOut(300);
+		this.status = false;
+
+	};
+
+	toggle() {
+		if (this.status) {
+			this.$body.removeClass('modal-active');
+			console.log(this.close);
+			this.close();
+		} else {
+			this.$body.addClass('modal-active');
+			this.open();
+		}
+	}
+
+	listeners() {
+		const self = this;
+		this.$body.on('click', `${this.closeBtn}, ${this.openBtn}`, function (e) {
+			self.toggle();
+		});
+	}
+
+
+	init() {
+		this.listeners();
+
+	}
+
+}
 class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
 		this.content = obj.$content
+		this.event = obj.event || 'changeTab'
+		
 
 		this.btnActiveClass = obj.btnActiveClass
 		this.contentActiveClass = obj.contentActiveClass
@@ -17,16 +67,31 @@ class Tab {
 	}
 
 	setStyles() {
-		this.btn.each((i, el) => {
-			$(el).attr(this.data.btnDataName, i);
-		});
 		this.btn.eq(this.active).addClass(this.btnActiveClass);
 		this.content.eq(this.active).addClass(this.contentActiveClass);
 	}
+	setMarkup() {
+		this.btn.each((i, el) => {
+			$(el).attr(this.data.btnDataName, i);
+		});
+	}
 
+	initEvent(callback = function () {}) {
+		const self = this;
+		this.btn.on('click', function (e) {
+			const inx = $(this).attr(self.data.btnDataName);
+			PubSub.publish(self.event, {inx} );
+			// 
+			callback();
+		});
+	}
 
 	init() {
+		
+		this.setMarkup();
 		this.setStyles();
+		
+		this.initEvent();
 		this.listeners();
 
 	}
@@ -34,17 +99,20 @@ class Tab {
 
 Tab.prototype.listeners = function (callback = function () {}) {
 	const self = this;
-	this.btn.on('click', function () {
-		const inx = $(this).attr(self.data.btnDataName);
+
+	PubSub.subscribe(self.event, function (msg, data) {
 		//btn
 		self.btn.removeClass(self.btnActiveClass);
-		self.btn.eq(inx).addClass(self.btnActiveClass);
+		self.btn.eq(data.inx).addClass(self.btnActiveClass);
 		//contents
 		self.content.removeClass(self.contentActiveClass);
-		self.content.eq(inx).addClass(self.contentActiveClass);
-
-		// ajax
+		self.content.eq(data.inx).addClass(self.contentActiveClass);
+	
+		// 
 		callback();
+	});
+
+	this.btn.on('click', function () {
 	});
 }
 
@@ -200,7 +268,7 @@ class showModal {
 
 			}
 		
-	}
+}
 
 
 	const form_1 = new showModal({
@@ -213,6 +281,11 @@ class showModal {
 		popup: '.js-modal-form-popup_2',
 		closeBtn: '.js-form_delivery_close',
 		openBtn: '.js-open-delivery'
+	});
+	const search = new showModal({
+		popup: '.js-search-modal',
+		closeBtn: '.js-search-modal-back',
+		openBtn: '.js-header-search'
 	});
 
 	const form_3 = new showModal({
