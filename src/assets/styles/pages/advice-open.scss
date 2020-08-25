@@ -594,3 +594,93 @@
 	}
 
 }
+
+/* ******************************************************************* */
+/* *********************** DISCOUN PAGE ****************************** */
+/* ******************************************************************* */
+
+.discounts-open{
+	.products-card-block-info{
+		max-width: 170px;
+		.products-card-block-info-item{
+			width: 35px;
+			height: 35px;
+		}
+		.products-card-block-info-item--long:not(#j){
+			width: 70px;
+			height: 25px;
+		}
+	}
+	.discounts-open-banner{
+		background: #fff;
+	}
+	.discount-top-banner{
+		display: flex;
+		overflow: hidden;
+		background: #F0F1F8;
+		&__title{
+			margin-bottom: 25px;
+		}
+		&__subtitle{
+			font-size: 18px;
+			line-height: 1.3em;
+			color: #586386;
+			font-weight: 500;
+			margin-bottom: 30px;
+			display: block;
+		}
+		&__img{
+			flex: 0 0 50%;
+			transform: translate(-100%, 0);
+			position: relative;
+			img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				max-width: 100%;
+			}
+		}
+		&__content{
+			flex: 0 0 100%;
+		}
+		&__content-inner{
+			max-width: 380px;
+			margin-left: auto;
+		}
+		&__body{
+			width: 50%;
+			padding: 40px 30px 150px 0;
+			position: relative;
+		}
+		&__discount-block{
+			display: flex;
+			align-items: center;
+			position: absolute;
+			left: calc(50% + 100px);
+			z-index: 10;
+			bottom: 10px;
+			&-title{
+				font-weight: bold;
+				color: #C11426;
+				font-size: 45px;
+				line-height: 1.22em;
+			}
+			&-img{
+				width: 170px;
+				height: 205px;
+				position: relative;
+				img{
+					// width: 100%;
+					// height: 100%;
+					// object-fit: cover;
+					// position: absolute;
+					// top: 0;
+					// left: 0;
+				}
+			}
+		}
+	}
+}
