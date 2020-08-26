@@ -1,0 +1,93 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'M323'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'СЕРВИСЫ',
+					link: '#'
+				},
+				{
+					label: 'Подбор цвета',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/color-single.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+		.row
+			.color-single-block
+				.color-single-block__l(style="background: #B02C3C;")
+					// if color lighten add class .color-single-block-info--color-dark
+					.color-single-block-info
+						.color-single-block__title Прекрасный красный
+						.color-single-block__color M323
+						ul.color-single-block-list-info
+							li.color-single-block-item-info
+								span.color-single-block-item-info__key Код RGB:
+								span.color-single-block-item-info__val 176, 44, 60 (B02C3C)
+							li.color-single-block-item-info
+								span.color-single-block-item-info__key Аналог в палитре NCS:
+								span.color-single-block-item-info__val если есть
+							li.color-single-block-item-info
+								span.color-single-block-item-info__key Базис:
+								span.color-single-block-item-info__val C
+							li.color-single-block-item-info
+								span.color-single-block-item-info__key Ценовая категория:
+								span.color-single-block-item-info__val 2
+					.color-single-block-info-nav
+						.calculator-item.color-single-select.calculator-item-select-wrap 
+							select.palette-item__select.js-palette-color-item__select.calculator-item__select
+								each v, j in ['Выбрать продукт','хз1', 'хз2', 'хз3']
+									if j == 0
+										option.palette-item__select-item(selected="selected")= v
+									else
+										option.palette-item__select-item= v
+						a(href="#" download).color-single-block-info-nav__link
+							span Сохранить цвет
+							+svg('download1')
+				.color-single-block__r
+					.color-single-block__img(style="background: #B02C3C;")
+						+img('temp/66.png').js-color-single-block__main-img
+					ul.color-single-block-img-nav
+						each v, j in [1,1,1,1]
+							if j == 0
+								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item.color-single-block-img-nav-item--active(style="border-color: #B02C3C;")
+									button(type="button").btn--res
+										+img('temp/o4.jpg')
+							else
+								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item(style="border-color: #B02C3C;")
+									button(type="button").btn--res
+										+img('temp/o4.jpg')
+		.row
+			.same-color-block
+				.same-color-block__title Похожие цвета
+				ul.same-color-block-list
+					each v in [1,1,1,1,1]
+						li.same-color-block-item
+							a(href="#" style="background: #B0243C;").btn--res
+		a(href="#").color-single-block-link
+			+svg('qww').color-single-block-link__text
+			.color-single-block-link__text Назад к выбору цвета

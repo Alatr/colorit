@@ -32,6 +32,9 @@
 @import './pages/news';
 @import './pages/object';
 @import './pages/advice';
+@import './pages/calculator';
+@import './pages/palette';
+@import './pages/color_single';
 
 // vadym
 @import './pages/company.scss';
@@ -63,6 +66,13 @@
 	@include to(768px){
 		margin: 0 5px 0 0;
 		font-size: 16px;
+	}
+	@include to(480px){
+		max-width: 300px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-bottom: 3px;
+		overflow: hidden;
 	}
 
 
@@ -124,6 +134,12 @@
 	color: #C11426;
 	font-size: 10px;
 	text-transform: uppercase;
+	@include to(480px){
+		max-width: 300px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 }
 
 .breadcrumbs-item__current {

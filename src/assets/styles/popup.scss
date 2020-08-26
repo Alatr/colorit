@@ -151,3 +151,162 @@
 				}
 			}
 }
+
+
+
+
+
+
+
+
+
+
+.search-modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #F6F7FC;
+	z-index: 66;
+	display: none;
+	@include to(700px){
+		flex-direction: column;
+	}
+}
+
+.search-modal-back-block{
+	background: #17315B;
+	width: 100%;
+	min-width: 204px;
+	padding: 75px 0 0 55px;
+	@include to(992px){
+		padding: 30px 30px 0 30px;
+		min-width: auto;
+		width: auto;
+		@include to(700px){
+			padding: 20px 10px 20px 10px;
+
+		}
+	}
+	.link-arrow-type__text{
+		margin: 0 30px;
+		@include to(992px){
+			margin: 0 15px;
+
+		}
+	}
+	.search-modal-back-block__link{
+		.circle-btn{
+			transform: scaleX(-1);
+		}
+	}
+}
+
+.search-modal-content-block{
+	padding: 69px 65px 0 65px;
+	width: 100%;
+	max-width: 671px;
+	@include to(992px){
+		padding: 30px 30px 0 30px;
+	}
+	@include to(700px){
+		padding: 20px 10px 0 10px;
+	}
+
+	
+}
+
+.search-modal__title{
+	font-size: 55px;
+	line-height: lh(54, 55);
+	margin-bottom: 15px;
+	color: #000C31;
+	font-weight: bold;
+	@include to(992px){
+		font-size: 36px;
+	}
+	@include to(700px){
+		font-size: 22px;
+	}
+}
+
+.search-modal-input{
+	position: relative;
+	margin-bottom: 40px;
+	input{
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid #9AB4C1;
+		background-color: transparent;
+		font-size: 18px;
+		height: 30px;
+		color: #292C35;
+		@include to(700px){
+			font-size: 14px;
+		}
+			&::placeholder {
+				color: #292C35;
+			}
+
+			&:-moz-placeholder {
+				color: #292C35;
+			}
+
+			&::-webkit-input-placeholder {
+				color: #292C35;
+			}
+
+			&:-ms-input-placeholder {
+				color: #292C35;
+			}
+
+			&::-ms-input-placeholder {
+				color: #292C35;
+			}
+	}
+	svg{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 18px;
+		height: 18px;
+		fill: #C11426;
+	}
+}
+
+
+.search-result-list{
+	display: flex;
+	flex-direction: column;
+	height: 500px;
+	overflow-y: scroll;
+}
+
+.search-result-item {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+
+.search-result-item__link{
+	text-decoration: none;
+	span{
+		font-size: 18px;
+		line-height: lh(28, 18);
+		margin-bottom: 3px;
+		color: #000C31;
+	background-image: linear-gradient(#000C31, #000C31);
+		@include to(700px){
+			font-size: 14px;
+		}
+	}
+	.search-result-item__text{
+		color: #586386;
+		font-size: 18px;
+		line-height: lh(28, 18);
+		margin-bottom: 3px;
+	}
+}

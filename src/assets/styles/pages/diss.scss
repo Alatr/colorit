@@ -55,6 +55,17 @@
 	fill: #17315B;
 	stroke: #17315B;
 }
+
+#icon-newarr {
+	path[data-stroke] {
+		stroke: #17315B !important;
+	}
+
+	path[data-fill] {
+		fill: #17315B !important;
+
+	}
+}
 .news-item-btn__text{
 	display: flex;
 	margin: 0 22px 0;

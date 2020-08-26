@@ -1,0 +1,160 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = '6 причин купить шпатлевку Kolorit STANDART LF в июне'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'инфоцентр',
+					link: '#'
+				},
+				{
+					label: 'новости',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/open-pg.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+	.discounts-open
+		.discount-top-banner
+			.discount-top-banner__content
+				.container
+					.discount-top-banner__body
+						.discount-top-banner__content-inner
+							h1.discount-top-banner__title.advice-open-sec-title 6 причин купить шпатлевку Kolorit STANDART LF в июне
+							span.discount-top-banner__subtitle Магия шелка для вашего дома
+							ul.products-card-block-info
+										//- ----------
+										li.products-card-block-info-item
+											+img('discounts-open/v1-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+										li.products-card-block-info-item
+											+img('discounts-open/v2-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+										//- ----------
+										//- ----------
+										li.products-card-block-info-item.products-card-block-info-item--long
+											+img('discounts-open/v3-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+						.discount-top-banner__discount-block
+							h2.discount-top-banner__discount-block-title -10%
+							.discount-top-banner__discount-block-img
+								+img('temp/discount-open-bottle.png')
+				.discount-top-banner__mob-img
+					+img('temp/discounts-open-topbanner.jpg')
+			.discount-top-banner__img
+				+img('temp/discounts-open-topbanner.jpg')
+		.discounts-open-section
+			.container
+				.row.discounts-open-section__row
+					.discounts-open-section__inner
+						.discounts-open-section__mob-header
+							h1.discount-top-banner__title.advice-open-sec-title 6 причин купить шпатлевку Kolorit STANDART LF в июне
+							span.discount-top-banner__subtitle Магия шелка для вашего дома
+							ul.products-card-block-info
+										//- ----------
+										li.products-card-block-info-item
+											+img('discounts-open/v1-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+										li.products-card-block-info-item
+											+img('discounts-open/v2-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+										//- ----------
+										//- ----------
+										li.products-card-block-info-item.products-card-block-info-item--long
+											+img('discounts-open/v3-gray.svg').products-card-block-info-item__ico
+											.products-card-block-info-item-descr
+												+svg('vopr')
+												p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+						.discounts-open-section__text.advice-open-text
+							p Шпатлевка — один из самых важных строительных материалов, без которых не может обойтись практически любой ремонт. Финишную шпатлевку используют для подготовки поверхностей под покраску.
+							p Поэтому, она должна хорошо сцеплять поверхность и лакокрасочные продукты. Всё это и даже больше, умеет шпатлевка Kolorit STANDART LF. Её основные преимущества:
+						ol.custom-ol
+							li Термостойкость — готовое покрытие выдерживает перепады температур от -40° С до +80 ° С.
+							li Повышенная белизна — для максимально точной передачи оттенков при последующем покрытии краской.
+							li Не дает усадку в будущем — остается идеально ровной и с заданной толщиной даже после полного застывания.
+							li Повышенная прочность покрытия — не потрескается даже через 5-7 и более лет.
+							li Оптимальная консистенция — легко наносится и шлифуется, не забивая шлифовальный инструмент.
+							li Связующие вещества имеют высокую степень адгезии — шпатлевка обеспечивает хорошее сцепление поверхности с краской. Это заметно повышает долговечность и надежность ремонта.
+						.discounts-open-section__text.advice-open-text
+							p Спешите купить: только с 1 по 30 июня STANDART LF доступна по акционной цене. Сегодня у вас есть возможность купить её со скидкой в 20%.
+							p Внимание: предложение действует только до 30 июня. Акция действует в точках продажи по всей территории Украины.
+		.advice-open-banner.discounts-open-banner
+			.container
+				.row
+				
+					.advice-open-banner__img-wrapper
+						+img('advice-open/banner.png')
+					.advice-open-banner__content
+						h4.advice-open-banner__title.advice-open-sec-title Шпатлевка Kolorit STANDART LF
+						p.advice-open-text.advice-open-banner__text Силиконовый грунт для наружных работ, укрепления и пропитывания бетонных, цементно-известковых, гипсокартонных и других впитывающих поверхностей перед нанесением штукатурки, шпатлёвки, водно-дисперсионных красок.
+						.advice-open-banner__content-bottom
+							a(href="#").services-btn.advice-open-banner__btn Подробнее
+							a(href="#").link-with-circle.advice-open-banner__link
+										.link-with-circle__circle
+											.link-with-circle__circle-inner
+												<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+													<path d="M-7.86805e-08 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+												</svg>
+										span.link-with-circle__text Где купить
+		.products-card-advice-sl-container-wrap
+			.container
+				.row.products-card-advice-sl-row
+					.products-card-advice-sl
+						.products-card-advice-sl__title Другие акции
+						.products-card-advice-sl-slider-wrap
+							.products-card-advice-sl-navbar-btn-wrap
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+									+svg('arr-small-right')
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+									+svg('arr-small-left')
+							ul.products-card-advice-sl-slider.js-advice-open-slider
+								each v in [1,1,1,1,]
+									li.advice-sl-slider-li
+										a.news-item
+											.news-item__img
+												+img('temp/12.jpg')
+											.advice-item__subtitle
+												.advice-item__subtitle__num СОВЕТ №1
+												.advice-item__subtitle__text Работа с цветом
+											h4.news-item__title.underline-link
+												span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+											.news-item__time 17.03.2010
+											.news-item-btn.link-arrow-type
+												.circle-btn
+													.circle-btn-inner.dark-ico
+														+svg('qww')
+												.news-item-btn__text Подробнее

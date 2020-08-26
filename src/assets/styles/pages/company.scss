@@ -568,6 +568,7 @@
 				height: 425px;
 				background: #fff;
 				position: absolute;
+				z-index: 5 ;
 				box-shadow: 0px 4px 30px rgba(154, 180, 193, 0.4);
 			}
 			.company-principles__info-block-text-collapse{
@@ -782,7 +783,7 @@
 			position: absolute;
 			left: 50%;
 			top: 0;
-			@include to(480px){
+			@include to(560px){
 				display: none;
 			}
 		}
@@ -964,7 +965,7 @@
 		.company__text{
 			max-width: 285px;
 			@include to(480px){
-				max-width: none;
+				max-width: 245px;
 			}
 		}
 		&-top{
@@ -1037,6 +1038,10 @@
 	}
 	.company-trophy-slider-js{
 		min-width: 0;
+		max-width: 300px;
+		.slick-track{
+			display: flex;
+		}
 	}
 	.link-with-circle{
 		&__text{

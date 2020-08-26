@@ -46,7 +46,7 @@
 .advice-tab {
 	display: flex;
 	flex-direction: column;
-	
+
 	@include to(700px) {
 		padding-bottom: 60px;
 		margin-bottom: 60px;
@@ -58,19 +58,22 @@
 	background-color: #fff;
 	min-height: 990px;
 
-	@include to(768px){
+	@include to(768px) {
 		min-height: 1420px;
 	}
-	@include to(700px){
+
+	@include to(700px) {
 		min-height: 1220px;
 	}
-	@include to(576px){
+
+	@include to(576px) {
 		min-height: 2430px;
 	}
 
-	.news-list.row{
+	.news-list.row {
 		padding-bottom: 0;
 	}
+
 	.advice-tab-content-item {
 		position: absolute;
 		top: 0;
@@ -82,7 +85,7 @@
 		pointer-events: none;
 		transform: translateX(-30px);
 		transition: all 0.3s;
-		
+
 	}
 }
 

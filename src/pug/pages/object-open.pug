@@ -1,0 +1,152 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Апельсин и карбон: фитнес клуб Hiitworks в динамичных оттенках от марки Kolorit'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+				{
+					label: 'инфоцентр',
+					link: '#'
+				},
+				{
+					label: 'Объекты',
+					link: '#'
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/open-pg.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container.position--relative
+		include ../includes/breadcrumbs.pug
+	.object-open
+		.advice-open__main-img-wrapper
+			+img('object-open/main.jpg').advice-open__main-img
+		.advice-open-sec
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner.advice-open-sec__inner_first
+						h1.advice-open-title.advice-open-sec__title Апельсин и карбон: фитнес клуб Hiitworks в динамичных оттенках от марки Kolorit
+						.advice-open-text.advice-open-sec__text
+							p Киевский фитнес-клуб на улице Казимира Малевича 87 выполнен в единой дизайнерской концепции с еще семью другими. Итоговый результат четко выполняет запрос посетителя на удобство и современность интерьера. Динамичное сочетание глубокого карбоново-графитного(RAL 7024) и чистого оранжевого(RAL 2004) оттенков помогают полностью сосредоточиться на процессе занятия спортом. На всю площадь спортивного клуба было использовано 234 литра краски.
+
+		.services-slider.object-open-slider
+			.container
+				.row
+					.services-slider__control
+						.services-slider__counter-wrapper
+							span.services-slider__counter-wrapper-text фото 
+							span.services-slider__counter.js-services-slider-counter 1/7
+						.services-slider__arrows
+							.services-slider__arrow.js-services-arrow-prev
+								+svg('docs-arrow-prev')
+							.services-slider__arrow.js-services-arrow-next
+								+svg('docs-arrow-next')
+					.services-slider__slider.js-services-slider
+						.js-services-slider__item
+							+img('object-open/img1.jpg')
+						.js-services-slider__item
+							+img('object-open/img1.jpg')
+						.js-services-slider__item
+							+img('object-open/img1.jpg')
+						.js-services-slider__item
+							+img('object-open/img1.jpg')
+		.advice-open-sec.advice-open-sec_padding-bottom
+			.container
+				.row.advice-open-sec__row
+					.advice-open-sec__inner
+						.object-passport
+							.object-passport__top
+								.object-passport__col
+									span паспорт объекта
+								.object-passport__col
+									span использованные материалы
+							.object-passport__main
+								.object-passport__col
+									.object-passport__item
+										span.object-passport__item-title Объект
+										span.object-passport__item-text фитнес клуб Hiitwork
+									.object-passport__item
+										span.object-passport__item-title Адрес
+										span.object-passport__item-text Киев, Казимира Малевича, 87
+									.object-passport__item
+										span.object-passport__item-title краска
+										span.object-passport__item-text ТМ KOLORIT
+									.object-passport__item
+										span.object-passport__item-title литраж
+										span.object-passport__item-text 243 литра краски
+								.object-passport__col.object-passport__col_right
+									.object-passport__item
+										span.object-passport__item-title потолок
+										.object-passport__object
+											.object-passport__object-img-wrapper
+												+img('object-open/passport-image-render.png')
+											.object-passport__object-content
+												span.object-passport__item-text.object-passport__item-text_underline Dynasty база С
+												span.object-passport__item-text Цвет: RAL 7024
+											.object-passport__color-box(style="background-color: #141D1C")
+									.object-passport__item
+										span.object-passport__item-title стены
+										.object-passport__object
+											.object-passport__object-img-wrapper
+												+img('object-open/passport-image-render.png')
+											.object-passport__object-content
+												span.object-passport__item-text.object-passport__item-text_underline Dynasty база С
+												span.object-passport__item-text Цвет: RAL 7024
+											.object-passport__color-box(style="background-color: #EE5803")
+						.advice-open-sec__bottom-section
+							a(href="./object.html").link-with-circle.advice-open-sec__link
+									.link-with-circle__circle
+										.link-with-circle__circle-inner
+											<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 3.2L2.8 1.4L2.8 3.2L2.8 5L1 3.2Z" fill="#17315B"/>
+												<path d="M10 3.2L1 3.2M1 3.2L2.8 1.4L2.8 5L1 3.2Z" stroke="#17315B" stroke-width="0.6"/>
+											</svg>
+									span.link-with-circle__text К другим объектам
+							time(datetime="17-03-2020").advice-open-sec__date 17.03.2020
+		.products-card-advice-sl-container-wrap
+			.container
+				.row.products-card-advice-sl-row
+					.products-card-advice-sl
+						.products-card-advice-sl__title Похожие объекты
+						.products-card-advice-sl-slider-wrap
+							.products-card-advice-sl-navbar-btn-wrap
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+									+svg('arr-small-right')
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+									+svg('arr-small-left')
+							ul.products-card-advice-sl-slider.js-advice-open-slider
+								each v in [1,1,1,1,]
+									li.advice-sl-slider-li
+										a.news-item
+											.news-item__img
+												+img('temp/12.jpg')
+											.advice-item__subtitle
+												.advice-item__subtitle__num СОВЕТ №1
+												.advice-item__subtitle__text Работа с цветом
+											h4.news-item__title.underline-link
+												span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+											.news-item__time 17.03.2010
+											.news-item-btn.link-arrow-type
+												.circle-btn
+													.circle-btn-inner.dark-ico
+														+svg('qww')
+												.news-item-btn__text Подробнее

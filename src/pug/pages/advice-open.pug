@@ -24,7 +24,7 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
-	script(src='./assets/scripts/advice.js')
+	script(src='./assets/scripts/open-pg.js')
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -96,3 +96,41 @@ block content
 								p На этом всё – процесс реставрации ванны завершён. Для полного высыхания поверхности лучше выдержать не менее 7 дней. Если вы всё сделали правильно и пользовались только качественными материалами, ваша ванная получит «вторую жизнь» и будет радовать вас своим глянцевым блеском.
 							.advice-open-sec__img-wrapper
 								+img('advice-open/img3.jpg')
+							.advice-open-sec__bottom-section
+								a(href="./advice.html").link-with-circle.advice-open-sec__link
+										.link-with-circle__circle
+											.link-with-circle__circle-inner
+												<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1 3.2L2.8 1.4L2.8 3.2L2.8 5L1 3.2Z" fill="#17315B"/>
+													<path d="M10 3.2L1 3.2M1 3.2L2.8 1.4L2.8 5L1 3.2Z" stroke="#17315B" stroke-width="0.6"/>
+												</svg>
+										span.link-with-circle__text К другим советам
+								time(datetime="17-03-2020").advice-open-sec__date 17.03.2020
+		.products-card-advice-sl-container-wrap
+			.container
+				.row.products-card-advice-sl-row
+					.products-card-advice-sl
+						.products-card-advice-sl__title Похожие советы
+						.products-card-advice-sl-slider-wrap
+							.products-card-advice-sl-navbar-btn-wrap
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-prev
+									+svg('arr-small-right')
+								button(type="button").btn--res.slider-btn.js-products-card-advice-sl-slider-next
+									+svg('arr-small-left')
+							ul.products-card-advice-sl-slider.js-advice-open-slider
+								each v in [1,1,1,1,]
+									li.advice-sl-slider-li
+										a.news-item
+											.news-item__img
+												+img('temp/12.jpg')
+											.advice-item__subtitle
+												.advice-item__subtitle__num СОВЕТ №1
+												.advice-item__subtitle__text Работа с цветом
+											h4.news-item__title.underline-link
+												span 6 причин купить шпатлевку Kolorit STANDART LF в июне 6 причин купить шпатлевку Kolorit STANDART LF в июне
+											.news-item__time 17.03.2010
+											.news-item-btn.link-arrow-type
+												.circle-btn
+													.circle-btn-inner.dark-ico
+														+svg('qww')
+												.news-item-btn__text Подробнее
