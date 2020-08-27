@@ -46,7 +46,8 @@ block header
 block content
     .container
         include ../includes/breadcrumbs.pug
-        .buy
+    .buy
+        .container
             h3.buy__title Фирменные магазины
             .buy__top
                 .buy__top-left
@@ -59,9 +60,9 @@ block content
                         p.buy__top-desc Farba -Service - магазин лучших решений для ремонта - широкий ассортимент продукции позволяет оптимизировать время на подбор товаров для ремонтных работ, ведь все лучшие бренды собраны под 1 крышей. А ассортименте товаров есть такие бренды как: Kolorit, Tikkurila, Caparol, Sadolin, Pinotex, Anza, Tesa, HPX, 3M и другие.
             .buy__tabs
                 .buy__tabs-list
-                    a(href="#" class="buy__tabs-tab buy__tabs-tab--active" data-location="tikkurila") Color Studio Tikkurila
-                    a(href="#" class="buy__tabs-tab" data-location="service") Farba-Service
-                div(class="buy__tabs-content" data-location="tikkurila")
+                    a(href="#" class="buy__tabs-tab buy__tabs-tab--active js-trigger1" data-location="tikkurila") Color Studio Tikkurila
+                    a(href="#" class="buy__tabs-tab js-trigger1" data-location="service") Farba-Service
+                div(class="buy__tabs-content js-buy__tabs-content1" data-location="tikkurila")
                     .buy__tabs-left
                         .buy__tabs-filter
                             .buy__tabs-filter-block
@@ -126,7 +127,7 @@ block content
                                     a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
                                     a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
                     div(class="buy__tabs-right buy__tabs-right-map")
-                div(class="buy__tabs-content" data-location="farbaService")
+                div(class="buy__tabs-content js-buy__tabs-content1" data-location="farbaService")
                     .buy__tabs-left
                         .buy__tabs-filter
                             .buy__tabs-filter-block
@@ -191,51 +192,172 @@ block content
                                     a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
                                     a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
                     div(class="buy__tabs-right buy__tabs-right-map")
-            .buy__parther
-                h3(class="buy__parther-title buy-title") Торговые сети и магазины партнеров
-                .buy__parther-wrap
-                    .buy__parther-left
-                        .buy__parther-left-content
-                            p.buy__parther-desc Бренд Kolorit представлен в более 300 городов Украины. Мы предствлены в больших торговых сетям таких как: Эпицентр, Новая Линия, Олди, Анжио, Будмаркет, так и в локальным маркетах Вашего города
-                            h4.buy__parther-title-small Бренд Kolorit удобно покупать даже не выходя из дому
-                            p.buy__parther-desc Наши онлайн-ритейлеры обесчетам вам полноценную консультацию, помогут с выбором и вы сможете продолжать ремонт не выходя из дома.
-                    .buy__parther-right
-                        .buy__parther-list
-                            div(class="buy__parther-list-item buy__parther-list-item--1")
-                                +img('buy/oldi.png')
-                            div(class="buy__parther-list-item buy__parther-list-item--2")
-                                +img('buy/epicenter.png')
-                            div(class="buy__parther-list-item buy__parther-list-item--3")
-                                +img('buy/bogema.png')
-                            div(class="buy__parther-list-item buy__parther-list-item--4")
-                                +img('buy/anzio.png')
-                            div(class="buy__parther-list-item buy__parther-list-item--5")
-                                +img('buy/nova-liniya.png')
-                            div(class="buy__parther-list-item buy__parther-list-item--6")
-                                +img('buy/color.jpg')
-                            div(class="buy__parther-list-item buy__parther-list-item--7")
-                                +img('buy/build-shop.jpg')
-            .buy__form
-                .buy__form-content
-                    .buy__form-content-left
-                        .buy__form-desc
-                            span По вопросам сотрудничества обращайтесь на
-                            a(href="mailto:partner@kolorit.ua") partner@kolorit.ua
-                        .modal-form-popup__title Хотите стать  официальным ритейлером?
-                    form.modal-form
-                        input(type="text" required placeholder="Имя*").modal-form__input
-                        input(type="email" required placeholder="E-mail*").modal-form__input
-                        input(type="text" placeholder="Сообщение*").modal-form__input.margin-top--more
-                        button.btn--res.modal-form__btn Отправить
-            .buy__message
-                    .buy__message-block
-                        h3(class="buy-title buy__message-title") Мы открыты к общению
-                        .buy__message-tabs
-                            a(href="#" class="buy__message-tab buy__message-tab--active") Офис
-                            a(href="#" class="buy__message-tab") Производство
+        .buy__parther
+            .container
+                .buy__parther-row.row
+                    .buy__parther-content
+                        h3(class="buy__parther-title buy-title") Торговые сети и магазины партнеров
+                        .buy__parther-wrap
+                            .buy__parther-left
+                                .buy__parther-left-content
+                                    p.buy__parther-desc Бренд Kolorit представлен в более 300 городов Украины. Мы предствлены в больших торговых сетям таких как: Эпицентр, Новая Линия, Олди, Анжио, Будмаркет, так и в локальным маркетах Вашего города
+                                    h4.buy__parther-title-small Бренд Kolorit удобно покупать даже не выходя из дому
+                                    p.buy__parther-desc Наши онлайн-ритейлеры обесчетам вам полноценную консультацию, помогут с выбором и вы сможете продолжать ремонт не выходя из дома.
+                            .buy__parther-right
+                                .buy__parther-list
+                                    div(class="buy__parther-list-item buy__parther-list-item--1")
+                                        +img('buy/oldi.png')
+                                    div(class="buy__parther-list-item buy__parther-list-item--2")
+                                        +img('buy/epicenter.png')
+                                    div(class="buy__parther-list-item buy__parther-list-item--3")
+                                        +img('buy/bogema.png')
+                                    div(class="buy__parther-list-item buy__parther-list-item--4")
+                                        +img('buy/anzio.png')
+                                    div(class="buy__parther-list-item buy__parther-list-item--5")
+                                        +img('buy/nova-liniya.png')
+                                    div(class="buy__parther-list-item buy__parther-list-item--6")
+                                        +img('buy/color.jpg')
+                                    div(class="buy__parther-list-item buy__parther-list-item--7")
+                                        +img('buy/build-shop.jpg')
+        .container
+            .buy__tabs.js-buy__tabs
+                .buy__tabs-list
+                    a(href="#" class="buy__tabs-tab buy__tabs-tab--active js-trigger" data-partners="partners") Торговые сети и магазины партнеров
+                    a(href="#" class="buy__tabs-tab js-trigger" data-partners="online") Онлайн магазины
+                div(class="buy__tabs-content js-buy__tabs-content" data-partners="partners")
+                    .buy__tabs-left
+                        .buy__tabs-filter
+                            .buy__tabs-filter-block
+                                div(class="buy__tabs-filter-item") Область
+                                    button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Все
+                                    .buy__tabs-filter-list
+                                        .buy__tabs-filter-list-content
+                                            each value, idx in regions
+                                                div(class="buy__tabs-filter-list-item" data-city=value)
+                                                    label=value
+                                                        if idx === 0
+                                                            input(type="radio" checked name="region" id=idx)
+                                                        input(type="radio" name="region" id=idx)
+                                                        span.buy__tabs-filter-list-indicator
+                                        button(class="buy__tabs-filter-submit") Применить
+                            .buy__tabs-filter-block
+                                div(class="buy__tabs-filter-item") Город
+                                    button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Киев
+                                    .buy__tabs-filter-list
+                                        .buy__tabs-filter-list-content
+                                            each value, idx in cities
+                                                div(class="buy__tabs-filter-list-item" data-city=value)
+                                                    label=value
+                                                        if idx === 0
+                                                            input(type="radio" checked name="city" id=idx)
+                                                        input(type="radio" name="city" id=idx)
+                                                        span.buy__tabs-filter-list-indicator
+                        .buy__tabs-filtered
+                            div(class="buy__tabs-filtered__item")
+                                .buy__tabs-filtered__item-block
+                                    .buy__tabs-filtered-name GOOD STORE
+                                    .buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
+                                .buy__tabs-filtered__item-block
+                                    a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
+                                    a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
+                            div(class="buy__tabs-filtered__item buy__tabs-filtered__item--active")
+                                .buy__tabs-filtered__item-block
+                                    .buy__tabs-filtered-name GOOD STORE
+                                    .buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
+                                .buy__tabs-filtered__item-block
+                                    a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
+                                    a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
+                            div(class="buy__tabs-filtered__item")
+                                .buy__tabs-filtered__item-block
+                                    .buy__tabs-filtered-name GOOD STORE
+                                    .buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
+                                .buy__tabs-filtered__item-block
+                                    a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
+                                    a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
+                            div(class="buy__tabs-filtered__item")
+                                .buy__tabs-filtered__item-block
+                                    .buy__tabs-filtered-name GOOD STORE
+                                    .buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
+                                .buy__tabs-filtered__item-block
+                                    a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
+                                    a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
+                            div(class="buy__tabs-filtered__item")
+                                .buy__tabs-filtered__item-block
+                                    .buy__tabs-filtered-name GOOD STORE
+                                    .buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
+                                .buy__tabs-filtered__item-block
+                                    a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
+                                    a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
+                    div(class="buy__tabs-right buy__tabs-right-map-partners")
+                div(class="buy__tabs-content js-buy__tabs-content" data-partners="online")
+                    .online-shops
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/epicenter2.png')
+                            .online-shops__content
+                                h4.online-shops__title ЭПИЦЕНТР
+                                a(href="#").online-shops__link goodstore.com
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/Rozetka.png')
+                            .online-shops__content
+                                h4.online-shops__title Розетка
+                                a(href="#").online-shops__link goodstore.com
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/budmaster.png')
+                            .online-shops__content
+                                h4.online-shops__title БУДМАЙСТЕР.PRO
+                                a(href="#").online-shops__link goodstore.com
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/tricolor.png')
+                            .online-shops__content
+                                h4.online-shops__title Tricolor
+                                a(href="#").online-shops__link goodstore.com
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/ibud.png')
+                            .online-shops__content
+                                h4.online-shops__title ibud.ua
+                                a(href="#").online-shops__link goodstore.com
+                        .online-shops__item
+                            .online-shops__img-wrapper
+                                .online-shops__img
+                                    +img('buy/intergips.png')
+                            .online-shops__content
+                                h4.online-shops__title Intergips
+                                a(href="#").online-shops__link goodstore.com
+        .container
+            .row.buy__form-row
+                .buy__form
+                    .buy__form-content
+                        .buy__form-content-left
+                            .buy__form-desc
+                                span По вопросам сотрудничества обращайтесь на
+                                a(href="mailto:partner@kolorit.ua") partner@kolorit.ua
+                            .modal-form-popup__title Хотите стать  официальным ритейлером?
+                        form.modal-form
+                            input(type="text" required placeholder="Имя*").modal-form__input
+                            input(type="email" required placeholder="E-mail*").modal-form__input
+                            input(type="text" placeholder="Сообщение*").modal-form__input.margin-top--more
+                            button.btn--res.modal-form__btn Отправить
+        .container
+            .buy__message-row.row
+                .buy__message
+                    .buy__message-right.js-buy-message-map
                     .buy__message-wrap
-                        .buy__message-right
-                        div(class="buy__message-left js-buy__message-left")
+                        .buy__message-block
+                            h3(class="buy-title buy__message-title") Мы открыты к общению
+                            .buy__message-tabs
+                                a(href="#" class="buy__message-tab buy__message-tab--active js-message-triger" data-message="office") Офис
+                                a(href="#" class="buy__message-tab js-message-triger" data-message="manufacture" ) Производство
+                        div(class="buy__message-left js-buy__message-left" data-message="office")
                             .buy__message-text ООО «Краски Колорит»
                             .buy__message-contacts
                                 div(class="buy__message-contacts-item buy__message-contacts-item--1")
@@ -251,7 +373,18 @@ block content
                                     a(href="tel:0800508908" class="buy__message-info-phone") 0 800 508 908
                                 .buy__message-info-item
                                     a(href="tel:+380442377112" class="buy__message-info-phone") +38 044 237 71 12
-
+                        div(class="buy__message-left js-buy__message-left" data-message="manufacture")
+                            .buy__message-text ООО «Краски Колорит»
+                            .buy__message-contacts
+                                div(class="buy__message-contacts-item buy__message-contacts-item--1")
+                                    +svg('location-with-circle')
+                                    span.buy__message-contacts-text 04073 г. Киев, ул. Марка Вовчка, 14
+                            .buy__message-text Горячая линия
+                            .buy__message-info
+                                .buy__message-info-item
+                                    +svg('smartphone')
+                                    a(href="tel:0800508908" class="buy__message-info-phone") 0 800 508 908
+        .container
             .banner-2
                 .banner-2__l(style="background-image: url('assets/images/1.jpg');")
                     p.underline-link
