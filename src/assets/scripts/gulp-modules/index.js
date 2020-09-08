@@ -300,6 +300,18 @@ class showModal {
 		openBtn: '.js-school-popup-open'
 	});
 
+	const form_5 = new showModal({
+		popup: '.js-modal-form-popup_loyal',
+		closeBtn: '.js-form_loyal_close',
+		openBtn: '.js-open-popup-services'
+	});
+
+	const form_6 = new showModal({
+		popup: '.js-modal-form-popup_company',
+		closeBtn: '.js-form_company_close',
+		openBtn: '.js-company-open-popup'
+	});
+
 
 
 
@@ -340,7 +352,7 @@ $body.on('click', '.js-header-menu-btn, .js-menu-btn-close', function () {
 });
 
 
-
+$('.js-modal-form__input-phone').mask("(999) 999-9999");
 /*
 * modal end
 */

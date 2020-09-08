@@ -473,7 +473,120 @@ span.word-animate{
 	border: 1px solid red;
 }
 
+.main-section-sl{
+	&__slide{
+		position: relative;
+		height: 100vh;
+		&-bg{
+			position: absolute;
+			top: 0;
+			height: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
+		&-text-wrapper{
+			margin-top: 10%;
+			margin-left: 50px;
+		}
+		&-title{
+			font-size: 60px;
+			line-height: 1.1em;
+			color: #17315B;
+			font-weight: bold;
+			margin-bottom: 20px;
+			max-width: 555px;
+		}
+		&-subtitle{
+			color: #586386;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 1.3em;
+			max-width: 285px;
 
+		}
+		&-paints{
+			max-width: 770px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+		&-btn{
+			width: 384px;
+			height: 117px;
+			background-color: #17315B;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			text-decoration: none;
+			span{
+				color: #F6F7FC;
+				letter-spacing: 0.08em;
+				font-size: 15px;
+				font-weight: 500;
+				line-height: 1.6em;
+				margin-left: 25px;
+			}
+			&-circle-out{
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: 0.327586px solid #9AB4C1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&-circle-in{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+				border: 0.327586px solid rgba(246, 247, 252, 0.8);
+			}
+		}
+
+
+		&_2{
+			.main-section-sl__slide-title{
+				color: #F6F7FC;
+			}
+			.main-section-sl__slide-subtitle{
+				color: #F6F7FC;
+				max-width: 375px;
+			}
+		}
+		&_3{
+			.main-section-sl__slide-title{
+				color: #F6F7FC;
+			}
+			.main-section-sl__slide-subtitle{
+				color: #F6F7FC;
+				max-width: 375px;
+			}
+		}
+	}
+}
+.scroll-icon{
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 30px;
+	left: 50px;
+	&__text{
+		font-size: 10px;
+		line-height: 1.5em;
+		color: #586386;
+		text-transform: uppercase;
+		max-width: 70px;
+		margin-left: 10px;
+	}
+}
 .main-section-sl-1__btn{
 	position: absolute;
 	bottom: 0;

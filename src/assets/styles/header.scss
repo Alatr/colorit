@@ -447,9 +447,13 @@ header .header__text {
 			cursor: pointer;
 
 			.lang-list-vertical {
-				height: 55px;
+				height: 35px;
 				@include to(992px){
-					height: 46px;
+					height: 30px;
+
+				}
+				@include to(992px){
+					height: 35px;
 
 				}
 			}

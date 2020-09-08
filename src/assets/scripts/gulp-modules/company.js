@@ -94,7 +94,23 @@
 		
 	});
 	
-
+	/* SMOOTH SCROLL TO ANCHOR */
+	$(".js-company-scroll").on("click", function (event) {
+				//отменяем стандартную обработку нажатия по ссылке
+				event.preventDefault();
+		 
+				//забираем идентификатор бока с атрибута href
+				var id  = $(this).attr('href'),
+		 
+				//узнаем высоту от начала страницы до блока на который ссылается якорь
+					top = $(id).offset().top;
+				 
+				//анимируем переход на расстояние - top за 1500 мс
+				$('body,html').animate({scrollTop: top}, 1500);
+		14
+			});
+		
+			
 })(jQuery);
 
 
@@ -127,7 +143,7 @@
 			player = new YT.Player(`player0`, {
 				height: '390',
 				width: '640',
-				videoId: 'eu5aGhqksbY',
+				videoId: '90CxMXugffw',
 				events: {
 					'onReady': onPlayerReady,
 					'onStateChange': onPlayerStateChange

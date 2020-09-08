@@ -3,3 +3,4 @@
 @@include('../libs/scroll_magic/scroll_magic.js')
 @@include('../libs/pub_sub/pub_sub.js')
 @@include('../libs/slick/slick.js')
+@@include('../libs/masked-input/masked-input.min.js')

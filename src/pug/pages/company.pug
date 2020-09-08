@@ -33,9 +33,9 @@ block content
 	.company
 		.company-main-banner(style="background-image: url('assets/images/company/main-banner.jpg');")
 			.container
-				h2.company-main-banner__title Вдохновение цветом
-				p.company-main-banner__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем. 
-				a(href="#company-second-sec").link-with-circle
+				h2.company-main-banner__title Мастерство и профессионализм
+				p.company-main-banner__text Компания Kolorit — бренд лакокрасочных материалов с 18-ти летней историей и известным именем.
+				a(href="#company-second-sec").link-with-circle.js-company-scroll
 					.link-with-circle__circle
 						.link-with-circle__circle-inner
 							<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,21 +48,20 @@ block content
 			.container
 				.company-second-sec__row.row
 					.company-second-sec__content-wrapper
-						h2.company-second-sec__title.company__title 17 лет на рынке
+						h2.company-second-sec__title.company__title 18 лет на рынке
 						.company-second-sec__text.company__text 
-							h2.company-second-sec__title.company-second-sec__title_mobile.company__title 17 лет на рынке
+							h2.company-second-sec__title.company-second-sec__title_mobile.company__title 18 лет на рынке
 							p Kolorit - краски европейского уровня с гарантией качества. В каждой капле - концентрированный опыт команды специалистов и профессионалов. Это материалы для всего спектра малярных работ. Они позволяют совершить полный цикл окрашивания: от подготовки до финиша на любых поверхностях.
-				each v,j in ['eu5aGhqksbY']
-					.row.products-card-video-row.js-prod-video(data-id= v)
-						.products-card-video
-							.products-card-video-wrap
-								.player(id='player'+j)
-						.products-card-video-nav
-							.products-card-video-nav__title Ролик о КРАСКЕ KOLORIT LEGENDA
-							.products-card-video-nav__decor    
-							.products-card-video-nav__time.js-products-card-video-nav__time 
+				.row.products-card-video-row.js-prod-video(data-id= '90CxMXugffw')
+					.products-card-video
+						.products-card-video-wrap
+							.player(id='player0')
+					.products-card-video-nav
+						.products-card-video-nav__title Как создается краска Kolorit
+						.products-card-video-nav__decor    
+						.products-card-video-nav__time.js-products-card-video-nav__time 
 		.company-advantages.company-advantages_1
-				h2.company-advantages__title.company__title Основные преимущества
+				h2.company-advantages__title.company__title За что вы полюбите Kolorit
 				.company-advantages__content
 					.container
 						.company-advantages__inner
@@ -78,7 +77,7 @@ block content
 										li удобные в работе и нанесении;
 										li ультрастойкие к истиранию и мытью;
 										li идеально ложатся на поверхности;
-										li имеют несколько степеней блеска от глубокоматовых до полуглянцевых, чтобы реализовать любые идеи.
+										li имеют степени блеска от глубокоматовых до полуматовых, чтобы реализовать любые идеи в интерьере.
 									a(href="#").link-with-circle
 										.link-with-circle__circle
 											.link-with-circle__circle-inner
@@ -114,14 +113,14 @@ block content
 										+img('company/v2.svg').products-card-block-info-item__ico
 										.products-card-block-info-item-descr
 											+svg('vopr')
-											p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+											p.products-card-block-info-item-descr__text экомаркировка «Живая планета»;
 									//- ----------
 									//- ----------
 									li.products-card-block-info-item.products-card-block-info-item--long
 										+img('company/v3.svg').products-card-block-info-item__ico
 										.products-card-block-info-item-descr
 											+svg('vopr')
-											p.products-card-block-info-item-descr__text заключение «Ассоциации аллергологов Украины» и Института экогигиены и токсикологии о гипоаллергенности продукции;
+											p.products-card-block-info-item-descr__text соответствие европейской системе VOC ( Directive 2004/42/СЕ), нетоксичность и пожаробезопасность;
 								a(href="#").link-with-circle
 									.link-with-circle__circle
 										.link-with-circle__circle-inner
@@ -151,7 +150,8 @@ block content
 								.company-advantages__kolorit-bg-img-wrapper
 									+img('company/KOLORIT.svg').company-advantages__kolorit-bg-img
 				.company-advantages__big-img
-					+img('./company/advantages3.jpg')
+					video(autoplay loop muted poster="./assets/images/company/advantages3.jpg").company-advantages__video
+						source(src="./assets/images/company/advantages3.mp4")
 		.company-advantages.company-advantages_4
 			.company-advantages__big-img
 				+img('./company/advantages4.jpg')
@@ -171,7 +171,7 @@ block content
 				.company-banner__row.row
 					.company-banner__inner
 						h3.company-banner__title Более 50 млн литров краски
-						span.company-banner__text Входит в состав FarbaHouse Group и представлена в более 300 городов Украины
+						span.company-banner__text  Входит в состав FarbaHouse Group и представлена в более 400 точках продаж по всей Украине
 						a(href="#").link-with-circle.company-banner__link-with-circle
 							.link-with-circle__circle
 								.link-with-circle__circle-inner
@@ -202,11 +202,12 @@ block content
 							.company-principles__info-block-inner
 								.company-principles__info-block-top
 									+img('company/info-block2.svg').company-principles__info-block-img
-									h4.company-principles__info-block-title.company-advantages__small-title Системность и удобство 
+									h4.company-principles__info-block-title.company-advantages__small-title Система и удобство
 								.company-principles__info-block-content
 									.company-principles__info-block-text-collapse-wrapper
-										p.company__text Продукция Kolorit разработана так, что в ней есть материалы для каждого этапа ремонта. Благодаря схожей рецептуре они прекрасно взаимодействуют друг с другом, делая процесс ремонта легким и удобным: - во время нанесения не появляются брызги и пена; - краска хорошо разравнивается по поверхности; - благодаря правильной вязкости материала вы контролируете его нанесение и работу с инструментом.
+										p.company__text Продукция Kolorit разработана так, что в ней есть материалы для каждого этапа ремонта. Благодаря схожей рецептуре они прекрасно взаимодействуют друг с другом, делая процесс ремонта легким и удобным: <br />- во время нанесения не появляются брызги и пена; <br />- краска хорошо разравнивается по поверхности; <br />- благодаря правильной вязкости материала вы контролируете его нанесение и работу с инструментом.
 										p.company__text Заботясь о вас, мы создали краску под каждый конкретный запрос. Вам остается только определиться со степенью блеска и цветом.
+										p.company__text Подобрать нужный продукт и оттенок помогут консультанты Kolorit, а наши сервисы облегчат выбор и процесс доставки.
 							.company-principles__info-block-cross
 								<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
@@ -219,14 +220,14 @@ block content
 								.company-principles__info-block-content
 									.company-principles__info-block-text-collapse-wrapper
 										p.company__text Налажено собственное производство краски на современном европейском оборудовании. Для создания материалов мы используем опыт и качественные показатели компании Tikkurila Group, параллельно внедряя лучшие финские технологии.
-										p.company__text Наши технологи проходили стажировку под руководством специалистов европейских компаний, по сей день продолжая обмениваться с ними опытом. Используя собственные производственные мощности, мы знаем, что входит в состав краски, поэтому на 100% уверены в высоком качестве. В собственной лаборатории Kolorit продукция проходит 16 этапов проверки и тестирования
-										p.company__text Наши технологи проходили стажировку под руководством специалистов европейских компаний, по сей день продолжая обмениваться с ними опытом. Используя собственные производственные мощности, мы знаем, что входит в состав краски, поэтому на 100% уверены в высоком качестве. В собственной лаборатории Kolorit продукция проходит 16 этапов проверки и тестирования
+										p.company__text Наши технологи проходили стажировку под руководством специалистов европейских компаний, по сей день продолжая обмениваться с ними опытом. Используя собственные производственные мощности, мы знаем, что входит в состав краски, поэтому на 100% уверены в высоком качестве.
+										p.company__text В собственной лаборатории Kolorit продукция проходит 16 этапов проверки и тестирования по более чем 90 показателям перед тем, как попасть в продажу. Производство соответствует международному стандарту ISO 9001, чтобы создавать для вас качественную и безопасную краску.
 							.company-principles__info-block-cross
 								<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M7 8V15H8V8H15V7H8V0H7V7H0V8H7Z" fill="#C11426"/>
 								</svg>
 					
-					a(href="#company-partners").link-with-circle
+					a(href="#company-partners").link-with-circle.js-company-scroll
 							span.link-with-circle__text Узнать больше о наших партнерах
 							.link-with-circle__circle
 								.link-with-circle__circle-inner
@@ -245,23 +246,23 @@ block content
 							.company-partners__info-block-top
 								+img('company/partners-logo1.svg').company-partners__info-block-logo.emballator
 							span.company-partners__info-block-subtitle.company__text Emballator, Швеция
-							p.company__text Группа Emballator состоит из десяти компаний и работает в Швеции, Норвегии, Дании, Финляндии и Великобритании. Компании разрабатывают, производят и продают упаковочные решения, которые облегчают жизнь
+							p.company__text Признанный лидер скандинавского рынка по производству упаковок для химической промышленности благодаря высокому качеству, безопасности и удобству в использовании и логистике.
 						.company-partners__info-block
 							.company-partners__info-block-top
 								+img('company/partners-logo2.svg').company-partners__info-block-logo.basf
 							span.company-partners__info-block-subtitle.company__text Basf, Германия
-							p.company__text В 2015 году BASF праздновал 150 лет со дня своего основания. История компании, показывает, как новые идеи и решения становятся возможными благодаря химии. Концерн располагает 160 дочерними предприятиями в Европе, Америке и Азии.
+							p.company__text Самый крупный в мире химический концерн со 150-летней историей. О масштабах и качестве его работы говорят 160 дочерних предприятий в Европе, Азии и США.
 						.company-partners__info-block
 							.company-partners__info-block-top
 								+img('company/partners-logo3.svg').company-partners__info-block-logo.venator
 							span.company-partners__info-block-subtitle.company__text Venator, Англия
-							p.company__text Компания Venator специализируется на производстве (импорте, доставке) пигментов и добавок, которые вносят изменения в повседневную жизнь и способствуют более экологичному будущему.
+							p.company__text Международный производитель пигментов и добавок. Принцип заботы об окружающей среде и нацеленность на устойчивое развитие делает его продукцию максимально экологичной и безопасной.
 
 						.company-partners__info-block
 							.company-partners__info-block-top
 								+img('company/partners-logo4.svg').company-partners__info-block-logo.dow
 							span.company-partners__info-block-subtitle.company__text Dow, Швейцария
-							p.company__text Международная химическая компания. Штаб-квартира расположена в США, штат Мичиган. Компания присутствует в 175 странах и имеет около 56 000 сотрудников по всему миру.
+							p.company__text Международная химическая компания, производит около 7 тыс. видов продукции, которые производятся на 189 заводах в 34 странах. Высокое качество материалов подтверждают их присутствие в 175 странах мира.
 		.company-banner
 			.container
 				.company-banner__row.row
@@ -296,21 +297,21 @@ block content
 										+img('company/trophy1-render.png').company-trophy__info-block-logo
 										span.company-trophy__info-block-title Европейский знак качества
 									span.company-trophy__info-block-subtitle.company__text Великобритания, 2019
-									p.company__text Награда от Номинационного комитета Европейской Бизнес Ассамблеи (г. Оксфорд, Великобритания) за соответствие качества продукции и услуг европейским стандартам.
+									p.company__text Самая престижная награда от Европейского фонда управления качеством (г. Оксфорд, Великобритания) за соответствие европейским стандартам качества и достижение преимущества в бизнесе.
 
 								.company-trophy__info-block
 									.company-trophy__info-block-top
 										+img('company/trophy2-render.png').company-trophy__info-block-logo
 										span.company-trophy__info-block-title Золотой символ качества
 									span.company-trophy__info-block-subtitle.company__text Украина, 2013-2018
-									p.company__text Награда подтверждает высокое качество и конкурентоспособность продукции Kolorit на украинском рынке.
+									p.company__text Награда вручается социально-ответственным компаниям, которые заботятся о своих потребителях и экологии. Она подтверждает высокое качество, уровень сервиса и заботу Kolorit об окружающей среде.
 								
 								.company-trophy__info-block
 									.company-trophy__info-block-top
 										+img('company/trophy3-render.png').company-trophy__info-block-logo
 										span.company-trophy__info-block-title Выбор Украины
 									span.company-trophy__info-block-subtitle.company__text Украина, 2018
-									p.company__text Для получения награды учитываются результаты всеукраинского маркетингового исследования, опрос оргкомитета, мнение экспертного совета, опрос высокого жюри и представителей рекламных агентств. Kolorit подтвердил свое право называться лучшим украинским производителем лакокрасочных материалов.
+									p.company__text Kolorit подтвердил свое право называться лучшим украинским производителем лакокрасочных материалов на основе всеукраинского маркетингового исследования и заключения экспертного совета.
 								
 								.company-trophy__info-block
 									.company-trophy__info-block-top
@@ -327,7 +328,7 @@ block content
 									p.company__text Несколько лет подряд потребители отдают предпочтение продукции Kolorit. Мы гордимся этим званием и высоким качеством наших материалов.
 									
 								.company-trophy__link-block
-									a(href="#company-docs").link-with-circle.company-banner__link-with-circle
+									a(href="#company-docs").link-with-circle.company-banner__link-with-circle.js-company-scroll
 										.link-with-circle__circle
 											.link-with-circle__circle-inner
 												<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -346,54 +347,20 @@ block content
 								+svg('docs-arrow-next')
 						.company-docs__slider-and-link
 							.company-docs__slider.js-docs-slider.docs-slider
-								.docs-slider__item
-									.docs-slider__card-wrapper
-										.docs-slider__card
-											.docs-slider__card-inner
-												.docs-slider__card-top
-													+svg('doc').docs-slider__doc-icon
-													span.docs-slider__file-size 0.2 MB
-												span.docs-slider__card-text KOLORIT
-										.docs-slider__bottom
-											span.docs-slider__filename Очень хороший сертификат качества 
-											a(href="#").docs-slider__download-link
-												+svg('download').docs-slider__download-icon
-								.docs-slider__item
-									.docs-slider__card-wrapper
-										.docs-slider__card
-											.docs-slider__card-inner
-												.docs-slider__card-top
-													+svg('doc').docs-slider__doc-icon
-													span.docs-slider__file-size 0.2 MB
-												span.docs-slider__card-text KOLORIT
-										.docs-slider__bottom
-											span.docs-slider__filename Очень хороший сертификат качества 
-											a(href="#").docs-slider__download-link
-												+svg('download').docs-slider__download-icon
-								.docs-slider__item
-									.docs-slider__card-wrapper
-										.docs-slider__card
-											.docs-slider__card-inner
-												.docs-slider__card-top
-													+svg('doc').docs-slider__doc-icon
-													span.docs-slider__file-size 0.2 MB
-												span.docs-slider__card-text KOLORIT
-										.docs-slider__bottom
-											span.docs-slider__filename Очень хороший сертификат качества 
-											a(href="#").docs-slider__download-link
-												+svg('download').docs-slider__download-icon
-								.docs-slider__item
-									.docs-slider__card-wrapper
-										.docs-slider__card
-											.docs-slider__card-inner
-												.docs-slider__card-top
-													+svg('doc').docs-slider__doc-icon
-													span.docs-slider__file-size 0.2 MB
-												span.docs-slider__card-text KOLORIT
-										.docs-slider__bottom
-											span.docs-slider__filename Очень хороший сертификат качества 
-											a(href="#").docs-slider__download-link
-												+svg('download').docs-slider__download-icon
+								each item in [1, 1, 1, 1, 1]
+									.docs-slider__item
+										a(href="#").docs-slider__card-wrapper
+											.docs-slider__card
+												.docs-slider__card-inner
+													.docs-slider__card-top
+														+svg('doc').docs-slider__doc-icon
+														span.docs-slider__file-size 0.2 MB
+													span.docs-slider__card-text KOLORIT
+											.docs-slider__bottom
+												span.docs-slider__filename Очень хороший сертификат качества 
+												.docs-slider__download-link
+													+svg('download').docs-slider__download-icon
+								
 							a(href="#").link-with-circle.company-docs__link-with-circle
 								.link-with-circle__circle
 									.link-with-circle__circle-inner
@@ -405,6 +372,6 @@ block content
 					.company-docs__docs-block
 						h3.company-docs__title.company-advantages__subtitle Разрешительная документация
 						.company-docs__text-section.company__text 
-							p Цель минимизации потерь материала и количества отходов. Наши ресурсоэффективные операции направлены на более эффективное использование сырья, энергии и воды, а также  сокращение отходов и переработку. Цель минимизации потерь материала и количества отходов. Наши ресурсоэффективные операции направлены на более эффективное.
-						a(href="#").company-docs__button Консультация
+							p Сертификаты, заключения санэпидемстанции и другие разрешительные документы вы можете посмотреть в этом разделе. Если у вас появились дополнительные вопросы - обратитесь к нашим специалистам за консультацией.
+						button.btn--res.company-docs__button.js-company-open-popup Консультация
 

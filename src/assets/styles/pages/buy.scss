@@ -350,6 +350,10 @@
         align-items: center;
         flex-direction: row-reverse;
         padding: 27px 27px 14px;
+        cursor: pointer;
+        &:hover{
+          background-color: #F0F1F8;
+        }
         @include to(768px){
           justify-content: space-between;
         }

@@ -4,9 +4,9 @@
 		+svg('close')
 	.modal-form-popup__title Выездная консультация
 	form.modal-form
-		input(type="text" required placeholder="Телефон*").modal-form__input
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
 		input(type="email" required placeholder="E-mail*").modal-form__input
-		input(type="text" required placeholder="Город*").modal-form__input
+		input(type="text" placeholder="Город").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
 // ---------------
@@ -17,9 +17,9 @@
 		+svg('close')
 	.modal-form-popup__title Бесплатная доставка
 	form.modal-form
-		input(type="text" required placeholder="Телефон*").modal-form__input
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
 		input(type="email" required placeholder="E-mail*").modal-form__input
-		input(type="text" required placeholder="Город*").modal-form__input
+		input(type="text" placeholder="Город").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
 // ---------------
@@ -54,9 +54,9 @@
 		+svg('close')
 	.modal-form-popup__title Бесплатная доставка
 	form.modal-form
-		input(type="text" required placeholder="Телефон*").modal-form__input
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
 		input(type="email" required placeholder="E-mail*").modal-form__input
-		input(type="text" required placeholder="Город*").modal-form__input
+		input(type="text" placeholder="Город").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
 // ---------------
@@ -118,3 +118,27 @@
 										</svg>
 								span.link-with-circle__text Регистрация
 // ---------------
+
+
+.modal-form-popup.js-modal-form-popup_loyal
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_loyal_close
+		+svg('close')
+	.modal-form-popup__title Запросить условия
+	form.modal-form
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
+		input(type="email" required placeholder="E-mail*").modal-form__input
+		input(type="text" placeholder="Город").modal-form__input
+		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить
+
+
+.modal-form-popup.js-modal-form-popup_company
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_company_close
+		+svg('close')
+	.modal-form-popup__title Консультация
+	form.modal-form
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
+		input(type="email" required placeholder="E-mail*").modal-form__input
+		input(type="text" placeholder="Город").modal-form__input
+		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить
