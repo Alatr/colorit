@@ -262,6 +262,10 @@
 	letter-spacing: 0.08em;
 
 	color: #F0F1F8;
+	transition: all 0.3s;
+	&:hover{
+		transform: scale(0.95);
+	}
 	@include to(768px){
 		width: 186px;
 		height: 40px;
@@ -286,6 +290,13 @@
 	letter-spacing: 0.08em;
 	border: 1px solid #9AB4C1;
 	color: #000C31;
+	transition: all 0.3s;
+	&:hover{
+		color: #fff;
+		border-color: #C11426;
+		background-color: #C11426;
+		transform: scale(0.95);
+	}
 	@include to(768px){
 		width: 186px;
 		height: 40px;
@@ -775,6 +786,11 @@
 		}
 		.link-arrow-type__text{
 			margin: 0 26px;
+		}
+		&:hover{
+			.circle-btn{
+				transform: translateX(15px);
+			}
 		}
 	}
 }

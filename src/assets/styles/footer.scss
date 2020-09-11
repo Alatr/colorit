@@ -358,6 +358,7 @@
 		font-weight: 500;
 		font-size: 15px;
 		letter-spacing: 0.08em;
+		transition: all 0.3s;
 
 		/* вайт */
 
@@ -372,6 +373,11 @@
 			width: 100%;
 			font-size: 14px;
 			height: 44px;
+		}
+		&:hover{
+			background-color: #C11426;
+			color: #F6F7FC;
+			border-color: #C11426;
 		}
 	}
 }

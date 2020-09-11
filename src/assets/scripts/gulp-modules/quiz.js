@@ -765,7 +765,7 @@
 					 $('.js-quiz__result').append(dataQuestionMarkup.itemResult(item));
 					});
 				} else {
-					$('.js-quiz__result').html('Не найдено');
+					$('.js-quiz__result').html('<p> Не найдено </p><button class="quiz__reset">Еще раз</button>');
 				}
 				
 
@@ -775,6 +775,22 @@
 		$(`.quiz__number[data-number="${qustionCounter}"]`).addClass('quiz__number_active');
 	});
 
+	$(document).on('click', '.quiz__reset', function(){
+		reset();
+	});
+
+
+	function reset(){
+		qustionCounter = 0;
+		result = {};
+		$('.quiz__question').removeClass('quiz__question_active');
+		$('.quiz__number').removeClass('quiz__number_active');
+		$('.quiz__number').removeClass('quiz__number_done');
+		$($('.quiz__question')[0]).addClass('quiz__question_active'); 
+		$($('.quiz__number')[0]).addClass('quiz__number_active');
+	}
+
+	
 	function getSortResult(line, dataProduct, dataAnswer){
 		return dataProduct.filter(function(item) {
 			if (result.features){

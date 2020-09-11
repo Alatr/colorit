@@ -1,6 +1,7 @@
 extends ../layout/main
 
-	
+block home-variable 
+	- var page_id= "home"	
 block meta
 	title= 'Home'
 	meta(name='description', content='')
@@ -267,6 +268,7 @@ block content
 						.home-open-sec-item__btn Узнать больше
 						.home-open-sec-item__img2
 							+img('temp/o522.png')
+						.home-open-sec-item__overlay
 				li
 					a(href="#").home-news__link.link-arrow-type
 						.circle-btn
@@ -329,7 +331,9 @@ block content
 							+svg('qw')
 
 				a(href="#").home-news__link.link-arrow-type
-					+svg('arr-circ-white').link-arrow-type__icon
+					.circle-btn
+						.circle-btn-inner
+							+svg('qww')
 					.link-arrow-type__text Больше новостей
 	.home-advice
 		.page-container
@@ -353,9 +357,15 @@ block content
 								h3.home-advice-sl__title Ближе к природе: интерьер в экостиле
 								p.home-advice-sl__text Поездка на природу – любимый отдых многих жителей каменных джунглей. Чистый и свежий воздух расслабляет, а превосходные пейзажи...
 								a(href="#").home-advice-sl__btn Читать далее
-								a(href="#").home-advice-sl__link
-									+svg('arr-circ-diff')
-									span Все советы
+								//- a(href="#").home-advice-sl__link
+								//- 	+svg('arr-circ-diff')
+								//- 	span Все советы
+								a(href="#").home-advice-sl__link.link-arrow-type
+									.circle-btn
+										.circle-btn-inner
+											+svg('qww')
+									span.link-arrow-type__text Все советы
+						span.link-arrow-type__text Смотреть всю продукцию
 	a(href="#").home-news__link.link-arrow-type.all-advice.tablet--hiddenn
 		+svg('arr-circ-white').link-arrow-type__icon
 		.link-arrow-type__text Все советы

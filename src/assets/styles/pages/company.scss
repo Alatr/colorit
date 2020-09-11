@@ -3,9 +3,48 @@
 	align-items: center;
 	text-decoration: none;
 	transition: all 0.3s;
+	flex-direction: row;
 	&:hover{
-		.link-with-circle__text{
+		// .link-with-circle__text{
+		// 	text-decoration: underline;
+
+		// }
+		// .link-with-circle__circle{
+		// 	transform: translateX(15px);
+		// }
+		// .link-with-circle__circle-inner{
+		// 	background-color: #C11426;
+		// 	border-color: #C11426;
+		// }
+		// .link-with-circle__circle{
+		// 	border-color: transparent;
+		// }
+		// svg{
+		// 	path{
+		// 		fill: #fff;
+		// 		stroke: #fff;
+		// 	}
+		// }
+		svg{
+			path{
+				fill: #fff;
+				stroke: #fff;
+			}
+			// transform: translateX(15px)
+			
+		}
+		span{
 			text-decoration: underline;
+		}
+		.link-with-circle__circle{
+			background-color: rgba(193, 20, 38, .5);
+			border-color: transparent;
+			animation: button linear 1.5s infinite 0s ;
+			
+		}
+		.link-with-circle__circle-inner{
+			background-color: #C11426;
+			border-color: #C11426;
 		}
 	}
 	&__circle, &__circle-inner{
@@ -18,14 +57,19 @@
 		height: 40px;
 		border-radius: 50%;
 		border: 1px solid #9AB4C1;
+		transition: all 0.3s;
+		transform: translateX(0px);
+		transition: all 0.3s;
 
 	}
 	&__circle-inner{
 		width: 28px;
 		height: 28px;
 		border-radius: 50%;
+		transition: all 0.3s;
 		border: 1px solid #17315B;
 		svg{
+			transition: all 0.3s;
 		}
 	}
 	&__text{
@@ -35,6 +79,8 @@
 		letter-spacing: 0.08em;
 		color: #C11426;
 		margin-left: 25px;
+
+		
 		@include to(768px){
 			font-size: 12px;
 			line-height: 1.5em;
@@ -43,6 +89,7 @@
 			font-size: 14px;
 			line-height: 1.4em;
 		}
+		
 	}
 }
 
@@ -545,6 +592,14 @@
 			width: auto;
 		}
 	}
+	&__link-with-circle{
+		&:hover{
+			.link-with-circle__circle{
+				transform: translateX(0);
+				transform: translateY(15px);
+			}
+		}
+	}
 	&__title{
 		max-width: 510px;
 		text-align: center;
@@ -877,6 +932,7 @@
 	@include to(480px){
 		padding: 54px 0;
 	}
+
 	&__row{
 		justify-content: center;
 	}
@@ -930,6 +986,27 @@
 			color: #F0F1F8;
 			max-width: 90px;
 		}
+
+		&:hover{
+			.link-with-circle__circle{
+				background-color: rgba(255, 255, 255, .5);
+				border-color: transparent;
+				animation: button-white linear 1.5s infinite 0s ;
+				
+			}
+			.link-with-circle__circle-inner{
+				background-color: #fff;
+				border-color: #fff;
+			}
+			svg{
+				path{
+					fill: #C11426;
+					stroke: #C11426;
+				}
+				// transform: translateX(15px)
+				
+			}
+		}
 	}
 }
 
@@ -940,6 +1017,14 @@
 	&__row{
 		position: relative;
 		justify-content: center;
+	}
+	&__link-with-circle{
+		&:hover{
+			.link-with-circle__circle{
+				transform: translateX(0);
+				transform: translateY(10px);
+			}
+		}
 	}
 	&__inner{
 		padding-top: 100px;
@@ -1218,8 +1303,11 @@
 		justify-content: center;
 		background-color: #FBFBFB;
 		box-shadow: 0px 15px 35px rgba(188, 190, 195, 0.3);
+		transition: all 0.3s;
 		cursor: pointer;
-
+		&:hover{
+			transform: scale(0.9);
+		}
 		@include to(768px){
 			width: 42px;
 			height: 42px;

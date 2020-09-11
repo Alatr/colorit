@@ -114,9 +114,8 @@ Tab.prototype.listeners = function (callback = function () {}) {
 
 	this.btn.on('click', function () {
 	});
-}
+};
 
-console.log(Tab);
 
 
 
@@ -235,6 +234,7 @@ class showModal {
 			open() {
 				$(this.popup).css("display", "flex").hide().fadeToggle();
 				this.status = true;
+				
 			};
 		
 			close() {
@@ -268,6 +268,21 @@ class showModal {
 
 			}
 		
+}
+
+
+class showModalCallback extends showModal {
+	constructor(props) {
+		super(props);
+		this.beforeOpen = props.beforeOpen;
+
+	}
+	open() {
+		this.beforeOpen(this)
+		$(this.popup).css("display", "flex").hide().fadeToggle();
+		this.status = true;
+		
+	};
 }
 
 
@@ -311,6 +326,16 @@ class showModal {
 		closeBtn: '.js-form_company_close',
 		openBtn: '.js-company-open-popup'
 	});
+
+	const form_7 = new showModalCallback({
+		popup: '.js-modal-form-popup_school-registr',
+		closeBtn: '.js-form_registr_close',
+		openBtn: '.js-school-registr-popup',
+		beforeOpen: function (e) {
+			form_4.close();
+		}
+	});
+
 
 
 

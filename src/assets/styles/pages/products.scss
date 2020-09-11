@@ -124,6 +124,15 @@
 
 		color: #C11426;
 	}
+	&:hover{
+		.circle-btn{
+			transform: translateX(10px);
+			border-color: transparent;
+		}
+		.news-item-btn__text{
+			text-decoration: underline;
+		}
+	}
 }
 
 
@@ -218,65 +227,65 @@
 
 
 
-								.products-item:nth-child(4){
-									.products-item-l {
-										background: #EFEAEE;
-										
-										padding-left: min(vw(22), 22px);
-										@include to(992px){
-											padding-left: min(vw(92), 92px);
-										}
-										@include to(700px) {
-											padding: 25px 11px;
-										}
-									}
-									.products-item__decor-img {
-										width: min(vw(335), 335px);
-										right: 0%;
-									}
-									
-								}
-								.products-item:nth-child(5){
-									.products-item__decor-img{
-										width: min(vw(298), 298px);
-										left: 50%;
-										transform: translate(-50%, 0);
-									}
-									.products-item-l {
-										width: 100%;
-										padding-left: min(vw(42), 42px);
+	.products-item:nth-child(4){
+		.products-item-l {
+			background: #EFEAEE;
+			
+			padding-left: min(vw(22), 22px);
+			@include to(992px){
+				padding-left: min(vw(92), 92px);
+			}
+			@include to(700px) {
+				padding: 25px 11px;
+			}
+		}
+		.products-item__decor-img {
+			width: min(vw(335), 335px);
+			right: 0%;
+		}
+		
+	}
+	.products-item:nth-child(5){
+		.products-item__decor-img{
+			width: min(vw(298), 298px);
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+		.products-item-l {
+			width: 100%;
+			padding-left: min(vw(42), 42px);
 
-										background-color: #F0F1F8;
-										background-repeat: no-repeat;
-										background-position: right center;
-										
-										
-										
-										
-										@include to(992px){
-											background-position: right 53% 50%;
-											padding-left: min(vw(92), 92px);
-										}
-										@include to(700px) {
-											padding: 25px 11px;
-										}
-									}
-									
-								}
-								.products-item:nth-child(6){
-									.products-item__decor-img{
-										width: min(vw(415), 415px);
-										left: min(vw(95), 95px);
-									}
-									.products-item-l {
-								background: #F2EEE3;
-						
-								padding-top: min(vw(100), 100px);
-								padding-left: min(vw(175), 175px);
-								@include to(700px) {
-									padding: 25px 11px;
-								}
-							}
+			background-color: #F0F1F8;
+			background-repeat: no-repeat;
+			background-position: right center;
+			
+			
+			
+			
+			@include to(992px){
+				background-position: right 53% 50%;
+				padding-left: min(vw(92), 92px);
+			}
+			@include to(700px) {
+				padding: 25px 11px;
+			}
+		}
+		
+	}
+	.products-item:nth-child(6){
+		.products-item__decor-img{
+			width: min(vw(415), 415px);
+			left: min(vw(95), 95px);
+		}
+		.products-item-l {
+	background: #F2EEE3;
+
+	padding-top: min(vw(100), 100px);
+	padding-left: min(vw(175), 175px);
+	@include to(700px) {
+		padding: 25px 11px;
+	}
+}
 
 }
 

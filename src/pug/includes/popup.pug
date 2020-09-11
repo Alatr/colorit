@@ -109,7 +109,7 @@
 							span.services-school-popup__text Киев, ул. Прекрасная и волшебная, 85
 						.services-school-popup__col.services-school-popup__col_4
 							span.services-school-popup__text Второй поток курса по управлению проектами пройдет  полностью онлайн. Мировой кризис из-за эпидемии распространения Covid-19 серьёзно 
-							a(href="#").link-with-circle.company-banner__link-with-circle
+							button.btn--res.link-with-circle.company-banner__link-with-circle.js-school-registr-popup
 								.link-with-circle__circle
 									.link-with-circle__circle-inner
 										<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,3 +142,18 @@
 		input(type="text" placeholder="Город").modal-form__input
 		input(type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
 		button.btn--res.modal-form__btn Отправить
+
+.modal-form-popup.js-modal-form-popup_school-registr
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_registr_close
+		+svg('close')
+	.modal-form-popup__title Регистрация
+	form.modal-form
+		input(type="text" required placeholder="Имя*").modal-form__input
+		input(type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
+		input(type="email" required placeholder="E-mail*").modal-form__input
+		button.btn--res.modal-form__btn Отправить
+
+.modal-form-popup.js-modal-form-popup_thank.modal-form-popup_thank
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-form_thank_close
+		+svg('close')
+	.modal-form-popup__title Спасибо за обращение. Наши менеджеры скоро с Вами свяжутся. 
