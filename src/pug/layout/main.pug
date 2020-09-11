@@ -73,16 +73,16 @@ include ../includes/mixins.pug
 		},
 		{
 			title: 'Сухие и готовые шпатлевки',
-			sub: ['Kolorit STANDART LF', 'Kolorit STANDART LH', 'Сухая шпатлевка']
+			sub: ['Kolorit STANDART LF', 'Kolorit STANDART LH']
 		},
 		{
 			title: 'Клея для стекло обоев',
-			sub: ['Kolorit Strong Adgesive', 'Еще клей']
+			sub: ['Kolorit Strong Adgesive']
 		},
 	
 		{
 			title: 'Лаки и Эмали KOLORIT',
-			sub: ['Kolorit Wood and Metal Enamel глянец', 'Kolorit Wood and Metal Enamel полуглянец', 'Kolorit Radiator Enamel', 'Kolorit Panel Lacquer']
+			sub: ['Глянцевая Kolorit Wood and Metal Enamel', 'Полуматовая Kolorit Wood and Metal Enamel', 'Kolorit Radiator Enamel', 'Kolorit Panel Lacquer']
 		},
 
 	]
@@ -101,6 +101,7 @@ include ../includes/mixins.pug
 
 block variable
 block variable1
+block home-variable
 doctype html
 html(lang="uk")
 	head
@@ -125,7 +126,7 @@ html(lang="uk")
 		block meta
 		block head
 
-	body
+	body(id= page_id)
 		// START SVG SPRITE
 		include ../../assets/svg-sprite/sprite/symbol_sprite.php
 		// END SVG SPRITE

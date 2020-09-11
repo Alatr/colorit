@@ -70,17 +70,17 @@ block content
 							+svg('download1')
 				.color-single-block__r
 					.color-single-block__img(style="background: #B02C3C;")
-						+img('temp/66.png').js-color-single-block__main-img
+						+img('color-single/sc1.jpg').js-color-single-block__main-img
 					ul.color-single-block-img-nav
-						each v, j in [1,1,1,1]
+						each v, j in ['color-single/sc2.jpg','color-single/sc3.jpg','color-single/sc4.jpg','color-single/sc5.jpg']
 							if j == 0
 								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item.color-single-block-img-nav-item--active(style="border-color: #B02C3C;")
 									button(type="button").btn--res
-										+img('temp/o4.jpg')
+										+img(v)
 							else
 								li.js-color-single-block-img-nav-item.color-single-block-img-nav-item(style="border-color: #B02C3C;")
 									button(type="button").btn--res
-										+img('temp/o4.jpg')
+										+img(v)
 		.row
 			.same-color-block
 				.same-color-block__title Похожие цвета

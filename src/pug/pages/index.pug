@@ -1,6 +1,7 @@
 extends ../layout/main
 
-	
+block home-variable 
+	- var page_id= "home"	
 block meta
 	title= 'Home'
 	meta(name='description', content='')
@@ -31,18 +32,93 @@ block content
 				+svg('arr-small-right')
 			button(type="button").btn--res.slider-btn.js-main-sl-arr-next
 				+svg('arr-small-left')
+				
 		.main-section-sl.js-main-section-sl
-			each v in [1,2,3,4,5,6]
-				.main-section-sl__1.main-section-sl-1
-					a(href="#").main-section-sl-1__main-img
-						picture
-							source(srcset="./assets/images/sl/sl_1/"+v+"@1440.jpg" media="(max-width: 1440px)") 
-							img(src="./assets/images/sl/sl_1/"+v+".jpg" alt="MDN")
-					.hot-line.hot-line--darken
-						.hot-line__text Горячая линия
-						a(href="tel:+1234567890").header-phone
-							+svg('phone').header-phone__icon
-							span.header-phone__text.header__text 1 234 567 890
+			.main-section-sl__slide.main-section-sl__slide_1
+				+img("main-slider/sl1.jpg").main-section-sl__slide-bg
+				.main-section-sl__slide-text-wrapper
+					h2.main-section-sl__slide-title Особое ощущение вашего дома
+					p.main-section-sl__slide-subtitle Лаки и краски со скандинавской генетикой
+				//- +img("main-slider/slide1-paints.png").main-section-sl__slide-paints
+				a(href="company.html").main-section-sl__slide-btn
+					.main-section-sl__slide-btn-circle-out
+						.main-section-sl__slide-btn-circle-in
+							<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+								<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+							</svg>
+					span Читать о компании
+				.scroll-icon
+					<svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.5" d="M8.66667 0C3.9 0 0 3.9 0 8.66667V17.3333C0 22.1 3.9 26 8.66667 26C13.4333 26 17.3333 22.1 17.3333 17.3333V8.66667C17.3333 3.9 13.4333 0 8.66667 0ZM16.0952 17.3333C16.0952 21.4191 12.7524 24.7619 8.66667 24.7619C4.58095 24.7619 1.2381 21.4191 1.2381 17.3333V8.66667C1.2381 4.58095 4.58095 1.2381 8.66667 1.2381C12.7524 1.2381 16.0952 4.58095 16.0952 8.66667V17.3333Z" fill="#9AB4C1"/>
+						<path d="M8.66641 5.57144C8.32593 5.57144 8.04736 5.85001 8.04736 6.19049V9.28573C8.04736 9.6262 8.32593 9.90478 8.66641 9.90478C9.00689 9.90478 9.28546 9.6262 9.28546 9.28573V6.19049C9.28546 5.85001 9.00689 5.57144 8.66641 5.57144Z" fill="#C11426"/>
+					</svg>
+					span.scroll-icon__text ИСПОЛЬЗУЙТЕ СКРОЛЛ
+
+				.hot-line.hot-line--darken
+					.hot-line__text Горячая линия
+					a(href="tel:800508908").header-phone
+						+svg('phone').header-phone__icon
+						span.header-phone__text.header__text 800508908
+			.main-section-sl__slide.main-section-sl__slide_2
+				+img("main-slider/sl2.jpg").main-section-sl__slide-bg
+				.main-section-sl__slide-text-wrapper
+					h2.main-section-sl__slide-title Ваши краски — ваш Kolorit
+					p.main-section-sl__slide-subtitle Линейка премиальных интерьерных красок Home — стиль и элегантность в каждом нанесении
+				//- +img("main-slider/slide2-paints.png").main-section-sl__slide-paints
+				a(href="company.html").main-section-sl__slide-btn
+					.main-section-sl__slide-btn-circle-out
+						.main-section-sl__slide-btn-circle-in
+							<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+								<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+							</svg>
+					span Выбрать краску
+				.scroll-icon
+					<svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.5" d="M8.66667 0C3.9 0 0 3.9 0 8.66667V17.3333C0 22.1 3.9 26 8.66667 26C13.4333 26 17.3333 22.1 17.3333 17.3333V8.66667C17.3333 3.9 13.4333 0 8.66667 0ZM16.0952 17.3333C16.0952 21.4191 12.7524 24.7619 8.66667 24.7619C4.58095 24.7619 1.2381 21.4191 1.2381 17.3333V8.66667C1.2381 4.58095 4.58095 1.2381 8.66667 1.2381C12.7524 1.2381 16.0952 4.58095 16.0952 8.66667V17.3333Z" fill="#9AB4C1"/>
+						<path d="M8.66641 5.57144C8.32593 5.57144 8.04736 5.85001 8.04736 6.19049V9.28573C8.04736 9.6262 8.32593 9.90478 8.66641 9.90478C9.00689 9.90478 9.28546 9.6262 9.28546 9.28573V6.19049C9.28546 5.85001 9.00689 5.57144 8.66641 5.57144Z" fill="#C11426"/>
+					</svg>
+					span.scroll-icon__text ИСПОЛЬЗУЙТЕ СКРОЛЛ
+				
+				.hot-line.hot-line--darken
+					.hot-line__text Горячая линия
+					a(href="tel:800508908").header-phone
+						+svg('phone').header-phone__icon
+						span.header-phone__text.header__text 800508908
+			.main-section-sl__slide.main-section-sl__slide_3
+				+img("main-slider/sl3.jpg").main-section-sl__slide-bg
+				.main-section-sl__slide-text-wrapper
+					h2.main-section-sl__slide-title Вдохновение цветом
+					p.main-section-sl__slide-subtitle Профессиональная тонировочная система Avatint Tikkurila — более 50 000 цветов
+				//- +img("main-slider/slide2-paints.png").main-section-sl__slide-paints
+				a(href="company.html").main-section-sl__slide-btn
+					.main-section-sl__slide-btn-circle-out
+						.main-section-sl__slide-btn-circle-in
+							<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 2.8L7.2 4.6L7.2 2.8L7.2 1L9 2.8Z" fill="#C11426"/>
+								<path d="M-4.36308e-07 2.8L9 2.8M9 2.8L7.2 4.6L7.2 1L9 2.8Z" stroke="#C11426" stroke-width="0.6"/>
+							</svg>
+					span Выбрать краску
+				.scroll-icon
+					<svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.5" d="M8.66667 0C3.9 0 0 3.9 0 8.66667V17.3333C0 22.1 3.9 26 8.66667 26C13.4333 26 17.3333 22.1 17.3333 17.3333V8.66667C17.3333 3.9 13.4333 0 8.66667 0ZM16.0952 17.3333C16.0952 21.4191 12.7524 24.7619 8.66667 24.7619C4.58095 24.7619 1.2381 21.4191 1.2381 17.3333V8.66667C1.2381 4.58095 4.58095 1.2381 8.66667 1.2381C12.7524 1.2381 16.0952 4.58095 16.0952 8.66667V17.3333Z" fill="#9AB4C1"/>
+						<path d="M8.66641 5.57144C8.32593 5.57144 8.04736 5.85001 8.04736 6.19049V9.28573C8.04736 9.6262 8.32593 9.90478 8.66641 9.90478C9.00689 9.90478 9.28546 9.6262 9.28546 9.28573V6.19049C9.28546 5.85001 9.00689 5.57144 8.66641 5.57144Z" fill="#C11426"/>
+					</svg>
+					span.scroll-icon__text ИСПОЛЬЗУЙТЕ СКРОЛЛ
+
+				.hot-line.hot-line--darken
+					.hot-line__text Горячая линия
+					a(href="tel:800508908").header-phone
+						+svg('phone').header-phone__icon
+						span.header-phone__text.header__text 800508908
+			//- each v in [1,2,3,4,5,6]
+			//- 	.main-section-sl__1.main-section-sl-1
+			//- 		a(href="#").main-section-sl-1__main-img
+			//- 			picture
+			//- 				source(srcset="./assets/images/sl/sl_1/"+v+"@1440.jpg" media="(max-width: 1440px)") 
+			//- 				img(src="./assets/images/sl/sl_1/"+v+".jpg" alt="MDN")
+
 		.main-section-sl--mob
 			.main-section-sl__1.main-section-sl-1
 				.main-section-sl-wrap
@@ -131,7 +207,7 @@ block content
 						+img('temp/q2.png').slide-content__bucket
 						
 						h3.slide-content__title.js-second__title Безопасность и Экологичность
-						p.slide-content__text Наши краски экологичны и гипоаллергенны, имеют эко маркировку “Живая Планета”, безопастны по уровню VOC, а в составе не содержат легколетучих веществ,фенолов, аммиака и свинца.
+						p.slide-content__text Наши краски экологичны и гипоаллергенны, имеют экомаркировку “Живая Планета”, безопасны по уровню VOC, а в составе не содержат легколетучих веществ, фенолов, аммиака и свинца.
 						a(href="#").slide-content__btn Узнать больше
 
 				// end
@@ -192,6 +268,7 @@ block content
 						.home-open-sec-item__btn Узнать больше
 						.home-open-sec-item__img2
 							+img('temp/o522.png')
+						.home-open-sec-item__overlay
 				li
 					a(href="#").home-news__link.link-arrow-type
 						.circle-btn
@@ -254,7 +331,9 @@ block content
 							+svg('qw')
 
 				a(href="#").home-news__link.link-arrow-type
-					+svg('arr-circ-white').link-arrow-type__icon
+					.circle-btn
+						.circle-btn-inner
+							+svg('qww')
 					.link-arrow-type__text Больше новостей
 	.home-advice
 		.page-container
@@ -278,9 +357,15 @@ block content
 								h3.home-advice-sl__title Ближе к природе: интерьер в экостиле
 								p.home-advice-sl__text Поездка на природу – любимый отдых многих жителей каменных джунглей. Чистый и свежий воздух расслабляет, а превосходные пейзажи...
 								a(href="#").home-advice-sl__btn Читать далее
-								a(href="#").home-advice-sl__link
-									+svg('arr-circ-diff')
-									span Все советы
+								//- a(href="#").home-advice-sl__link
+								//- 	+svg('arr-circ-diff')
+								//- 	span Все советы
+								a(href="#").home-advice-sl__link.link-arrow-type
+									.circle-btn
+										.circle-btn-inner
+											+svg('qww')
+									span.link-arrow-type__text Все советы
+						span.link-arrow-type__text Смотреть всю продукцию
 	a(href="#").home-news__link.link-arrow-type.all-advice.tablet--hiddenn
 		+svg('arr-circ-white').link-arrow-type__icon
 		.link-arrow-type__text Все советы

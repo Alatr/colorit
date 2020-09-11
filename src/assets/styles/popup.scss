@@ -22,6 +22,13 @@
 		align-items: center;
 		min-height: 480px;
 	}
+	&_thank{
+		justify-content: center;
+		align-items: center;
+		.modal-form-popup__title{
+			width: 100%;
+		}
+	}
 }
 .js-modal-form__btn-close{
 	position: absolute;
@@ -134,9 +141,13 @@
 				letter-spacing: 0.08em;
 				font-weight: 500;
 				/* вайт */
-
+				transition: all 0.3s;
 				color: #000C31;
-
+				&:hover{
+					background-color: #C11426;
+					color: #F6F7FC;
+					border-color: #C11426;
+				}
 				@include to(992px) {
 					width: 180px;
 					height: 40px;

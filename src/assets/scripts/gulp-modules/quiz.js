@@ -12,14 +12,14 @@
 	// * GET PROMISE FUNC FOR AJAX REQUEST START
 	function getFakePromise(){
 		return [{
-			img: './assets/images/quiz/quiz1.jpg',
+			img: './assets/images/temp/quiz-img.png',
 			link: '#1',
-			label: 'Some label'
+			label: 'Kolorit Biostop'
 		},
 		{
-			img: './assets/images/quiz/quiz1.jpg',
+			img: './assets/images/temp/quiz-img.png',
 			link: '#13',
-			label: 'Some lab33333el'
+			label: 'Kolorit Biostop'
 		},]
 	}
 
@@ -47,7 +47,7 @@
 
 	const $answerList = $('.js-quiz__answers');
 	const $questionList = $('.js-quiz__question');
-	const line = '#preparation';
+	const line = '#home';
 	let result = {};
 
 	/* QUESTION DATA LIST */
@@ -686,15 +686,17 @@
 		  			</li>`
 		} ,
 		itemResult: function({img, link, label}){
-			return `<li class="quiz__answer">
+			return `<li class="quiz__answer quiz__result">
 						<a href="${link}" target="_blank">
-							<img src="${img}" />
+							<div class="quiz__result-img-wrapper">
+								<img src="${img}" />
+							</div>
 							<span>${label}</span>
 						</a>
 		  			</li>`
 		} ,
 		preloader: function(){
-			return `<img src="/assets/images/preloader.svg" alt="preloader">`
+			return `<img src="./assets/images/preloader.svg" alt="preloader">`
 		} ,
 	}
 
@@ -717,7 +719,15 @@
 		}
 	}
 
-	$('.quiz__title').on('click', function(){
+	// Закрываем окно опросника при клике вне
+	$(document).on('click', function(e){
+		if (!$('.quiz').is(e.target) && $('.quiz').has(e.target).length === 0){
+			$('.quiz').removeClass('quiz_active');
+			$('.quiz').animate({scrollTop: 0}, 1000);
+		}
+	});
+	// Открытие/закрытие опросника при клике
+	$('.quiz__title').on('click', function(e){
 		$('.quiz').toggleClass('quiz_active'); // Open/Close of quiz
 	});
 
@@ -741,25 +751,46 @@
 			$(`.quiz__number[data-number="${qustionCounter-1}"]`).addClass('quiz__number_done');
 		};
 			if (qustionCounter === 4){
-			   const resultArray = getSortResult(line, dataProductList, result).map(item => item.name);
-			   console.log(resultArray);
+				   const resultArray = getSortResult(line, dataProductList, result).map(item => item.name);
+				   console.log(resultArray);
+				if (resultArray.length > 0){
+					$('.js-quiz__result').html(dataQuestionMarkup.preloader());
 
-			   $('.js-quiz__result').html(dataQuestionMarkup.preloader());
+					const requestLink =  getFakePromise(); // For this moment this is fake promise, will be changed to real during Wordpress install
+ 
+				 	$('.js-quiz__result').html('');
+				
+ 
+					requestLink.forEach(function(item){
+					 $('.js-quiz__result').append(dataQuestionMarkup.itemResult(item));
+					});
+				} else {
+					$('.js-quiz__result').html('<p> Не найдено </p><button class="quiz__reset">Еще раз</button>');
+				}
+				
 
-			   const requestLink =  getFakePromise(); // For this moment this is fake promise, will be changed to real during Wordpress install
-
-			   $('.js-quiz__result').html('');
-			   
-
-			   requestLink.forEach(function(item){
-				$('.js-quiz__result').append(dataQuestionMarkup.itemResult(item));
-			   })
 			}
 
 		$(`.quiz__question[data-quest="${qustionCounter}"]`).addClass('quiz__question_active');
 		$(`.quiz__number[data-number="${qustionCounter}"]`).addClass('quiz__number_active');
 	});
 
+	$(document).on('click', '.quiz__reset', function(){
+		reset();
+	});
+
+
+	function reset(){
+		qustionCounter = 0;
+		result = {};
+		$('.quiz__question').removeClass('quiz__question_active');
+		$('.quiz__number').removeClass('quiz__number_active');
+		$('.quiz__number').removeClass('quiz__number_done');
+		$($('.quiz__question')[0]).addClass('quiz__question_active'); 
+		$($('.quiz__number')[0]).addClass('quiz__number_active');
+	}
+
+	
 	function getSortResult(line, dataProduct, dataAnswer){
 		return dataProduct.filter(function(item) {
 			if (result.features){
