@@ -529,4 +529,19 @@
 			color: #000C31;
 		}
 	}
+	&__reset{
+		color: #fff;
+		font-size: 14px;
+		background:#17315B;
+		width: 150px;
+		height: 46px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		transition: all .5s;
+		&:hover{
+			background: #C11426;
+		}
+	}
 }
