@@ -1,4 +1,6 @@
+/* eslint-disable */
 @@include('./libs.js');
+/* eslint-enable */
 class showModal {
 	constructor(obj) {
 		this.popup = obj.popup;

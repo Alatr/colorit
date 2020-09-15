@@ -47,7 +47,33 @@
 @import "./pages/buy";
 
 
+/**********************************/
+/*
+* error start
+*/
+[data-state="error"] {
+	input, select{
+		border: 1px solid rgb(216, 52, 52)
+	}
+}
+[data-state="success"]  {
+	input, select{
+		border: 1px solid rgb(37, 158, 37)
+	}
+}
+[data-state="disabled"] {
+	    opacity: 0.6;
+			filter: blur(3px);
+			cursor: not-allowed;
+			input, select{
+				pointer-events: none;
+			}
 
+}
+/*
+* error end
+*/
+/**********************************/
 
 /**********************************/
 /*

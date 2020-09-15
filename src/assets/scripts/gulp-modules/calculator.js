@@ -1,6 +1,5 @@
 
 (function ($) {
-	console.log(4);
 	const tab = new Tab({
 		$btn: $('.js-calculator-tab-btn'),
 		$content: $('.js-calculator-tab-content-item'),
