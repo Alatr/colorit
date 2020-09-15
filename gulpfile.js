@@ -110,7 +110,7 @@ function watch() {
 // следим за build и релоадим браузер
 function server() {
 		browserSync.init({
-				//server: paths.root,
+				// server: paths.root,
 				notify: false,
 				proxy,
 		});
