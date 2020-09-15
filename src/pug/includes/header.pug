@@ -68,19 +68,19 @@ block variable
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
 							if i == 1
-								ul.type-prod-list
-									li.type-prod-list-item.bgc--white.width--midlle
-										a(href="#")
-											+svg('3').type-prod-list-item__icon
-											span.type-prod-list-item__text Грунтовки
-									li.type-prod-list-item.bgc--red.width--midlle
-										a(href="#")
-											+svg('4').type-prod-list-item__icon
-											span.type-prod-list-item__text.color--wc Шпатлевки
-									li.type-prod-list-item.bgc--blue.width--midlle
-										a(href="#")
-											+svg('5').type-prod-list-item__icon.fill--none
-											span.type-prod-list-item__text.color--wc Сухие смеси
+								//- ul.type-prod-list
+								//- 	li.type-prod-list-item.bgc--white.width--midlle
+								//- 		a(href="#")
+								//- 			+svg('3').type-prod-list-item__icon
+								//- 			span.type-prod-list-item__text Грунтовки
+								//- 	li.type-prod-list-item.bgc--red.width--midlle
+								//- 		a(href="#")
+								//- 			+svg('4').type-prod-list-item__icon
+								//- 			span.type-prod-list-item__text.color--wc Шпатлевки
+								//- 	li.type-prod-list-item.bgc--blue.width--midlle
+								//- 		a(href="#")
+								//- 			+svg('5').type-prod-list-item__icon.fill--none
+								//- 			span.type-prod-list-item__text.color--wc Сухие смеси
 							else if i == 0
 								ul.type-prod-list
 									li.type-prod-list-item.bgc--white
@@ -120,7 +120,7 @@ block variable
 								h5.header-submenu-item__title= v.title
 					li.overlay
 			li.header-menu-item
-				a(href="#").header-menu-item__title Где Купить
+				a(href=pagesLink[0].buy).header-menu-item__title Где Купить
 		a(href="tel:+1234567890").header-phone
 			+img('phone_icon.svg').header-phone__icon
 			span.header-phone__text.header__text 1 234 567 890
@@ -130,8 +130,6 @@ block variable
 					a(href='#').header__text укр
 				li.lang-list-vertical__item.active
 					a(href='#').header__text рус
-				li.lang-list-vertical__item
-					a(href='#').header__text eng
 			+svg('arr')
 		button(type="button").js-header-search.header-search.btn--res
 			+img('search.svg')

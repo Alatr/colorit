@@ -262,6 +262,10 @@
 	letter-spacing: 0.08em;
 
 	color: #F0F1F8;
+	transition: all 0.3s;
+	&:hover{
+		transform: scale(0.95);
+	}
 	@include to(768px){
 		width: 186px;
 		height: 40px;
@@ -286,6 +290,13 @@
 	letter-spacing: 0.08em;
 	border: 1px solid #9AB4C1;
 	color: #000C31;
+	transition: all 0.3s;
+	&:hover{
+		color: #fff;
+		border-color: #C11426;
+		background-color: #C11426;
+		transform: scale(0.95);
+	}
 	@include to(768px){
 		width: 186px;
 		height: 40px;
@@ -776,6 +787,11 @@
 		.link-arrow-type__text{
 			margin: 0 26px;
 		}
+		&:hover{
+			.circle-btn{
+				transform: translateX(15px);
+			}
+		}
 	}
 }
 
@@ -950,5 +966,32 @@
 		line-height: lh(22,12);
 
 		color: #9AB4C1;
+	}
+}
+
+
+.instruction-item:not(#j){
+	flex-direction: column;
+	p{
+
+		    font-size: 12px;
+		    line-height: 1.83333em;
+				color: #586386;
+				margin-bottom: 25px;
+	}
+}
+
+.document-item:not(#k){
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include to(700px){
+		justify-content: space-around;
+	}
+	.docs-slider__item{
+		text-decoration: none;
+		margin-top: 40px;
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-bottom: 40px;
 	}
 }

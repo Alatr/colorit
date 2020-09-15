@@ -116,14 +116,47 @@ block content
 								h5.usage-area-item__key Хорошо подходит для:
 								p.usage-area-item__text детских комнатах, кухонь, ванных (за исключением мест прямого попадания воды) и др. жилых помещений, а также в помещениях с высокой эксплуатационной нагрузкой (например, детские сады, учебные заведения, санаторнокурортные, гостиничные, офисные помещения, магазины и т.п.).
 							//------------
-				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 1
-				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 2
-				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll 3
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll
+					ul.usage-area-list
+						each v in [1,1,1,1,1]
+							//------------
+							li.usage-area-item
+								h5.usage-area-item__key Идеально для:
+								p.usage-area-item__text первичной и ремонтной окраски стен и потолков в гостиных, спальнях.
+							//------------
+							//------------
+							li.usage-area-item
+								h5.usage-area-item__key Хорошо подходит для:
+								p.usage-area-item__text детских комнатах, кухонь, ванных (за исключением мест прямого попадания воды) и др. жилых помещений, а также в помещениях с высокой эксплуатационной нагрузкой (например, детские сады, учебные заведения, санаторнокурортные, гостиничные, офисные помещения, магазины и т.п.).
+							//------------
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll.document-item
+					each v in [1,1,1,1,1,1,1,1]
+						// ------
+						a(href="#" download).docs-slider__item
+							.docs-slider__card-wrapper
+								.docs-slider__card
+									.docs-slider__card-inner
+										.docs-slider__card-top
+											+svg('doc').docs-slider__doc-icon
+											span.docs-slider__file-size 0.2 MB
+										span.docs-slider__card-text KOLORIT
+								.docs-slider__bottom
+									span.docs-slider__filename Очень хороший сертификат качества 
+									.docs-slider__download-link
+										+svg('download').docs-slider__download-icon
+						// ------
+				li.brd.js-products-card-tab-content-item.products-card-tab-content-item.custom-scroll.instruction-item
+					//------------
+					p детских комнатах, кухонь, ванных (за исключением мест прямого попадания воды) и др. жилых помещений, а также в помещениях с высокой эксплуатационной нагрузкой (например, детские сады, учебные заведения, санаторнокурортные, гостиничные, офисные помещения, магазины и т.п.).
+					//------------
+					//------------
+					p детских комнатах, кухонь, ванных (за исключением мест прямого попадания воды) и др. жилых помещений, а также в помещениях с высокой эксплуатационной нагрузкой (например, детские сады, учебные заведения, санаторнокурортные, гостиничные, офисные помещения, магазины и т.п.).
+					//------------
 		.row.products-card-form-row
 			.products-card-form
 				.products-card-form-title-wrap
 					h4.products-card-form__title Запрос просчета
-					p.products-card-form__subtitle Если вам нужна помощь в просчете необходимого количества материалов, вы не знаете, какой продукт идеально подойдет под вашу задачу - наши специалисты готовы помочь вам сделать правильный выбор и пасчеты!
+					p.products-card-form__subtitle Нужна помощь в просчете количества  материалов или не знаете, какой продукт идеально подойдет под вашу задачу? Наши специалисты всегда готовы помочь!
 				form.modal-form
 					input(type="text" required placeholder="Телефон*").modal-form__input
 					input(type="email" required placeholder="E-mail*").modal-form__input

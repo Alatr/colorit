@@ -21,6 +21,7 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/quiz.js')
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -62,6 +63,69 @@ block content
 				}
 			}
 
+		.row.quiz-row
+			.quiz
+				button.quiz__title.btn--res
+					h4.quiz__title-text Быстрый подбор краски 
+					+svg('quiz-arrow').quiz__title-icon
+				.quiz__inner
+					ul.quiz__numbers
+						each item, index in [1, 2, 3, 4, 5]
+							if index == 0
+								li(data-number=index).quiz__number.quiz__number_active 
+									.quiz__number-wrapper
+										span= item
+							else 
+								li(data-number=index).quiz__number 
+									.quiz__number-wrapper
+										span= item
+					.quiz__question-wrapper
+						.js-quiz__question.quiz__question(data-quest="0")
+							span.quiz__quest Для какого помещения подбираете покрытие?
+							.quiz__answers-wrapper
+								ul.quiz__answers.js-quiz__answers
+									//- each item, index in ['Любое', 'Кухня', 'Ванная', 'Детская ', 'Спальня', 'Гостинная', 'Гардероб/холл', 'Балкон', 'Офис/магазин', 'Пищевое производство', 'Складское помещение', 'Мед учереждение', 'ТРЦ', 'Школа/детский сад']
+									//- 	li.quiz__answer
+									//- 		.quiz__answer-img-wrapper
+									//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+									//- 		span.quiz__answer-text=item
+						.js-quiz__question.quiz__question(data-quest="1")
+							span.quiz__quest Какую поверхность планируете покрывать?
+							.quiz__answers-wrapper
+								ul.quiz__answers.js-quiz__answers
+									//- each item, index in ['Любая', 'Стены', 'Потолок', 'Элементы интерьера']
+									//- 	li.quiz__answer
+									//- 		.quiz__answer-img-wrapper
+									//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+									//- 		span.quiz__answer-text=item
+						.js-quiz__question.quiz__question(data-quest="2")
+							span.quiz__quest Какой материал покрываемой поверхности? 
+							.quiz__answers-wrapper
+								ul.quiz__answers.js-quiz__answers
+									//- each item, index in ['Любой', 'Бетон', 'Гипсокартон', 'Кирпич', 'Обои', 'Шпатлевка', 'ДСП/ДВП', 'Минеральная штукатурка', 'Дерево', 'Металл', 'Плитка', 'Стекло', 'Пластик']
+									//- 	li.quiz__answer
+									//- 		.quiz__answer-img-wrapper
+									//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+									//- 		span.quiz__answer-text=item
+						.js-quiz__question.quiz__question(data-quest="3")
+							span.quiz__quest Особенности
+							.quiz__answers-wrapper
+								ul.quiz__answers.js-quiz__answers
+									//- each item, index in ['Защита от плесени и грибка', 'Антимикробная', 'Повышенная кроющая способность', 'Подчеркивающая рельеф', 'Идеально гладкая', 'Для влажных помещений', 'Ремонтная', 'Ультралегкая', 'Идеально белая', 'антикоррозионная', 'Колеруемая ']
+									//- 	li.quiz__answer
+									//- 		.quiz__answer-img-wrapper
+									//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+									//- 		span.quiz__answer-text=item
+						.js-quiz__question.quiz__question(data-quest="4")
+							span.quiz__quest Результат
+							.quiz__answers-wrapper
+								ul.quiz__answers.js-quiz__result
+									span
+								//- 	each index in [1, 1, 1, 1, 1, 1]
+								//- 		li.quiz__answer
+								//- 			.quiz__answer-img-wrapper
+								//- 				+img('quiz/quiz1.jpg').quiz__answer-img
+								//- 			span.quiz__answer-text Для внутренних работ
 
 		ul.products-list.products-list--margin-bt
 			//- ---------------------

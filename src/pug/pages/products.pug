@@ -17,6 +17,7 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
+
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -57,8 +58,69 @@ block content
 					background-image: none;
 				}
 			}
-
-
+		//- .row.quiz-row
+		//- 	.quiz
+		//- 		button.quiz__title.btn--res
+		//- 			h4.quiz__title-text Быстрый подбор краски 
+		//- 			+svg('quiz-arrow').quiz__title-icon
+		//- 		.quiz__inner
+		//- 			ul.quiz__numbers
+		//- 				each item, index in [1, 2, 3, 4, 5]
+		//- 					if index == 0
+		//- 						li(data-number=index).quiz__number.quiz__number_active 
+		//- 							.quiz__number-wrapper
+		//- 								span= item
+		//- 					else 
+		//- 						li(data-number=index).quiz__number 
+		//- 							.quiz__number-wrapper
+		//- 								span= item
+		//- 			.quiz__question-wrapper
+		//- 				.js-quiz__question.quiz__question(data-quest="0")
+		//- 					span.quiz__quest Для какого помещения подбираете покрытие?
+		//- 					.quiz__answers-wrapper
+		//- 						ul.quiz__answers.js-quiz__answers
+		//- 							//- each item, index in ['Любое', 'Кухня', 'Ванная', 'Детская ', 'Спальня', 'Гостинная', 'Гардероб/холл', 'Балкон', 'Офис/магазин', 'Пищевое производство', 'Складское помещение', 'Мед учереждение', 'ТРЦ', 'Школа/детский сад']
+		//- 							//- 	li.quiz__answer
+		//- 							//- 		.quiz__answer-img-wrapper
+		//- 							//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+		//- 							//- 		span.quiz__answer-text=item
+		//- 				.js-quiz__question.quiz__question(data-quest="1")
+		//- 					span.quiz__quest Какую поверхность планируете покрывать?
+		//- 					.quiz__answers-wrapper
+		//- 						ul.quiz__answers.js-quiz__answers
+		//- 							//- each item, index in ['Любая', 'Стены', 'Потолок', 'Элементы интерьера']
+		//- 							//- 	li.quiz__answer
+		//- 							//- 		.quiz__answer-img-wrapper
+		//- 							//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+		//- 							//- 		span.quiz__answer-text=item
+		//- 				.js-quiz__question.quiz__question(data-quest="2")
+		//- 					span.quiz__quest Какой материал покрываемой поверхности? 
+		//- 					.quiz__answers-wrapper
+		//- 						ul.quiz__answers.js-quiz__answers
+		//- 							//- each item, index in ['Любой', 'Бетон', 'Гипсокартон', 'Кирпич', 'Обои', 'Шпатлевка', 'ДСП/ДВП', 'Минеральная штукатурка', 'Дерево', 'Металл', 'Плитка', 'Стекло', 'Пластик']
+		//- 							//- 	li.quiz__answer
+		//- 							//- 		.quiz__answer-img-wrapper
+		//- 							//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+		//- 							//- 		span.quiz__answer-text=item
+		//- 				.js-quiz__question.quiz__question(data-quest="3")
+		//- 					span.quiz__quest Особенности
+		//- 					.quiz__answers-wrapper
+		//- 						ul.quiz__answers.js-quiz__answers
+		//- 							//- each item, index in ['Защита от плесени и грибка', 'Антимикробная', 'Повышенная кроющая способность', 'Подчеркивающая рельеф', 'Идеально гладкая', 'Для влажных помещений', 'Ремонтная', 'Ультралегкая', 'Идеально белая', 'антикоррозионная', 'Колеруемая ']
+		//- 							//- 	li.quiz__answer
+		//- 							//- 		.quiz__answer-img-wrapper
+		//- 							//- 			+img('quiz/quiz1.jpg').quiz__answer-img
+		//- 							//- 		span.quiz__answer-text=item
+		//- 				.js-quiz__question.quiz__question(data-quest="4")
+		//- 					span.quiz__quest Результат
+		//- 					.quiz__answers-wrapper
+		//- 						ul.quiz__answers.js-quiz__result
+		//- 						//- 	each index in [1, 1, 1, 1, 1, 1]
+		//- 						//- 		li.quiz__answer
+		//- 						//- 			.quiz__answer-img-wrapper
+		//- 						//- 				+img('quiz/quiz1.jpg').quiz__answer-img
+		//- 						//- 			span.quiz__answer-text Для внутренних работ
+					
 		ul.products-list
 			//- ---------------------
 			li.products-item
@@ -67,8 +129,8 @@ block content
 				.products-mobile-img
 					+img('prod/w1.jpg')
 				.products-item-l
-					.products-item__title Линейка Home
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__title Kolorit Home
+					.products-item__text Линейка премиальных красок для дома. Они гипоаллергенны, безопасны и продуманы под потребности каждого помещения.
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
@@ -83,8 +145,8 @@ block content
 				.products-item__logo.products-item__logo--left
 					+img('logo.svg')
 				.products-item-l
-					.products-item__title Professional линейка
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__title Kolorit Professional
+					.products-item__text Линейка интерьерных красок для больших объектов. Удобная, практичная и легкая в нанесении
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
@@ -104,7 +166,7 @@ block content
 				.products-item-l
 					.products-item__title Средства подготовки<br> поверхности
 					+img('prod/z1_3.png').products-item__decor-img
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__text Грунтовки и специальные средства с особыми свойствами. Создадут надежное основание для вашего ремонта.
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
@@ -116,9 +178,9 @@ block content
 				.products-item__logo.products-item__logo--left
 					+img('logo.svg')
 				.products-item-l
-					.products-item__title Сухие и готовые<br> шпатлевки
+					.products-item__title Шпатлевки и сухие смеси
 					+img('prod/z1_4.png').products-item__decor-img
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__text Готовые к применению финишные шпатлевки. Создают идеально ровные стены.
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
@@ -136,7 +198,7 @@ block content
 				.products-item-l
 					+img('prod/z1_5.png').products-item__decor-img
 					.products-item__title Клея для<br> стекло обоев
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__text Готовые для использования клеи. Надежные и качественные, поэтому выдерживают любые нагрузки.
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner
@@ -149,7 +211,7 @@ block content
 					+img('logo.svg')
 				.products-item-l
 					.products-item__title Лаки и Эмали
-					.products-item__text Компания Kolorit - бренд лакокрасочных материалов с 17-летней историей и известным именем.
+					.products-item__text Придадут деревянным и металлическим элементам интерьера красивый вид, защитят их от повреждений.
 					a(href= pagesLink[0].productsSingle).products-item__link.products-item-link
 						.circle-btn
 							.circle-btn-inner

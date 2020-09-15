@@ -33,7 +33,7 @@ $bc2: #000;
 		--sidebar_w: 64px;
 	}
 }
-@include to(700px){
+@include to(480px){
 	:root {
 		--sidebar_w: 0px;
 	}

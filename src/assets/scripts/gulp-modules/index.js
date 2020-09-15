@@ -114,9 +114,8 @@ Tab.prototype.listeners = function (callback = function () {}) {
 
 	this.btn.on('click', function () {
 	});
-}
+};
 
-console.log(Tab);
 
 
 
@@ -235,6 +234,7 @@ class showModal {
 			open() {
 				$(this.popup).css("display", "flex").hide().fadeToggle();
 				this.status = true;
+				
 			};
 		
 			close() {
@@ -271,6 +271,21 @@ class showModal {
 }
 
 
+class showModalCallback extends showModal {
+	constructor(props) {
+		super(props);
+		this.beforeOpen = props.beforeOpen;
+
+	}
+	open() {
+		this.beforeOpen(this)
+		$(this.popup).css("display", "flex").hide().fadeToggle();
+		this.status = true;
+		
+	};
+}
+
+
 	const form_1 = new showModal({
 		popup: '.js-modal-form-popup_1',
 		closeBtn: '.js-form_cons_close',
@@ -299,6 +314,28 @@ class showModal {
 		closeBtn: '.js-school-popup-close',
 		openBtn: '.js-school-popup-open'
 	});
+
+	const form_5 = new showModal({
+		popup: '.js-modal-form-popup_loyal',
+		closeBtn: '.js-form_loyal_close',
+		openBtn: '.js-open-popup-services'
+	});
+
+	const form_6 = new showModal({
+		popup: '.js-modal-form-popup_company',
+		closeBtn: '.js-form_company_close',
+		openBtn: '.js-company-open-popup'
+	});
+
+	const form_7 = new showModalCallback({
+		popup: '.js-modal-form-popup_school-registr',
+		closeBtn: '.js-form_registr_close',
+		openBtn: '.js-school-registr-popup',
+		beforeOpen: function (e) {
+			form_4.close();
+		}
+	});
+
 
 
 
@@ -340,7 +377,7 @@ $body.on('click', '.js-header-menu-btn, .js-menu-btn-close', function () {
 });
 
 
-
+$('.js-modal-form__input-phone').mask("(999) 999-9999");
 /*
 * modal end
 */
