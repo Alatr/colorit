@@ -15,7 +15,7 @@
 	.container
 			ul.footer-menu.footer-menu_desk
 				each j, ii in menuObj
-					li.footer-menu-item.footer-menu-item_small
+					li.footer-menu-item
 						a(href="#").footer-menu-item__link
 							span= j.title
 						ul.footer-submenu-list
@@ -42,7 +42,20 @@
 						each v in ['Акции', 'Новости', 'Объекты']
 							li.footer-submenu-item
 								a(href="#").footer-submenu-item__link= v
-				li.footer-menu-item.footer-menu-item_social
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link Меню
+						ul.footer-submenu-list
+							each v in ['Компания', 'Продукция', 'Сервисы']
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link= v
+
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link.mob1--hidden menu
+						ul.footer-submenu-list
+							each v in ['Советы', 'Инфо', 'Где купить']
+								li.footer-submenu-item
+									a(href="#").footer-submenu-item__link= v
+				li.footer-menu-item.footer-menu-item_social.menu-mob-show
 					ul.footer-menu-info-list
 						li.footer-menu-info-item
 							a(href="https://www.instagram.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
@@ -83,87 +96,87 @@
 
 
 
-			ul.footer-menu.list.footer-menu_mob
-				.row
-					each j, ii in menuObj
-						li.footer-menu-item
-							a(href="#").footer-menu-item__link
-								span= j.title
-							ul.footer-submenu-list
-								each v in j.sub
-									li.footer-submenu-item
-										a(href="#").footer-submenu-item__link= v
-					li.footer-menu-item
-						a(href="#").footer-menu-item__link.item-maggin-bottom
-							span компания
-						a(href="#").footer-menu-item__link.item-maggin-bottom
-							span советы
-						a(href="#").footer-menu-item__link.item-maggin-bottom
-							span где купить
-					li.footer-menu-item
-						a(href="#").footer-menu-item__link
-							span сервисы
-						ul.footer-submenu-list
-							each v in ['Калькулятор краски', 'Подбор цвета']
-								li.footer-submenu-item
-									a(href="#").footer-submenu-item__link= v
-					li.footer-menu-item
-						a(href="#").footer-menu-item__link Инфо
-						ul.footer-submenu-list
-							each v in ['Акции', 'Новости', 'Объекты']
-								li.footer-submenu-item
-									a(href="#").footer-submenu-item__link= v
-					li.footer-menu-item.footer-menu-item--fat.menu-mob-show-fat.col--12.order--last
-						ul.footer-menu-info-list
-							li.footer-menu-info-item
-								a(href="https://www.instagram.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
-									+svg('f1')
-								.footer-menu-info-item__text
-									p.footer-text ООО «Краски Колорит»
-									p.footer-text 08130 Киевская область, Петропавловская Борщаговка, ул. Садовая, 49
-										a.footer-text(href="tel:+380442377112") +38 044 237 71 12 
-										a.footer-text(href="tel:+380442377112") 0 800 508 908 
-							li.footer-menu-info-item
-								a(href="https://www.youtube.com/channel/UC5oOS8rX3BZi2OfQGDwocAQ" target="_blank").footer-menu-info-item__icon
-									+svg('f2')
-								.footer-menu-info-item__text
-									p.footer-text Унитарное предприятие «Краски Колорит» Республика Беларусь Минск, 220036 пр-т Дзержинского д. 5, офис 4405 Тел.
-										a.footer-text(href="tel:+375173281868") +375 17 328 18 68; 
-										a.footer-text(href="tel:+375291525555") +375 29 152 55 55
-							li.footer-menu-info-item
-								a(href="https://www.facebook.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
-									+svg('f3')
-								.footer-menu-info-item__text
-									p.footer-menu-info-item__title Подписаться на рассылку:
-									form.subscribe-form
-										input(type="email" required placeholder="E-mail").subscribe-form__input-email
-										button.btn--res.subscribe-form__submit
-											+svg('form_submit')
-							li.footer-menu-tel
-								a(href="tel:0800508908") 0 800 508 908
-									+svg('helloy')
+			//- ul.footer-menu.list.footer-menu_mob
+			//- 	.row
+			//- 		each j, ii in menuObj
+			//- 			li.footer-menu-item
+			//- 				a(href="#").footer-menu-item__link
+			//- 					span= j.title
+			//- 				ul.footer-submenu-list
+			//- 					each v in j.sub
+			//- 						li.footer-submenu-item
+			//- 							a(href="#").footer-submenu-item__link= v
+			//- 		li.footer-menu-item
+			//- 			a(href="#").footer-menu-item__link.item-maggin-bottom
+			//- 				span компания
+			//- 			a(href="#").footer-menu-item__link.item-maggin-bottom
+			//- 				span советы
+			//- 			a(href="#").footer-menu-item__link.item-maggin-bottom
+			//- 				span где купить
+			//- 		li.footer-menu-item
+			//- 			a(href="#").footer-menu-item__link
+			//- 				span сервисы
+			//- 			ul.footer-submenu-list
+			//- 				each v in ['Калькулятор краски', 'Подбор цвета']
+			//- 					li.footer-submenu-item
+			//- 						a(href="#").footer-submenu-item__link= v
+			//- 		li.footer-menu-item
+			//- 			a(href="#").footer-menu-item__link Инфо
+			//- 			ul.footer-submenu-list
+			//- 				each v in ['Акции', 'Новости', 'Объекты']
+			//- 					li.footer-submenu-item
+			//- 						a(href="#").footer-submenu-item__link= v
+			//- 		li.footer-menu-item.footer-menu-item--fat.menu-mob-show-fat.col--12.order--last
+			//- 			ul.footer-menu-info-list
+			//- 				li.footer-menu-info-item
+			//- 					a(href="https://www.instagram.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
+			//- 						+svg('f1')
+			//- 					.footer-menu-info-item__text
+			//- 						p.footer-text ООО «Краски Колорит»
+			//- 						p.footer-text 08130 Киевская область, Петропавловская Борщаговка, ул. Садовая, 49
+			//- 							a.footer-text(href="tel:+380442377112") +38 044 237 71 12 
+			//- 							a.footer-text(href="tel:+380442377112") 0 800 508 908 
+			//- 				li.footer-menu-info-item
+			//- 					a(href="https://www.youtube.com/channel/UC5oOS8rX3BZi2OfQGDwocAQ" target="_blank").footer-menu-info-item__icon
+			//- 						+svg('f2')
+			//- 					.footer-menu-info-item__text
+			//- 						p.footer-text Унитарное предприятие «Краски Колорит» Республика Беларусь Минск, 220036 пр-т Дзержинского д. 5, офис 4405 Тел.
+			//- 							a.footer-text(href="tel:+375173281868") +375 17 328 18 68; 
+			//- 							a.footer-text(href="tel:+375291525555") +375 29 152 55 55
+			//- 				li.footer-menu-info-item
+			//- 					a(href="https://www.facebook.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
+			//- 						+svg('f3')
+			//- 					.footer-menu-info-item__text
+			//- 						p.footer-menu-info-item__title Подписаться на рассылку:
+			//- 						form.subscribe-form
+			//- 							input(type="email" required placeholder="E-mail").subscribe-form__input-email
+			//- 							button.btn--res.subscribe-form__submit
+			//- 								+svg('form_submit')
+			//- 				li.footer-menu-tel
+			//- 					a(href="tel:0800508908") 0 800 508 908
+			//- 						+svg('helloy')
 
-					li.footer-menu-item.menu-mob-show.col--6
-						a(href="#").footer-menu-item__link Меню
-							ul.footer-submenu-list
-								each v in ['Компания', 'Продукция', 'Сервисы']
-									li.footer-submenu-item
-										a(href="#").footer-submenu-item__link= v
+			//- 		li.footer-menu-item.menu-mob-show.col--6
+			//- 			a(href="#").footer-menu-item__link Меню
+			//- 				ul.footer-submenu-list
+			//- 					each v in ['Компания', 'Продукция', 'Сервисы']
+			//- 						li.footer-submenu-item
+			//- 							a(href="#").footer-submenu-item__link= v
 
-					li.footer-menu-item.menu-mob-show.col--6
-						a(href="#").footer-menu-item__link.mob1--hidden menu
-							ul.footer-submenu-list
-								each v in ['Советы', 'Инфо', 'Где купить']
-									li.footer-submenu-item
-										a(href="#").footer-submenu-item__link= v
+			//- 		li.footer-menu-item.menu-mob-show.col--6
+			//- 			a(href="#").footer-menu-item__link.mob1--hidden menu
+			//- 				ul.footer-submenu-list
+			//- 					each v in ['Советы', 'Инфо', 'Где купить']
+			//- 						li.footer-submenu-item
+			//- 							a(href="#").footer-submenu-item__link= v
 										
-					li.footer-menu-item.col--12.menu-mob-show-fat
-						a(href="#").footer-menu-item__link Полезные ссылки
-							ul.footer-submenu-list
-								each v in ['kolorit-argentum-protect.com','www.tikkurila.ua','vivacolor.ua','farba-sevice.com']
-									li.footer-submenu-item
-										a(href="#").footer-submenu-item__link.underline--mob
-											span= v
+			//- 		li.footer-menu-item.col--12.menu-mob-show-fat
+			//- 			a(href="#").footer-menu-item__link Полезные ссылки
+			//- 				ul.footer-submenu-list
+			//- 					each v in ['kolorit-argentum-protect.com','www.tikkurila.ua','vivacolor.ua','farba-sevice.com']
+			//- 						li.footer-submenu-item
+			//- 							a(href="#").footer-submenu-item__link.underline--mob
+			//- 								span= v
 .footer-copy
 	.container
 		.row
