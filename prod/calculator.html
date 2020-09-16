@@ -1072,91 +1072,93 @@
             </ul>
             <ul class="calculator-tab-content">
               <li class="js-calculator-tab-content-item calculator-tab-content-item custom-scroll">
-                <ul class="row calculator-list">
-                  <li class="calculator-item col-4 calculator-item--margin-left">
-                    <div class="calculator-item__label">Выберите продукт*</div>
-                    <div class="calculator-item-select-wrap">
-                      <select class="calculator-item__select">
-                        <option class="calculator-item__select-item" selected="selected">Выбрать</option>
-                        <option class="calculator-item__select-item">1</option>
-                        <option class="calculator-item__select-item">2</option>
-                        <option class="calculator-item__select-item">3</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li class="calculator-item col-4 calculator-item--margin-right">
-                    <div class="calculator-item__label">Выберите продукт*</div>
-                    <div class="calculator-item-select-wrap">
-                      <select class="calculator-item__select">
-                        <option class="calculator-item__select-item" selected="selected">Выбрать</option>
-                        <option class="calculator-item__select-item">1</option>
-                        <option class="calculator-item__select-item">2</option>
-                        <option class="calculator-item__select-item">3</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li class="calculator-item col-2 calculator-item--margin-left">
-                    <div class="calculator-item__label">Площадь*</div>
-                    <input type="text">
-                  </li>
-                  <li class="calculator-item col-2">
-                    <div class="calculator-item__label">Ширина комнаты, м</div>
-                    <input type="text">
-                  </li>
-                  <li class="calculator-item col-2">
-                    <div class="calculator-item__label">Длина комнаты, м</div>
-                    <input type="text">
-                  </li>
-                  <li class="calculator-item col-2 calculator-item--margin-right">
-                    <div class="calculator-item__label">Высота потолков, м</div>
-                    <input type="text">
-                  </li>
-                  <li class="calculator-item col-4 calculator-item--margin-left">
-                    <div class="calculator-item__label">Наличие дверей (стандартная древь 2Х0.7 м)</div>
-                    <div class="calculator-item-select-wrap">
-                      <select class="calculator-item__select">
-                        <option class="calculator-item__select-item" selected="selected">Выбрать</option>
-                        <option class="calculator-item__select-item">1</option>
-                        <option class="calculator-item__select-item">2</option>
-                        <option class="calculator-item__select-item">3</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li class="calculator-item col-4 calculator-item--margin-right">
-                    <div class="calculator-item__label">Наличие окна (стандартное окно 1,5х1 м)</div>
-                    <div class="calculator-item-select-wrap">
-                      <select class="calculator-item__select">
-                        <option class="calculator-item__select-item" selected="selected">Выбрать</option>
-                        <option class="calculator-item__select-item">1</option>
-                        <option class="calculator-item__select-item">2</option>
-                        <option class="calculator-item__select-item">3</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li class="calculator-item col-4 calculator-item--margin-left calculator-result">
-                    <div class="calculator-result__title">Необходимое количество:
-                      <span>5.7</span>
-                    </div>
-                    <div class="calculator-result-wrap">
-                      <span>Рекомендуемые два слоя</span>
-                      <span>Окрашиваемая площадь (м2)
-                        <span>40,0</span>
-                      </span>
-                    </div>
-                  </li>
-                  <li class="calculator-item col-4 calculator-item--margin-right calculator-result-btn-wrap">
-                    <button class="btn--res link-arrow-type" type="button">
-                      <div class="circle-btn">
-                        <div class="circle-btn-inner">
-                          <svg class="icon--newarr">
-                            <use xlink:href="#icon-newarr"></use>
-                          </svg>
-                        </div>
+                <form class="js-wall-calc" id="js-wall-calc">
+                  <ul class="row calculator-list">
+                    <li class="calculator-item col-4 calculator-item--margin-left">
+                      <div class="calculator-item__label">Выберите продукт*</div>
+                      <div class="calculator-item-select-wrap">
+                        <select class="calculator-item__select">
+                          <option class="calculator-item__select-item" selected="selected">Выбрать</option>
+                          <option class="calculator-item__select-item">1</option>
+                          <option class="calculator-item__select-item">2</option>
+                          <option class="calculator-item__select-item">3</option>
+                        </select>
                       </div>
-                      <div class="calculator-item-btn__text">Отправить результаты <br> на почту</div>
-                    </button>
-                  </li>
-                </ul>
+                    </li>
+                    <li class="calculator-item col-4 calculator-item--margin-right">
+                      <div class="calculator-item__label">Выберите продукт*</div>
+                      <div class="calculator-item-select-wrap">
+                        <select class="calculator-item__select">
+                          <option class="calculator-item__select-item" selected="selected">Выбрать</option>
+                          <option class="calculator-item__select-item">1</option>
+                          <option class="calculator-item__select-item">2</option>
+                          <option class="calculator-item__select-item">3</option>
+                        </select>
+                      </div>
+                    </li>
+                    <li class="calculator-item col-2 calculator-item--margin-left">
+                      <div class="calculator-item__label">Площадь*</div>
+                      <input type="text">
+                    </li>
+                    <li class="calculator-item col-2">
+                      <div class="calculator-item__label">Ширина комнаты, м</div>
+                      <input type="text">
+                    </li>
+                    <li class="calculator-item col-2">
+                      <div class="calculator-item__label">Длина комнаты, м</div>
+                      <input type="text">
+                    </li>
+                    <li class="calculator-item col-2 calculator-item--margin-right">
+                      <div class="calculator-item__label">Высота потолков, м</div>
+                      <input type="text">
+                    </li>
+                    <li class="calculator-item col-4 calculator-item--margin-left">
+                      <div class="calculator-item__label">Наличие дверей (стандартная древь 2Х0.7 м)</div>
+                      <div class="calculator-item-select-wrap">
+                        <select class="calculator-item__select">
+                          <option class="calculator-item__select-item" selected="selected">Выбрать</option>
+                          <option class="calculator-item__select-item">1</option>
+                          <option class="calculator-item__select-item">2</option>
+                          <option class="calculator-item__select-item">3</option>
+                        </select>
+                      </div>
+                    </li>
+                    <li class="calculator-item col-4 calculator-item--margin-right">
+                      <div class="calculator-item__label">Наличие окна (стандартное окно 1,5х1 м)</div>
+                      <div class="calculator-item-select-wrap">
+                        <select class="calculator-item__select">
+                          <option class="calculator-item__select-item" selected="selected">Выбрать</option>
+                          <option class="calculator-item__select-item">1</option>
+                          <option class="calculator-item__select-item">2</option>
+                          <option class="calculator-item__select-item">3</option>
+                        </select>
+                      </div>
+                    </li>
+                    <li class="calculator-item col-4 calculator-item--margin-left calculator-result">
+                      <div class="calculator-result__title">Необходимое количество:
+                        <span>5.7</span>
+                      </div>
+                      <div class="calculator-result-wrap">
+                        <span>Рекомендуемые два слоя</span>
+                        <span>Окрашиваемая площадь (м2)
+                          <span>40,0</span>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="calculator-item col-4 calculator-item--margin-right calculator-result-btn-wrap">
+                      <button class="btn--res link-arrow-type" type="button">
+                        <div class="circle-btn">
+                          <div class="circle-btn-inner">
+                            <svg class="icon--newarr">
+                              <use xlink:href="#icon-newarr"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="calculator-item-btn__text">Отправить результаты <br> на почту</div>
+                      </button>
+                    </li>
+                  </ul>
+                </form>
               </li>
               <li class="brd js-calculator-tab-content-item calculator-tab-content-item custom-scroll">1</li>
               <li class="brd js-calculator-tab-content-item calculator-tab-content-item custom-scroll">2</li>
@@ -1489,5 +1491,6 @@
     </div>
     <script src="./assets/scripts/index.js"></script>
     <script src="./assets/scripts/calculator.js"></script>
+    <script src="./assets/scripts/calc_bundle.js"></script>
   </body>
 </html>

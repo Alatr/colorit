@@ -590,5 +590,3 @@ if (screen.width > 700) {
 		sl_features.slick('slickGoTo', $(this).data().sl_bread, true);
 	})
 }
-
-
