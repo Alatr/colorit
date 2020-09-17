@@ -2025,7 +2025,11 @@ span.word-animate{
 	margin-left: auto;
     display: flex;
     align-items: flex-end;
-    margin-right: 5%;
+	margin-right: 5%;
+	@include to(700px){
+		margin-left: 0;
+		margin-right: 0;
+	}
 }	
 .home-news .home-news__link {
 	// margin-left: auto;

@@ -112,6 +112,12 @@
 			&_social{
 				flex-basis: calc(40% - 86px);
 				margin-right: 86px;
+
+				@include from-to(769px, 992px){
+					@include size(6);
+					margin-right: 0;
+					flex-basis: auto;
+				}
 				@include to(768px){
 					flex-basis: auto;
 					@include size(5);
@@ -120,6 +126,8 @@
 				}
 				@include to(700px){
 					@include size(12);
+					display: block;
+					order: 2;
 				}
 			}
 
@@ -129,16 +137,36 @@
 				.footer-submenu-item{
 					max-width: 100%;
 				}
+				@include from-to(769px, 992px){
+					@include size(6);
+					margin-right: 0;
+					flex-basis: auto;
+				}
+
 				@include to(768px){
 					flex-basis: auto;
 					@include size(4);
 					margin-right: 0;
+				}
+
+				@include to(700px){
+					@include size(12);
+					display: block;
+					
 				}
 			}
 			&_hello{
 
 				// flex-basis:180px;
 				flex-basis: calc(20%);
+				@include to(700px){
+					display: block;
+					flex-basis: 100%;
+					order: 3;
+				}
+				@include from-to(701px, 992px){
+					display: none;
+				}
 			}
 		}
 		// .footer-menu-item + .footer-menu-item{
@@ -152,9 +180,10 @@
 	display: flex;
 	flex-direction: column;
 	@include to(700px){
-		margin-bottom: 25px;
+		margin-bottom: 35px;
 	}
 	&__link{
+		max-width: 180px;
 		margin-bottom: 5px;
 		font-size: 12px;
 		text-transform: uppercase;
@@ -163,6 +192,7 @@
 		color: #000C31;
 		display: inline-block;
 		font-weight: 500;
+		padding-right: 15px;
 		@include from(1441px){
 			font-size: 14px;
 		}
@@ -214,9 +244,6 @@
 .footer-menu-info-list{
 	display: flex;
 	flex-direction: column;
-	@include to(700px){
-		padding: 0px 0 120px;
-	}
 }
 .footer-menu-item__link.item-maggin-bottom{
 	display: inline-block;
@@ -497,9 +524,6 @@
 	}
 }
 .footer-menu-tel-desk{
-	font-weight: 500;
-	font-size: 24px;
-	line-height: lh(24, 40);
 	max-width: 180px;
 	align-self: flex-end;
 	margin-top: auto;
@@ -511,17 +535,27 @@
 		color: #C11426;
 		text-decoration: none;
 	}
+	span{
+		line-height: 1.5em;
+		font-weight: 500;
+		font-size: 24px;
+		@include from(1441px){
+			font-size: 27px;
+		}
+		@include to(700px){
+			font-size: 22px;
+			line-height: 1.3em;
+		}
+	}
 	svg{
 		width: 120px;
 		height: 56px;
 		align-self: flex-end;
+		margin-bottom: 3px;
 		@include to(700px){
 			width: 110px;
 			height: 40px;
 		}
-	}
-	@include to(768px){
-		display: none;
 	}
 }
 .footer-menu-tel{
