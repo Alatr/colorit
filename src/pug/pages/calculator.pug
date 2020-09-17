@@ -40,6 +40,7 @@ block content
 					li.calculator-tab-btns-item
 						button(type="button").calculator-tab-btn.js-calculator-tab-btn.btn--res= v
 			ul.calculator-tab-content
+				
 				li.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll
 					form.js-wall-calc(id="js-wall-calc")
 						ul.row.calculator-list
@@ -47,19 +48,31 @@ block content
 							li(data-state="").calculator-item.col-4.calculator-item--margin-left
 								.calculator-item__label Выберите продукт*
 								.calculator-item-select-wrap
-									select().calculator-item__select
-										option.calculator-item__select-item(selected="selected"  value="") Выбрать
-										option( value="3").calculator-item__select-item 1
-										option( value="3").calculator-item__select-item 2
-										option( value="3").calculator-item__select-item 3
+									select( name="product").calculator-item__select
+										option.calculator-item__select-item(selected="selected" value="") Выбрать
+										option.calculator-item__select-item(value="000") Краски - Kolorit Legenda
+										option.calculator-item__select-item(value="001") Краски - Kolorit Dynasty
+										option.calculator-item__select-item(value="002") Краски - Kolorit Idol
+										option.calculator-item__select-item(value="003") Краски - Kolorit History
+										option.calculator-item__select-item(value="004") Краски - Kolorit Family
+										option.calculator-item__select-item(value="005") Краски - Kolorit Argentic
+										option.calculator-item__select-item(value="006") Краски - Kolorit STANDART 3
+										option.calculator-item__select-item(value="007") Краски - Kolorit STANDART 5
+										option.calculator-item__select-item(value="008") Краски - Kolorit STANDART H
+										option.calculator-item__select-item(value="009") Краски - Kolorit STANDART M
+										option.calculator-item__select-item(value="010") Средства подготовки поверхности - Kolorit STANDART G
+										option.calculator-item__select-item(value="011") Средства подготовки поверхности - Kolorit Biostop
+										option.calculator-item__select-item(value="012") Средства подготовки поверхности - Kolorit Silanit 
+										option.calculator-item__select-item(value="013") Шпатлевки - Kolorit STANDART LF
+										option.calculator-item__select-item(value="014") Шпатлевки - Kolorit STANDART LH
 							li(data-state="").calculator-item.col-4.calculator-item--margin-right
 								.calculator-item__label Тип поверхности*
 								.calculator-item-select-wrap
-									select().calculator-item__select
-										option.calculator-item__select-item(selected="selected" value="") Выбрать
-										option(value="3").calculator-item__select-item 1
-										option(value="3").calculator-item__select-item 2
-										option(value="3").calculator-item__select-item 3
+									select( name="surface").calculator-item__select
+										option.calculator-item__select-item(selected="selected" value="12:2") Все поверхности
+										option(value="11:2").calculator-item__select-item 1
+										option(value="9:2").calculator-item__select-item 2
+										option(value="12:2").calculator-item__select-item 3
 							//- ---------------------
 							//- ---------------------
 							li(data-state="").calculator-item.col-2.calculator-item--margin-left
@@ -77,32 +90,32 @@ block content
 							//- ---------------------
 							//- ---------------------
 							li(data-state="").calculator-item.col-4.calculator-item--margin-left
-								.calculator-item__label Наличие дверей (стандартная древь 2Х0.7 м)
+								.calculator-item__label Наличие дверей (стандартная древь 2.1Х1 м)
 								.calculator-item-select-wrap
-									select.calculator-item__select
-										option.calculator-item__select-item(selected="selected" value="") Выбрать
-										option.calculator-item__select-item 1
-										option.calculator-item__select-item 2
-										option.calculator-item__select-item 3
+									select( name="door").calculator-item__select
+										option.calculator-item__select-item(value="") Выбрать
+										option.calculator-item__select-item(selected="selected" value="2.1") 2.1`
+										option.calculator-item__select-item(value="4.2") 4.2`
+										option.calculator-item__select-item(value="6.3") 6.3`
 							li(data-state="").calculator-item.col-4.calculator-item--margin-right
-								.calculator-item__label Наличие окна (стандартное окно 1,5х1 м)
+								.calculator-item__label Наличие окна (стандартное окно 1,6х1.5 м)
 								.calculator-item-select-wrap
-									select.calculator-item__select
-										option.calculator-item__select-item(selected="selected" value="") Выбрать
-										option.calculator-item__select-item 1
-										option.calculator-item__select-item 2
-										option.calculator-item__select-item 3
+									select( name="window").calculator-item__select
+										option.calculator-item__select-item(value="") Выбрать
+										option.calculator-item__select-item(selected="selected" value="2.4") 2.4`
+										option.calculator-item__select-item(value="4.8") 4.8`
+										option.calculator-item__select-item(value="7.2") 7.2`
 							//- ---------------------
 							//- ---------------------
 							li.calculator-item.col-4.calculator-item--margin-left.calculator-result
-								.calculator-result__title Необходимое количество:
-									span.js-result-paint 5.7
+								.calculator-result__title Необходимое количество (л):&nbsp;
+									span.js-result-paint
 								.calculator-result-wrap
-									span Рекомендуемые 
-										span.js-result-layer 2 
-										| слоя
-									span Окрашиваемая площадь (м2)
-										span.js-square-layer 40.0
+									span Рекомендуемые
+										span.js-square-layer
+										|&nbsp;слоя
+									span Окрашиваемая площадь (м2)&nbsp;
+										span.js-result-square
 							li.calculator-item.col-4.calculator-item--margin-right.calculator-result-btn-wrap
 								button(type="submit").btn--res.link-arrow-type
 									.circle-btn
@@ -110,7 +123,68 @@ block content
 											+svg('newarr')
 									.calculator-item-btn__text Отправить результаты <br> на почту
 							//- ---------------------
-				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 1
+				li.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll
+						form.js-ceiling-calc.ceiling-calc#js-ceiling-calc
+							ul.row.calculator-list
+								//- ---------------------
+								li(data-state="").calculator-item.col-4.calculator-item--margin-left
+									.calculator-item__label Выберите продукт*
+									.calculator-item-select-wrap
+										select( name="product").calculator-item__select
+											option.calculator-item__select-item(selected="selected" value="") Выбрать
+											option.calculator-item__select-item(value="000") Краски - Kolorit Legenda
+											option.calculator-item__select-item(value="001") Краски - Kolorit Dynasty
+											option.calculator-item__select-item(value="002") Краски - Kolorit Idol
+											option.calculator-item__select-item(value="003") Краски - Kolorit History
+											option.calculator-item__select-item(value="004") Краски - Kolorit Family
+											option.calculator-item__select-item(value="005") Краски - Kolorit Argentic
+											option.calculator-item__select-item(value="006") Краски - Kolorit STANDART 3
+											option.calculator-item__select-item(value="007") Краски - Kolorit STANDART 5
+											option.calculator-item__select-item(value="008") Краски - Kolorit STANDART H
+											option.calculator-item__select-item(value="009") Краски - Kolorit STANDART M
+											option.calculator-item__select-item(value="010") Средства подготовки поверхности - Kolorit STANDART G
+											option.calculator-item__select-item(value="011") Средства подготовки поверхности - Kolorit Biostop
+											option.calculator-item__select-item(value="012") Средства подготовки поверхности - Kolorit Silanit 
+											option.calculator-item__select-item(value="013") Шпатлевки - Kolorit STANDART LF
+											option.calculator-item__select-item(value="014") Шпатлевки - Kolorit STANDART LH
+								li(data-state="").calculator-item.col-4.calculator-item--margin-right
+									.calculator-item__label Тип поверхности*
+									.calculator-item-select-wrap
+										select( name="surface").calculator-item__select
+											option.calculator-item__select-item(selected="selected" value="12:2") Все поверхности
+											option(value="11:2").calculator-item__select-item 1
+											option(value="9:2").calculator-item__select-item 2
+											option(value="12:2").calculator-item__select-item 3
+								//- ---------------------
+								//- ---------------------
+								li(data-state="").calculator-item.col-3.calculator-item--margin-left
+									.calculator-item__label Площадь*
+									input(name="all" type="number" step="0.1" pattern="[0-9]*[.,]?[0-9]+" )
+								li(data-state="").calculator-item.col-3
+									.calculator-item__label Ширина комнаты, м
+									input(name="width" type="number" step="0.1" pattern="[0-9]*[.,]?[0-9]+" )
+								li(data-state="").calculator-item.col-3.calculator-item--margin-right
+									.calculator-item__label Длина комнаты, м
+									input(name="length" type="number" step="0.1" pattern="[0-9]*[.,]?[0-9]+" )
+								//- ---------------------
+								//- ---------------------
+								li.calculator-item.col-4.calculator-item--margin-left.calculator-result
+									.calculator-result__title Необходимое количество (л):&nbsp;
+										span.js-ceiling-result-paint
+									.calculator-result-wrap
+										span Рекомендуемые
+											span.js-ceiling-square-layer
+											|&nbsp;слоя
+										span Окрашиваемая площадь (м2)&nbsp;
+											span.js-ceiling-result-square
+								li.calculator-item.col-4.calculator-item--margin-right.calculator-result-btn-wrap
+									button(type="submit").btn--res.link-arrow-type
+										.circle-btn
+											.circle-btn-inner
+												+svg('newarr')
+										.calculator-item-btn__text Отправить результаты <br> на почту
+								//- ---------------------
+								
 				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 2
 				li.brd.js-calculator-tab-content-item.calculator-tab-content-item.custom-scroll 3
 	.banner-2

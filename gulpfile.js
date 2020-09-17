@@ -62,7 +62,7 @@ const paths = {
 				dest: './dist/assets/scripts/'
 		},
 		ts: {
-				src: './src/assets/scripts/gulp-modules/ts/*.ts',
+				src: './src/assets/scripts/gulp-modules/ts/**/*.ts',
 				dest: './dist/assets/scripts/'
 		},
 		fonts: {
