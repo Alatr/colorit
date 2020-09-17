@@ -649,23 +649,23 @@ span.word-animate{
 			}
 		}
 	}
-	&__slide-bg{
-		// position: absolute;
-		// left: 0;
-		// top: 0;
-		// width: 100%;
-		// height: 100%;
-		// object-fit: cover;
-		// @include to(768px){
-		// 	display: none;
-		// }
-		// &_mob{
-		// 	display: none;
-		// 	@include to(768px){
-		// 		display: block;
-		// 	}
-		// }
-	}
+	// &__slide-bg{
+	// 	position: absolute;
+	// 	left: 0;
+	// 	top: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	object-fit: cover;
+	// 	@include to(768px){
+	// 		display: none;
+	// 	}
+	// 	&_mob{
+	// 		display: none;
+	// 		@include to(768px){
+	// 			display: block;
+	// 		}
+	// 	}
+	// }
 	&__btn{
 		display: flex;
 		align-items: center;
@@ -960,25 +960,25 @@ span.word-animate{
 		margin-right: 26px;
 	}
 }
-.main-section-sl-1__main-img{
-	// width: 1111px;
-	// height: 684px;
-	// @include to(1280px){
-	// 	height: 600px;
-	// }
-	// @include to(768px){
-	// 	width: 768px;
-	// 	height: calc(1024px - var(--header_h));
-	// }
-	// @include to(700px){
-	// 	width: 100vw;
-	// 	height: calc(100vh - var(--header_h));
-	// 	img{
-	// 		height: 100%;
-	// 		object-fit: cover;
-	// 	}
-	// }
-}
+// .main-section-sl-1__main-img{
+// 	width: 1111px;
+// 	height: 684px;
+// 	@include to(1280px){
+// 		height: 600px;
+// 	}
+// 	@include to(768px){
+// 		width: 768px;
+// 		height: calc(1024px - var(--header_h));
+// 	}
+// 	@include to(700px){
+// 		width: 100vw;
+// 		height: calc(100vh - var(--header_h));
+// 		img{
+// 			height: 100%;
+// 			object-fit: cover;
+// 		}
+// 	}
+// }
 .main-section-sl-1__main-img-2{
 	position: absolute;
 	left: calc(38px + var(--sidebar_w));
@@ -2087,10 +2087,6 @@ span.word-animate{
 			font-size: 14px;
 		}
 	}
-	svg{
-		
-	}
-	
 }
 
 
@@ -2139,6 +2135,12 @@ span.word-animate{
 			justify-content: flex-start;
 		}
 	}
+	.slick-list{
+		padding: 0 15% 0 0;
+		@include to(700px){
+			padding: 0;
+		}
+	}
 	.slick-initialized .slick-slide{
 		display: flex;
 	}
@@ -2154,12 +2156,16 @@ span.word-animate{
 		transform: translateY(-150%);
 	}
 }
-
+.home-advice-sl.slick-active{
+	transform: scale(1) translate(0, 0);
+}
 .home-advice-sl{
 	display: flex;
 	align-items: center;
 	min-width: 0;
 	width: 100%;
+	transition: all 0.3s;
+	transform: scale(0.75) translate(-15%, 0);
 	@include to(992px){
 		align-items: stretch;
 	}
@@ -2354,6 +2360,7 @@ span.word-animate{
 .home-advice-sl-wrap{
 	flex-grow: 1;
 	min-width: 0;
+	width: 100vw;
 	@include from(1441px){
 		margin-left: 130px;
 	}
