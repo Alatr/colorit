@@ -121,7 +121,8 @@
 				@include to(768px){
 					flex-basis: auto;
 					@include size(5);
-					margin-right: 0;
+					margin-right: 10px;
+					margin-left: 10px;
 					
 				}
 				@include to(700px){
@@ -139,14 +140,16 @@
 				}
 				@include from-to(769px, 992px){
 					@include size(6);
-					margin-right: 0;
+					margin-right: 10px;
+					margin-left: 10px;
 					flex-basis: auto;
 				}
 
 				@include to(768px){
 					flex-basis: auto;
 					@include size(4);
-					margin-right: 0;
+					margin-right: 10px;
+					margin-left: 10px;
 				}
 
 				@include to(700px){
