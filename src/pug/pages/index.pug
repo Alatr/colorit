@@ -10,6 +10,7 @@ block head
 block scripts
 	script(src='./assets/scripts/index.js')
 	script(src='./assets/scripts/home.js')
+	script(src='./assets/scripts/home-slider.js')
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -28,14 +29,28 @@ block content
 				span /
 				span.js-current-slick__all 6
 			.main-section-dots-wrapper.js-main-section-dots-wrapper
-			button(type="button").btn--res.slider-btn.js-main-sl-arr-prev
-				+svg('arr-small-right')
+				ul.js-slick-dots.slick-dots(role="tablist" style="")
+					li.slick-active(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide00" aria-label="1 of 6" tabindex="0" aria-selected="true") 1
+					li(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide01" aria-label="2 of 6" tabindex="-1") 2
+					li(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide02" aria-label="3 of 6" tabindex="-1") 3
+					li(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide03" aria-label="4 of 6" tabindex="-1") 4
+					li(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide04" aria-label="5 of 6" tabindex="-1") 5
+					li(role="presentation")
+						button(type="button" role="tab" aria-controls="slick-slide05" aria-label="6 of 6" tabindex="-1") 6
+
 			button(type="button").btn--res.slider-btn.js-main-sl-arr-next
+				+svg('arr-small-right')
+			button(type="button").btn--res.slider-btn.js-main-sl-arr-prev
 				+svg('arr-small-left')
 		//- Main Slider		
 		.main-section-sl.js-main-section-sl
 			//- Slide 1
-			.main-section-sl__main-slide.main-slide.main-slide--1
+			.main-section-sl__main-slide.main-slide--active.main-slide.main-slide--1
 				.main-slide__left(style="background: #EBEEF3;")
 					.main-slide__text-wrapper
 						h2.main-slide__title Особое ощущение вашего дома

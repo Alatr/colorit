@@ -448,7 +448,7 @@
 // 		}, 1000);
 
 const sl_main = $('.js-main-section-sl');
-
+/* 
 sl_main.on('init', function (event, slick, currentSlide, nextSlide) {
 	$('.js-current-slick__all').text(slick.slideCount);
 });
@@ -473,7 +473,7 @@ $('.js-main-sl-arr-prev').click(function () {
 
 sl_main.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 	$('.js-current-slick__cnt').text(currentSlide + 1)
-});
+}); */
 
 
 

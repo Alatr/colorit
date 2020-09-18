@@ -498,9 +498,18 @@ span.word-animate{
 	border: 1px solid red;
 }
 .main-section-sl{
+	position: relative;
+	
 	.main-slide{
 		display: flex;
 		height: calc(100vh - 66px);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
 		@include to(768px){
 			flex-direction: column-reverse;
 		}
@@ -525,6 +534,11 @@ span.word-animate{
 			display: block;
 		}
 	}	
+}
+.main-slide--active:not(#h) {
+	pointer-events: auto;
+	opacity: 1;
+	visibility: visible;
 }
 .main-slide{
 	&__left, &__right{
