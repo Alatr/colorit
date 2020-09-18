@@ -2173,6 +2173,11 @@ span.word-animate{
 	@include to(700px){
 		flex-direction: column;
 	}
+	.link-with-circle{
+		@include to(700px){
+			display: none;
+		}
+	}
 	&__title{
 		width: 515px;
 		z-index: 6;
@@ -2790,7 +2795,18 @@ span.word-animate{
 }
 
 .home-news{
+	.home-news__link-wrapepr{
+		@include to(700px){
+			background-color: #C11426;
+			width: calc(100vw);
+			transform: translate(-10px, 0);
+			align-items: center;
+			justify-content: center;
+			height: 90px;
+		}
+	}
 	.home-news__link-with-circle{
+		
 		&:hover{
 			.link-with-circle__circle{
 				background-color: rgba(255, 255, 255, .5);
@@ -2849,6 +2865,7 @@ span.word-animate{
 
 .home-advice-sl__link-with-circle{
 	z-index: 5;
+
 	.link-with-circle__text{
 		color:#C11426;
 		@include from(1441px){
