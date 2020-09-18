@@ -415,11 +415,14 @@ block content
 							+img('temp/o522.png')
 						.home-open-sec-item__overlay
 				li
-					a(href="#").home-news__link.link-arrow-type
-						.circle-btn
-							.circle-btn-inner
-								+svg('qww')
-						span.link-arrow-type__text Смотреть всю продукцию
+					a(href="#").link-with-circle.home-open-sec__link-with-circle
+						.link-with-circle__circle
+							.link-with-circle__circle-inner
+								<svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11 3L8.8 5L8.8 3L8.8 1L11 3Z" fill="#C11426"/>
+									<path d="M-3.25841e-07 3L11 3M11 3L8.8 5L8.8 1L11 3Z" stroke="#C11426" stroke-width="0.6"/>
+								</svg>
+						span.link-with-circle__text Смотреть всю продукцию
 
 	.page-container
 		ul.row.page-list
@@ -475,11 +478,19 @@ block content
 						.home-news-title__btn-inner
 							+svg('qw')
 				.home-news__link-wrapepr
-					a(href="#").home-news__link.link-arrow-type
-						.circle-btn
-							.circle-btn-inner
-								+svg('qww')
-						.link-arrow-type__text Больше новостей
+					//- a(href="#").home-news__link.link-arrow-type
+					//- 	.circle-btn
+					//- 		.circle-btn-inner
+					//- 			+svg('qww')
+					//- 	.link-arrow-type__text Больше новостей
+					a(href="#").link-with-circle.home-news__link-with-circle
+						.link-with-circle__circle
+							.link-with-circle__circle-inner
+								<svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11 3L8.8 5L8.8 3L8.8 1L11 3Z" fill="#F6F7FC"/>
+									<path d="M-3.25841e-07 3L11 3M11 3L8.8 5L8.8 1L11 3Z" stroke="#F6F7FC" stroke-width="0.6"/>
+								</svg>
+						span.link-with-circle__text Больше новостей
 	.home-advice
 		.page-container
 			.row-row
@@ -505,11 +516,19 @@ block content
 								//- a(href="#").home-advice-sl__link
 								//- 	+svg('arr-circ-diff')
 								//- 	span Все советы
-								a(href="#").home-advice-sl__link.link-arrow-type
-									.circle-btn
-										.circle-btn-inner
-											+svg('qww')
-									span.link-arrow-type__text Все советы
+								//- a(href="#").home-advice-sl__link.link-arrow-type
+								//- 	.circle-btn
+								//- 		.circle-btn-inner
+								//- 			+svg('qww')
+								//- 	span.link-arrow-type__text Все советы
+								a(href="#").link-with-circle.home-advice-sl__link-with-circle
+									.link-with-circle__circle
+										.link-with-circle__circle-inner
+											<svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11 3L8.8 5L8.8 3L8.8 1L11 3Z" fill="#C11426"/>
+												<path d="M-3.25841e-07 3L11 3M11 3L8.8 5L8.8 1L11 3Z" stroke="#C11426" stroke-width="0.6"/>
+											</svg>
+									span.link-with-circle__text Все советы
 	a(href="#").home-news__link.link-arrow-type.all-advice.tablet--hiddenn
 		+svg('arr-circ-white').link-arrow-type__icon
 		.link-arrow-type__text Все советы

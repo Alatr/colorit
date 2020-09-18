@@ -30,3 +30,13 @@ mixin RangeSlider(options)
 			.u-range-item-nav
 				input(id=option.id+"_min" class="js_"+option.id+"_min js-current-min" name=option.id+"_min" maxlength=option.max type="number" min=option.min value=option.min max=option.max)
 				input(id=option.id+"_max" class="js_"+option.id+"_max js-current-max" name=option.id+"_max" maxlength=option.max type="number" min=option.min value=option.max max=option.max)
+
+mixin link-with-circle(color, text, link)
+	a(href=link class="link-with-circle link-with-circle_"+color)
+		.link-with-circle__circle
+			.link-with-circle__circle-inner
+				<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M3.2 9L1.4 7.2L3.2 7.2L5 7.2L3.2 9Z" fill="#C11426"/>
+					<path d="M3.2 -5.14989e-07L3.2 9M3.2 9L1.4 7.2L5 7.2L3.2 9Z" stroke="#C11426" stroke-width="0.6"/>
+				</svg>
+		span.link-with-circle__text= text
