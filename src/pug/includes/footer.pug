@@ -13,7 +13,7 @@
 	button.btn--res
 		+svg('up').up-btn.js-up-btn
 	.container
-			ul.row.footer-menu.list
+			ul.footer-menu.footer-menu_desk
 				each j, ii in menuObj
 					li.footer-menu-item
 						a(href="#").footer-menu-item__link
@@ -36,13 +36,34 @@
 						each v in ['Калькулятор краски', 'Подбор цвета']
 							li.footer-submenu-item
 								a(href="#").footer-submenu-item__link= v
-				li.footer-menu-item
+				li.footer-menu-item.footer-menu-item_last
 					a(href="#").footer-menu-item__link Инфо
 					ul.footer-submenu-list
 						each v in ['Акции', 'Новости', 'Объекты']
 							li.footer-submenu-item
 								a(href="#").footer-submenu-item__link= v
-				li.footer-menu-item.footer-menu-item--fat.menu-mob-show-fat.col--12.order--last
+
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link Меню
+					ul.footer-submenu-list
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Компания
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Продукция
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Сервисы
+
+				li.footer-menu-item.menu-mob-show.col--6
+					a(href="#").footer-menu-item__link.mob1--hidden menu
+					ul.footer-submenu-list
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Советы
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Инфо
+						li.footer-submenu-item
+							a(href="#").footer-submenu-item__link Где купить
+
+				li.footer-menu-item.footer-menu-item_social
 					ul.footer-menu-info-list
 						li.footer-menu-info-item
 							a(href="https://www.instagram.com/kolorit.ukraine/" target="_blank").footer-menu-info-item__icon
@@ -68,31 +89,19 @@
 									input(type="email" required placeholder="E-mail").subscribe-form__input-email
 									button.btn--res.subscribe-form__submit
 										+svg('form_submit')
-						li.footer-menu-tel
-							a(href="tel:0800508908") 0 800 508 908
-								+svg('helloy')
 
-				li.footer-menu-item.menu-mob-show.col--6
-					a(href="#").footer-menu-item__link Меню
-						ul.footer-submenu-list
-							each v in ['Компания', 'Продукция', 'Сервисы']
-								li.footer-submenu-item
-									a(href="#").footer-submenu-item__link= v
+				li.footer-menu-item.footer-menu-item_links
+					ul.footer-submenu-list
+						each v in ['Система Argentum Protect, Национальная акция 2020, Символы на этикетках','Национальная акция 2020, Символы на этикеткахСистема Argentum Protect Национальная акция 2020, Символы на этикетках','Argentum Система Protect, Национальная акция 2020, Символы на этикетках. Национальная акция']
+							li.footer-submenu-item
+								a(href="#").footer-submenu-item__link.underline--mob
+									span= v
+				li.footer-menu-item.footer-menu-item_hello
+					.footer-menu-tel-desk
+						a(href="tel:0800508908") 
+							+svg('helloy')
+							span 0 800 508 908
 
-				li.footer-menu-item.menu-mob-show.col--6
-					a(href="#").footer-menu-item__link.mob1--hidden menu
-						ul.footer-submenu-list
-							each v in ['Советы', 'Инфо', 'Где купить']
-								li.footer-submenu-item
-									a(href="#").footer-submenu-item__link= v
-									
-				li.footer-menu-item.col--12.menu-mob-show-fat
-					a(href="#").footer-menu-item__link Полезные ссылки
-						ul.footer-submenu-list
-							each v in ['kolorit-argentum-protect.com','www.tikkurila.ua','vivacolor.ua','farba-sevice.com']
-								li.footer-submenu-item
-									a(href="#").footer-submenu-item__link.underline--mob
-										span= v
 .footer-copy
 	.container
 		.row

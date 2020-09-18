@@ -534,8 +534,11 @@ sl_advice.slick({
 	dots: false,
 	arrows: false,
 	infinite: false,
-	fade: true,
+	fade: false,
 });
+
+let sl_advice_leftPos = $('.home-advice').find('.slick-list').offset().left;
+$('.home-advice').find('.slick-list').css('width', `calc(100vw - ${sl_advice_leftPos}px)`)
 
 $('.js-advice-sl-arr-next').click(function () {
 	sl_advice.slick('slickPrev');
@@ -590,5 +593,3 @@ if (screen.width > 700) {
 		sl_features.slick('slickGoTo', $(this).data().sl_bread, true);
 	})
 }
-
-

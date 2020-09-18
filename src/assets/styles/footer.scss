@@ -57,6 +57,11 @@
 	@include to(700px){
 		padding-top: 12px;
 	}
+	.container{
+		@include from(1441px){
+			max-width: 1300px;
+		}
+	}
 	.row{
 		@include row-flex();
 		justify-content: space-between;
@@ -72,6 +77,105 @@
 
 		}
 	}
+	&_mob{
+		display: none;
+		@include to(768px){
+			display: block;
+		}
+	}
+
+	&_desk{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include to(768px){
+			@include row-flex();
+		}
+		.footer-menu-item{
+			flex-basis: 20%;
+			@include to(768px){
+				flex-basis: auto;
+				@include col();
+				@include size(3);
+			}
+			@include to(700px){
+				display: none;
+			}
+			&_last{
+				flex-basis: calc(40%);
+				@include to(768px){
+					flex-basis: auto;
+					@include size(3);
+				}
+			}
+
+			&_social{
+				flex-basis: calc(40% - 86px);
+				margin-right: 86px;
+
+				@include from-to(769px, 992px){
+					@include size(6);
+					margin-right: 0;
+					flex-basis: auto;
+				}
+				@include to(768px){
+					flex-basis: auto;
+					@include size(5);
+					margin-right: 10px;
+					margin-left: 10px;
+					
+				}
+				@include to(700px){
+					@include size(12);
+					display: block;
+					order: 2;
+				}
+			}
+
+			&_links{
+				flex-basis: calc(40% - 112px);
+				margin-right: 112px;
+				.footer-submenu-item{
+					max-width: 100%;
+				}
+				@include from-to(769px, 992px){
+					@include size(6);
+					margin-right: 10px;
+					margin-left: 10px;
+					flex-basis: auto;
+				}
+
+				@include to(768px){
+					flex-basis: auto;
+					@include size(4);
+					margin-right: 10px;
+					margin-left: 10px;
+				}
+
+				@include to(700px){
+					@include size(12);
+					display: block;
+					
+				}
+			}
+			&_hello{
+
+				// flex-basis:180px;
+				flex-basis: calc(20%);
+				@include to(700px){
+					display: block;
+					flex-basis: 100%;
+					order: 3;
+				}
+				@include from-to(701px, 992px){
+					display: none;
+				}
+			}
+		}
+		// .footer-menu-item + .footer-menu-item{
+		// 	margin-left: 84px;
+		// }
+	}
 }
 
 .footer-menu-item{
@@ -79,9 +183,10 @@
 	display: flex;
 	flex-direction: column;
 	@include to(700px){
-		margin-bottom: 25px;
+		margin-bottom: 35px;
 	}
 	&__link{
+		max-width: 180px;
 		margin-bottom: 5px;
 		font-size: 12px;
 		text-transform: uppercase;
@@ -89,19 +194,24 @@
 		text-decoration: none;
 		color: #000C31;
 		display: inline-block;
+		font-weight: 500;
+		padding-right: 10px;
+		@include from(1441px){
+			font-size: 14px;
+		}
 		@include to(700px){
 			text-decoration: none;
 		}
-			span {
+			// span {
 
 
-				text-decoration: none;
-				background-image: linear-gradient(#000C31, #000C31);
-				background-position: 0% 100%;
-				background-repeat: no-repeat;
-				background-size: 100% 1px;
-				transition: background-size .3s;
-			}
+			// 	text-decoration: none;
+			// 	background-image: linear-gradient(#000C31, #000C31);
+			// 	background-position: 0% 100%;
+			// 	background-repeat: no-repeat;
+			// 	background-size: 100% 1px;
+			// 	transition: background-size .3s;
+			// }
 	}
 }
 .footer-menu-item--fat:not(#j){
@@ -118,6 +228,7 @@
 	}
 }
 .footer-submenu-item{
+	max-width: 180px;
 	&__link{
 		font-size: 12px;
 		line-height: lh(20,12);
@@ -126,33 +237,37 @@
 		padding-right: 15px;
 		display: flex;
 		margin-bottom: 5px;
+		@include from(1441px){
+			font-size: 14px;
+			line-height: 2.15em;
+		}
 	}
 }
 
 .footer-menu-info-list{
 	display: flex;
 	flex-direction: column;
-	@include to(700px){
-		padding: 0px 0 120px;
-	}
 }
 .footer-menu-item__link.item-maggin-bottom{
 	display: inline-block;
 	text-decoration: none;
-	span{
+	// span{
 
-		background-image: linear-gradient(#000C31, #000C31);
-		background-position: 0% 90%;
-		background-repeat: no-repeat;
-		background-size: 100% 1px;
-		transition: background-size .3s;
-	}
+	// 	background-image: linear-gradient(#000C31, #000C31);
+	// 	background-position: 0% 90%;
+	// 	background-repeat: no-repeat;
+	// 	background-size: 100% 1px;
+	// 	transition: background-size .3s;
+	// }
 }
 
 .footer-menu-info-item{
 	margin-bottom: 33px;
 	display: flex;
 	align-items: center;
+	&:last-child{
+		margin-bottom: 0;
+	}
 	@include to(700px){
 		margin-bottom: 15px;
 	}
@@ -259,6 +374,10 @@
 		padding-top: 50px;
 		padding-bottom: 54px;
 		justify-content: center;
+		@include from(1441px){
+			padding-top: 71px;
+			padding-bottom: 71px;
+		}
 		@include to(700px){
 			flex-direction: column;
 			align-items: center;
@@ -270,6 +389,9 @@
 	}
 	.footer-subscribe__l{
 		@include size(4);
+		@include from(1441px){
+			@include size(5);
+		}
 		@include to(700px){
 			@include size(10)
 		}
@@ -278,6 +400,10 @@
 		@include shift-right(1);
 		
 		@include size(4);
+		@include from(1441px){
+			@include size(5);
+			padding-left: 80px;
+		}
 		@include to(992px){
 			@include shift-right(0);
 			@include size(5);
@@ -293,12 +419,21 @@
 		line-height: lh(22,12);
 		color: #F0F1F8;
 		padding-right: 17%;
+		@include from(1441px){
+			font-size: 16px;
+			line-height: 1.6em;
+			margin-bottom: 9px;
+		}
 	}
 	&__title{
 		font-weight: bold;
 		font-size: 45px;
 		line-height: lh(55, 45);
 		color: #F6F7FC;
+		@include from(1441px){
+			font-size: 45px;
+			line-height: 50px;
+		}
 		@include to(992px){
 			font-size: 32px;
 		}
@@ -344,6 +479,10 @@
 		&::-ms-input-placeholder {
 			color: #F6F7FC;
 		}
+		@include from(1441px){
+			margin-bottom: 50px;
+			font-size: 16px;
+		}
 	}
 	&__btn{
 		margin-top: 10px;
@@ -354,7 +493,7 @@
 		align-items: center;
 		justify-content: center;
 		border: 1px solid #9AB4C1;
-		border-radius: 25px;
+		border-radius: 50px;
 		font-weight: 500;
 		font-size: 15px;
 		letter-spacing: 0.08em;
@@ -363,6 +502,12 @@
 		/* вайт */
 
 		color: #F6F7FC;
+		@include from(1441px){
+			width: 232px;
+			height: 54px;
+			font-size: 18px;
+
+		}
 		@include to(992px){
 			width: 180px;
 			height: 40px;
@@ -381,7 +526,41 @@
 		}
 	}
 }
+.footer-menu-tel-desk{
+	max-width: 180px;
+	align-self: flex-end;
+	margin-top: auto;
+	
+	a{
+		display: flex;
+		flex-direction: column;
 
+		color: #C11426;
+		text-decoration: none;
+	}
+	span{
+		line-height: 1.5em;
+		font-weight: 500;
+		font-size: 24px;
+		@include from(1441px){
+			font-size: 27px;
+		}
+		@include to(700px){
+			font-size: 22px;
+			line-height: 1.3em;
+		}
+	}
+	svg{
+		width: 120px;
+		height: 56px;
+		align-self: flex-end;
+		margin-bottom: 3px;
+		@include to(700px){
+			width: 110px;
+			height: 40px;
+		}
+	}
+}
 .footer-menu-tel{
 	position: absolute;
 	bottom: 70px;
@@ -469,5 +648,14 @@
 		background-repeat: no-repeat;
 		background-size: 100% 1px;
 		transition: background-size .3s;
+	}
+}
+
+
+
+.footer-menu-new{
+	&__container{
+		max-width: 1266px;
+		margin: 0 auto;
 	}
 }
