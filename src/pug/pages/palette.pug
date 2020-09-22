@@ -42,12 +42,13 @@ block content
 						select.palette-item__select.js-palette-item__select.calculator-item__select
 							each v, j in ['Symphony', 'Deco Grey', 'RAL Effect', 'RAL Classic', 'VALTTI -  лазури для дерева', 'Лаки для интерьера', 'Краски для мебели', 'Miranol и Unica', 'Почувствуй цвет']
 								if j == 0
-									option.palette-item__select-item(selected="selected")= v
+									option.palette-item__select-item(data-pal="palette"+j  selected="selected")= v
 								else
-									option.palette-item__select-item= v
+									option.palette-item__select-item(data-pal="palette"+j)= v
 				.palette-block-body
 					// ------- item
 					.palette-block-body-item.js-palette-block-body-item
+
 						//p.palette-block-body-item__text На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета
 						//.palette-tab.js-palette-tab
 						//	.calculator-item-select-wrap.palette-color-item-select-wrap
