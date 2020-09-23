@@ -5,6 +5,7 @@ class PaletteCreate {
         this.wrap = data.wrap || '';
         this.lang = 'ru';
         this.type = 'palette0';
+        this.letters = ['f','g', 'h','j','k','l','m','n','s','v','x','y'];
         this.init('palette0')
     }
 
@@ -24,10 +25,22 @@ class PaletteCreate {
         this.tab = tabs;
         this.description = description;
         this.getColors('/dist/static/',type, this.setContentPalette.bind(this));
+
+        $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-palette-tab-content-item',function (e) {
+            let delta = e.originalEvent.deltaY;
+            if( (delta < 0 && this.scrollLeft > 0) || delta > 0 && this.scrollLeft < this.scrollWidth - this.offsetWidth) {
+                e.preventDefault();
+                this.scrollLeft += e.originalEvent.deltaY;
+            }
+
+
+
+        })
     }
 
     setContentPalette(list, type) {
         if(type === 'palette0') {
+        // if(type === 'palette0' || type === 'palette1') {
             this.createTab('.js-palette-tab',this.changeListForSymphony(list));
             if (screen.width > 700) {
                 const tab = new Tab({
@@ -51,31 +64,42 @@ class PaletteCreate {
             }
 
         } else {
-            this.createNoTab('.js-palette-tab',this.changeListInObj(list));
+            this.createNoTab('.js-palette-tab',list.colors);
+            // this.createNoTab('.js-palette-tab',this.changeListInObj(list));
         }
 
 
     }
-
     changeListForSymphony(list) {
         const obj = {};
         list.colors.forEach(el => {
-            if(obj[el.code]) {
-                if(!obj[el.code][el.type]) obj[el.code][el.type] = el;
+            if(obj[el.type]) {
+                if(!obj[el.type][el.code]) obj[el.type][el.code] = el;
             } else {
-                obj[el.code] = {};
-                obj[el.code][el.type] = el;
+                obj[el.type] = {};
+                obj[el.type][el.code] = el;
             }
         });
         return obj;
     }
+    // changeListForSymphony(list) {
+    //     const obj = {};
+    //     list.colors.forEach(el => {
+    //         if(obj[el.code]) {
+    //             if(!obj[el.code][el.type]) obj[el.code][el.type] = el;
+    //         } else {
+    //             obj[el.code] = {};
+    //             obj[el.code][el.type] = el;
+    //         }
+    //     });
+    //     return obj;
+    // }
     changeListInObj(list) {
         const obj = {};
         let i = 0;
         let j = 0;
         list.colors.forEach( el => {
-
-
+            console.log(el);
             if(obj[i]) {
                 obj[i][j] = el
             } else {
@@ -83,7 +107,7 @@ class PaletteCreate {
                 obj[i][j] = el;
             }
             j++;
-            if(j === 12){
+            if(j === 10){
                 j = 0;
                 i++;
             }
@@ -170,34 +194,136 @@ class PaletteCreate {
         `;
     }
 
+    // createColorTableSymphony(list, name) {
+    //     let row = `
+    //     `;
+    //
+    //     for(let el in list){
+    //         if(+el > +name.from && +el < +name.to) row += this.createColorRow(list[el]);
+    //     }
+    //     let wrap = `<ul class='color-list'>${row}</ul>`;
+    //     return wrap;
+    // }
+
     createColorTableSymphony(list, name) {
         let row = `
         `;
-
+        let content = `
+        `;
         for(let el in list){
-            if(+el > +name.from && +el < +name.to) row += this.createColorRow(list[el]);
+            row += this.createSymphonyColorRow(list[el], name);
         }
-        let wrap = `<ul class='color-list'>${row}</ul>`;
-        return wrap;
+        content += `<ul class='color-list'>${row}</ul>`;
+
+        return content;
     }
 
+    createSymphonyColorRow(list, name) {
+        let elem = `
+        `;
+        let type = '';
+        // for(let i = 300;i <= 503; i++){
+        //     if(i >= +name.from && i <= +name.to) {
+        //
+        //         // console.log(list[el]);
+        //         if(list[i]){
+        //             elem += this.createSymphonyColorEl(list[i]);
+        //         } else{
+        //             elem += this.createEmptyEl();
+        //         }
+        //
+        //     }
+        //
+        // }
+
+        for(let el in list){
+            type = list[el].type;
+            if(+el >= +name.from && +el <= +name.to) {
+                elem += this.createSymphonyColorEl(list[el]);
+                // console.log(list[el]);
+            }
+        }
+
+        return `
+            <li class='color-item' data-letter="${type}">
+                <ul class='color-shade-list'>
+                    ${elem}
+                </ul>
+            </li>
+            
+        `
+    }
+
+    createSymphonyColorEl(el) {
+        let name = el.name.replace(' ', '-');
+        return `
+            <li class='color-shade-item' data-code="${el.code}" style="background: rgb(${el.r},${el.g},${el.b})">
+                <a href='/color-single.html?style=${this.type}&color=${name}'  data-code="${el.code}"></a>
+            </li>
+        `
+    }
+
+
+    // createColorTableSymphony(list, name) {
+    //     let row = `
+    //     `;
+    //     let content = `
+    //     `;
+    //     let i = 0;
+    //
+    //     for(let el in list){
+    //         if(+el >= +name.from && +el <= +name.to) {
+    //             if(i >= 12) {
+    //                 i = 0;
+    //                 content += `<ul class='color-list'>${row}</ul>`;
+    //                 row = `
+    //             `;
+    //             }
+    //
+    //             row += this.createColorRow(list[el]);
+    //             i++;
+    //         }
+    //     }
+    //     if(i > 0){
+    //         content += `<ul class='color-list'>${row}</ul>`;
+    //     }
+    //
+    //     return content;
+    // }
     createColorTable(list) {
         let row = `
         `;
-
+        console.log(list);
         for(let el in list){
-            row += this.createColorRow(list[el]);
+            row += this.createColorEl(list[el]);
+            // row += this.createColorRow(list[el]);
         }
-        let wrap = `<ul class='color-list'>${row}</ul>`;
+        let wrap = `<ul class='color-list'><li class='color-item'>
+                <ul class='color-shade-list wrap'>
+                    ${row}
+                </ul>
+            </li></ul>`;
+        // let wrap = `<ul class='color-list'>${row}</ul>`;
         return wrap;
     }
 
     createColorRow(list) {
         let elem = `
         `;
-        for(let el in list){
-            elem += this.createColorEl(list[el]);
-        }
+        // console.log(list);
+        // for(let el in list){
+        //     elem += this.createColorEl(list[el]);
+        // }
+        this.letters.forEach(el => {
+            // console.log(el.toUpperCase());
+            if(list[el.toUpperCase()]) {
+                elem += this.createColorEl(list[el.toUpperCase()]);
+            } else {
+                elem += this.createEmptyEl();
+            }
+        });
+
+
         return `
             <li class='color-item'>
                 <ul class='color-shade-list'>
@@ -214,6 +340,11 @@ class PaletteCreate {
             <li class='color-shade-item' style="background: rgb(${el.r},${el.g},${el.b})">
                 <a href='/color-single.html?style=${this.type}&color=${name}' ></a>
             </li>
+        `
+    }
+    createEmptyEl() {
+        return `
+            <li class='color-shade-item'></li>
         `
     }
 
