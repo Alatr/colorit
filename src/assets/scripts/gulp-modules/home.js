@@ -564,7 +564,7 @@ sl_advice.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 
 
 
-
+/* 
 if (screen.width > 700) {
 	
 	const sl_features = $('.js-section-slaider');
@@ -592,4 +592,4 @@ if (screen.width > 700) {
 		// console.log($(this).data().sl_bread);
 		sl_features.slick('slickGoTo', $(this).data().sl_bread, true);
 	})
-}
+} */

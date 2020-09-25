@@ -148,6 +148,17 @@
 		@include size(12)
 	}
 }
+.col-8{
+	@include col();
+	@include size(8);
+	@include to(992px){
+		@include size(10);
+
+	}
+	@include to(700px){
+		@include size(12)
+	}
+}
 
 .calculator-item--margin-left{
 	@include shift-left(1);
