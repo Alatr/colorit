@@ -35,7 +35,18 @@ block variable
 				link: pagesLink[0].palette,
 				img: 'menu/2_2.jpg',
 				title: 'Подбор цвета',
-			}
+			},
+			{ 
+				link: './services.html#kolorit-academy',
+				img: 'menu/2_3.jpg',
+				title: 'Школа мастеров KOLORIT',
+			},
+			{ 
+				link: './services.html#kolorit-loyalty',
+				img: 'menu/2_4.jpg',
+				title: 'Программа лояльности',
+			},
+
 		];
 		var submenu_4 = [{
 				link: pagesLink[0].news,
@@ -55,7 +66,7 @@ block variable
 		];
 .container
 	.row-row
-		ul.header-menu
+		ul.header-menu.header-menu__left
 			li.header-menu-item
 				a(href=pagesLink[0].company).header-menu-item__title Компания
 			li.has-submenu.header-menu-item
@@ -97,18 +108,38 @@ block variable
 			li.has-submenu.header-menu-item
 				a(href=pagesLink[0].services).header-menu-item__title Сервисы
 				ul.header-submenu
-					each v in submenu_2 
-						li
-							a(href= v.link).header-submenu-item
-								.header-submenu-item__img
-									+img(v.img)
-								h5.header-submenu-item__title= v.title
+					each v, i in submenu_2 
+						if i=='0'
+							li
+								a(href= v.link).header-submenu-item
+									.header-submenu-item__img
+										+img(v.img)
+									h5.header-submenu-item__title= v.title
+						if i=='1'
+							li
+								a(href= v.link).header-submenu-item
+									.header-submenu-item__img
+										+img(v.img)
+									h5.header-submenu-item__title= v.title
+						if i=='2'
+							li
+								a(href= v.link).header-submenu-item
+									.header-submenu-item__img
+										+img(v.img)
+									h5.header-submenu-item__title.header-submenu-item__title_width= v.title
+						if i=='3'
+							li
+								a(href= v.link).header-submenu-item
+									.header-submenu-item__img
+										+img(v.img)
+									h5.header-submenu-item__title.header-submenu-item__title_width= v.title
 					li.overlay
 			li.header-menu-item
 				a(href=pagesLink[0].advice).header-menu-item__title советы
-			li.header-menu-item.header-menu-item__logo
-				a(href="/")
-					+img('logo.svg')
+		.header-menu-item.header-menu-item__logo
+			a(href="/")
+				+img('logo.svg')
+		ul.header-menu.header-menu__right
 			li.has-submenu.header-menu-item
 				a(href="./discounts.html").header-menu-item__title инфо
 				ul.header-submenu
@@ -119,19 +150,20 @@ block variable
 									+img(v.img)
 								h5.header-submenu-item__title= v.title
 					li.overlay
-			li.header-menu-item
+			li.header-menu-item.header-menu-item_border
 				a(href=pagesLink[0].buy).header-menu-item__title Где Купить
-		a(href="tel:+1234567890").header-phone
-			+img('phone_icon.svg').header-phone__icon
-			span.header-phone__text.header__text 1 234 567 890
-		.lang-list-vertical-wrap
-			ul.lang-list-vertical
-				li.lang-list-vertical__item.lang-list__item--active
-					a(href='#').header__text укр
-				li.lang-list-vertical__item.active
-					a(href='#').header__text рус
-			+svg('arr')
-		button(type="button").js-header-search.header-search.btn--res
-			+img('search.svg')
-		button(type="button").js-header-menu-btn.header-menu-btn.btn--res
-			+svg('menu')
+			li.header-menu-item-left-block
+				a(href="tel:+1234567890").header-phone
+					+img('phone_icon.svg').header-phone__icon
+					span.header-phone__text.header__text 1 234 567 890
+				.lang-list-vertical-wrap
+					ul.lang-list-vertical
+						li.lang-list-vertical__item.lang-list__item--active
+							a(href='#').header__text укр
+						li.lang-list-vertical__item.active
+							a(href='#').header__text рус
+					+svg('arr')
+				button(type="button").js-header-search.header-search.btn--res
+					+img('search.svg')
+				button(type="button").js-header-menu-btn.header-menu-btn.btn--res
+					+svg('menu')

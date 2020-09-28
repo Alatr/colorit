@@ -338,6 +338,12 @@ class showModalCallback extends showModal {
 		}
 	});
 
+	const form_8 = new showModal({
+		popup: '.js-modal-form-popup_color-single',
+		closeBtn: '.js-form_color-single_close',
+		openBtn: '.js-color-single-block-info-btn'
+	});
+
 
 
 

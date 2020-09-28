@@ -48,9 +48,9 @@ block content
 							li.color-single-block-item-info
 								span.color-single-block-item-info__key Код RGB:
 								span.color-single-block-item-info__val 176, 44, 60 (B02C3C)
-							li.color-single-block-item-info
-								span.color-single-block-item-info__key Аналог в палитре NCS:
-								span.color-single-block-item-info__val если есть
+							//- li.color-single-block-item-info
+							//- 	span.color-single-block-item-info__key Аналог в палитре NCS:
+							//- 	span.color-single-block-item-info__val если есть
 							li.color-single-block-item-info
 								.color-single-block-item-info__key_w-quest.color-single-block-item-info__key
 									span Базис:
@@ -75,21 +75,24 @@ block content
 											+svg('vopr')
 											.products-card-block-info-item-descr__text 
 												p 1- Стоимость тонировки до 150 грн на 9л тару
-												p 2-Стоимость тонировки от 151 до 400 грн на 9л тару
+												p 2- Стоимость тонировки от 151 до 400 грн на 9л тару
 												p 3- Стоимость тонировки более 400 грн на 9л тару.
 												p Точную стоимость тонировки уточняйте при покупке краски
 								span.color-single-block-item-info__val 2
-					.color-single-block-info-nav
-						.calculator-item.color-single-select.calculator-item-select-wrap 
-							select.palette-item__select.js-palette-color-item__select.calculator-item__select
-								each v, j in ['Выбрать продукт','хз1', 'хз2', 'хз3']
-									if j == 0
-										option.palette-item__select-item(selected="selected")= v
-									else
-										option.palette-item__select-item= v
-						a(href="#" download).color-single-block-info-nav__link
-							span Сохранить цвет
-							+svg('download1')
+					.color-single-block-info-nav-wrapper
+						.color-single-block-info-nav
+							.calculator-item.color-single-select.calculator-item-select-wrap 
+								select.palette-item__select.js-palette-color-item__select.calculator-item__select
+									each v, j in ['Выбрать продукт','хз1', 'хз2', 'хз3']
+										if j == 0
+											option.palette-item__select-item(selected="selected")= v
+										else
+											option.palette-item__select-item= v
+							a(href="#" download).color-single-block-info-nav__link
+								span Сохранить цвет
+								+svg('download1')
+						button.btn--res.color-single-block-info-btn.js-color-single-block-info-btn Заказать выкрас
+						
 				.color-single-block__r
 					.color-single-block__img(style="background: #B02C3C;")
 						+img('color-single/sc1.jpg').js-color-single-block__main-img
