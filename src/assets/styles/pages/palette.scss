@@ -174,9 +174,10 @@
 	pointer-events: none;
 	visibility: hidden;
 	opacity: 0;
-	transition: all 0.3s;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	//transition: all 0.3s;
+	justify-content: flex-start;
+	overflow: auto;
+	//flex-wrap: wrap;
 	padding: 50px 30px 50px 30px;
 	@include to(992px){
 		padding: 30px 15px 0px 15px;
@@ -194,7 +195,6 @@
 	display: flex;
 
 
-
 }
 
 .palette-tab-btn--active:not(#h){
@@ -207,7 +207,7 @@
 .color-list{
 	display: flex;
 	flex-direction: column;
-	margin: 0 15px 30px;
+	margin: 0 auto 30px;
 	@include to(1200px){
 		margin: 0 min(vw(5), 5px) 30px;
 
@@ -216,26 +216,32 @@
 
 .color-shade-list{
 	display: flex;
+	&.wrap{
+		flex-wrap: wrap;
+	}
 }
 
 .color-shade-item{
 	margin: 2px;
-	width: 21px;
-	height: 21px;
-	background: #C84F68;
-	transition: all 0.3s;
+	width: 26px;
+	height: 26px;
+	background: transparent;
+	//background: #C84F68;
+	border: 1px solid #eeeeee;
+	transition: transform 0.3s;
 	@include from(993px){
 		&:hover{
-				transform: scale(1.3);
+			border: 1px solid transparent;
+			transform: scale(1.8);
 		}
 	}
 	@include to(1200px){
-		width: min(vw(21), 21px);
-		height: min(vw(21), 21px);
+		width: min(vw(26), 26px);
+		height: min(vw(26), 26px);
 	}
 	@include to(992px){
-		width: 21px;
-		height: 21px;
+		width: 26px;
+		height: 26px;
 	}
 
 	a{
@@ -243,4 +249,5 @@
 		height: 100%;
 		display: flex;
 	}
+
 }
