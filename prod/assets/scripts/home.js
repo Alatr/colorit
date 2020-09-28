@@ -448,7 +448,7 @@
 // 		}, 1000);
 
 const sl_main = $('.js-main-section-sl');
-
+/* 
 sl_main.on('init', function (event, slick, currentSlide, nextSlide) {
 	$('.js-current-slick__all').text(slick.slideCount);
 });
@@ -473,7 +473,7 @@ $('.js-main-sl-arr-prev').click(function () {
 
 sl_main.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 	$('.js-current-slick__cnt').text(currentSlide + 1)
-});
+}); */
 
 
 
@@ -534,8 +534,11 @@ sl_advice.slick({
 	dots: false,
 	arrows: false,
 	infinite: false,
-	fade: true,
+	fade: false,
 });
+
+let sl_advice_leftPos = $('.home-advice').find('.slick-list').offset().left;
+$('.home-advice').find('.slick-list').css('width', `calc(100vw - ${sl_advice_leftPos}px)`)
 
 $('.js-advice-sl-arr-next').click(function () {
 	sl_advice.slick('slickPrev');
@@ -590,5 +593,3 @@ if (screen.width > 700) {
 		sl_features.slick('slickGoTo', $(this).data().sl_bread, true);
 	})
 }
-
-

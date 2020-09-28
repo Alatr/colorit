@@ -9,6 +9,11 @@
 			margin: 0 10px;
 		}
 	}
+	.container{
+		@include from(1441px){
+			max-width: 1300px;
+		}
+	}
 }
 
 .up-btn{
@@ -242,7 +247,7 @@
 		margin-bottom: 5px;
 		@include from(1441px){
 			font-size: 14px;
-			line-height: 1.7em;
+			line-height: 1.6em;
 		}
 	}
 }
@@ -267,7 +272,6 @@
 .footer-menu-info-item{
 	margin-bottom: 33px;
 	display: flex;
-	align-items: center;
 	&:last-child{
 		margin-bottom: 0;
 	}
@@ -280,6 +284,7 @@
 		height: 57px;
 		min-width: 57px;
 		min-height: 57px;
+		margin-top: 5px;
 		@include to(700px){
 			width: 40px;
 			height: 40px;
@@ -303,9 +308,11 @@
 }
 
 .footer-menu-info-item__title{
-	margin-bottom: 10px;
+	@include from(1441px){
+		font-size: 14px;
+	}
 	text-transform: uppercase;
-
+	font-weight: 500;
 	color: #000C31;
 
 	font-size: 12px;
@@ -329,6 +336,9 @@
 		border: none;
 		font-size: 12px;
 		line-height: 22px;
+		@include from(1441px){
+			font-size: 14px;
+		}
 
 		color: #586386;
 		&::placeholder {
@@ -451,8 +461,35 @@
 	}
 }
 .footer-subscribe-form{
+	.footer-subscribe-form__input{
+		&:focus:required:invalid{
+			border-color: #F6F7FC;
+		}
+		&:focus::placeholder{
+			color: transparent;
+		}
+	}
+}
+.footer-subscribe-form{
 	display: flex;
 	flex-direction: column;
+	&__label{
+		color: #F6F7FC;
+		display: inline-block;
+		font-size: 18px;
+		transition: all 0.3s;
+		transform: translate(0px, 20px);
+		opacity: 0;
+		pointer-events: none;
+		@include to(1441px){
+			font-size: 14px;
+		}
+		&_active{
+			transform: translate(0px, 0px) scale(0.9);
+			opacity: 1;
+			font-size: 12px;
+		}
+	}
 	&__input{
 		margin-bottom: 40px;
 		height: 30px;
@@ -481,6 +518,9 @@
 
 		&::-ms-input-placeholder {
 			color: #F6F7FC;
+		}
+		&:focus{
+			
 		}
 		@include from(1441px){
 			margin-bottom: 50px;
@@ -646,7 +686,7 @@
 
 
 		text-decoration: none;
-		background-image: linear-gradient(#000C31, #000C31);
+		background-image: linear-gradient(#586386, #586386);
 		background-position: 0% 100%;
 		background-repeat: no-repeat;
 		background-size: 100% 1px;
@@ -654,7 +694,11 @@
 	}
 }
 
-
+.footer-link-list{
+	.footer-submenu-item{
+		margin-bottom: 5px;
+	}
+}
 
 .footer-menu-new{
 	&__container{
