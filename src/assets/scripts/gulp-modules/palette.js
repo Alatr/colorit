@@ -38,10 +38,9 @@ class TabSelect extends Tab {
 	});
 
 	tabSelect.initEvent(e =>{
-		console.log(e);
-		console.log(paletteCreate);
+		// console.log(e);
+		// console.log(paletteCreate);
 		paletteCreate.update(e,'На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета', true )
-
 	});
 
 

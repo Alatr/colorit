@@ -10,10 +10,11 @@ class PaletteCreate {
     }
 
     init(type) {
-        this.getColors('/dist/static/','colorCode', (reject) => {
+        this.getColors('/static/','colorCode', (reject) => {
             console.log(reject);
             this.tabsInfo = reject;
         });
+
         this.createContent('.palette-block-body', this.description);
         this.update(type);
     }
@@ -24,9 +25,9 @@ class PaletteCreate {
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        this.getColors('/dist/static/',type, this.setContentPalette.bind(this));
+        this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
 
-        $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-palette-tab-content-item',function (e) {
+        $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
             let delta = e.originalEvent.deltaY;
             if( (delta < 0 && this.scrollLeft > 0) || delta > 0 && this.scrollLeft < this.scrollWidth - this.offsetWidth) {
                 e.preventDefault();
@@ -39,6 +40,7 @@ class PaletteCreate {
     }
 
     setContentPalette(list, type) {
+        console.log(type);
         if(type === 'palette0') {
         // if(type === 'palette0' || type === 'palette1') {
             this.createTab('.js-palette-tab',this.changeListForSymphony(list));
@@ -63,8 +65,11 @@ class PaletteCreate {
                 });
             }
 
-        } else {
-            this.createNoTab('.js-palette-tab',list.colors);
+        } else if(type === 'palette2'){
+            this.createNoTab('.js-palette-tab',this.changeListForSymphony(list), 'symphony');
+            // this.createNoTab('.js-palette-tab',this.changeListInObj(list));
+        }else{
+            this.createNoTab('.js-palette-tab',list.colors, type);
             // this.createNoTab('.js-palette-tab',this.changeListInObj(list));
         }
 
@@ -118,7 +123,7 @@ class PaletteCreate {
 
     getColors(url, type, callback) {
         $.ajax({
-            url:url+type+'.JSON',
+            url:url+type+'.json',
             success: function (responsive) {
                 callback(responsive, type);
             },
@@ -145,8 +150,12 @@ class PaletteCreate {
         $(wrap).append(this.createTabContent(list, this.tabsInfo));
     }
 
-    createNoTab(wrap, list) {
-        $(wrap).append(this.createColorTable(list) );
+    createNoTab(wrap, list, type) {
+        if(type === 'symphony'){
+            $(wrap).append(this.createColorTable(list));
+            return;
+        }
+        $(wrap).append(this.createColorList(list) );
     }
 
     createTabContent(list, tabsInfo) {
@@ -157,7 +166,7 @@ class PaletteCreate {
         tabsInfo.forEach( name => {
             const html = this.createColorTableSymphony(list, name);
             content.innerHTML += `
-            <li class="js-palette-tab-content-item palette-color-tab-content-item custom-scroll " >
+            <li class="js-palette-tab-content-item palette-color-tab-content-item custom-scroll js-horizontal-scroll" >
                 ${html}
             </li>
             `
@@ -165,10 +174,6 @@ class PaletteCreate {
         // вывести таблицу цвета
         return content;
     }
-
-
-
-
 
     tabHtmlSelect(tabsInfo) {
         let selected = `
@@ -217,6 +222,20 @@ class PaletteCreate {
 
         return content;
     }
+    createColorTable(list) {
+        let row = `
+        `;
+        let content = `
+        `;
+        for(let el in list){
+            row += this.createTableColorRow(list[el]);
+        }
+
+
+        content += `<div class="color-shade-table custom-scroll js-horizontal-scroll"><ul class='color-list'>${row}</ul></div>`;
+
+        return content;
+    }
 
     createSymphonyColorRow(list, name) {
         let elem = `
@@ -239,8 +258,7 @@ class PaletteCreate {
         for(let el in list){
             type = list[el].type;
             if(+el >= +name.from && +el <= +name.to) {
-                elem += this.createSymphonyColorEl(list[el]);
-                // console.log(list[el]);
+                elem += this.createColorEl(list[el]);
             }
         }
 
@@ -250,19 +268,27 @@ class PaletteCreate {
                     ${elem}
                 </ul>
             </li>
-            
         `
     }
 
-    createSymphonyColorEl(el) {
-        let name = el.name.replace(' ', '-');
+    createTableColorRow(list) {
+        let elem = `
+        `;
+        let type = '';
+
+        for(let el in list){
+            type = list[el].type;
+                elem += this.createColorEl(list[el]);
+        }
+
         return `
-            <li class='color-shade-item' data-code="${el.code}" style="background: rgb(${el.r},${el.g},${el.b})">
-                <a href='/color-single.html?style=${this.type}&color=${name}'  data-code="${el.code}"></a>
+            <li class='color-item' data-letter="${type}">
+                <ul class='color-shade-list'>
+                    ${elem}
+                </ul>
             </li>
         `
     }
-
 
     // createColorTableSymphony(list, name) {
     //     let row = `
@@ -290,10 +316,9 @@ class PaletteCreate {
     //
     //     return content;
     // }
-    createColorTable(list) {
+    createColorList(list) {
         let row = `
         `;
-        console.log(list);
         for(let el in list){
             row += this.createColorEl(list[el]);
             // row += this.createColorRow(list[el]);
@@ -310,7 +335,6 @@ class PaletteCreate {
     createColorRow(list) {
         let elem = `
         `;
-        // console.log(list);
         // for(let el in list){
         //     elem += this.createColorEl(list[el]);
         // }
@@ -342,6 +366,7 @@ class PaletteCreate {
             </li>
         `
     }
+
     createEmptyEl() {
         return `
             <li class='color-shade-item'></li>

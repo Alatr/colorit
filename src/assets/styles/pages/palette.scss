@@ -73,13 +73,15 @@
 	flex-direction: column;
 }
 .palette-item-select-wrap{
-	width: 180px;
+	//width: 180px;
+	display: inline-block;
 	@include to(700px){
 		width: 100%;
 	}
 	select,
 	input {
-		width: 100%;
+		//width: 100%;
+		width: initial;
 		padding: 0 25px 0 20px;
 		border: none;
 		height: 36px;
@@ -88,6 +90,9 @@
 		text-transform: uppercase;
 		font-weight: 500;
 		color: #17315B;
+	}
+	&.calculator-item-select-wrap::after{
+		right: 15px;
 	}
 }
 .palette-color-item-select-wrap {
@@ -214,6 +219,13 @@
 	}
 }
 
+.color-shade-table{
+	display: flex;
+	width: 100%;
+	padding: 50px 30px 50px 30px;
+	overflow: auto;
+}
+
 .color-shade-list{
 	display: flex;
 	&.wrap{
@@ -232,7 +244,7 @@
 	@include from(993px){
 		&:hover{
 			border: 1px solid transparent;
-			transform: scale(1.8);
+			transform: scale(2.4);
 		}
 	}
 	@include to(1200px){
