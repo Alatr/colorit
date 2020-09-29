@@ -14,7 +14,7 @@ class TabSelect extends Tab {
 			const inx = e.target.value;
 			const data = $(e.target).find("[value='"+inx+"']").data('pal');
 			PubSub.publish(self.event, { inx });
-			// 
+
 			callback(data);
 		});
 	}
@@ -38,8 +38,6 @@ class TabSelect extends Tab {
 	});
 
 	tabSelect.initEvent(e =>{
-		// console.log(e);
-		// console.log(paletteCreate);
 		paletteCreate.update(e,'На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета', true )
 	});
 
