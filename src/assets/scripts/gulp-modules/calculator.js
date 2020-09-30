@@ -10,11 +10,13 @@
 
 
 
-		const form_2 = new showModal({
+/* 		const popupCalcForm = new showModal({
 			popup: '.js-modal-form-popup_3',
 			closeBtn: '.js-form_result_close',
-			openBtn: '.js-open-delivery'
+			openBtn: '.js-open-form-calc-wall'
 		});
+
+		// popupCalcForm.open() */
 
 
 })(jQuery);

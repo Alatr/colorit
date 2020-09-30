@@ -62,7 +62,9 @@ const paths = {
 				dest: './dist/assets/scripts/'
 		},
 		ts: {
-				src: './src/assets/scripts/gulp-modules/ts/**/*.ts',
+				src: './src/assets/scripts/gulp-modules/ts/*.ts',
+				src3: './src/assets/scripts/gulp-modules/ts/calculator/paint-calc.ts',
+				src2: './src/assets/scripts/gulp-modules/ts/calculator/modal-popup.ts',
 				dest: './dist/assets/scripts/'
 		},
 		fonts: {
@@ -97,7 +99,11 @@ function watch() {
 		gulp.watch(paths.templates.src, templates);
 		//gulp.watch(paths.scripts.src, scripts); //for webpack
 		gulp.watch(paths.gulpModules.src, gulpModules);
+		// 
 		gulp.watch(paths.ts.src, typeScript);
+		gulp.watch(paths.ts.src2, typeScript);
+		gulp.watch(paths.ts.src3, typeScript);
+		// 
 		gulp.watch(paths.ts.src, testJsLint);
 		gulp.watch(paths.images.src, images);
 		gulp.watch(paths.fonts.src, fonts);

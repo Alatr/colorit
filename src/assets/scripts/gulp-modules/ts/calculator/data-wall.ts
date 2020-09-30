@@ -657,7 +657,7 @@
 			},
 		],
 	},
-	{
+	 {
 		label: {
 			ua: 'Клей - Kolorit Wall Adhesive',
 			ru: 'Клей - Kolorit Wall Adhesive'
@@ -675,7 +675,7 @@
 				layers: 1,
 			},
 		],
-	},
+	},/*
 	{
 		label: {
 			ua: 'Клей - Kolorit Strong Adgesive',
@@ -694,7 +694,7 @@
 				layers: 1,
 			},
 		],
-	},
+	}, 
 	{
 		label: {
 			ua: 'Клей - Kolorit Wet Room Adhesive',
@@ -714,4 +714,4 @@
 			},
 		],
 	},
-] 
+*/] 

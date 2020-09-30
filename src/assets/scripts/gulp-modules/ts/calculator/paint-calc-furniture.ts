@@ -16,6 +16,9 @@ export default class paintCalcFurniture extends PaintCalc {
 	totalResult: number
 	filterValueState: ceilCalculatorState
 	data: ReadonlyArray<ICeilCalculatorDataItem>
+	labelProduct: string;
+	submitFormOpenModal: () => void;
+	
 
 
 	constructor(props: PintCalcFurnitureOptions) {
@@ -26,36 +29,73 @@ export default class paintCalcFurniture extends PaintCalc {
 		this.cntLayers = 2;
 		this.cntConsumption = 12;
 		this.data = props.data;
-		this.filterValueState = {
-			product: 0.0,
-			window: 0.0,
-			surface: 0.0,
-			door: 0.0,
-			square: 0.0,
-		}
+		this.labelProduct = '';
+
 
 		this.init();
 	}
 	init() {
-		console.log(34);
 		
 		this.squareListeners();
 		this.productChangeListeners();
+		this.submitFormOpenModal();
+
 	}
 
 }
+
+
+paintCalcFurniture.prototype.submitFormOpenModal = function () {
+	const self = this;
+
+	this.$form.addEventListener('submit', function (e: Event) {
+		e.preventDefault();
+		self.popup.open();
+	});
+
+	document.querySelector('#furniture-form').addEventListener('submit', function (e: Event) {
+		e.preventDefault();
+		self.ajaxForm(e.target);
+	});
+}
 paintCalcFurniture.prototype.writeResult = function () {
 
+	const modalPopup = document.querySelector(this.popup.popup)
+	const modalPopupTotalPaints = modalPopup.querySelector('.js-popup-total-paints')
+	const modalPopupLayers = modalPopup.querySelector('.js-popup-total-layers')
+	const modalPopupSquare = modalPopup.querySelector('.js-popup-square')
+	const modalPopupSelectWrap = modalPopup.querySelector('.js-result-block-item__key-prod')
 
-	this.$square.innerHTML = '';
-	this.$square.insertAdjacentHTML('beforeend', this.square)
-	console.log(this.$layer);
+	const modalPopupInputTotalPaints = modalPopup.querySelector('.js-popup-calc-total_paints')
+	const modalPopupInputLayers = modalPopup.querySelector('.js-popup-calc-layers')
+	const modalPopupInputSquare = modalPopup.querySelector('.js-popup-calc-square')
+	const modalPopupInputSelectWrap = modalPopup.querySelector('.js-popup-calc-product')
 
-	this.$layer.innerHTML = '';
-	this.$layer.insertAdjacentHTML('beforeend', this.cntLayers)
-
+	// total paints
+	modalPopupTotalPaints.innerHTML = '';
+	modalPopupTotalPaints.insertAdjacentHTML('beforeend', Math.round(this.totalResult));
 	this.$resPaint.innerHTML = '';
-	this.$resPaint.insertAdjacentHTML('beforeend', Math.round(this.totalResult))
+	this.$resPaint.insertAdjacentHTML('beforeend', Math.round(this.totalResult));
+	modalPopupInputTotalPaints.value = Math.round(this.totalResult);
+
+	// total layers
+	this.$layer.innerHTML = '';
+	this.$layer.insertAdjacentHTML('beforeend', this.cntLayers);
+	modalPopupLayers.innerHTML = '';
+	modalPopupLayers.insertAdjacentHTML('beforeend', this.cntLayers);
+	modalPopupInputLayers.value = this.cntLayers;
+
+	// total square
+	modalPopupSquare.innerHTML = '';
+	modalPopupSquare.insertAdjacentHTML('beforeend', this.square);
+	this.$square.innerHTML = '';
+	this.$square.insertAdjacentHTML('beforeend', this.square);
+	modalPopupInputSquare.value = this.square;
+
+	// select wrap
+	modalPopupSelectWrap.innerHTML = '';
+	modalPopupSelectWrap.insertAdjacentHTML('beforeend', this.labelProduct);
+	modalPopupInputSelectWrap.value = this.labelProduct;
 
 }
 paintCalcFurniture.prototype.startCalculation = function () {
@@ -63,7 +103,7 @@ paintCalcFurniture.prototype.startCalculation = function () {
 	this.square = square;
 
 	this.totalResult = (square / this.cntConsumption) * this.cntLayers;
-	console.log(this.totalResult);
+
 	
 }
 
@@ -96,8 +136,7 @@ paintCalcFurniture.prototype.getSquare = function () {
 
 		const square = ((W_L.length * W_L.width));
 		// set filterValueState
-		this.filterValueState = { ...selectData, square }
-		console.log(square);
+
 
 		return Math.round(square)
 	}
@@ -174,6 +213,8 @@ paintCalcFurniture.prototype.productChangeListeners = function () {
 		const [value, layers] = surfaceSelect.value.split(':')
 		self.cntConsumption = value
 		self.cntLayers = layers
+		self.labelProduct = self.data[inx].label[lang];
+
 
 
 		/* clear all field */
@@ -205,7 +246,10 @@ paintCalcFurniture.prototype.validate = function (e) {
 		// filter form el
 		const actualElemetForm = arrayFormElements.filter((formElements: HTMLFormElement): boolean => {
 			// 
-			if (formElements.tagName === 'BUTTON') return false
+			if (formElements.tagName === 'BUTTON') {
+				this.disableBtnSubmit(formElements);
+				return false
+			}
 			//
 			const attrElementWrap = formElements.closest('*[data-state]').getAttribute('data-state');
 			// 
@@ -223,6 +267,9 @@ paintCalcFurniture.prototype.validate = function (e) {
 			return (attrElementWrap === 'success') ? true : false;
 		});
 		if (isAllFieldValid) {
+			const btn = self.$form.querySelector('button');
+			this.enableBtnSubmit(btn);
+
 			self.startCalculation();
 			self.writeResult();
 		}
@@ -237,6 +284,9 @@ interface PintCalcFurnitureOptions {
 	readonly $layer: HTMLElement;
 	readonly $resPaint: HTMLElement;
 	readonly $formItem: HTMLElement;
+	readonly popup: any;
+	readonly popupThanks: any;
+
 	readonly data: ReadonlyArray<ICeilCalculatorDataItem>;
 }
 interface ceilCalculatorState {
