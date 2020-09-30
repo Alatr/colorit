@@ -9,23 +9,23 @@ class PaletteCreate {
     }
 
     init(type) {
-        this.getColors('/assets/jsons/','colorCode', (reject) => {
-        // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
+        // this.getColors('/assets/jsons/','colorCode', (reject) => {
+        this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
         });
 
         this.createContent('.palette-block-body', this.description);
-        this.update(type);
+        this.update(type , this.description, this.tab);
     }
 
     update(type,description, tabs) {
         $('.js-palette-tab').html('');
-        $('.palette-block-body-item__text').html(this.description);
+        // $('.palette-block-body-item__text').html(this.description);
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
-        // this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
+        // this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
+        this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
 
         $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
             let delta = e.originalEvent.deltaY;
@@ -37,6 +37,7 @@ class PaletteCreate {
     }
 
     setContentPalette(list, type) {
+        this.updateDescription();
         if(type === 'palette0') {
             this.createTab('.js-palette-tab',this.changeListForSymphony(list));
             if (screen.width > 700) {
@@ -63,8 +64,6 @@ class PaletteCreate {
         }else{
             this.createNoTab('.js-palette-tab',list.colors, type);
         }
-
-
     }
     changeListForSymphony(list) {
         const obj = {};
@@ -101,6 +100,9 @@ class PaletteCreate {
         wrap.classList = 'palette-tab js-palette-tab';
         $(wrapper).append(wrap);
         return true
+    }
+    updateDescription(){
+        $('.palette-block-body-item__text').html(this.description);
     }
 
     createTab(wrap,list) {

@@ -2,7 +2,7 @@ import PaintCalc from './paint-calc';
 
 
 
-export default class paintCalcCeiling extends PaintCalc {
+export default class paintCalcFurniture extends PaintCalc {
 	squareListeners: () => void
 	productChangeListeners: () => void
 	startCalculation: () => void
@@ -14,12 +14,14 @@ export default class paintCalcCeiling extends PaintCalc {
 	cntConsumption: number
 	square: number
 	totalResult: number
+	filterValueState: ceilCalculatorState
 	data: ReadonlyArray<ICeilCalculatorDataItem>
-	submitFormOpenModal: () => void;
 	labelProduct: string;
+	submitFormOpenModal: () => void;
+	
 
 
-	constructor(props: PintCalcCeilingOptions) {
+	constructor(props: PintCalcFurnitureOptions) {
 		super(props);
 		this.data = props.data;
 		this.totalResult = 0;
@@ -28,32 +30,35 @@ export default class paintCalcCeiling extends PaintCalc {
 		this.cntConsumption = 12;
 		this.data = props.data;
 		this.labelProduct = '';
+
+
 		this.init();
 	}
 	init() {
+		
 		this.squareListeners();
 		this.productChangeListeners();
 		this.submitFormOpenModal();
+
 	}
 
 }
 
 
-
-paintCalcCeiling.prototype.submitFormOpenModal = function () {
+paintCalcFurniture.prototype.submitFormOpenModal = function () {
 	const self = this;
 
 	this.$form.addEventListener('submit', function (e: Event) {
-		e.preventDefault();		
+		e.preventDefault();
 		self.popup.open();
 	});
-	document.querySelector('#ceiling-form').addEventListener('submit', function (e: Event) {
+
+	document.querySelector('#furniture-form').addEventListener('submit', function (e: Event) {
 		e.preventDefault();
 		self.ajaxForm(e.target);
 	});
 }
-
-paintCalcCeiling.prototype.writeResult = function () {
+paintCalcFurniture.prototype.writeResult = function () {
 
 	const modalPopup = document.querySelector(this.popup.popup)
 	const modalPopupTotalPaints = modalPopup.querySelector('.js-popup-total-paints')
@@ -93,17 +98,16 @@ paintCalcCeiling.prototype.writeResult = function () {
 	modalPopupInputSelectWrap.value = this.labelProduct;
 
 }
-
-
-paintCalcCeiling.prototype.startCalculation = function () {
+paintCalcFurniture.prototype.startCalculation = function () {
 	const square = this.getSquare();
 	this.square = square;
 
 	this.totalResult = (square / this.cntConsumption) * this.cntLayers;
 
+	
 }
 
-paintCalcCeiling.prototype.getSelectDataForm = function () {
+paintCalcFurniture.prototype.getSelectDataForm = function () {
 	const self = this;
 	const selectValue: any = Array.from(this.$form.elements)
 		.filter((el: HTMLFormElement) => el.type === 'select-one' && el.value !== '')
@@ -115,7 +119,7 @@ paintCalcCeiling.prototype.getSelectDataForm = function () {
 		}, {});
 	return selectValue;
 }
-paintCalcCeiling.prototype.getSquare = function () {
+paintCalcFurniture.prototype.getSquare = function () {
 	const squareInputs: any = Array.from(this.$form.elements).filter((el: HTMLFormElement) => el.type === 'number' && el.value !== '')
 
 	if (squareInputs.length === 1) {
@@ -131,17 +135,19 @@ paintCalcCeiling.prototype.getSquare = function () {
 		}, {})
 
 		const square = ((W_L.length * W_L.width));
+		// set filterValueState
+
 
 		return Math.round(square)
 	}
 
 }
-paintCalcCeiling.prototype.squareListeners = function () {
+paintCalcFurniture.prototype.squareListeners = function () {
 	const self = this;
-	const event = new Event('ceilingCalcSquareHandler', { bubbles: true });
+	const event = new Event('FurnitureCalcSquareHandler', { bubbles: true });
 	const squareInputs = Array.from(this.$form.elements).filter((el: HTMLFormElement) => el.type === 'number')
 	/*  */
-	document.addEventListener('ceilingCalcSquareHandler', function (event: any) {
+	document.addEventListener('FurnitureCalcSquareHandler', function (event: any) {
 		/* change all field */
 		if (event.target.name === 'all') {
 			squareInputs
@@ -179,14 +185,14 @@ paintCalcCeiling.prototype.squareListeners = function () {
 	});
 
 }
-paintCalcCeiling.prototype.productChangeListeners = function () {
+paintCalcFurniture.prototype.productChangeListeners = function () {
 	const self = this;
-	const event = new Event('ceilingCalcProductChange', { bubbles: true });
+	const event = new Event('FurnitureCalcProductChange', { bubbles: true });
 	const productSelect = Array.from(this.$form.elements).filter((el: HTMLFormElement) => el.name === 'product')
 	const surfaceSelect: any = Array.from(this.$form.elements).filter((el: HTMLFormElement) => el.name === 'surface')[0]
 
 	/*  */
-	document.addEventListener('ceilingCalcProductChange', function (e: any) {
+	document.addEventListener('FurnitureCalcProductChange', function (e: any) {
 		surfaceSelect.innerHTML = '';
 		const markupOptionSurfase = function (label: string, value: number, layers: number) {
 			return ` <option class="calculator-item__select-item" value="${value}:${layers}">${label}</option> `
@@ -229,7 +235,7 @@ paintCalcCeiling.prototype.productChangeListeners = function () {
 	});
 
 }
-paintCalcCeiling.prototype.validate = function (e) {
+paintCalcFurniture.prototype.validate = function (e) {
 	const self = this;
 	const arrayFormElements = Array.from(this.$form.elements);
 	// SET TIMEOUT FOR SQUARE INPUTS. arrayFormElements.filter MUST FILTER ALL FORM ELEMENTS WITHOUT DATA-SATAE='DISABLED'
@@ -241,8 +247,6 @@ paintCalcCeiling.prototype.validate = function (e) {
 		const actualElemetForm = arrayFormElements.filter((formElements: HTMLFormElement): boolean => {
 			// 
 			if (formElements.tagName === 'BUTTON') {
-			const btn = self.$form.querySelector('button');
-
 				this.disableBtnSubmit(formElements);
 				return false
 			}
@@ -274,7 +278,7 @@ paintCalcCeiling.prototype.validate = function (e) {
 };
 
 
-interface PintCalcCeilingOptions {
+interface PintCalcFurnitureOptions {
 	readonly $form: HTMLElement;
 	readonly $square: HTMLElement;
 	readonly $layer: HTMLElement;
@@ -299,7 +303,6 @@ interface ICeilCalculatorDataItem {
 		readonly ru: string
 	},
 	readonly id: string,
-	readonly type: string,
 	readonly consumptionSurface: ReadonlyArray<ICeilConsumptionSurface>,
 
 }

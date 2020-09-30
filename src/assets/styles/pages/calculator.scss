@@ -150,6 +150,17 @@
 		@include size(12)
 	}
 }
+.col-8{
+	@include col();
+	@include size(8);
+	@include to(992px){
+		@include size(10);
+
+	}
+	@include to(700px){
+		@include size(12)
+	}
+}
 
 .calculator-item--margin-left{
 	@include shift-left(1);
@@ -350,6 +361,9 @@
 .result-block-left{
 	padding-right: 67px;
 	width: 55%;
+	@include to(1024px){
+		width: 100%;
+	}
 	@include to(700px){
 		padding-right: 0px;
 				width: 100%;
@@ -359,7 +373,7 @@
 	.modal-form-popup__title{
 		width: auto;
 		padding-right: 0;
-		margin-bottom: 32px;
+		margin-bottom: 28px;
 		@include to(700px){
 			margin-bottom: 15px;
 		}
@@ -368,7 +382,7 @@
 
 
 .result-block-list{
-	margin-bottom: 42px;
+	margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
 	@include to(700px){

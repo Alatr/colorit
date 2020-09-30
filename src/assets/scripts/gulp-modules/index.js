@@ -1,6 +1,74 @@
 /* eslint-disable */
 @@include('./libs.js');
 /* eslint-enable */
+
+/**********************************/
+/*
+* form submit start
+*/
+	// $('#call-form').on('submit', function (e) {
+	// 	e.preventDefault();
+	// 	ajax_form(e.target);
+
+		function ajax_form(e) {
+			e.preventDefault();
+			const str = $("#" + e.id).serialize();
+			$.ajax({
+				method: "POST",
+				url: "/wp-admin/admin-ajax.php",
+				data: str += '&action=app',
+				beforeSend: function () {
+				},
+				error: function (data) {
+				},
+				success: function (msg) {
+				}
+			})
+		}
+			
+
+			function langDetect() {
+				if (window.location.pathname.match(/ru/)) {
+					return 'ru'
+				} else if (window.location.pathname.match(/en/)) {
+					return 'en'
+				} else {
+					return 'ua'
+				}
+			}
+		// }
+
+	// });
+
+/*
+* form submit end
+*/
+/**********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class showModal {
 	constructor(obj) {
 		this.popup = obj.popup;
@@ -28,7 +96,6 @@ class showModal {
 	toggle() {
 		if (this.status) {
 			this.$body.removeClass('modal-active');
-			console.log(this.close);
 			this.close();
 		} else {
 			this.$body.addClass('modal-active');
