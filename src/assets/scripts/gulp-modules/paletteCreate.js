@@ -9,8 +9,8 @@ class PaletteCreate {
     }
 
     init(type) {
-        // this.getColors('/assets/jsons/','colorCode', (reject) => {
-        this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
+        this.getColors('./assets/jsons/','colorCode', (reject) => {
+        // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
         });
 
@@ -24,8 +24,8 @@ class PaletteCreate {
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        // this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
-        this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
+        this.getColors('./assets/jsons/',type, this.setContentPalette.bind(this));
+        // this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
 
         $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
             let delta = e.originalEvent.deltaY;

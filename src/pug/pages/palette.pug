@@ -45,6 +45,12 @@ block content
 									option.palette-item__select-item(data-pal="palette"+j  selected="selected" data-descr='1')= v
 								else
 									option.palette-item__select-item(data-pal="palette"+j data-descr=v)= v
+					form.pallete-search
+						input(type="text" placeholder="Введите номер или название цвета").pallete-search__input
+						button.pallete-search__btn
+							+svg('search')
+
+
 				.palette-block-body
 					// ------- item
 					.palette-block-body-item.js-palette-block-body-item

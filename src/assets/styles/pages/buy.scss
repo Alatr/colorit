@@ -93,6 +93,9 @@
     }
 
     &-desc {
+      @include from(1441px){
+        font-size: 14px;
+      }
       font-size: 12px;
       line-height: 1.9em;
       color: #586386;
@@ -491,6 +494,9 @@
     }
 
     &-desc {
+      @include from(1441px){
+        font-size: 14px;
+      }
       margin-bottom: 25px;
       font-size: 12px;
       line-height: 1.9em;

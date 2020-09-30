@@ -14,6 +14,9 @@
 		padding: 20px 65px 20px 10.3%;
 		box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
 		min-height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		@include to(992px){
 			padding: 20px 65px 20px 6%;
 
@@ -39,13 +42,41 @@
 
 	}
 }
+.pallete-search{
+	display: inline-flex;
+	align-items: center;
+	border-bottom: 1px solid #C2D2DA;
+	&__input{
+		height: 22px;
+		width: 168px;
+		border: none;
+		margin-right: 25px;
+		font-style: italic;
+		&::placeholder{
+			font-weight: 500;
+			font-size: 10px;
+			color: #9AB4C1;
+		}
+	}
+	&__btn{
+		background: transparent;
+		border: none;
+		outline: none;
+	}
+	svg{
+		width: 18px;
+		height: 18px;
+		fill: #C11426;
+		
+	}
+}
 
 .palette-block-body-item__text{
 	margin-bottom: 45px;
 	max-width: 540px;
 	font-size: 12px;
 	line-height: lh(22, 12);
-	margin-left: min(vw(107), 107px);
+	margin-left: min(vw(107), 90px);
 	color: #586386;
 	@include to(992px){
 		margin-left: 32px;
