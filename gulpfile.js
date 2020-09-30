@@ -89,6 +89,10 @@ const paths = {
 				src: './src/static/**/*.*',
 				dest: './dist/static/'
 		},
+		json: {
+			src: './src/assets/jsons/*.json',
+			dest: './dist/assets/jsons/'
+		}
 }
 
 // слежка
@@ -102,6 +106,7 @@ function watch() {
 		gulp.watch(paths.images.src, images);
 		gulp.watch(paths.fonts.src, fonts);
 		gulp.watch(paths.libs.src, libs);
+		gulp.watch(paths.json.src, json);
 		gulp.watch(paths.static.src, static);
 		gulp.watch('./src/pug/**/*.html', templates);
 		gulp.watch('./src/assets/svg-sprite/*.*', svgSprite);
@@ -110,10 +115,9 @@ function watch() {
 // следим за build и релоадим браузер
 function server() {
 		browserSync.init({
-				server: './dist',
 				// server: paths.root,
-				// notify: false,
-				// proxy,
+				notify: false,
+				proxy,
 		});
 		browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
@@ -121,6 +125,12 @@ function server() {
 // очистка
 function clean() {
 		return del(paths.root);
+}
+
+// перенос json
+function json() {
+	return gulp.src(paths.json.src)
+		.pipe(gulp.dest(paths.json.dest));
 }
 
 // pug
@@ -273,13 +283,14 @@ exports.clean = clean;
 exports.fonts = fonts;
 exports.svgSprite = svgSprite;
 exports.libs = libs;
+exports.json = json;
 exports.static = static;
 
 gulp.task('default', gulp.series(
 		svgSprite,
 		clean,
 		libs,
-		gulp.parallel(styles, templates, fonts, gulpModules, typeScript, testJsLint, images, static),
+		gulp.parallel(styles, templates, fonts, gulpModules, typeScript, testJsLint, images, static, json),
 		gulp.parallel(watch, server)
 ));
 

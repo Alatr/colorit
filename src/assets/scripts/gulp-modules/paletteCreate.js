@@ -1,19 +1,19 @@
 class PaletteCreate {
     constructor(data){
         this.tab = data.tab || true;
-        this.description= data.description;
+        this.description = data.description;
         this.wrap = data.wrap || '';
         this.lang = 'ru';
         this.type = 'palette0';
-        this.letters = ['f','g', 'h','j','k','l','m','n','s','v','x','y'];
         this.init('palette0')
     }
 
     init(type) {
-        this.getColors('/dist/static/','colorCode', (reject) => {
-            console.log(reject);
+        this.getColors('/assets/jsons/','colorCode', (reject) => {
+        // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
         });
+
         this.createContent('.palette-block-body', this.description);
         this.update(type);
     }
@@ -24,23 +24,20 @@ class PaletteCreate {
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        this.getColors('/dist/static/',type, this.setContentPalette.bind(this));
+        this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
+        // this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
 
-        $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-palette-tab-content-item',function (e) {
+        $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
             let delta = e.originalEvent.deltaY;
             if( (delta < 0 && this.scrollLeft > 0) || delta > 0 && this.scrollLeft < this.scrollWidth - this.offsetWidth) {
                 e.preventDefault();
                 this.scrollLeft += e.originalEvent.deltaY;
             }
-
-
-
         })
     }
 
     setContentPalette(list, type) {
         if(type === 'palette0') {
-        // if(type === 'palette0' || type === 'palette1') {
             this.createTab('.js-palette-tab',this.changeListForSymphony(list));
             if (screen.width > 700) {
                 const tab = new Tab({
@@ -50,9 +47,7 @@ class PaletteCreate {
                     contentActiveClass: 'palette-color-tab-content-item--active',
                     active: 0
                 });
-                console.log(tab);
             } else {
-                console.log('holla');
                 const tabSelectPalette = new TabSelect({
                     $btn: $('.js-palette-color-item__select'),
                     $content: $('.js-palette-tab-content-item'),
@@ -63,9 +58,10 @@ class PaletteCreate {
                 });
             }
 
-        } else {
-            this.createNoTab('.js-palette-tab',list.colors);
-            // this.createNoTab('.js-palette-tab',this.changeListInObj(list));
+        } else if(type === 'palette2'){
+            this.createNoTab('.js-palette-tab',this.changeListForSymphony(list), 'symphony');
+        }else{
+            this.createNoTab('.js-palette-tab',list.colors, type);
         }
 
 
@@ -82,43 +78,10 @@ class PaletteCreate {
         });
         return obj;
     }
-    // changeListForSymphony(list) {
-    //     const obj = {};
-    //     list.colors.forEach(el => {
-    //         if(obj[el.code]) {
-    //             if(!obj[el.code][el.type]) obj[el.code][el.type] = el;
-    //         } else {
-    //             obj[el.code] = {};
-    //             obj[el.code][el.type] = el;
-    //         }
-    //     });
-    //     return obj;
-    // }
-    changeListInObj(list) {
-        const obj = {};
-        let i = 0;
-        let j = 0;
-        list.colors.forEach( el => {
-            console.log(el);
-            if(obj[i]) {
-                obj[i][j] = el
-            } else {
-                obj[i] = {};
-                obj[i][j] = el;
-            }
-            j++;
-            if(j === 10){
-                j = 0;
-                i++;
-            }
-
-        });
-        return obj;
-    }
 
     getColors(url, type, callback) {
         $.ajax({
-            url:url+type+'.JSON',
+            url:url+type+'.json',
             success: function (responsive) {
                 callback(responsive, type);
             },
@@ -145,8 +108,12 @@ class PaletteCreate {
         $(wrap).append(this.createTabContent(list, this.tabsInfo));
     }
 
-    createNoTab(wrap, list) {
-        $(wrap).append(this.createColorTable(list) );
+    createNoTab(wrap, list, type) {
+        if(type === 'symphony'){
+            $(wrap).append(this.createColorTable(list));
+            return;
+        }
+        $(wrap).append(this.createColorList(list) );
     }
 
     createTabContent(list, tabsInfo) {
@@ -157,7 +124,7 @@ class PaletteCreate {
         tabsInfo.forEach( name => {
             const html = this.createColorTableSymphony(list, name);
             content.innerHTML += `
-            <li class="js-palette-tab-content-item palette-color-tab-content-item custom-scroll " >
+            <li class="js-palette-tab-content-item palette-color-tab-content-item custom-scroll js-horizontal-scroll" >
                 ${html}
             </li>
             `
@@ -165,10 +132,6 @@ class PaletteCreate {
         // вывести таблицу цвета
         return content;
     }
-
-
-
-
 
     tabHtmlSelect(tabsInfo) {
         let selected = `
@@ -194,17 +157,6 @@ class PaletteCreate {
         `;
     }
 
-    // createColorTableSymphony(list, name) {
-    //     let row = `
-    //     `;
-    //
-    //     for(let el in list){
-    //         if(+el > +name.from && +el < +name.to) row += this.createColorRow(list[el]);
-    //     }
-    //     let wrap = `<ul class='color-list'>${row}</ul>`;
-    //     return wrap;
-    // }
-
     createColorTableSymphony(list, name) {
         let row = `
         `;
@@ -217,30 +169,30 @@ class PaletteCreate {
 
         return content;
     }
+    createColorTable(list) {
+        let row = `
+        `;
+        let content = `
+        `;
+        for(let el in list){
+            row += this.createTableColorRow(list[el]);
+        }
+
+
+        content += `<div class="color-shade-table custom-scroll js-horizontal-scroll"><ul class='color-list'>${row}</ul></div>`;
+
+        return content;
+    }
 
     createSymphonyColorRow(list, name) {
         let elem = `
         `;
         let type = '';
-        // for(let i = 300;i <= 503; i++){
-        //     if(i >= +name.from && i <= +name.to) {
-        //
-        //         // console.log(list[el]);
-        //         if(list[i]){
-        //             elem += this.createSymphonyColorEl(list[i]);
-        //         } else{
-        //             elem += this.createEmptyEl();
-        //         }
-        //
-        //     }
-        //
-        // }
 
         for(let el in list){
             type = list[el].type;
             if(+el >= +name.from && +el <= +name.to) {
-                elem += this.createSymphonyColorEl(list[el]);
-                // console.log(list[el]);
+                elem += this.createColorEl(list[el]);
             }
         }
 
@@ -250,98 +202,52 @@ class PaletteCreate {
                     ${elem}
                 </ul>
             </li>
-            
         `
     }
 
-    createSymphonyColorEl(el) {
-        let name = el.name.replace(' ', '-');
+    createTableColorRow(list) {
+        let elem = `
+        `;
+        let type = '';
+
+        for(let el in list){
+            type = list[el].type;
+                elem += this.createColorEl(list[el]);
+        }
+
         return `
-            <li class='color-shade-item' data-code="${el.code}" style="background: rgb(${el.r},${el.g},${el.b})">
-                <a href='/color-single.html?style=${this.type}&color=${name}'  data-code="${el.code}"></a>
+            <li class='color-item' data-letter="${type}">
+                <ul class='color-shade-list'>
+                    ${elem}
+                </ul>
             </li>
         `
     }
 
 
-    // createColorTableSymphony(list, name) {
-    //     let row = `
-    //     `;
-    //     let content = `
-    //     `;
-    //     let i = 0;
-    //
-    //     for(let el in list){
-    //         if(+el >= +name.from && +el <= +name.to) {
-    //             if(i >= 12) {
-    //                 i = 0;
-    //                 content += `<ul class='color-list'>${row}</ul>`;
-    //                 row = `
-    //             `;
-    //             }
-    //
-    //             row += this.createColorRow(list[el]);
-    //             i++;
-    //         }
-    //     }
-    //     if(i > 0){
-    //         content += `<ul class='color-list'>${row}</ul>`;
-    //     }
-    //
-    //     return content;
-    // }
-    createColorTable(list) {
+    createColorList(list) {
         let row = `
         `;
-        console.log(list);
         for(let el in list){
             row += this.createColorEl(list[el]);
-            // row += this.createColorRow(list[el]);
         }
         let wrap = `<ul class='color-list'><li class='color-item'>
                 <ul class='color-shade-list wrap'>
                     ${row}
                 </ul>
             </li></ul>`;
-        // let wrap = `<ul class='color-list'>${row}</ul>`;
         return wrap;
-    }
-
-    createColorRow(list) {
-        let elem = `
-        `;
-        // console.log(list);
-        // for(let el in list){
-        //     elem += this.createColorEl(list[el]);
-        // }
-        this.letters.forEach(el => {
-            // console.log(el.toUpperCase());
-            if(list[el.toUpperCase()]) {
-                elem += this.createColorEl(list[el.toUpperCase()]);
-            } else {
-                elem += this.createEmptyEl();
-            }
-        });
-
-
-        return `
-            <li class='color-item'>
-                <ul class='color-shade-list'>
-                    ${elem}
-                </ul>
-            </li>
-            
-        `
     }
 
     createColorEl(el) {
         let name = el.name.replace(' ', '-');
         return `
             <li class='color-shade-item' style="background: rgb(${el.r},${el.g},${el.b})">
-                <a href='/color-single.html?style=${this.type}&color=${name}' ></a>
+                <a href='/palette?style=${this.type}&color=${name}' ></a>
             </li>
         `
     }
+
     createEmptyEl() {
         return `
             <li class='color-shade-item'></li>

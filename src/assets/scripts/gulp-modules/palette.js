@@ -14,7 +14,7 @@ class TabSelect extends Tab {
 			const inx = e.target.value;
 			const data = $(e.target).find("[value='"+inx+"']").data('pal');
 			PubSub.publish(self.event, { inx });
-			// 
+
 			callback(data);
 		});
 	}
@@ -33,15 +33,12 @@ class TabSelect extends Tab {
 
 	const paletteCreate = new PaletteCreate({
 		tab: true,
-		description: 'На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета',
+		description: $('.palette-item__select-item')[0].dataset.descr || '',
 		wrap: '.js-palette-block-body-item'
 	});
 
-	tabSelect.initEvent(e =>{
-		console.log(e);
-		console.log(paletteCreate);
-		paletteCreate.update(e,'На странице должно присутствовать: краткое описание палитры (если выбрана 1 из палитр). Если выбраны все цвета, то должна быть возможность выбрать цвета из цветовой палитры, или поиск по названию или по номеру цвета', true )
-
+	tabSelect.initEvent(e => {
+		paletteCreate.update(e,$('.palette-item__select-item[data-pal='+ e +']').data('descr') || '', true )
 	});
 
 
