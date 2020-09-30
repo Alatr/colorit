@@ -2,8 +2,8 @@
 
 (function ($) {
 
-	$('.company-principles__info-block-cross').on('mouseover', function(){
-		$(this).parents('.company-principles__info-block').addClass('company-principles__info-block_active')
+	$('.company-principles__info-block').on('mouseover', function(){
+		$(this).addClass('company-principles__info-block_active')
 	})
 
 	$(document).on('mouseover', function(e){

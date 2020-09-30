@@ -2,10 +2,10 @@
 
 (function ($) {
 
-	$('.company-principles__info-block-cross').on('mouseover', function(){
+	$('.company-principles__info-block').on('mouseover', function(){
 		// $(this).prev().addClass('company-principles__info-block-text-collapse_active')
 		// $('.company-principles__info-block-text-collapse').addClass('company-principles__info-block-text-collapse_active')
-		$(this).parents('.company-principles__info-block').addClass('company-principles__info-block_active')
+		$(this).addClass('company-principles__info-block_active')
 	})
 
 	$(document).on('mouseover', function(e){

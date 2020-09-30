@@ -1,66 +1,37 @@
 
 
 (function ($) {
-	/* ALL PRODUCT PROPERTIES */
-	// const tempObj = {
-		//id: 1,
-	// 		permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
-	// 		surface: ['all', 'walls', 'ceiling', 'interior'],
-	// 		material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster', 'wood', 'metal', 'tile', 'glass', 'plastic'],
-	// 		features: ['mold', 'microb', 'covering', 'relief', 'smooth', 'wet', 'repair', 'light', 'white', 'anticorossion', 'color']	
-	// }
-	/* ALL PRODUCT PROPERTUES END */
-
 	// * GET PROMISE FUNC FOR AJAX REQUEST START
-	function getFakePromise(){
-		return [{
-			img: './assets/images/temp/quiz-img.png',
-			link: '#1',
-			label: 'Kolorit Biostop'
-		},
-		{
-			img: './assets/images/temp/quiz-img.png',
-			link: '#13',
-			label: 'Kolorit Biostop'
-		},]
-	}
-
 	async function getPromise(data, url){
-		// let promise = new Promise(function(resolve, reject) {
-		// 	$.ajax({
-		// 		url         : url,
-		// 		data        : data,
-		// 		action      : 'getProd',
-		// 		type        : 'GET',
-		// 		global      : false,
-		// 		async       :  true,
-		// 		success     : function(res){
-		// 		let data = (!parse) ? JSON.parse(res): res
-		// 		resolve(data);
-		// 		},
-		// 		error       : function( jqXHR, status, errorThrown ){
-		// 		reject(jqXHR);
-		// 		},
-		// 		beforeSend: function () {},
-		// 	});   
-		// });
-		const response = await fetch(url, {
-			method: 'GET',
-			data: data,
-			// action: 'getProd'
-		})
-		return await response.json();
+		let promise = new Promise(function(resolve, reject) {
+			$.ajax({
+				url         : url,
+				data        : {id: data, action: 'getProd'},
+				action      : 'getProd',
+				type        : 'POST',
+				global      : false,
+				async       :  true,
+				success     : function(res){
+					let data = JSON.parse(res);
+					resolve(data);
+				},
+				error       : function( jqXHR, status, errorThrown ){
+				reject(jqXHR);
+				},
+				beforeSend: function () {},
+			});   
+		});
+		return await promise;
 	}
 
 	const $answerList = $('.js-quiz__answers');
 	const $questionList = $('.js-quiz__question');
-	const line = '#home';
+	const line = '#' + $('body').attr('id');
 	let result = {};
-
 	/* QUESTION DATA LIST */
 	const dataQuestionList = {
 		firstQuestion: {
-			lines: ['#home', '#professional', '#preparation', '#putty', '#adhesive', '#enamel'],
+			lines: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#kleya-dlya-steklooboev', '#laki-i-emali'],
 			title: {
 				rus: 'Для какого помещения подбираете покрытие?',
 				ua: 'Для какого помещения подбираете покрытие?',
@@ -200,7 +171,7 @@
 				rus: 'Какую поверхность планируете покрывать?',
 				ua: 'Какую поверхность планируете покрывать?',
 			},
-			lines: ['#home', '#professional', '#preparation', '#putty', '#adhesive', '#enamel'],
+			lines: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#kleya-dlya-steklooboev', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
@@ -245,7 +216,7 @@
 				rus: 'Какой материал покрываемой поверхности?',
 				ua: 'Какой материал покрываемой поверхности?',
 			},
-			lines: ['#home', '#professional', '#preparation', '#putty', '#adhesive', '#enamel'],
+			lines: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#kleya-dlya-steklooboev', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
@@ -371,7 +342,7 @@
 				rus: 'Особенности',
 				ua: 'Особенности',
 			},
-			lines: ['#home', '#professional', '#putty', '#enamel'],
+			lines: ['#home-linejka', '#professional-linejka', '#shpatlevki', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
@@ -480,7 +451,7 @@
 	const dataProductList = [
 		{
 			name : 'Kolorit Argentic',
-			line: 'home',
+			line: 'home-linejka',
 			id: 141,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -489,7 +460,7 @@
 		},
 		{
 			name : 'Kolorit Legenda',
-			line: 'home',
+			line: 'home-linejka',
 			id: 143,
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -498,7 +469,7 @@
 		},
 		{
 			name : 'Kolorit Family',
-			line: 'home',
+			line: 'home-linejka',
 			id: 145,
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -507,7 +478,7 @@
 		},
 		{
 			name: 'Kolorit Idol',
-			line: 'home',
+			line: 'home-linejka',
 			id: 147,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -516,7 +487,7 @@
 		},
 		{
 			name: 'Kolorit Dynasty',
-			line: 'home',
+			line: 'home-linejka',
 			id: 149,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -525,7 +496,7 @@
 		},
 		{
 			name: 'Kolorit History',
-			line: 'home',
+			line: 'home-linejka',
 			id: 151,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -534,7 +505,7 @@
 		},
 		{
 			name: 'Kolorit STANDART 3',
-			line: 'professional',
+			line: 'professional-linejka',
 			id: 153,
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -543,7 +514,7 @@
 		},
 		{
 			name: 'Kolorit STANDART 5',
-			line: 'professional',
+			line: 'professional-linejka',
 			id: 155,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -552,7 +523,7 @@
 		},
 		{
 			name: 'Kolorit STANDART H',
-			line: 'professional',
+			line: 'professional-linejka',
 			id: 157,
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -561,7 +532,7 @@
 		},
 		{
 			name: 'Kolorit STANDART M',
-			line: 'professional',
+			line: 'professional-linejka',
 			id: 159,
 			permises: ['all', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -570,7 +541,7 @@
 		},
 		{
 			name: 'Kolorit Silanit',
-			line: 'preparation',
+			line: 'sredstva-podgotovki-poverhnosti',
 			id: 161,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -579,7 +550,7 @@
 		},
 		{
 			name: 'Kolorit STANDART G',
-			line: 'preparation',
+			line: 'sredstva-podgotovki-poverhnosti',
 			id: 163,
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -589,7 +560,7 @@
 		},
 		{
 			name: 'Kolorit Biostop',
-			line: 'preparation',
+			line: 'sredstva-podgotovki-poverhnosti',
 			id: 165,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -598,7 +569,7 @@
 		},
 		{
 			name: 'Kolorit Beton K',
-			line: 'preparation',
+			line: 'sredstva-podgotovki-poverhnosti',
 			id: 167,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -607,7 +578,7 @@
 		},
 		{
 			name: 'Kolorit STANDART LF',
-			line: 'putty',
+			line: 'shpatlevki',
 			id: 169,
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -617,7 +588,7 @@
 		{
 			name: 'Kolorit STANDART LH',
 			id: 171,
-			line: 'putty',
+			line: 'shpatlevki',
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'putty', 'chipboard', 'minplaster'],
@@ -625,7 +596,7 @@
 		},
 		{
 			name: 'Kolorit Strong Adhesive',
-			line: 'adhesive',
+			line: 'kleya-dlya-steklooboev',
 			id: 173,
 			permises: ['all'],
 			surface: ['all', 'walls', 'ceiling'],
@@ -634,7 +605,7 @@
 		},
 		{
 			name: 'Kolorit Wood and Metal Enamel Глянец',
-			line: 'enamel',
+			line: 'laki-i-emali',
 			id: 175,
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
@@ -646,7 +617,7 @@
 		{
 			name: 'Kolorit Wood and Metal Enamel Полуматовая',
 			id: 177,
-			line: 'enamel',
+			line: 'laki-i-emali',
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'putty', 'chipboard', 'wood', 'metal'],
@@ -655,7 +626,7 @@
 		{
 			name: 'Kolorit Radiator Enamel',
 			id: 179,
-			line: 'enamel',
+			line: 'laki-i-emali',
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'metal'],
@@ -666,7 +637,7 @@
 		},
 		{
 			name: 'Kolorit Panel Lacquer',
-			line: 'enamel',
+			line: 'laki-i-emali',
 			id: 181,
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
@@ -692,13 +663,13 @@
 						<span class="quiz__answer-text">${title}</span>
 		  			</li>`
 		} ,
-		itemResult: function({img, link, label}){
+		itemResult: function({img, url, name}){
 			return `<li class="quiz__answer quiz__result">
-						<a href="${link}" target="_blank">
+						<a href="${url}" target="_blank">
 							<div class="quiz__result-img-wrapper">
 								<img src="${img}" />
 							</div>
-							<span>${label}</span>
+							<span>${name}</span>
 						</a>
 		  			</li>`
 		} ,
@@ -759,31 +730,19 @@
 		};
 			if (qustionCounter === 4){
 				   const resultArray = getSortResult(line, dataProductList, result).map(item => item.id);
-				   console.log(resultArray);
 				if (resultArray.length > 0){
 					$('.js-quiz__result').html(dataQuestionMarkup.preloader());
-					// const requestLink = getPromise(resultArray, '/wp-admin/admin-ajax.php').then(data => {console.log(data)}); // For this moment this is fake promise, will be changed to real during Wordpress install
-	
-					$.ajax({
-						method: "POST",
-						url: "/wp-admin/admin-ajax.php",
-						data: {	id : resultArray,
-								action: 'getProd'},
-						
-					  })
-						.done(function( msg ) {
-						 console.log(msg);
-						}
-						)
-						.fail(function(msg){
-							console.log(msg);
-						});
+					let requestLink;
+					getPromise(resultArray, '/wp-admin/admin-ajax.php').then(data => {
+						requestLink=data; 
+						requestLink.forEach(function(item){
+							$('.js-quiz__result').append(dataQuestionMarkup.itemResult(item));
+						   });
+					}); 
+
 				 	$('.js-quiz__result').html('');
 				
- 
-					// requestLink.forEach(function(item){
-					//  $('.js-quiz__result').append(dataQuestionMarkup.itemResult(item));
-					// });
+
 				} else {
 					$('.js-quiz__result').html('<p> Не найдено </p><button class="quiz__reset">Еще раз</button>');
 				}

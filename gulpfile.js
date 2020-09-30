@@ -110,9 +110,10 @@ function watch() {
 // следим за build и релоадим браузер
 function server() {
 		browserSync.init({
+				server: './dist',
 				// server: paths.root,
-				notify: false,
-				proxy,
+				// notify: false,
+				// proxy,
 		});
 		browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }

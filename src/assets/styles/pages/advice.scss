@@ -1,25 +1,41 @@
 .advice-tab-btns {
 	display: flex;
 	align-items: center;
-	padding: 0 12px;
+	justify-content: space-between;
+	padding: 10px 12px;
 	box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
-
+	margin-bottom: 15px;
 	@include to(700px) {
 		flex-wrap: wrap;
 		padding: 0;
 	}
-
+	@include to(460px){
+		justify-content: flex-start;
+	}
+	.advice-tab-btns-item{
+		flex-basis: 25%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-right: 1px solid #F0F1F8;
+		@include to(460px){
+			display: inline-block;
+			flex-basis: auto;
+		}
+		&:last-child{
+			border: none;
+		}
+	}
 	.advice-tab-btns-item button {
-		margin: 12px 0;
-		padding: 10px 38px;
+		margin: 5px 0;
+		// padding: 10px 38px;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: lh(24, 14);
 		text-transform: uppercase;
-		border-right: 1px solid #F0F1F8;
+		
 		color: #9AB4C1;
 		opacity: 0.7;
-
 		@include to(1024px) {
 			font-size: 12px;
 		}

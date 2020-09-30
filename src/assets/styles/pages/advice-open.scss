@@ -286,7 +286,7 @@
 		flex-basis: 50%;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		flex-direction: column;
 		&_right{
 			padding-left: 60px;
@@ -739,7 +739,11 @@
 		}
 		&__content-inner{
 			max-width: 380px;
-			margin-left: auto;
+			// margin-left: auto;
+			padding-left: 45px;
+			@include to(1020px){
+				padding-left: 0;
+			}
 			@include to(560px){
 				display: none;
 			}
