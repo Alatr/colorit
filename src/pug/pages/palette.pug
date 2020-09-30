@@ -45,10 +45,28 @@ block content
 									option.palette-item__select-item(data-pal="palette"+j  selected="selected" data-descr='1')= v
 								else
 									option.palette-item__select-item(data-pal="palette"+j data-descr=v)= v
-					form.pallete-search
-						input(type="text" placeholder="Введите номер или название цвета").pallete-search__input
-						button.pallete-search__btn
-							+svg('search')
+					.pallete-search-wrapper.js-pallete-search-wrapper
+						form.pallete-search
+							input(type="text" placeholder="Введите номер или название цвета").pallete-search__input
+							button.pallete-search__btn.js-pallete-search__btn
+								+svg('search')
+						.pallete-search__result
+							p.pallete-search__result-text Результат:
+							ul.pallete-search__result-list
+								li.pallete-search__result-item 
+									a(href="#") 
+										.pallete-search__color(style="background: rgb(122, 122, 122)")
+										span.pallete-search__color-name  ЕМЕ 134
+								li.pallete-search__result-item 
+									a(href="#") 
+										.pallete-search__color(style="background: rgb(122, 122, 122)")
+										span.pallete-search__color-name  ЕМЕ 134
+								li.pallete-search__result-item 
+									a(href="#") 
+										.pallete-search__color(style="background: rgb(122, 122, 122)")
+										span.pallete-search__color-name  ЕМЕ 134
+
+
 
 
 				.palette-block-body

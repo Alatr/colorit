@@ -63,4 +63,15 @@ class TabSelect extends Tab {
 	//
 	// }
 
+
+	$('.js-pallete-search__btn').on('click', function(e){
+		e.preventDefault();
+		$('.js-pallete-search-wrapper').addClass('pallete-search-wrapper_result-visible');
+	})
+
+	$(document).on('click', function(e){
+		if (!$('.js-pallete-search-wrapper').is(e.target) && $('.js-pallete-search-wrapper').has(e.target).length === 0){
+			$('.js-pallete-search-wrapper').removeClass('pallete-search-wrapper_result-visible')
+		}
+	})
 })(jQuery);

@@ -42,20 +42,38 @@
 
 	}
 }
+.pallete-search-wrapper{
+	position: relative;
+	&_result-visible{
+		.pallete-search__result{
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+}
 .pallete-search{
 	display: inline-flex;
 	align-items: center;
 	border-bottom: 1px solid #C2D2DA;
+	position: relative;
 	&__input{
 		height: 22px;
 		width: 168px;
 		border: none;
 		margin-right: 25px;
 		font-style: italic;
+		@include to(480px){
+			width: 160px;
+			margin-right: 10px;
+		}
 		&::placeholder{
 			font-weight: 500;
 			font-size: 10px;
 			color: #9AB4C1;
+			@include to(480px){
+				font-size: 9px;
+			}
 		}
 	}
 	&__btn{
@@ -67,7 +85,38 @@
 		width: 18px;
 		height: 18px;
 		fill: #C11426;
+		@include to(480px){
+			width: 15px;
+			height: 15px;
+		}
 		
+	}
+	&__result{
+		padding: 15px 10px 10px;
+		position: absolute;
+		background: #fff;
+		z-index: 2;
+		width: 100%;
+		box-shadow: 0px 10px 20px rgba(24, 49, 91, 0.05);
+		opacity: 0;
+		transition: all 0.5s;
+		visibility: hidden;
+		pointer-events: none;
+
+	}
+	&__result-item{
+		a{
+			text-decoration: none;
+			color:  #000C31;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	&__color{
+		display: block;
+		width: 10px;
+		height: 10px;
 	}
 }
 
@@ -107,12 +156,14 @@
 	//width: 180px;
 	display: inline-block;
 	@include to(700px){
-		width: 100%;
+		
+	}
+	@include to(480px){
+		width: 74px;
 	}
 	select,
 	input {
 		//width: 100%;
-		width: initial;
 		padding: 0 25px 0 20px;
 		border: none;
 		height: 36px;
@@ -121,9 +172,16 @@
 		text-transform: uppercase;
 		font-weight: 500;
 		color: #17315B;
+		@include to(480px){
+			font-size: 10px;
+			padding: 0 5px 0 5px;
+		}
 	}
 	&.calculator-item-select-wrap::after{
 		right: 15px;
+		@include to(480px){
+			right: 5px;
+		}
 	}
 }
 .palette-color-item-select-wrap {
