@@ -339,6 +339,21 @@ class showModal {
 		
 }
 
+const labelEffects = ()=>{
+    $('.footer-subscribe-form__input').on('focus', function() {
+        $('.footer-subscribe-form__label').removeClass('footer-subscribe-form__label_active');
+        $('.footer-subscribe-form__input-group').removeClass('footer-subscribe-form__input-group_active');
+		let labelTarget = $(this).attr('name')
+        $(`label[for=${labelTarget}]`).addClass('footer-subscribe-form__label_active');
+        $(this).parent().addClass('footer-subscribe-form__input-group_active');
+    });
+    $('.footer-subscribe-form__input').on('focusout', function() {
+		$('.footer-subscribe-form__label').removeClass('footer-subscribe-form__label_active');
+        $('.footer-subscribe-form__input-group').removeClass('footer-subscribe-form__input-group_active');
+    });
+}
+
+labelEffects();
 
 class showModalCallback extends showModal {
 	constructor(props) {
@@ -403,6 +418,12 @@ class showModalCallback extends showModal {
 		beforeOpen: function (e) {
 			form_4.close();
 		}
+	});
+
+	const form_8 = new showModal({
+		popup: '.js-modal-form-popup_color-single',
+		closeBtn: '.js-form_color-single_close',
+		openBtn: '.js-color-single-block-info-btn'
 	});
 
 

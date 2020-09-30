@@ -16,6 +16,7 @@
 			.row-row{
 				justify-content: space-between;
 				margin-right: 0;
+				margin-left: 0;
 			}
 		}
 		
@@ -23,7 +24,8 @@
 	@include to(1200px){
 		.container{
 			padding-left: 0;
-			padding-right: 20px;
+			padding-right: 0px;
+			// padding-right: 20px;
 		}
 	}
 	@include to(992px){
@@ -31,6 +33,7 @@
 	}
 	@include to(768px){
 		.container{
+			// padding-right: 0px;
 			padding-right: 15px;
 				}
 				
@@ -38,8 +41,9 @@
 			.row-row{
 				display: flex;
 				align-items: center;
-				margin-left: -37px;
-				margin-right: -37px;
+				justify-content: space-between;
+				// margin-left: -37px;
+				// margin-right: -37px;
 				@include to(1200px){
 					justify-content: space-between;
 					margin-left: 0;
@@ -59,13 +63,25 @@
 	}
 }
 
-
+.header-menu-item-left-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-basis: 42%;
+	height: 66px;
+	@include to(700px){
+		flex-basis: 295px;
+		height: 42px;
+	}
+	
+}
 .header-menu{
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-grow: 0.8;
+	
 	&:hover {
 
 		.header-menu-item__title {
@@ -73,18 +89,26 @@
 		}
 	}
 	& li.header-menu-item:last-child {
-		position: relative;
-		&::after{
-			position: absolute;
-			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 1px;
-			height: 22px;
-			content: "";
-			display: flex;
-			
-			background-color: #9AB4C1;
+	}
+	&__right, &__left{
+		flex-grow: 0;
+	}
+	&__left{
+		margin-left: -37px;
+		flex-basis: 45%;
+		@include to(1200px){
+			margin-left: 0;
+		}
+		@include to(700px){
+			display: none;
+		}
+	}
+	&__right{
+		flex-basis: 43%;
+		flex-shrink: 0;
+		@include to(700px){
+			justify-content: flex-end;
+			flex-basis: auto;
 		}
 	}
 }
@@ -94,6 +118,8 @@
 	height: 100%;
 	line-height: 69px;
 }
+
+
 .header-phone{
 	padding: 0 5px 0 30px;
 	@include to(1200px){
@@ -120,30 +146,47 @@
 
 	white-space: nowrap;
 }
+.header-menu-item__logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@include to(700px){
+		position: static;
+		transform: none;
+		padding: 0 min(vw(23), 23px);
+	}
+
+}
 .header-menu-item > a,
 
 .header-menu-item__logo{
 	white-space: nowrap;
-		padding: 0 37px;
-		@include to(1200px){
+		// padding: 0 37px;
+
+		// @include to(1200px){
 			
-			padding: 0 min(vw(33), 33px);
-		}
-		@include to(1024px){
+		// 	padding: 0 min(vw(33), 33px);
+		// }
+		// @include to(1024px){
 			
-			padding: 0 min(vw(27), 27px);
-		}
-		@include to(768px){
+		// 	padding: 0 min(vw(27), 27px);
+		// }
+		// @include to(768px){
 			
-			padding: 0 min(vw(25), 25px);
-		}
-		@include to(750px){
+		// 	padding: 0 min(vw(25), 25px);
+		// }
+		// @include to(750px){
 			
-			padding: 0 min(vw(23), 23px);
-		}
+		// 	padding: 0 min(vw(23), 23px);
+		// }
 }
 .header-menu-item__logo a{
 	padding: 0;
+	// margin-left: 37px;
 }
 .header-menu-item__logo img{
 	width: 46px;
@@ -166,6 +209,10 @@
 	}
 }
 .header-menu-item{
+	// padding: 0 37px;
+	// @include to(1200px){
+	// 	padding: 0;
+	// }
 	@include to(700px){
 		&:not(.header-menu-item__logo){
 			display: none;
@@ -176,7 +223,7 @@
 		font-size: 12px;
 		line-height: lh(14, 12);
 		align-items: center;
-		font-weight: 500;
+		font-weight: 400;
 		text-transform: uppercase;
 		color: #000C31;
 		transition: all 0.3s;
@@ -188,6 +235,27 @@
 		}
 		@include to(992px){
 			font-size: 10px;
+		}
+	}
+}
+.header-menu-item_border{
+	position: relative;
+	// padding-right: 37px;
+	&::after{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%) translateX(75px);
+		width: 1px;
+		height: 22px;
+		content: "";
+		display: flex;
+		background-color: #9AB4C1;
+		@include to(1440px){
+			transform: translateY(-50%) translateX(37px);
+		}
+		@include to(992px){
+			transform: translateY(-50%) translateX(18px);
 		}
 	}
 }
@@ -335,13 +403,16 @@ ul.header-submenu{
 		&__title{
 			padding: 0px 10px;
 			font-size: 16px;
-			line-height: lh(30, 16);
+			line-height: lh(25, 16);
 			text-align: center;
 			color: #000C31;
 			transition: all 0.3s;
 			@include to(992px){
 				font-size: 12px;
 				line-height: lh(18, 12);
+			}
+			&_width{
+				max-width: 160px;
 			}
 		}
 	}
@@ -534,6 +605,7 @@ header .header__text {
 	padding: 0;
 	width: 14px;
 	height: 11px;
+	flex-shrink: 0;
 	svg{
 		width: 100%;
 		height: 100%;
