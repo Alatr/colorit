@@ -1,7 +1,7 @@
 class PaletteCreate {
     constructor(data){
         this.tab = data.tab || true;
-        this.description= data.description;
+        this.description = data.description;
         this.wrap = data.wrap || '';
         this.lang = 'ru';
         this.type = 'palette0';
@@ -33,9 +33,6 @@ class PaletteCreate {
                 e.preventDefault();
                 this.scrollLeft += e.originalEvent.deltaY;
             }
-
-
-
         })
     }
 
