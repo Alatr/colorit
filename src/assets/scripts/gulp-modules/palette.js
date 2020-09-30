@@ -30,7 +30,6 @@ class TabSelect extends Tab {
 		event: 'changeTabSelect'
 	});
 
-
 	const paletteCreate = new PaletteCreate({
 		tab: true,
 		description: $('.palette-item__select-item')[0].dataset.descr || '',
