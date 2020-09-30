@@ -346,9 +346,15 @@ block content
                                 a(href="mailto:partner@kolorit.ua") partner@kolorit.ua
                             .modal-form-popup__title Хотите стать  официальным ритейлером?
                         form.modal-form
-                            input(type="text" required placeholder="Имя*").modal-form__input
-                            input(type="email" required placeholder="E-mail*").modal-form__input
-                            input(type="text" placeholder="Сообщение*").modal-form__input.margin-top--more
+                            .modal-form__input-group
+                                label(for="footer-subscribe-form-name").modal-form__label Имя*
+                                input(type="text" required placeholder="Имя*" name="footer-subscribe-form-name").modal-form__input
+                            .modal-form__input-group
+                                label(for="footer-subscribe-form-email").modal-form__label E-mail*
+                                input(type="email" required placeholder="E-mail*" name="footer-subscribe-form-email").modal-form__input
+                            .modal-form__input-group.margin-top--more
+                                label(for="footer-subscribe-form-msg").modal-form__label Сообщение*
+                                input(type="text" placeholder="Сообщение*" name="footer-subscribe-form-msg").modal-form__input
                             button.btn--res.modal-form__btn Отправить
         .container
             .buy__message-row.row
@@ -390,8 +396,13 @@ block content
 
         .banner-2
             .banner-2__l(style="background-image: url('assets/images/1.jpg');")
-                p.underline-link
+                a(href="./advice.html").underline-link
                     span.banner-2__title Вдохновляйтесь <br> вместе с нами
+                    .news-item-btn.link-arrow-type
+                        .circle-btn
+                            .circle-btn-inner.dark-ico
+                                +svg('qww')
+                        .news-item-btn__text Читать совет
             .banner-2__r
                 a(href="button").btn--res.link-arrow-type
                     .circle-btn

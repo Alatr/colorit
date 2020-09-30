@@ -285,8 +285,22 @@ const labelEffects = ()=>{
         $('.footer-subscribe-form__input-group').removeClass('footer-subscribe-form__input-group_active');
     });
 }
+const labelEffects2 = ()=>{
+    $('.modal-form__input').on('focus', function() {
+        $('.modal-form__label').removeClass('modal-form__label_active');
+        $('.modal-form__input-group').removeClass('modal-form__input-group_active');
+		let labelTarget = $(this).attr('name')
+        $(`label[for=${labelTarget}]`).addClass('modal-form__label_active');
+        $(this).parent().addClass('modal-form__input-group_active');
+    });
+    $('.modal-form__input').on('focusout', function() {
+		$('.modal-form__label').removeClass('modal-form__label_active');
+        $('.modal-form__input-group').removeClass('modal-form__input-group_active');
+    });
+}
 
 labelEffects();
+labelEffects2();
 
 class showModalCallback extends showModal {
 	constructor(props) {

@@ -201,12 +201,12 @@
 	}
 }
 .products-card-block-item{
-	padding: 0 40px 33px;
+	padding: 0 40px 25px;
 	display: flex;
 	align-items: center;
 	width: 50%;
 	@include to(768px){
-		padding: 0 7% 33px;
+		padding: 0 7% 25px;
 	}
 	@include to(700px){
 		width: 100%;
