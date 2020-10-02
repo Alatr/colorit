@@ -126,6 +126,14 @@ $('#modal-form-free-delivery-services').on('submit', function (e) {
 	e.preventDefault();
 	ajax_form(e.target, form_3);
 });
+$('#modal-form-free-delivery-services-order').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_3_2);
+});
+$('#modal-form-free-delivery-services-shipping').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_3_3);
+});
 
 /*  */
 /*  */
