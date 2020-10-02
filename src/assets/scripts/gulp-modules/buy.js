@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
 (function ($) {
     let currentTabShop = 'tikkurila'
     let currentLocation = 'office'
@@ -192,4 +192,481 @@ document.addEventListener('DOMContentLoaded', () => {
     tabsContainer()
 
 })(jQuery);
-})
+}) */
+
+
+
+
+
+
+(function ($) {
+	
+	
+
+	
+	/**********************************/
+	/*
+	* tab start
+	*/
+	const tab = new Tab({
+		$btn: $('.js-trigger1'),
+		$content: $('.js-buy__tabs-content1'),
+		btnActiveClass: 'buy-btn-content-item--active',
+		contentActiveClass: 'buy-tab-content-item--active',
+		active: 0
+	});
+	
+	/*
+	* tab end
+	*/
+	/**********************************/
+	
+	
+	
+	
+	
+	
+	/**********************************/
+	/*
+	* filter shops start
+	*/
+
+
+/* 
+
+	class FilterShopView{
+		constructor(model, elements){
+			this._model = model;
+			this._elements = elements;
+		}
+
+
+		
+		
+		
+		
+	}
+	class FilterShopModel{
+		constructor(items){
+			
+		}
+	}
+	class FilterShopController{
+		constructor(model, view) {
+
+		}
+	}
+
+
+	const model = new FilterShopModel(['node.js', 'react']),
+				view = new FilterShopView(model, {
+					'selectRegion': document.querySelector('.js-tikkurila-region'),
+					'selectCity': document.querySelector('.js-tikkurila-city'),
+					'resList': document.querySelector('.js-tikkurila-res-list'),
+				}),
+				controller = new FilterShopController(model, view);
+	
+	
+	 */
+
+	 
+const JSONShops = JSON.parse(JSON.stringify([{ "name": "Farba Service", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442 \u0421\u0442\u0435\u043f\u0430\u043d\u0430 \u0411\u0430\u043d\u0434\u0435\u0440\u044b, 23", "tel": "380970787777", "site": "https:\/\/farbaservice.business.site\/", "coords": "50.489917, 30.496976", "type": "2" }, { "name": "Color Studio Tikkurila", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya3", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya3", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya2", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya1", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya1", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "\u042d\u043f\u0438\u0446\u0435\u043d\u0442\u0440", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u0430\u044f \u0414\u043e\u0440\u043e\u0433\u0430, 1\u0411", "tel": "380442062603", "site": "https:\/\/epicentrk.ua\/shop\/kraski\/fs\/brand-kolorit\/", "coords": "50.376920, 30.445023", "type": "3" }]));
+
+console.log(JSONShops);
+
+	 class FilterShops{
+		 constructor (settings){
+		this._regions = [
+				{
+					label: {
+						ru: 'Все',
+						ua: 'Вcі',
+					},
+					value: 'all',
+				},
+				{
+					label: {
+						ru: 'Винницкая область',
+						ua: 'Вінницька область',
+					},
+					value: 'vinnickaya',
+				},
+				{
+					label: {
+						ru: '"kievskaya3" область',
+						ua: '"kievskaya3" область',
+					},
+					value: 'kievskaya3',
+				},
+				{
+					label: {
+						ru: '"kievskaya2" область',
+						ua: '"kievskaya2" область',
+					},
+					value: 'kievskaya2',
+				},
+				{
+					label: {
+						ru: '"kievskaya1" область',
+						ua: '"kievskaya1" область',
+					},
+					value: 'kievskaya1',
+				},
+
+
+
+
+
+				{
+					label: {
+						ru: 'Винницкая область',
+						ua: 'Вінницька область',
+					},
+					value: 'vinnickaya',
+				},
+
+				{
+					label: {
+						ru: 'Волынская область',
+						ua: 'Волинська область',
+					},
+					value: 'volynskaya',
+				},
+
+				{
+					label: {
+						ru: 'Днепропетровская область',
+						ua: 'Дніпропетровська область',
+					},
+					value: 'dnepropetrovskaya',
+				},
+
+				{
+					label: {
+						ru: 'Донецкая область',
+						ua: 'Донецька область',
+					},
+					value: 'doneckaya',
+				},
+
+				{
+					label: {
+						ru: 'Житомирская область',
+						ua: 'Житомирська область',
+					},
+					value: 'zhitomirskaya',
+				},
+
+				{
+					label: {
+						ru: 'Закарпатская область',
+						ua: 'Закарпатська область',
+					},
+					value: 'zakarpatskaya',
+				},
+
+				{
+					label: {
+						ru: 'Запорожская область',
+						ua: 'Запорізька область',
+					},
+					value: 'zaporozhskaya',
+				},
+
+				{
+					label: {
+						ru: 'Ивано-Франковская область',
+						ua: 'Івано-Франківська область',
+					},
+					value: 'ivanoFrankovskaya',
+				},
+
+				{
+					label: {
+						ru: 'Киевская область',
+						ua: 'Київська область',
+					},
+					value: 'kievskaya',
+				},
+
+				{
+					label: {
+						ru: 'Кировоградская область',
+						ua: 'Кіровоградська область',
+					},
+					value: 'kirovogradskaya',
+				},
+
+				{
+					label: {
+						ru: 'Луганская область',
+						ua: 'Луганська область',
+					},
+					value: 'luganskaya',
+				},
+
+				{
+					label: {
+						ru: 'Львовская область',
+						ua: 'Львівська область',
+					},
+					value: 'lvovskaya',
+				},
+
+				{
+					label: {
+						ru: 'Николаевская область',
+						ua: 'Миколаївська область',
+					},
+					value: 'nikolaevskaya',
+				},
+
+				{
+					label: {
+						ru: 'Одесская область',
+						ua: 'Одеська область',
+					},
+					value: 'odesskaya',
+				},
+
+				{
+					label: {
+						ru: 'Полтавская область',
+						ua: 'Полтавська область',
+					},
+					value: 'poltavskaya',
+				},
+
+				{
+					label: {
+						ru: 'Ровненская область',
+						ua: 'Рівненська область',
+					},
+					value: 'rovnenskaya',
+				},
+
+				{
+					label: {
+						ru: 'Сумская область',
+						ua: 'Сумська область',
+					},
+					value: 'sumskaya',
+				},
+
+				{
+					label: {
+						ru: 'Тернопольская область',
+						ua: 'Тернопільська область',
+					},
+					value: 'ternopolskaya',
+				},
+
+				{
+					label: {
+						ru: 'Харьковская область',
+						ua: 'Харківська область',
+					},
+					value: 'harkovskaya',
+				},
+
+				{
+					label: {
+						ru: 'Херсонская область',
+						ua: 'Херсонська область',
+					},
+					value: 'hersonskaya',
+				},
+
+				{
+					label: {
+						ru: 'Хмельницкая область',
+						ua: 'Хмельницька область',
+					},
+					value: 'hmelnickaya',
+				},
+
+				{
+					label: {
+						ru: 'Черкасская область',
+						ua: 'Черкаська область',
+					},
+					value: 'cherkasskaya',
+				},
+
+				{
+					label: {
+						ru: 'Черниговская область',
+						ua: 'Чернігівська область',
+					},
+					value: 'chernigovskaya',
+				},
+
+				{
+					label: {
+						ru: 'Черновицкая область',
+						ua: 'Чернівецька область',
+					},
+					value: 'chernovickaya',
+				}
+			]
+
+			this._shops = []
+			this._sortedShopByRegion = []
+			this._lang = this.langDetect();
+			this._elements = settings.elements;
+			this._filterState = {
+				region: 'all',
+				city: 'all',
+			};
+			this.init();
+		 }
+
+			 async getAllShops(){
+			//  const shops = await getPromise(`action=getBuy`, `/wp-admin/admin-ajax.php`, 0);
+			 this._shops = JSONShops;
+			 this.renderShopList();
+			 this.sortedShopByRegion();
+
+			}
+		 	startCalculation(){
+			
+
+			}
+			
+			sortedShopByRegion(){
+				this._sortedShopByRegion = this._shops.reduce((acc, el)=>{
+				 if (acc[el.region] !== undefined){
+					 acc[el.region].push(el)
+				 } else {
+					 acc[el.region] = []
+					 acc[el.region].push(el)
+				 }
+				 return acc
+				}, {})
+			}
+
+		changeRegion = (event)=>{
+			this._filterState.region = event.target.value
+			this._sortedShopByRegion[event.target.value].forEach((el)=>{
+				let {name: label, code: value} = el.city;
+				this.renderOptions(this._elements.$selectCity, {label, value}, false) // false it's not parse label language
+			});
+			this.startCalculation();
+		}
+		
+		changeCity = (event)=> {
+			this._filterState.city = event.target.value
+			this.startCalculation();
+		}
+		 
+		setStyle(){
+			
+		}
+		
+		setEvent(){
+			this._elements.$selectCity.addEventListener('change', this.changeCity);
+			this._elements.$selectRegion.addEventListener('change', this.changeRegion);
+		}
+		
+		/**********************************/
+		/*
+		* render start
+		*/
+		renderRegions(){
+		 this._regions.forEach((el)=>{
+			 this.renderOptions(this._elements.$selectRegion, el)
+		 })
+		}
+		renderShopList(){
+			parentList.innerHTML = '';
+			this._shops.forEach((el) => {
+				this.renderShopItem(this._elements.$resList, el)
+			})
+		}
+
+
+		renderShops(parentList, { site, address, name, tel }) {
+			const markupShopItem = `
+				<li class="buy__tabs-filtered__item">
+					<div class="buy__tabs-filtered__item-block">
+						<a class="buy__tabs-filtered-phone buy__tabs-filtered-link" href="tel:${tel}">${tel}</a>
+						<a class="buy__tabs-filtered-link buy__tabs-filtered-site shop-link" href="${site}"><span>${site}</span</a>
+					</div>
+					<div class="buy__tabs-filtered__item-block">
+						<div class="buy__tabs-filtered-name">${name}</div>
+						<div class="buy__tabs-filtered-address">${address}</div>
+					</div>
+				</li>
+			`	
+			parentList.insertAdjacentHTML('beforeend', markupShopItem);
+		}
+		renderOptions(parentList, {label, value}, parseLang = true){
+			const markup = `<option class="calculator-item__select-item" value="${value}">${(parseLang) ? label[this._lang] : label}</option>`
+				parentList.insertAdjacentHTML('beforeend', markup);
+	
+		}
+		
+		/*
+		* render end
+		*/
+		/**********************************/
+
+		 init(){
+			this.getAllShops();
+			this.setEvent();
+			this.renderRegions();
+		 }
+	 }
+	
+	 FilterShops.prototype.langDetect = function () {
+
+	 	if (window.location.pathname.match(/\/ru\//)) return 'ru';
+	 	if (window.location.pathname.match(/\/en\//)) return 'en';
+	 	return 'ua'
+	 };
+	
+	
+	
+		const filterTikkurila = new FilterShops({
+				elements: {
+					$selectRegion: document.querySelector('.js-tikkurila-region'),
+					$selectCity: document.querySelector('.js-tikkurila-city'),
+					$resList: document.querySelector('.js-tikkurila-res-list')
+				}
+			});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	* filter shops end
+	*/
+	/**********************************/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+})(jQuery);

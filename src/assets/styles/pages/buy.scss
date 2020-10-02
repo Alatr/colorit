@@ -164,7 +164,7 @@
     }
 
     &-filter {
-      padding: 18px 30px;
+      padding: 18px 0px;
       display: flex;
       background-color: #F0F1F8;
       @include to(768px){
@@ -177,7 +177,7 @@
         padding: 10px 10px;
       }
 
-      &-block {
+     /*  &-block {
         margin-right: 100px;
         @include to(768px){
           margin-right: 0;
@@ -192,7 +192,7 @@
         &:last-child {
           margin-right: 0;
         }
-      }
+      } */
 
       &-item {
         position: relative;
@@ -363,14 +363,13 @@
         background-color: #fff;
         display: flex;
         align-items: center;
-        flex-direction: row-reverse;
         padding: 27px 27px 14px;
         cursor: pointer;
+				justify-content: space-between;
         &:hover{
           background-color: #F0F1F8;
         }
         @include to(768px){
-          justify-content: space-between;
         }
         @include to(480px){
           padding: 27px 10px 14px;
@@ -386,7 +385,7 @@
           text-align: left;
           display: flex;
           flex-direction: column;
-          margin-right: 84px;
+          width: 200px;
           @include to(768px){
             margin-right: 0;
           }
@@ -411,7 +410,6 @@
       &-site {
         color: #C11426;
         font-weight: 600;
-        border-bottom: 1px solid #C11426;
       }
 
       &-name {
@@ -1025,4 +1023,68 @@
       }
     }
   }
+}
+
+
+
+
+.buy-btn-content-item--active:not(#h){
+	    color: #17315B;
+}
+.buy-tab-content-item--active:not(#h){
+	position: static;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+
+}
+
+.buy__tabs-content {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.buy__tabs-filter-block select,
+.buy__tabs-filter-block input {
+	width: 150px;
+	padding: 0 40px 0 20px;
+	border: none;
+	height: 36px;
+	background: #F0F1F8;
+	font-size: 12px;
+	color: #000C31;
+}
+
+
+.buy__tabs-filter-block{
+	margin: 0 30px;
+	display: flex;
+	align-items: center;
+}
+
+.calculator-item-select-region--width{
+	// width: 85px;
+}
+.calculator-item-select-city--width{
+	// width: 120px;
+}
+
+
+.shop-link:hover span {
+	background-image: linear-gradient(#C11426, #C11426);
+}
+
+.shop-link{
+	text-decoration: none;
+}
+.shop-link span {
+	word-break: break-all;
+	text-decoration: none;
+	background-image: linear-gradient(#C11426, #C11426);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 1.5px;
+	transition: background-size .3s;
 }

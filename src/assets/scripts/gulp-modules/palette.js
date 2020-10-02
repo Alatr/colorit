@@ -41,6 +41,11 @@ class TabSelect extends Tab {
 	});
 
 
+	document.addEventListener('onReadyJSONColor', function (e) {
+		getColors({colors: paletteCreate.colors, name: paletteCreate.type})
+	});
+
+
 	// if (screen.width > 700) {
 	// 	const tab = new Tab({
 	// 		$btn: $('.js-palette-color-tab-btn'),
@@ -62,16 +67,4 @@ class TabSelect extends Tab {
 	// 	});
 	//
 	// }
-
-
-	$('.js-pallete-search__btn').on('click', function(e){
-		e.preventDefault();
-		$('.js-pallete-search-wrapper').addClass('pallete-search-wrapper_result-visible');
-	})
-
-	$(document).on('click', function(e){
-		if (!$('.js-pallete-search-wrapper').is(e.target) && $('.js-pallete-search-wrapper').has(e.target).length === 0){
-			$('.js-pallete-search-wrapper').removeClass('pallete-search-wrapper_result-visible')
-		}
-	})
 })(jQuery);

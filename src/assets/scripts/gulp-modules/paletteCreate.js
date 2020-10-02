@@ -5,11 +5,14 @@ class PaletteCreate {
         this.wrap = data.wrap || '';
         this.lang = 'ru';
         this.type = 'palette0';
-        this.init('palette0')
+        this.init('palette0');
+        // this.event = null;
     }
 
     init(type) {
-        this.getColors('./assets/jsons/','colorCode', (reject) => {
+
+        this.productChangeListeners(); // add custom event for onload json color
+        this.getColors('/assets/jsons/','colorCode', (reject) => {
         // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
         });
@@ -24,7 +27,7 @@ class PaletteCreate {
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        this.getColors('./assets/jsons/',type, this.setContentPalette.bind(this));
+        this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
         // this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
 
         $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
@@ -36,7 +39,20 @@ class PaletteCreate {
         })
     }
 
+    getActiveColorList(){
+        if(this.colors){
+            return this.colors
+        } else {
+            let self = this;
+            setTimeout(() => {
+               return self.colors
+            },1000)
+        }
+    }
+
     setContentPalette(list, type) {
+        this.colors = list;
+        document.dispatchEvent(this.event);
         this.updateDescription();
         if(type === 'palette0') {
             this.createTab('.js-palette-tab',this.changeListForSymphony(list));
@@ -255,5 +271,9 @@ class PaletteCreate {
             <li class='color-shade-item'></li>
         `
     }
-
 }
+
+PaletteCreate.prototype.productChangeListeners = function () {
+    let event = new Event('onReadyJSONColor', { bubbles: true });
+    this.event = event;
+};

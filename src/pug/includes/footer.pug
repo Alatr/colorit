@@ -5,13 +5,13 @@
 				.footer-subscribe__subtitle Будьте в курсе всех новостей и интересных предложений от Kolorit. Подпишитесь на нашу
 				.footer-subscribe__title  Рассылку!
 			.footer-subscribe__r
-				form.footer-subscribe-form
+				form.footer-subscribe-form#footer-subscribe-form
 					.footer-subscribe-form__input-group
 						label(for="footer-subscribe-form-name").footer-subscribe-form__label Имя*
-						input(type="text" name="footer-subscribe-form-name" required placeholder="Имя*").footer-subscribe-form__input
+						input(type="text" name="name" required placeholder="Имя*").footer-subscribe-form__input
 					.footer-subscribe-form__input-group
 						label(for="footer-subscribe-form-email").footer-subscribe-form__label E-mail*
-						input(type="email" name="footer-subscribe-form-email" required placeholder="E-mail*").footer-subscribe-form__input
+						input(type="email" name="email" required placeholder="E-mail*").footer-subscribe-form__input
 					button.btn--res.footer-subscribe-form__btn Отправить
 .footer-menu
 	button.btn--res
@@ -118,8 +118,8 @@
 								</svg>
 							.footer-menu-info-item__text
 								p.footer-menu-info-item__title Подписаться на рассылку:
-								form.subscribe-form
-									input(type="email" required placeholder="E-mail").subscribe-form__input-email
+								form.subscribe-form#subscribe-form-menu-footer
+									input(type="email" name="email" required placeholder="E-mail").subscribe-form__input-email
 									button.btn--res.subscribe-form__submit
 										+svg('form_submit')
 
