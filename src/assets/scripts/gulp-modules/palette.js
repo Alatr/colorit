@@ -1,4 +1,3 @@
-
 class TabSelect extends Tab {
 	constructor(props) {
 		super(props);
@@ -40,11 +39,12 @@ class TabSelect extends Tab {
 		paletteCreate.update(e,$('.palette-item__select-item[data-pal='+ e +']').data('descr') || '', true )
 	});
 
-
+	let paletteSearch = new PaletteSearch();
+	paletteSearch.init();
 	document.addEventListener('onReadyJSONColor', function (e) {
-		getColors({colors: paletteCreate.colors, name: paletteCreate.type})
+		console.log(paletteCreate);
+		paletteSearch.update(paletteCreate.colors, paletteCreate.type)
 	});
-
 
 	// if (screen.width > 700) {
 	// 	const tab = new Tab({

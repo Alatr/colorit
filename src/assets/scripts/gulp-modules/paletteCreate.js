@@ -51,7 +51,7 @@ class PaletteCreate {
     }
 
     setContentPalette(list, type) {
-        this.colors = list;
+        this.colors = list.colors;
         document.dispatchEvent(this.event);
         this.updateDescription();
         if(type === 'palette0') {
