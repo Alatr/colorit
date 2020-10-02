@@ -311,6 +311,9 @@
 	@include to(700px){
 		display: flex;
 	}
+	img{
+		object-fit: cover;
+	}
 }
 
 

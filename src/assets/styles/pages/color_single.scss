@@ -122,6 +122,10 @@
 					background: #fff;
 					transform: translate(-9px, -50%) rotate(45deg);
 				}
+				@include to(700px){
+					display: flex;
+					transform: translate(75%, calc(100% - 43px));
+				}
 			}
 			
 			&:hover{
