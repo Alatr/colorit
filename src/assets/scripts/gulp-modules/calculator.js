@@ -10,13 +10,5 @@
 
 
 
-/* 		const popupCalcForm = new showModal({
-			popup: '.js-modal-form-popup_3',
-			closeBtn: '.js-form_result_close',
-			openBtn: '.js-open-form-calc-wall'
-		});
-
-		// popupCalcForm.open() */
-
 
 })(jQuery);

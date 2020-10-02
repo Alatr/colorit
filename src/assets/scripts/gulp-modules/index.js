@@ -2,72 +2,6 @@
 @@include('./libs.js');
 /* eslint-enable */
 
-/**********************************/
-/*
-* form submit start
-*/
-	// $('#call-form').on('submit', function (e) {
-	// 	e.preventDefault();
-	// 	ajax_form(e.target);
-
-		function ajax_form(e) {
-			e.preventDefault();
-			const str = $("#" + e.id).serialize();
-			$.ajax({
-				method: "POST",
-				url: "/wp-admin/admin-ajax.php",
-				data: str += '&action=app',
-				beforeSend: function () {
-				},
-				error: function (data) {
-				},
-				success: function (msg) {
-				}
-			})
-		}
-			
-
-			function langDetect() {
-				if (window.location.pathname.match(/ru/)) {
-					return 'ru'
-				} else if (window.location.pathname.match(/en/)) {
-					return 'en'
-				} else {
-					return 'ua'
-				}
-			}
-		// }
-
-	// });
-
-/*
-* form submit end
-*/
-/**********************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class showModal {
 	constructor(obj) {
@@ -115,8 +49,365 @@ class showModal {
 		this.listeners();
 
 	}
-
 }
+
+
+class showModalCallback extends showModal {
+	constructor(props) {
+		super(props);
+		this.beforeOpen = props.beforeOpen;
+
+	}
+	open() {
+		this.beforeOpen(this)
+		$(this.popup).css("display", "flex").hide().fadeToggle();
+		this.status = true;
+		
+	};
+}
+
+
+
+const form_1 = new showModal({
+	popup: '.js-modal-form-popup_1',
+	closeBtn: '.js-form_cons_close',
+	openBtn: '.js-open-consult'
+});
+
+$('#modal-form-consult').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_1);
+});
+/*  */
+/*  */
+/*  */
+/*  */
+const form_2 = new showModal({
+	popup: '.js-modal-form-popup_2',
+	closeBtn: '.js-form_delivery_close',
+	openBtn: '.js-open-delivery'
+});
+
+$('#modal-form-free-delivery').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_2);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+const search = new showModal({
+	popup: '.js-search-modal',
+	closeBtn: '.js-search-modal-back',
+	openBtn: '.js-header-search'
+});
+
+const form_3 = new showModal({
+	popup: '.js-modal-form-popup_services',
+	closeBtn: '.js-close-consult-services',
+	openBtn: '.js-open-consult-services'
+});
+
+$('#modal-form-free-delivery-services').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_3);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+const form_4 = new showModal({
+	popup: '.js-services-school-popup',
+	closeBtn: '.js-school-popup-close',
+	openBtn: '.js-school-popup-open'
+});
+
+const form_5 = new showModal({
+	popup: '.js-modal-form-popup_loyal',
+	closeBtn: '.js-form_loyal_close',
+	openBtn: '.js-open-popup-services'
+});
+
+$('#form-modal-form-popup_loyal').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_5);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+const form_6 = new showModal({
+	popup: '.js-modal-form-popup_company',
+	closeBtn: '.js-form_company_close',
+	openBtn: '.js-company-open-popup'
+});
+$('#company-modal-form').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_6);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+const form_7 = new showModalCallback({
+	popup: '.js-modal-form-popup_school-registr',
+	closeBtn: '.js-form_registr_close',
+	openBtn: '.js-school-registr-popup',
+	beforeOpen: function (e) {
+		form_4.close();
+	}
+});
+
+$('#form-popup_school-registr').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_7);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+const form_8 = new showModal({
+	popup: '.js-modal-form-popup_color-single',
+	closeBtn: '.js-form_color-single_close',
+	openBtn: '.js-color-single-block-info-btn'
+});
+
+$('#modal-form-popup_color-single').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, form_8);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+const thanksFormPopup = new showModal({
+	popup: '.js-modal-form-popup_thank-site',
+	closeBtn: '.js-modal-form-popup_thank-site .js-modal-form__btn-close',
+	openBtn: '.q'
+});
+
+
+$('#footer-subscribe-form').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target);
+});
+$('#subscribe-form-menu-footer').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+
+
+
+
+
+
+async function getPromise(data, url, parse) {
+	let promise = new Promise(function (resolve, reject) {
+		$.ajax({
+			url: url,
+			data: data,
+			type: 'POST',
+			global: false,
+			async: true,
+			success: function (res) {
+				let data = (!parse) ? JSON.parse(res) : res
+				resolve(data);
+			},
+			error: function (jqXHR, status, errorThrown) {
+				reject(jqXHR);
+			},
+			beforeSend: function () {},
+		});
+	});
+
+	return await promise;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************/
+/*
+* form submit start
+*/
+	// $('#call-form').on('submit', function (e) {
+	// 	e.preventDefault();
+	// 	ajax_form(e.target);
+	// ffff@bk.ru
+
+
+
+	
+	
+	
+	
+	
+
+		const dataMessage = {
+			done: {
+				ua: 'Заявка успішно відправлена',
+				ru: 'Заявка успешно отправлена',
+			},
+			fail: {
+				ua: 'Щось пішло не так? статус fail',
+				ru: 'Что-то пошло не так? статус fail',
+			},
+			zero: {
+				ua: 'Щось пішло не так? статус 0',
+				ru: 'Что-то пошло не так? статус 0',
+			},
+			default: {
+				ua: 'Щось пішло не так? статус null',
+				ru: 'Что-то пошло не так? статус null',
+			},
+		}
+
+	function ajax_form(e, popupModalForm = true) {
+			let str = $("#" + e.id).serialize();
+			const btn = $(`#${e.id}`).find('button[type="submit"]');
+			const lang = langDetect();
+			const titleThanksPopup = $('.js-modal-form-popup_thank-site .js-modal-form-popup__title');
+			// const fromPopupThanks = document.querySelector('.js-modal-form-popup_thank-site');
+			$.ajax({
+				method: "POST",
+				url: "/wp-admin/admin-ajax.php",
+				data: str += '&action=app',
+				beforeSend: function () {
+					btn.html('Отправка...');
+					btn.prop('disabled', true);
+					$('body').css('cursor', 'wait');
+				},
+				error: function (data) {
+					btn.html('Отправить');
+					btn.prop('disabled', false);
+					$('body').css('cursor', 'default');
+					console.log('error');
+					titleThanksPopup.html(dataMessage.default[lang]);
+					thanksFormPopup.open();
+				},
+				success: function (msg) {
+					btn.html('Отправить');
+					btn.prop('disabled', false);
+					$('body').css('cursor', 'default');
+					$(`#${e.id}`)
+						.find('input')
+						.each(function () {
+							console.log(this);
+							$(this).val('')
+						});
+
+					switch (JSON.parse(msg)) {
+						case 'done':
+							titleThanksPopup.html(dataMessage.done[lang]);
+							break;
+
+						case 'fail':
+							titleThanksPopup.html(dataMessage.fail[lang]);
+							break;
+
+						case 'zero':
+							titleThanksPopup.html(dataMessage.zero[lang]);
+							break;
+
+						default:
+							titleThanksPopup.html(dataMessage.default[lang]);
+							break;
+					}
+
+					if (popupModalForm) {
+						popupModalForm.close();
+					}
+					thanksFormPopup.open();
+				}
+			})
+		}
+
+
+
+	
+
+			
+
+			function langDetect() {
+				if (window.location.pathname.match(/ru/)) {
+					return 'ru'
+				} else if (window.location.pathname.match(/en/)) {
+					return 'en'
+				} else {
+					return 'ua'
+				}
+			}
+		// }
+
+	// });
+
+/*
+* form submit end
+*/
+/**********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
@@ -288,7 +579,7 @@ if (screen.width <= 1024) {
 * modal start
 */
 
-class showModal {
+/* class showModal {
 	constructor(obj) {
 		this.popup = obj.popup;
 		this.openBtn = obj.openBtn;
@@ -337,7 +628,7 @@ class showModal {
 
 			}
 		
-}
+} */
 
 const labelEffects = ()=>{
     $('.footer-subscribe-form__input').on('focus', function() {
@@ -368,63 +659,6 @@ class showModalCallback extends showModal {
 		
 	};
 }
-
-
-	const form_1 = new showModal({
-		popup: '.js-modal-form-popup_1',
-		closeBtn: '.js-form_cons_close',
-		openBtn: '.js-open-consult'
-	});
-
-	const form_2 = new showModal({
-		popup: '.js-modal-form-popup_2',
-		closeBtn: '.js-form_delivery_close',
-		openBtn: '.js-open-delivery'
-	});
-	const search = new showModal({
-		popup: '.js-search-modal',
-		closeBtn: '.js-search-modal-back',
-		openBtn: '.js-header-search'
-	});
-
-	const form_3 = new showModal({
-		popup: '.js-modal-form-popup_services',
-		closeBtn: '.js-close-consult-services',
-		openBtn: '.js-open-consult-services'
-	});
-
-	const form_4 = new showModal({
-		popup: '.js-services-school-popup',
-		closeBtn: '.js-school-popup-close',
-		openBtn: '.js-school-popup-open'
-	});
-
-	const form_5 = new showModal({
-		popup: '.js-modal-form-popup_loyal',
-		closeBtn: '.js-form_loyal_close',
-		openBtn: '.js-open-popup-services'
-	});
-
-	const form_6 = new showModal({
-		popup: '.js-modal-form-popup_company',
-		closeBtn: '.js-form_company_close',
-		openBtn: '.js-company-open-popup'
-	});
-
-	const form_7 = new showModalCallback({
-		popup: '.js-modal-form-popup_school-registr',
-		closeBtn: '.js-form_registr_close',
-		openBtn: '.js-school-registr-popup',
-		beforeOpen: function (e) {
-			form_4.close();
-		}
-	});
-
-	const form_8 = new showModal({
-		popup: '.js-modal-form-popup_color-single',
-		closeBtn: '.js-form_color-single_close',
-		openBtn: '.js-color-single-block-info-btn'
-	});
 
 
 

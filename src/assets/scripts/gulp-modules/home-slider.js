@@ -359,6 +359,7 @@ class CustomSl {
 		this.nextBtn = document.querySelector(settings.btnNext)
 		this.activeSlide = 'main-slide--active'
 		this.activeDot = 'slick-active'
+		this.autoPlay = settings.autoPlay
 		this.cntNote = document.querySelector(settings.cntNote)
 		this.allNote = document.querySelector(settings.allNote)
 		this.overlay = document.querySelector(settings.overlay)
@@ -366,6 +367,7 @@ class CustomSl {
 		this.overlay_1 = settings.overlay__1;
 		this.overlay_2 = settings.overlay__2;
 		this.overlay_3 = settings.overlay__3;
+		this.autoPlayInterval = null;
 		this.title = document.querySelectorAll(settings.title),
 		this.text = document.querySelectorAll(settings.text),
 		this.btn = document.querySelectorAll(settings.btn),
@@ -387,18 +389,12 @@ class CustomSl {
 		this.init()
 	}
 
-/* 	bindAll() {
-		['nextSlide', 'transitionNext']
-		.forEach(fn => this[fn] = this[fn].bind(this))
-	} */
 
 	setStyles() {
 		this.bullets.forEach((el, i) => el.setAttribute('data-inx', i));
 		// gsap overlay
 		gsap.set([this.overlay_0, this.overlay_1 ], { scaleX: 0});
 		gsap.set([this.overlay_2, this.overlay_3], { scaleY: 0});
-		// gsap.set([this.title, this.btn, this.text], { autoAlpha: 0, x: -100});
-
 	}
 	fireSlide(cnt) {
 		this.slides.forEach((el) =>  el.classList.remove(this.activeSlide));
@@ -537,8 +533,23 @@ class CustomSl {
 		this.transitionIn(this.data);
 		
 	}
+	setAutoplay() {
+		const self = this;
+		this.autoPlayInterval = setInterval(() => {
+			self.nextSlide();
+		}, 3000);
+		
+	}
+	clearAutoplay() {
+		const self = this;
+		clearInterval(this.autoPlayInterval)
+	}
 	listeners() {
 		const self = this;
+		// --
+		if (this.autoPlay) {
+			this.setAutoplay();
+		}
 		// --
 		this.nextBtn.addEventListener('click', function(){
 			self.nextSlide();
@@ -575,6 +586,7 @@ class CustomSl {
 
 
 let hoverArrEl = [];
+let sliderHome = {};
 imagesLoaded(document.querySelectorAll('.main-slide__slide-bg'), () => {
 
 Array.from(document.querySelectorAll('.js-main-slide__slide-bg-wrap')).forEach((el) => {
@@ -598,9 +610,10 @@ Array.from(document.querySelectorAll('.js-main-slide__slide-bg-wrap')).forEach((
 		hoverArrEl.push(hoverEffectInstatse)
 	});
 
-	const sl = new CustomSl({
+	sliderHome = new CustomSl({
 		container: '.js-main-section-sl',
 		dotsContainer: '.js-slick-dots',
+		autoPlay: true,
 		/*  */
 		overlay__0: '.main-slaider-overlay__0',
 		overlay__1: '.main-slaider-overlay__1',
@@ -621,6 +634,15 @@ Array.from(document.querySelectorAll('.js-main-slide__slide-bg-wrap')).forEach((
 		allNote: '.js-current-slick__all',
 	});
 });
+
+
+
+
+
+
+
+
+
 
 setTimeout(() => {
 	
@@ -723,6 +745,28 @@ setTimeout(() => {
 		* pin second section end
 		*/
 		/**********************************/
+
+
+
+
+		ScrollTrigger.create({
+			trigger: ".main-section",
+			onLeave: ({progress, direction, isActive}) => {
+				if(sliderHome.autoPlay){
+					sliderHome.clearAutoplay();
+				};
+			},
+			onEnterBack: ({ progress, direction, isActive }) => {
+				if(sliderHome.autoPlay){
+					sliderHome.setAutoplay();
+
+				};
+			},
+			start: "50% 50%",
+			end: "+=1200",
+			scroller: ".js-scroll-container",
+			scrub: true,
+		});
 
 
 
