@@ -41,6 +41,11 @@ class TabSelect extends Tab {
 	});
 
 
+	document.addEventListener('onReadyJSONColor', function (e) {
+		console.log('onReadyJSONColor',paletteCreate.colors);
+	});
+
+
 	// if (screen.width > 700) {
 	// 	const tab = new Tab({
 	// 		$btn: $('.js-palette-color-tab-btn'),
