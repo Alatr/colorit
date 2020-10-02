@@ -10,6 +10,9 @@
 }
 
 .services-text{
+	@include from(1441px){
+		font-size: 14px;
+	}
 	font-size: 12px;
 	line-height: 1.8em;
 	color: #586386;

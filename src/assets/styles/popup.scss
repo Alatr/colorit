@@ -128,8 +128,38 @@
 	}
 }
 .modal-form{
+	.modal-form__input{
+		&:focus:required:invalid{
+			border-color: #000C31;
+		}
+		&:focus{
+			border-color: #000C31;
+		}
+		&:focus::placeholder{
+			color: transparent;
+		}
+	}
+}
+.modal-form{
 	display: flex;
 	flex-direction: column;
+		&__label{
+			color: #000C31;
+			display: inline-block;
+			font-size: 18px;
+			transition: all 0.3s;
+			transform: translate(0px, 20px);
+			opacity: 0;
+			pointer-events: none;
+			@include to(1441px){
+				font-size: 14px;
+			}
+			&_active{
+				transform: translate(0px, 0px) scale(0.9);
+				opacity: 1;
+				font-size: 12px;
+			}
+		}
 		&__input {
 			margin-bottom: 33px;
 			height: 32px;

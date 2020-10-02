@@ -69,6 +69,9 @@
 		font-size: 12px;
 		line-height: lh(22, 12);
 		color: #586386;
+		@include from(1441px){
+			font-size: 14px;
+		}
 		@include to(992px){
 			max-width: 248px;
 		}
@@ -126,9 +129,19 @@
 	}
 	&:hover{
 		.circle-btn{
-			transform: translateX(10px);
+			background-color: rgba(193, 20, 38, 0.5);
 			border-color: transparent;
+			animation: button linear 1.5s infinite 0s;
 		}
+		.circle-btn-inner{
+			background-color: #C11426;
+			border-color: #C11426;
+			svg{
+				fill: #fff;
+				stroke: #fff;
+			}
+		}
+		
 		.news-item-btn__text{
 			text-decoration: underline;
 		}

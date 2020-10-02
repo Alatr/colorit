@@ -144,6 +144,9 @@
 		color: #F0F1F8;
 		max-width: 310px;
 		margin-bottom: 50px;
+		@include from(1441px){
+			font-size: 14px;
+		}
 		@include to(768px){
 			margin-bottom: 25px;
 			max-width: 290px;
@@ -182,6 +185,9 @@
 		}
 	}
 	&__text{
+		@include from(1441px){
+			font-size: 14px;
+		}
 		font-size: 12px;
 		line-height: 1.8em;
 		color: #586386;
@@ -315,6 +321,9 @@
 			color: #586386;
 			position: relative;
 			margin-bottom: 10px;
+			@include from(1441px){
+				font-size: 14px;
+			}
 			@include to(768px){
 				margin-bottom: 5px;
 			}
