@@ -9,10 +9,10 @@ class PaletteSearch{
         this.palitteRes = document.querySelector('.pallete-search__result-text');
     }
 
-    getColors(colors, name) {
-        this.currentColors = colors
-        this.currentSelectPalette = name
-    }
+    // getColors(colors, name) {
+    //     this.currentColors = colors;
+    //     this.currentSelectPalette = name;
+    // }
 
     templatePalette(data) {
         return `
@@ -20,6 +20,11 @@ class PaletteSearch{
         <div class="pallete-search__color" style="background: rgb(${data.r}, ${data.g}, ${data.b})"></div><span class="pallete-search__color-name"> ${data.name}</span></a>
     </li>
     `
+    }
+    update(colors, name){
+
+        this.currentColors = colors;
+        this.currentSelectPalette = name;
     }
 
     renderList(filteredColors) {
@@ -31,15 +36,14 @@ class PaletteSearch{
         }
 
         this.palitteRes.textContent = 'Результат:'
-        const items =  filteredColors.map(this.templatePalette).join('')
+        const items =  filteredColors.map(el => this.templatePalette(el)).join('');
         this.resultContainer.insertAdjacentHTML('afterbegin', items)
     }
 
     searchColors(text) {
-        let colorsFound = []
-
-        this.currentColors.colors.forEach(function(color) {
-            const name = this.removeSpaceInStr(color.name.toLowerCase())
+        let colorsFound = [];
+        this.currentColors.forEach(color => {
+            const name = this.removeSpaceInStr(color.name.toLowerCase());
 
             if (name.indexOf(text, 0) !== -1) {
                 if(colorsFound.length >= 5) return;
@@ -47,7 +51,7 @@ class PaletteSearch{
             }
         })
 
-        this.renderList(colorsFound)
+        this.renderList(colorsFound);
         this.searchWrapper.classList.add('pallete-search-wrapper_result-visible');
     }
 
@@ -56,27 +60,27 @@ class PaletteSearch{
     }
 
     init(){
-        document.querySelector('[data-search="palette"]').addEventListener('keyup', (e) => {
+        $('[data-search="palette"]').on('keyup', e => {
             let value = e.target.value;
             if (value.length >= 3) {
-                this.textForSearch = value
+                this.textForSearch = value;
                 this.searchColors(this.removeSpaceInStr( this.textForSearch.toLowerCase()))
             } else {
                 this.searchWrapper.classList.remove('pallete-search-wrapper_result-visible');
             }
-        })
+        });
 
-        this.searchTrigger.addEventListener('click', function(e){
+        this.searchTrigger.addEventListener('click', e => {
             e.preventDefault();
             e.stopPropagation()
-
             if( this.textForSearch >= 4) {
-                this.searchColors(this.removeSpaceInStr( this.textForSearch.toLowerCase()))
+                this.searchColors(this.removeSpaceInStr( this.textForSearch.toLowerCase()));
                 this.searchWrapper.classList.add('pallete-search-wrapper_result-visible');
             }
         })
 
-        document.addEventListener('click', function(e){
+        document.addEventListener('click', e => {
+            console.log(this.searchWrapper);
             if (e.target !==  this.searchWrapper &&  this.searchWrapper.classList.contains('pallete-search-wrapper_result-visible')) {
                 this.searchWrapper.classList.remove('pallete-search-wrapper_result-visible');
             }
@@ -84,4 +88,3 @@ class PaletteSearch{
     }
 
 };
-
