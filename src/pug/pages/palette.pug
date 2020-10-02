@@ -20,8 +20,10 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/index.js')
+	script(src="./assets/scripts/palette-search.js")
 	script(src='./assets/scripts/paletteCreate.js')
 	script(src='./assets/scripts/palette.js')
+
 block footer
 	footer.footer
 		include ../includes/footer.pug
@@ -47,7 +49,7 @@ block content
 									option.palette-item__select-item(data-pal="palette"+j data-descr=v)= v
 					.pallete-search-wrapper.js-pallete-search-wrapper
 						form.pallete-search
-							input(type="text" placeholder="Введите номер или название цвета").pallete-search__input
+							input(type="text" data-search="palette" placeholder="Введите номер или название цвета").pallete-search__input
 							button.pallete-search__btn.js-pallete-search__btn
 								+svg('search')
 						.pallete-search__result

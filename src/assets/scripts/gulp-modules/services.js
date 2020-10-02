@@ -2,9 +2,9 @@
 
 (function ($) {
 
-	$('.company-principles__info-block').on('mouseover', function(){
-		$(this).addClass('company-principles__info-block_active')
-	})
+	// $('.company-principles__info-block').on('mouseover', function(){
+	// 	$(this).addClass('company-principles__info-block_active')
+	// })
 
 	$(document).on('mouseover', function(e){
 		if (!$('.company-principles__info-block').is(e.target) && $('.company-principles__info-block').has(e.target).length === 0){

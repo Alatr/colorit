@@ -29,8 +29,36 @@
 .modal-form-popup.js-modal-form-popup_services
 	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-close-consult-services
 		+svg('close')
-	.modal-form-popup__title Бесплатная доставка
+	.modal-form-popup__title Сервисы
 	form.modal-form#modal-form-free-delivery-services
+		input(name="phone" type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
+		input(name="email" type="email" required placeholder="E-mail*").modal-form__input
+		input(name="city" type="text" placeholder="Город").modal-form__input
+		input(name="datails" type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить
+// ---------------
+// ---------------
+
+
+.modal-form-popup.js-modal-form-popup_services-order
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-close-consult-services-order
+		+svg('close')
+	.modal-form-popup__title Заказ выкрасов
+	form.modal-form#modal-form-free-delivery-services-order
+		input(name="phone" type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
+		input(name="email" type="email" required placeholder="E-mail*").modal-form__input
+		input(name="city" type="text" placeholder="Город").modal-form__input
+		input(name="datails" type="text" placeholder="Детали запроса").modal-form__input.margin-top--more
+		button.btn--res.modal-form__btn Отправить
+// ---------------
+// ---------------
+
+
+.modal-form-popup.js-modal-form-popup_services-shipping
+	button(type="button").js-modal-form__btn-close.modal-form__btn-close.btn--res.js-close-consult-services-shipping
+		+svg('close')
+	.modal-form-popup__title Бесплатная доставка
+	form.modal-form#modal-form-free-delivery-services-shipping
 		input(name="phone" type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
 		input(name="email" type="email" required placeholder="E-mail*").modal-form__input
 		input(name="city" type="text" placeholder="Город").modal-form__input

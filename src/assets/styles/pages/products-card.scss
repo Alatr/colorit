@@ -524,6 +524,8 @@
 .usage-area-list{
 	display: flex;
 	flex-direction: column;
+	position: absolute;
+	flex-basis: 100%;
 
 }
 

@@ -1,0 +1,12 @@
+.policy-rules{
+	padding: 50px 0;
+	@include to(480px){
+		padding: 25px 0;
+	}
+	&__title{
+		margin-bottom: 50px;
+		@include to(480px){
+			margin-bottom: 25px;
+		}
+	}
+}
