@@ -1,133 +1,133 @@
 extends ../layout/main
 block variable1
-    -
-        var title_page = 'Где купить'
-        var breadcrumbsSubitem = [
-        {
-        label: 'Краски kolorit',
-        link: "/"
-        },
-        ];
-        var cities = [
-        'Киев',
-        'Житомир',
-        'Винница',
-        'Львов',
-        'Днепр'
-        ]
-        var regions = [
-        {
-        label: 'Винницкая область',
-        value: 'vinnickaya',
-        },
-        {
-        label: 'Волынская область',
-        value: 'volynskaya',
-        },
-        {
-        label: 'Днепропетровская область',
-        value: 'dnepropetrovskaya',
-        },
-        {
-        label: 'Донецкая область',
-        value: 'doneckaya',
-        },
-        {
-        label: 'Житомирская область',
-        value: 'zhitomirskaya',
-        },
-        {
-        label: 'Закарпатская область',
-        value: 'zakarpatskaya',
-        },
-        {
-        label: 'Запорожская область',
-        value: 'zaporozhskaya',
-        },
-        {
-        label: 'Ивано-Франковская область',
-        value: 'ivano-Frankovskaya',
-        },
-        {
-        label: 'Киевская область',
-        value: 'kievskaya',
-        },
-        {
-        label: 'Кировоградская область',
-        value: 'kirovogradskaya',
-        },
-        {
-        label: 'Луганская область',
-        value: 'luganskaya',
-        },
-        {
-        label: 'Львовская область',
-        value: 'lvovskaya',
-        },
-        {
-        label: 'Николаевская область',
-        value: 'nikolaevskaya',
-        },
-        {
-        label: 'Одесская область',
-        value: 'odesskaya',
-        },
-        {
-        label: 'Полтавская область',
-        value: 'poltavskaya',
-        },
-        {
-        label: 'Ровненская область',
-        value: 'rovnenskaya',
-        },
-        {
-        label: 'Сумская область',
-        value: 'sumskaya',
-        },
-        {
-        label: 'Тернопольская область',
-        value: 'ternopolskaya',
-        },
-        {
-        label: 'Харьковская область',
-        value: 'harkovskaya',
-        },
-        {
-        label: 'Херсонская область',
-        value: 'hersonskaya',
-        },
-        {
-        label: 'Хмельницкая область',
-        value: 'hmelnickaya',
-        },
-        {
-        label: 'Черкасская область',
-        value: 'cherkasskaya',
-        },
-        {
-        label: 'Черниговская область',
-        value: 'chernigovskaya',
-        },
-        {
-        label: 'Черновицкая область',
-        value: 'chernovickaya',
-        }]
+		-
+				var title_page = 'Где купить'
+				var breadcrumbsSubitem = [
+				{
+				label: 'Краски kolorit',
+				link: "/"
+				},
+				];
+				var cities = [
+				'Киев',
+				'Житомир',
+				'Винница',
+				'Львов',
+				'Днепр'
+				]
+				var regions = [
+				{
+				label: 'Винницкая область',
+				value: 'vinnickaya',
+				},
+				{
+				label: 'Волынская область',
+				value: 'volynskaya',
+				},
+				{
+				label: 'Днепропетровская область',
+				value: 'dnepropetrovskaya',
+				},
+				{
+				label: 'Донецкая область',
+				value: 'doneckaya',
+				},
+				{
+				label: 'Житомирская область',
+				value: 'zhitomirskaya',
+				},
+				{
+				label: 'Закарпатская область',
+				value: 'zakarpatskaya',
+				},
+				{
+				label: 'Запорожская область',
+				value: 'zaporozhskaya',
+				},
+				{
+				label: 'Ивано-Франковская область',
+				value: 'ivano-Frankovskaya',
+				},
+				{
+				label: 'Киевская область',
+				value: 'kievskaya',
+				},
+				{
+				label: 'Кировоградская область',
+				value: 'kirovogradskaya',
+				},
+				{
+				label: 'Луганская область',
+				value: 'luganskaya',
+				},
+				{
+				label: 'Львовская область',
+				value: 'lvovskaya',
+				},
+				{
+				label: 'Николаевская область',
+				value: 'nikolaevskaya',
+				},
+				{
+				label: 'Одесская область',
+				value: 'odesskaya',
+				},
+				{
+				label: 'Полтавская область',
+				value: 'poltavskaya',
+				},
+				{
+				label: 'Ровненская область',
+				value: 'rovnenskaya',
+				},
+				{
+				label: 'Сумская область',
+				value: 'sumskaya',
+				},
+				{
+				label: 'Тернопольская область',
+				value: 'ternopolskaya',
+				},
+				{
+				label: 'Харьковская область',
+				value: 'harkovskaya',
+				},
+				{
+				label: 'Херсонская область',
+				value: 'hersonskaya',
+				},
+				{
+				label: 'Хмельницкая область',
+				value: 'hmelnickaya',
+				},
+				{
+				label: 'Черкасская область',
+				value: 'cherkasskaya',
+				},
+				{
+				label: 'Черниговская область',
+				value: 'chernigovskaya',
+				},
+				{
+				label: 'Черновицкая область',
+				value: 'chernovickaya',
+				}]
 block meta
-    title= title_page
-    meta(name='description', content='')
+		title= title_page
+		meta(name='description', content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-    script(defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM")
-    script(src='./assets/scripts/index.js')
-    script(src='./assets/scripts/buy.js')
+		script(defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM")
+		script(src='./assets/scripts/index.js')
+		script(src='./assets/scripts/buy.js')
 block footer
-    footer.footer
-        include ../includes/footer.pug
+		footer.footer
+				include ../includes/footer.pug
 
 block header
-    header.header
-        include ../includes/header.pug
+		header.header
+				include ../includes/header.pug
 
 
 block content
