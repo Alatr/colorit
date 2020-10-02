@@ -1036,7 +1036,7 @@
 	opacity: 1;
 	visibility: visible;
 	pointer-events: auto;
-
+	
 }
 
 .buy__tabs-content {
@@ -1062,6 +1062,9 @@
 	margin: 0 30px;
 	display: flex;
 	align-items: center;
+}
+.buy__tabs-filtered{
+	height: 428px;
 }
 
 .calculator-item-select-region--width{

@@ -161,6 +161,14 @@ const form_7 = new showModalCallback({
 	closeBtn: '.js-form_registr_close',
 	openBtn: '.js-school-registr-popup',
 	beforeOpen: function (e) {
+		const dataBtn = $(this.openBtn).data();
+		
+		const inputWhere = $('#form-popup_school-registr').find('input[name="where"]');
+		const inputLabelEvent = $('#form-popup_school-registr').find('input[name="title"]');
+
+		inputWhere.val(dataBtn.where)
+		inputLabelEvent.val(dataBtn.title)
+		
 		form_4.close();
 	}
 });
@@ -198,11 +206,33 @@ const thanksFormPopup = new showModal({
 
 $('#footer-subscribe-form').on('submit', function (e) {
 	e.preventDefault();
-	ajax_form(e.target);
+	ajax_form(e.target, false);
 });
+/*  */
+/*  */
+/*  */
+/*  */
 $('#subscribe-form-menu-footer').on('submit', function (e) {
 	e.preventDefault();
-	ajax_form(e.target);
+	ajax_form(e.target, false);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+$('#retailer__form').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, false);
+});
+
+/*  */
+/*  */
+/*  */
+/*  */
+$('#product__calc').on('submit', function (e) {
+	e.preventDefault();
+	ajax_form(e.target, false);
 });
 
 /*  */
@@ -330,6 +360,7 @@ async function getPromise(data, url, parse) {
 					$('body').css('cursor', 'default');
 					$(`#${e.id}`)
 						.find('input')
+						.not('.js-not__clear')
 						.each(function () {
 							console.log(this);
 							$(this).val('')

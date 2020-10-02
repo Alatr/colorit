@@ -270,9 +270,154 @@
 	 */
 
 	 
-const JSONShops = JSON.parse(JSON.stringify([{ "name": "Farba Service", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442 \u0421\u0442\u0435\u043f\u0430\u043d\u0430 \u0411\u0430\u043d\u0434\u0435\u0440\u044b, 23", "tel": "380970787777", "site": "https:\/\/farbaservice.business.site\/", "coords": "50.489917, 30.496976", "type": "2" }, { "name": "Color Studio Tikkurila", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya3", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya3", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya2", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya1", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya1", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "Color Studio Tikkurila", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10", "tel": "380950909095", "site": "https:\/\/farba-service.com\/", "coords": "50.403860, 30.531110", "type": "1" }, { "name": "\u042d\u043f\u0438\u0446\u0435\u043d\u0442\u0440", "region": "kievskaya", "city": { "name": "\u041a\u0438\u0435\u0432", "code": "kyiv" }, "address": "\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u0430\u044f \u0414\u043e\u0440\u043e\u0433\u0430, 1\u0411", "tel": "380442062603", "site": "https:\/\/epicentrk.ua\/shop\/kraski\/fs\/brand-kolorit\/", "coords": "50.376920, 30.445023", "type": "3" }]));
+const JSONShops = JSON.parse(JSON.stringify([{
+	"name": "Farba Service",
+	"region": "kievskaya",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442 \u0421\u0442\u0435\u043f\u0430\u043d\u0430 \u0411\u0430\u043d\u0434\u0435\u0440\u044b, 23",
+	"tel": "380970787777",
+	"site": "https:\/\/farbaservice.business.site\/",
+	"coords": "50.489917, 30.496976",
+	"type": "2"
+}, {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+},
+{
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya3",
+	"city": {
+		"name": "Буча",
+		"code": "bucha"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+},
+{
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya3",
+	"city": {
+		"name": "Буча",
+		"code": "bucha"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+},
+ {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya3",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+}, {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya2",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+}, {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya2",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-s:\/\/farba-s:\/\/farba-s:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+}, {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya1",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+}, {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya",
+	"city": {
+		"name": "\u041a\u0438\u0435\u0432",
+		"code": "kyiv"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.403860, 30.531110",
+	"type": "1"
+}, {
+	"name": "\u042d\u043f\u0438\u0446\u0435\u043d\u0442\u0440",
+	"region": "kievskaya",
+	"city": {
+		"name": "sraka",
+		"code": "sraka"
+	},
+	"address": "\u041a\u043e\u043b\u044c\u0446\u0435\u0432\u0430\u044f \u0414\u043e\u0440\u043e\u0433\u0430, 1\u0411",
+	"tel": "380442062603",
+	"site": "https:\/\/epicentrk.ua\/shop\/kraski\/fs\/brand-kolorit\/",
+	"coords": "50.376920, 30.445023",
+	"type": "3"
+}]));
 
 console.log(JSONShops);
+	/*  */
+	/*  */
+	let _shops = []
+	async function getAllShops(){
+		//  const shops = await getPromise(`action=getBuy`, `/wp-admin/admin-ajax.php`, 0);
+		_shops = JSONShops;
+		const _sortedShops = _shops.reduce((acc, el) => {
+			if (acc[el.type] !== undefined) {
+				acc[el.type].push(el)
+			} else {
+				acc[el.type] = []
+				acc[el.type].push(el)
+			}
+			return acc
+		}, {})
+		_shops = _sortedShops;
+	}
+	getAllShops();
+	/*  */
+	/*  */
+			
+
 
 	 class FilterShops{
 		 constructor (settings){
@@ -508,10 +653,11 @@ console.log(JSONShops);
 					},
 					value: 'chernovickaya',
 				}
-			]
+		]
 
-			this._shops = []
+			this._shops = settings.data;
 			this._sortedShopByRegion = []
+			this._sortedShopByRegionAndCity = []
 			this._lang = this.langDetect();
 			this._elements = settings.elements;
 			this._filterState = {
@@ -521,15 +667,34 @@ console.log(JSONShops);
 			this.init();
 		 }
 
-			 async getAllShops(){
-			//  const shops = await getPromise(`action=getBuy`, `/wp-admin/admin-ajax.php`, 0);
-			 this._shops = JSONShops;
-			 this.renderShopList();
-			 this.sortedShopByRegion();
+		 	startFilterShops(){
+				this._elements.$resList.innerHTML = '';
+				/*  */
+				if (this._filterState.region === 'all') {
+					this._shops.forEach((el) => {
+						this.renderShopItem(this._elements.$resList, el)
+					});
+					return
+				}
+				/*  */
+				/*  */
+				if (this._filterState.city === 'all') {
+					this._sortedShopByRegion[this._filterState.region].forEach((el) => {
+						this.renderShopItem(this._elements.$resList, el)
+					})
+					return
+				}
+				/*  */
+				/*  */
 
-			}
-		 	startCalculation(){
-			
+				this._sortedShopByRegionAndCity[this._filterState.region][this._filterState.city]
+					.forEach((el) => {
+						this.renderShopItem(this._elements.$resList, el)
+					})
+
+
+
+				/*  */
 
 			}
 			
@@ -543,20 +708,50 @@ console.log(JSONShops);
 				 }
 				 return acc
 				}, {})
+				
+				let _sortedShopByRegionAndCityCopy = {...this._sortedShopByRegion};
+				
+				for (const key in _sortedShopByRegionAndCityCopy) {
+					if (_sortedShopByRegionAndCityCopy.hasOwnProperty(key)) {
+						const regionCities = _sortedShopByRegionAndCityCopy[key];
+						_sortedShopByRegionAndCityCopy[key] = regionCities.reduce((acc, el) => {
+							if (acc[el.city.code] !== undefined) {
+								acc[el.city.code].push(el)
+							} else {
+								acc[el.city.code] = []
+								acc[el.city.code].push(el)
+							}
+							return acc
+						}, {})
+					}
+				}
+				console.log(_sortedShopByRegionAndCityCopy);
+				this._sortedShopByRegionAndCity = _sortedShopByRegionAndCityCopy;
 			}
 
 		changeRegion = (event)=>{
 			this._filterState.region = event.target.value
-			this._sortedShopByRegion[event.target.value].forEach((el)=>{
-				let {name: label, code: value} = el.city;
-				this.renderOptions(this._elements.$selectCity, {label, value}, false) // false it's not parse label language
-			});
-			this.startCalculation();
+			/*  */
+				this._elements.$selectCity.innerHTML = '';
+			/*  */
+			this.renderOptions(this._elements.$selectCity, {label: this._regions[0].label[this._lang], value: 'all'}, false) // false it's not parse label language
+			for (const key in this._sortedShopByRegionAndCity[event.target.value]) {
+				if (this._sortedShopByRegionAndCity[event.target.value].hasOwnProperty(key)) {
+					const element = this._sortedShopByRegionAndCity[event.target.value][key];
+					let label = element[0].city.name;
+					let value = key;
+					this.renderOptions(this._elements.$selectCity, {label, value}, false) // false it's not parse label language
+					
+				}
+			}
+			/* this._sortedShopByRegionAndCityCopy[event.target.value].forEach((el) => {
+			}); */
+			this.startFilterShops();
 		}
 		
 		changeCity = (event)=> {
 			this._filterState.city = event.target.value
-			this.startCalculation();
+			this.startFilterShops();
 		}
 		 
 		setStyle(){
@@ -578,14 +773,14 @@ console.log(JSONShops);
 		 })
 		}
 		renderShopList(){
-			parentList.innerHTML = '';
+			this._elements.$resList.innerHTML = '';
 			this._shops.forEach((el) => {
 				this.renderShopItem(this._elements.$resList, el)
 			})
 		}
 
 
-		renderShops(parentList, { site, address, name, tel }) {
+		renderShopItem(parentList, { site, address, name, tel }) {
 			const markupShopItem = `
 				<li class="buy__tabs-filtered__item">
 					<div class="buy__tabs-filtered__item-block">
@@ -612,9 +807,11 @@ console.log(JSONShops);
 		/**********************************/
 
 		 init(){
-			this.getAllShops();
 			this.setEvent();
 			this.renderRegions();
+
+			this.renderShopList();
+			this.sortedShopByRegion();
 		 }
 	 }
 	
@@ -626,8 +823,9 @@ console.log(JSONShops);
 	 };
 	
 	
-	
+	console.log(_shops[1]);
 		const filterTikkurila = new FilterShops({
+				data: _shops[1],
 				elements: {
 					$selectRegion: document.querySelector('.js-tikkurila-region'),
 					$selectCity: document.querySelector('.js-tikkurila-city'),

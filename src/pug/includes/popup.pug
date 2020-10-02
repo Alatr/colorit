@@ -74,7 +74,7 @@
 				.services-school-popup__col.services-school-popup__col_3 Где
 				.services-school-popup__col.services-school-popup__col_4 Детали мероприятия
 			.services-school-popup__main
-				each index in ['1', '2', '3', '4', '5', '6']
+				each index in ['1']
 					.services-school-popup__table-row
 						.services-school-popup__col.services-school-popup__col_1 
 							spanspan.services-school-popup__text.services-school-popup__text_bold Ассортимент ЛКМ в Color Studio Tikkurila
@@ -86,7 +86,7 @@
 							span.services-school-popup__text Киев, ул. Прекрасная и волшебная, 85
 						.services-school-popup__col.services-school-popup__col_4
 							span.services-school-popup__text Второй поток курса по управлению проектами пройдет  полностью онлайн. Мировой кризис из-за эпидемии распространения Covid-19 серьёзно 
-							button.btn--res.link-with-circle.company-banner__link-with-circle.js-school-registr-popup
+							button(data-title="Ассортимент ЛКМ в Color Studio Tikkurila" data-where="29.09.2020 12:00:00").btn--res.link-with-circle.company-banner__link-with-circle.js-school-registr-popup
 								.link-with-circle__circle
 									.link-with-circle__circle-inner
 										<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,6 +128,8 @@
 		input(name="name" type="text" required placeholder="Имя*").modal-form__input
 		input(name="phone" type="text" required placeholder="Телефон*").modal-form__input.js-modal-form__input-phone
 		input(name="email" type="email" required placeholder="E-mail*").modal-form__input
+		<input type="hidden" class="js-not__clear" name="title">
+		<input type="hidden" class="js-not__clear" name="where">
 		button.btn--res.modal-form__btn Отправить
 
 .modal-form-popup.js-modal-form-popup_thank.modal-form-popup_thank
