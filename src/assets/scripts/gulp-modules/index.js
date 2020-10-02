@@ -110,6 +110,18 @@ const form_3 = new showModal({
 	openBtn: '.js-open-consult-services'
 });
 
+const form_3_2 = new showModal({
+	popup: '.js-modal-form-popup_services-order',
+	closeBtn: '.js-close-consult-services-order',
+	openBtn: '.js-open-consult-services-order'
+});
+
+const form_3_3 = new showModal({
+	popup: '.js-modal-form-popup_services-shipping',
+	closeBtn: '.js-close-consult-services-shipping',
+	openBtn: '.js-open-consult-services-shipping'
+});
+
 $('#modal-form-free-delivery-services').on('submit', function (e) {
 	e.preventDefault();
 	ajax_form(e.target, form_3);
