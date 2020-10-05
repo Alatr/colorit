@@ -118,7 +118,8 @@ block meta
 block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-		script(defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnKONOelCn1hKLT7lUNHP8er8YPvQ0XwY")
+
 		script(src='./assets/scripts/index.js')
 		script(src='./assets/scripts/buy.js')
 block footer
@@ -156,9 +157,6 @@ block content
 																div(class="buy__tabs-filter-item") Область
 																.calculator-item-select-wrap
 																	select( name="tikkurila_region").calculator-item__select.js-tikkurila-region
-																		//- option.calculator-item__select-item(selected="selected" value="all") Все
-																		//- each val, i in regions
-																		//- 	option.calculator-item__select-item( value=val.value)= val.label
 														.buy__tabs-filter-block
 																div(class="buy__tabs-filter-item") Город
 																.calculator-item-select-wrap
@@ -166,72 +164,25 @@ block content
 																		option.calculator-item__select-item(selected="selected" value="all") Все
 												//- buy__tabs-filtered__item--active
 												ul.buy__tabs-filtered.js-tikkurila-res-list
+										.buy__tabs-right
+											.js-tikkurila-google-map-init
 								div(class="buy__tabs-content js-buy__tabs-content1" data-location="farbaService")
 										.buy__tabs-left
 												.buy__tabs-filter
 														.buy__tabs-filter-block
 																div(class="buy__tabs-filter-item") Область
-																		button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Все
-																		.buy__tabs-filter-list
-																				.buy__tabs-filter-list-content
-																						each value, idx in regions
-																								div(class="buy__tabs-filter-list-item" data-city=value)
-																										label=value
-																												if idx === 0
-																														input(type="radio" checked name="region" id=idx)
-																												input(type="radio" name="region" id=idx)
-																												span.buy__tabs-filter-list-indicator
-																				button(class="buy__tabs-filter-submit") Применить
+																.calculator-item-select-wrap
+																	select( name="farba_region").calculator-item__select.js-farba-region
 														.buy__tabs-filter-block
 																div(class="buy__tabs-filter-item") Город
-																		button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Киев
-																		.buy__tabs-filter-list
-																				.buy__tabs-filter-list-content
-																						each value, idx in cities
-																								div(class="buy__tabs-filter-list-item" data-city=value)
-																										label=value
-																												if idx === 0
-																														input(type="radio" checked name="city" id=idx)
-																												input(type="radio" name="city" id=idx)
-																												span.buy__tabs-filter-list-indicator
-																				button(class="buy__tabs-filter-submit") Применить
-												.buy__tabs-filtered
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item buy__tabs-filtered__item--active")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-										div(class="buy__tabs-right buy__tabs-right-map")
+																.calculator-item-select-wrap
+																	select( name="farba_city").calculator-item__select.js-farba-city
+																		option.calculator-item__select-item(selected="selected" value="all") Все
+												//- buy__tabs-filtered__item--active
+												ul.buy__tabs-filtered.js-farba-res-list
+										.buy__tabs-right
+											.js-farba-google-map-init
+						
 				.buy__parther
 						.container
 								.buy__parther-row.row
@@ -262,75 +213,25 @@ block content
 				.container
 						.buy__tabs.js-buy__tabs
 								.buy__tabs-list
-										a(href="#" class="buy__tabs-tab buy__tabs-tab--active js-trigger" data-partners="partners") Торговые сети и магазины партнеров
-										a(href="#" class="buy__tabs-tab js-trigger" data-partners="online") Онлайн магазины
-								div(class="buy__tabs-content js-buy__tabs-content" data-partners="partners")
-										.buy__tabs-left
-												.buy__tabs-filter
-														.buy__tabs-filter-block
-																div(class="buy__tabs-filter-item") Область
-																		button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Все
-																		.buy__tabs-filter-list
-																				.buy__tabs-filter-list-content
-																						each value, idx in regions
-																								div(class="buy__tabs-filter-list-item" data-city=value)
-																										label=value
-																												if idx === 0
-																														input(type="radio" checked name="region" id=idx)
-																												input(type="radio" name="region" id=idx)
-																												span.buy__tabs-filter-list-indicator
-																				button(class="buy__tabs-filter-submit") Применить
-														.buy__tabs-filter-block
-																div(class="buy__tabs-filter-item") Город
-																		button(class="buy__tabs-filter-item-text js-buy__tabs-filter-item-text" type="button") Киев
-																		.buy__tabs-filter-list
-																				.buy__tabs-filter-list-content
-																						each value, idx in cities
-																								div(class="buy__tabs-filter-list-item" data-city=value)
-																										label=value
-																												if idx === 0
-																														input(type="radio" checked name="city" id=idx)
-																												input(type="radio" name="city" id=idx)
-																												span.buy__tabs-filter-list-indicator
-																				button(class="buy__tabs-filter-submit") Применить
-												.buy__tabs-filtered
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item buy__tabs-filtered__item--active")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-														div(class="buy__tabs-filtered__item")
-																.buy__tabs-filtered__item-block
-																		.buy__tabs-filtered-name GOOD STORE
-																		.buy__tabs-filtered-address Киев, ул. Здолбуновская, 7-Г
-																.buy__tabs-filtered__item-block
-																		a(href="tel:0503960767" class="buy__tabs-filtered-phone buy__tabs-filtered-link") (050) 3960767
-																		a(href="goodstore.com" class="buy__tabs-filtered-link buy__tabs-filtered-site") goodstore.com
-										div(class="buy__tabs-right buy__tabs-right-map-partners")
-								div(class="buy__tabs-content js-buy__tabs-content" data-partners="online")
+										button(type="button" class="btn--res buy__tabs-tab js-trigger2" data-partners="partners") Торговые сети и магазины партнеров
+										button(type="button" class="btn--res buy__tabs-tab js-trigger2" data-partners="online") Онлайн магазины
+								div(class="buy__tabs-content js-buy__tabs-content js-buy__tabs-content2" data-partners="partners")
+									.buy__tabs-left
+											.buy__tabs-filter
+													.buy__tabs-filter-block
+															div(class="buy__tabs-filter-item") Область
+															.calculator-item-select-wrap
+																select( name="partner_shop_region").calculator-item__select.js-partner_shop-region
+													.buy__tabs-filter-block
+															div(class="buy__tabs-filter-item") Город
+															.calculator-item-select-wrap
+																select( name="partner_shop_city").calculator-item__select.js-partner_shop-city
+																	option.calculator-item__select-item(selected="selected" value="all") Все
+											//- buy__tabs-filtered__item--active
+											ul.buy__tabs-filtered.js-partner_shop-res-list
+									.buy__tabs-right
+										.js-partner_shop-google-map-init
+								div(class="buy__tabs-content js-buy__tabs-content js-buy__tabs-content2" data-partners="online")
 										.online-shops
 												.online-shops__item
 														.online-shops__img-wrapper
@@ -402,9 +303,9 @@ block content
 												.buy__message-block
 														h3(class="buy-title buy__message-title") Мы открыты к общению
 														.buy__message-tabs
-																a(href="#" class="buy__message-tab buy__message-tab--active js-message-triger" data-message="office") Офис
-																a(href="#" class="buy__message-tab js-message-triger" data-message="manufacture" ) Производство
-												div(class="buy__message-left js-buy__message-left" data-message="office")
+																button(type="button" class="btn--res buy__message-tab js-message-triger" data-message="office") Офис
+																button(type="button" class="btn--res buy__message-tab js-message-triger" data-message="manufacture" ) Производство
+												div(class="buy__message-left buy__tabs-content js-buy__message-left" data-message="office")
 														.buy__message-text ООО «Краски Колорит»
 														.buy__message-contacts
 																div(class="buy__message-contacts-item buy__message-contacts-item--1")
@@ -420,7 +321,7 @@ block content
 																		a(href="tel:0800508908" class="buy__message-info-phone") 0 800 508 908
 																.buy__message-info-item
 																		a(href="tel:+380442377112" class="buy__message-info-phone") +38 044 237 71 12
-												div(class="buy__message-left js-buy__message-left" data-message="manufacture")
+												div(class="buy__message-left buy__tabs-content js-buy__message-left" data-message="manufacture")
 														.buy__message-text ООО «Краски Колорит»
 														.buy__message-contacts
 																div(class="buy__message-contacts-item buy__message-contacts-item--1")

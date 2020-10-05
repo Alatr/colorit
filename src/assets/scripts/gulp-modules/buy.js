@@ -1,202 +1,3 @@
-/* document.addEventListener('DOMContentLoaded', () => {
-(function ($) {
-    let currentTabShop = 'tikkurila'
-    let currentLocation = 'office'
-    let currentTabShop2 = 'partners'
-    const dateForLocationInfo = {
-        office: {
-            map: 'map2',
-            coords: {lat: 51.4254018, lng: 31.3337994},
-            markers: [
-                {
-                    position: { lat: 51.4254018, lng: 31.3337994 },
-                    icon: './assets/images/buy/marker.svg'
-                }
-            ]
-        },
-        manufacture: {
-            map: 'map2',
-            coords: {lat: 50.498138, lng: 30.4693233},
-            markers: [
-                {
-                    position: { lat: 50.498138, lng: 30.4693233 },
-                    icon: './assets/images/buy/marker.svg'
-                }
-            ]
-        }
-    }
-    
-    const dateForLocationAndShop = {
-        tikkurila: {
-            map: 'map',
-            coords: { lat: 50.4114889, lng: 30.6051148 },
-            markers: [
-                {
-                    position: { lat: 50.4114889, lng: 30.6051148 },
-                    icon: './assets/images/buy/marker.svg'
-                }
-            ]
-        },
-        service: {
-            map: 'map',
-            coords: {lat: 50.4385614, lng: 30.5929573},
-            markers: [
-                {
-                    position: { lat: 50.4385614, lng: 30.5929573 },
-                    icon: './assets/images/buy/marker.svg'
-                }
-            ]
-        }
-    }
-    const dateForPartners = {
-        partners: {
-            map: 'map-partners',
-            coords: { lat: 80.4114889, lng: 30.6051148 },
-            markers: [
-                {
-                    position: {  lat: 80.4114889, lng: 30.6051148 },
-                    icon: './assets/images/buy/marker.svg'
-                },
-                {
-                    position: {  lat: 80.4117889, lng: 30.6051148 },
-                    icon: './assets/images/buy/marker.svg'
-                }
-            ]
-        },
-        online: {
-        }
-    }
-
-    const addMarkersToMap = (markers, mapName) => {
-        markers.forEach(item => {
-            let marker = new google.maps.Marker(item);
-            marker.setMap(mapName)
-        })
-    }
-
-    const maps = {}
-    function initMap(whereAdd, coordObj, mapName, whatIsTabs) {
-        maps[mapName] = new google.maps.Map(whereAdd, {
-            center: coordObj,
-            zoom: 16
-        });
-        switch (whatIsTabs) {
-            case 'currentTabShop' :
-                addMarkersToMap(dateForLocationAndShop[currentTabShop].markers, maps[dateForLocationAndShop[currentTabShop].map])
-                break
-            case 'currentLocation' :
-                addMarkersToMap(dateForLocationInfo[currentLocation].markers, maps[dateForLocationInfo[currentLocation].map])
-                break
-            case 'currentTabShop2' :
-                addMarkersToMap(dateForPartners[currentTabShop2].markers, maps[dateForPartners[currentTabShop2].map])
-                break
-            default :
-                console.log('ky')
-        }
-    }
-
-    function tabsContainer() {
-        function bindTabs(triggerSelector, contentSelector, activeClass, dataName, whatIsData, whereAddMap) {
-            let idx = 0
-            const trigger = $(triggerSelector)
-            const content = $(contentSelector)
-            let currentElem = content[idx].querySelector(whereAddMap)
-    
-            trigger.each(function (i) {
-                $(this).on('click', function (e) {
-                    e.preventDefault()
-                    switch (whatIsData) {
-                        case 'dateForLocationAndShop' :
-                            currentTabShop = $(this).data(dataName)
-                            idx = i
-                            currentElem = content[idx].querySelector(whereAddMap)
-                            initMap(currentElem, dateForLocationAndShop[currentTabShop].coords, dateForLocationAndShop[currentTabShop].map, 'currentTabShop')
-                            break
-                        case 'dateForPartners' :
-                            currentTabShop2 = $(this).data(dataName)
-                            idx = i
-                            currentElem = content[idx].querySelector(whereAddMap)
-                            if (dateForPartners[currentTabShop2].map){
-                                initMap(currentElem, dateForPartners[currentTabShop2].coords, dateForPartners[currentTabShop2].map, 'currentTabShop2')
-                            }
-                            break
-                        case 'dateForLocationInfo' :
-                            currentLocation = $(this).data(dataName)
-                            idx = i
-                            currentElem = $(content[idx]).parent().siblings()[0]
-                            initMap(currentElem, dateForLocationInfo[currentLocation].coords, dateForLocationInfo[currentLocation].map, 'currentLocation')
-                    }
-                   
-                    hideTab()
-                    showTab(i)
-                })
-            })
-
-            function hideTab() {
-                trigger.each(function () {
-                    $(this).removeClass(activeClass)
-                })
-
-                content.each(function () {
-                    $(this).fadeOut()
-                })
-            }
-
-            function showTab(i) {
-                trigger.eq(i).addClass(activeClass)
-                content.eq(i).fadeIn()
-
-            }
-
-            hideTab()
-            showTab(0)
-            
-            
-        }
-        // Initialization of maps on load
-
-        initMap($('.buy__tabs-right-map')[0], dateForLocationAndShop[currentTabShop].coords, dateForLocationAndShop[currentTabShop].map,  'currentTabShop')
-        if (dateForPartners[currentTabShop2].map){
-            initMap($('.buy__tabs-right-map-partners')[0], dateForPartners[currentTabShop2].coords, dateForPartners[currentTabShop2].map, 'currentTabShop2')
-        }
-        initMap($('.js-buy-message-map')[0], dateForLocationInfo[currentLocation].coords,dateForLocationInfo[currentLocation].map, 'currentLocation')
-    
-        bindTabs(
-            '.js-trigger1',
-            '.js-buy__tabs-content1',
-            'buy__tabs-tab--active',
-            'location',
-            'dateForLocationAndShop',
-            '.buy__tabs-right-map'
-        )
-
-        bindTabs(
-            '.js-trigger',
-            '.js-buy__tabs-content',
-            'buy__tabs-tab--active',
-            'partners',
-            'dateForPartners',
-            '.buy__tabs-right-map-partners'
-        )
-
-        bindTabs(
-            '.js-message-triger',
-            '.js-buy__message-left',
-            'buy__message-tab--active',
-            'message',
-            'dateForLocationInfo',
-            '.js-buy-message-map'
-        )
-    }
-
-    tabsContainer()
-
-})(jQuery);
-}) */
-
-
-
-
 
 
 (function ($) {
@@ -212,6 +13,21 @@
 		$btn: $('.js-trigger1'),
 		$content: $('.js-buy__tabs-content1'),
 		btnActiveClass: 'buy-btn-content-item--active',
+		contentActiveClass: 'buy-tab-content-item--active',
+		active: 0
+	});
+
+	const tab2 = new Tab({
+		$btn: $('.js-trigger2'),
+		$content: $('.js-buy__tabs-content2'),
+		btnActiveClass: 'buy-btn-content-item--active',
+		contentActiveClass: 'buy-tab-content-item--active',
+		active: 0
+	});
+	const tab3 = new Tab({
+		$btn: $('.js-message-triger'),
+		$content: $('.js-buy__message-left'),
+		btnActiveClass: 'buy__message-tab--active',
 		contentActiveClass: 'buy-tab-content-item--active',
 		active: 0
 	});
@@ -232,44 +48,6 @@
 	*/
 
 
-/* 
-
-	class FilterShopView{
-		constructor(model, elements){
-			this._model = model;
-			this._elements = elements;
-		}
-
-
-		
-		
-		
-		
-	}
-	class FilterShopModel{
-		constructor(items){
-			
-		}
-	}
-	class FilterShopController{
-		constructor(model, view) {
-
-		}
-	}
-
-
-	const model = new FilterShopModel(['node.js', 'react']),
-				view = new FilterShopView(model, {
-					'selectRegion': document.querySelector('.js-tikkurila-region'),
-					'selectCity': document.querySelector('.js-tikkurila-city'),
-					'resList': document.querySelector('.js-tikkurila-res-list'),
-				}),
-				controller = new FilterShopController(model, view);
-	
-	
-	 */
-
-	 
 const JSONShops = JSON.parse(JSON.stringify([{
 	"name": "Farba Service",
 	"region": "kievskaya",
@@ -292,36 +70,48 @@ const JSONShops = JSON.parse(JSON.stringify([{
 	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
 	"tel": "380950909095",
 	"site": "https:\/\/farba-service.com\/",
-	"coords": "50.403860, 30.531110",
-	"type": "1"
-},
-{
-	"name": "Color Studio Tikkurila",
-	"region": "kievskaya3",
-	"city": {
-		"name": "Буча",
-		"code": "bucha"
-	},
-	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
-	"tel": "380950909095",
-	"site": "https:\/\/farba-service.com\/",
-	"coords": "50.403860, 30.531110",
-	"type": "1"
-},
-{
-	"name": "Color Studio Tikkurila",
-	"region": "kievskaya3",
-	"city": {
-		"name": "Буча",
-		"code": "bucha"
-	},
-	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
-	"tel": "380950909095",
-	"site": "https:\/\/farba-service.com\/",
-	"coords": "50.403860, 30.531110",
+	"coords": "50.413860, 30.531110",
 	"type": "1"
 },
  {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya3",
+	"city": {
+		"name": "Буча",
+		"code": "bucha"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.453860, 30.531110",
+	"type": "1"
+}, 
+ {
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya-666-3",
+	"city": {
+		"name": "Буча666",
+		"code": "bucha666"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.453860, 30.531110",
+	"type": "2"
+}, 
+{
+	"name": "Color Studio Tikkurila",
+	"region": "kievskaya3",
+	"city": {
+		"name": "Буча",
+		"code": "bucha"
+	},
+	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
+	"tel": "380950909095",
+	"site": "https:\/\/farba-service.com\/",
+	"coords": "50.393860, 28.531110",
+	"type": "1"
+}, {
 	"name": "Color Studio Tikkurila",
 	"region": "kievskaya3",
 	"city": {
@@ -331,7 +121,7 @@ const JSONShops = JSON.parse(JSON.stringify([{
 	"address": "\u0421\u0430\u043f\u0435\u0440\u043d\u043e-\u0421\u043b\u043e\u0431\u043e\u0434\u0441\u043a\u0430\u044f, 10",
 	"tel": "380950909095",
 	"site": "https:\/\/farba-service.com\/",
-	"coords": "50.403860, 30.531110",
+	"coords": "50.403860, 30.631110",
 	"type": "1"
 }, {
 	"name": "Color Studio Tikkurila",
@@ -419,242 +209,289 @@ console.log(JSONShops);
 			
 
 
-	 class FilterShops{
-		 constructor (settings){
-		this._regions = [
-				{
-					label: {
-						ru: 'Все',
-						ua: 'Вcі',
+	class FilterShops{
+		constructor (settings){
+			
+			this._regions = {
+					'all': {
+						label: {
+							ru: 'Все',
+							ua: 'Вcі',
+						},
+						value: 'all',
+					}
+					,
+					'vinnickaya': {
+						label: {
+							ru: 'Винницкая область',
+							ua: 'Вінницька область',
+						},
+						value: 'vinnickaya',
 					},
-					value: 'all',
+					'kievskaya3': {
+						label: {
+							ru: '"kievskaya3" область',
+							ua: '"kievskaya3" область',
+						},
+						value: 'kievskaya3',
+					},
+					'kievskaya-666-3': {
+						label: {
+							ru: '"kievskaya-666-3" область',
+							ua: '"kievskaya-666-3" область',
+						},
+						value: 'kievskaya-666-3',
+					},
+					'kievskaya2': {
+						label: {
+							ru: '"kievskaya2" область',
+							ua: '"kievskaya2" область',
+						},
+						value: 'kievskaya2',
+					},
+					'kievskaya1': {
+						label: {
+							ru: '"kievskaya1" область',
+							ua: '"kievskaya1" область',
+						},
+						value: 'kievskaya1',
+					},
+					'vinnickaya': {
+						label: {
+							ru: 'Винницкая область',
+							ua: 'Вінницька область',
+						},
+						value: 'vinnickaya',
+					},
+
+					'volynskaya': {
+						label: {
+							ru: 'Волынская область',
+							ua: 'Волинська область',
+						},
+						value: 'volynskaya',
+					},
+
+					'dnepropetrovskaya': {
+						label: {
+							ru: 'Днепропетровская область',
+							ua: 'Дніпропетровська область',
+						},
+						value: 'dnepropetrovskaya',
+					},
+
+					'doneckaya': {
+						label: {
+							ru: 'Донецкая область',
+							ua: 'Донецька область',
+						},
+						value: 'doneckaya',
+					},
+
+					'zhitomirskaya': {
+						label: {
+							ru: 'Житомирская область',
+							ua: 'Житомирська область',
+						},
+						value: 'zhitomirskaya',
+					},
+
+					'zakarpatskaya': {
+						label: {
+							ru: 'Закарпатская область',
+							ua: 'Закарпатська область',
+						},
+						value: 'zakarpatskaya',
+					},
+
+					'zaporozhskaya': {
+						label: {
+							ru: 'Запорожская область',
+							ua: 'Запорізька область',
+						},
+						value: 'zaporozhskaya',
+					},
+
+					'ivanoFrankovskaya': {
+						label: {
+							ru: 'Ивано-Франковская область',
+							ua: 'Івано-Франківська область',
+						},
+						value: 'ivanoFrankovskaya',
+					},
+
+					'kievskaya': {
+						label: {
+							ru: 'Киевская область',
+							ua: 'Київська область',
+						},
+						value: 'kievskaya',
+					},
+
+					'kirovogradskaya': {
+						label: {
+							ru: 'Кировоградская область',
+							ua: 'Кіровоградська область',
+						},
+						value: 'kirovogradskaya',
+					},
+
+					'luganskaya': {
+						label: {
+							ru: 'Луганская область',
+							ua: 'Луганська область',
+						},
+						value: 'luganskaya',
+					},
+
+					'lvovskaya': {
+						label: {
+							ru: 'Львовская область',
+							ua: 'Львівська область',
+						},
+						value: 'lvovskaya',
+					},
+
+					'nikolaevskaya': {
+						label: {
+							ru: 'Николаевская область',
+							ua: 'Миколаївська область',
+						},
+						value: 'nikolaevskaya',
+					},
+
+					'odesskaya': {
+						label: {
+							ru: 'Одесская область',
+							ua: 'Одеська область',
+						},
+						value: 'odesskaya',
+					},
+
+					'poltavskaya': {
+						label: {
+							ru: 'Полтавская область',
+							ua: 'Полтавська область',
+						},
+						value: 'poltavskaya',
+					},
+
+					'rovnenskaya': {
+						label: {
+							ru: 'Ровненская область',
+							ua: 'Рівненська область',
+						},
+						value: 'rovnenskaya',
+					},
+
+					'sumskaya': {
+						label: {
+							ru: 'Сумская область',
+							ua: 'Сумська область',
+						},
+						value: 'sumskaya',
+					},
+
+					'ternopolskaya': {
+						label: {
+							ru: 'Тернопольская область',
+							ua: 'Тернопільська область',
+						},
+						value: 'ternopolskaya',
+					},
+
+					'harkovskaya': {
+						label: {
+							ru: 'Харьковская область',
+							ua: 'Харківська область',
+						},
+						value: 'harkovskaya',
+					},
+
+					'hersonskaya': {
+						label: {
+							ru: 'Херсонская область',
+							ua: 'Херсонська область',
+						},
+						value: 'hersonskaya',
+					},
+
+					'hmelnickaya': {
+						label: {
+							ru: 'Хмельницкая область',
+							ua: 'Хмельницька область',
+						},
+						value: 'hmelnickaya',
+					},
+
+					'cherkasskaya': {
+						label: {
+							ru: 'Черкасская область',
+							ua: 'Черкаська область',
+						},
+						value: 'cherkasskaya',
+					},
+
+					'chernigovskaya': {
+						label: {
+							ru: 'Черниговская область',
+							ua: 'Чернігівська область',
+						},
+						value: 'chernigovskaya',
+					},
+
+					'chernovickaya': {
+						label: {
+							ru: 'Черновицкая область',
+							ua: 'Чернівецька область',
+						},
+						value: 'chernovickaya',
+					}
+			}
+			this.styleGoogleMap = [{
+					"featureType": "all",
+					"stylers": [{
+							"saturation": 0
+						},
+						{
+							"hue": "#e7ecf0"
+						}
+					]
 				},
 				{
-					label: {
-						ru: 'Винницкая область',
-						ua: 'Вінницька область',
-					},
-					value: 'vinnickaya',
+					"featureType": "road",
+					"stylers": [{
+						"saturation": -70
+					}]
 				},
 				{
-					label: {
-						ru: '"kievskaya3" область',
-						ua: '"kievskaya3" область',
-					},
-					value: 'kievskaya3',
+					"featureType": "transit",
+					"stylers": [{
+						"visibility": "off"
+					}]
 				},
 				{
-					label: {
-						ru: '"kievskaya2" область',
-						ua: '"kievskaya2" область',
-					},
-					value: 'kievskaya2',
+					"featureType": "poi",
+					"stylers": [{
+						"visibility": "off"
+					}]
 				},
 				{
-					label: {
-						ru: '"kievskaya1" область',
-						ua: '"kievskaya1" область',
-					},
-					value: 'kievskaya1',
-				},
-
-
-
-
-
-				{
-					label: {
-						ru: 'Винницкая область',
-						ua: 'Вінницька область',
-					},
-					value: 'vinnickaya',
-				},
-
-				{
-					label: {
-						ru: 'Волынская область',
-						ua: 'Волинська область',
-					},
-					value: 'volynskaya',
-				},
-
-				{
-					label: {
-						ru: 'Днепропетровская область',
-						ua: 'Дніпропетровська область',
-					},
-					value: 'dnepropetrovskaya',
-				},
-
-				{
-					label: {
-						ru: 'Донецкая область',
-						ua: 'Донецька область',
-					},
-					value: 'doneckaya',
-				},
-
-				{
-					label: {
-						ru: 'Житомирская область',
-						ua: 'Житомирська область',
-					},
-					value: 'zhitomirskaya',
-				},
-
-				{
-					label: {
-						ru: 'Закарпатская область',
-						ua: 'Закарпатська область',
-					},
-					value: 'zakarpatskaya',
-				},
-
-				{
-					label: {
-						ru: 'Запорожская область',
-						ua: 'Запорізька область',
-					},
-					value: 'zaporozhskaya',
-				},
-
-				{
-					label: {
-						ru: 'Ивано-Франковская область',
-						ua: 'Івано-Франківська область',
-					},
-					value: 'ivanoFrankovskaya',
-				},
-
-				{
-					label: {
-						ru: 'Киевская область',
-						ua: 'Київська область',
-					},
-					value: 'kievskaya',
-				},
-
-				{
-					label: {
-						ru: 'Кировоградская область',
-						ua: 'Кіровоградська область',
-					},
-					value: 'kirovogradskaya',
-				},
-
-				{
-					label: {
-						ru: 'Луганская область',
-						ua: 'Луганська область',
-					},
-					value: 'luganskaya',
-				},
-
-				{
-					label: {
-						ru: 'Львовская область',
-						ua: 'Львівська область',
-					},
-					value: 'lvovskaya',
-				},
-
-				{
-					label: {
-						ru: 'Николаевская область',
-						ua: 'Миколаївська область',
-					},
-					value: 'nikolaevskaya',
-				},
-
-				{
-					label: {
-						ru: 'Одесская область',
-						ua: 'Одеська область',
-					},
-					value: 'odesskaya',
-				},
-
-				{
-					label: {
-						ru: 'Полтавская область',
-						ua: 'Полтавська область',
-					},
-					value: 'poltavskaya',
-				},
-
-				{
-					label: {
-						ru: 'Ровненская область',
-						ua: 'Рівненська область',
-					},
-					value: 'rovnenskaya',
-				},
-
-				{
-					label: {
-						ru: 'Сумская область',
-						ua: 'Сумська область',
-					},
-					value: 'sumskaya',
-				},
-
-				{
-					label: {
-						ru: 'Тернопольская область',
-						ua: 'Тернопільська область',
-					},
-					value: 'ternopolskaya',
-				},
-
-				{
-					label: {
-						ru: 'Харьковская область',
-						ua: 'Харківська область',
-					},
-					value: 'harkovskaya',
-				},
-
-				{
-					label: {
-						ru: 'Херсонская область',
-						ua: 'Херсонська область',
-					},
-					value: 'hersonskaya',
-				},
-
-				{
-					label: {
-						ru: 'Хмельницкая область',
-						ua: 'Хмельницька область',
-					},
-					value: 'hmelnickaya',
-				},
-
-				{
-					label: {
-						ru: 'Черкасская область',
-						ua: 'Черкаська область',
-					},
-					value: 'cherkasskaya',
-				},
-
-				{
-					label: {
-						ru: 'Черниговская область',
-						ua: 'Чернігівська область',
-					},
-					value: 'chernigovskaya',
-				},
-
-				{
-					label: {
-						ru: 'Черновицкая область',
-						ua: 'Чернівецька область',
-					},
-					value: 'chernovickaya',
+					"featureType": "water",
+					"stylers": [{
+							"visibility": "simplified"
+						},
+						{
+							"saturation": -60
+						}
+					]
 				}
-		]
+			]
 
+			this.googleMap = null;
+			this.googleMapMarkers = [];
+
+			/*  */
 			this._shops = settings.data;
 			this._sortedShopByRegion = []
 			this._sortedShopByRegionAndCity = []
@@ -669,10 +506,14 @@ console.log(JSONShops);
 
 		 	startFilterShops(){
 				this._elements.$resList.innerHTML = '';
+				this.deleteGoogleMapMarker();
 				/*  */
 				if (this._filterState.region === 'all') {
 					this._shops.forEach((el) => {
-						this.renderShopItem(this._elements.$resList, el)
+						this.renderShopItem(this._elements.$resList, el);
+						const [lat, lng] = el.coords.replace(/\s/g, '').split(',');
+						/*  */
+						this.addGoogleMapMarker(lat, lng, el.address);
 					});
 					return
 				}
@@ -680,7 +521,10 @@ console.log(JSONShops);
 				/*  */
 				if (this._filterState.city === 'all') {
 					this._sortedShopByRegion[this._filterState.region].forEach((el) => {
-						this.renderShopItem(this._elements.$resList, el)
+						this.renderShopItem(this._elements.$resList, el);
+						const [lat, lng] = el.coords.replace(/\s/g, '').split(',');
+						/*  */
+						this.addGoogleMapMarker(lat, lng, el.address);
 					})
 					return
 				}
@@ -689,7 +533,10 @@ console.log(JSONShops);
 
 				this._sortedShopByRegionAndCity[this._filterState.region][this._filterState.city]
 					.forEach((el) => {
-						this.renderShopItem(this._elements.$resList, el)
+						this.renderShopItem(this._elements.$resList, el);
+						const [lat, lng] = el.coords.replace(/\s/g, '').split(',');
+						/*  */
+						this.addGoogleMapMarker(lat, lng, el.address);
 					})
 
 
@@ -725,7 +572,6 @@ console.log(JSONShops);
 						}, {})
 					}
 				}
-				console.log(_sortedShopByRegionAndCityCopy);
 				this._sortedShopByRegionAndCity = _sortedShopByRegionAndCityCopy;
 			}
 
@@ -734,7 +580,7 @@ console.log(JSONShops);
 			/*  */
 				this._elements.$selectCity.innerHTML = '';
 			/*  */
-			this.renderOptions(this._elements.$selectCity, {label: this._regions[0].label[this._lang], value: 'all'}, false) // false it's not parse label language
+			this.renderOptions(this._elements.$selectCity, {label: this._regions.all.label[this._lang], value: 'all'}, false) // false it's not parse label language
 			for (const key in this._sortedShopByRegionAndCity[event.target.value]) {
 				if (this._sortedShopByRegionAndCity[event.target.value].hasOwnProperty(key)) {
 					const element = this._sortedShopByRegionAndCity[event.target.value][key];
@@ -757,10 +603,72 @@ console.log(JSONShops);
 		setStyle(){
 			
 		}
+
+		initGoogleMap(){
+			this.googleMap = new google.maps.Map(this._elements.$googleMap, {
+				center: {
+					lat: 50.422954,
+					lng: 30.522
+				},
+				zoom: 10,
+				disableDefaultUI: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: this.styleGoogleMap
+			});
+		}
+		deleteGoogleMapMarker(){
+			this.googleMapMarkers.forEach((el)=>{
+				el.setMap(null);
+			});
+			this.googleMapMarkers = [];
+		}
+		addGoogleMapMarker(lat, lng, label){
+			// const category = marker[4];
+			// const content = "<p class='content'>" + marker[6] + "</p>";
+			const title = label;
+			const pos = new google.maps.LatLng(lat, lng);
+			const markerIcon = {
+				url: './assets/images/buy/marker.svg'
+			};
+			const marker = new google.maps.Marker({
+				title: title,
+				position: pos,
+				map: this.googleMap,
+				icon: markerIcon,
+				// category: category,
+				// animation: google.maps.Animation.DROP,
+			});
+			this.googleMapMarkers.push(marker)
+			marker.setMap(this.googleMap);
+			/*  */
+			/* 	google.maps.event.addListener(marker, 'click', (function (marker, title) {
+					return function () {
+						infowindow.setContent(title); // установка нужного контента в всплывайку
+						infowindow.open(this.googleMap, marker1); // открытие нужного окна
+						this.googleMap.panTo(this.getPosition()); // установка центра карты в координатах кликнутой иконки
+					}
+				})(marker, title)); */
+		}
+		showItemInMap = (e)=>{
+			const target = e.target.closest(this._elements.$resItem);
+			const items = [...this._elements.$resList.querySelectorAll(this._elements.$resItem)];
+			const activeClass = 'buy__tabs-filtered__item--active';
+			items.forEach(el => el.classList.remove(activeClass));
+			/*  */
+			const label = target.getAttribute('data-label');
+			const lat = target.getAttribute('data-lat');
+			const lng = target.getAttribute('data-lng');
+			if (target !== null) {
+				target.classList.add(activeClass)
+				this.deleteGoogleMapMarker();
+				this.addGoogleMapMarker(lat, lng, label)
+			}
+		}
 		
 		setEvent(){
 			this._elements.$selectCity.addEventListener('change', this.changeCity);
 			this._elements.$selectRegion.addEventListener('change', this.changeRegion);
+			this._elements.$resList.addEventListener('click', this.showItemInMap);
 		}
 		
 		/**********************************/
@@ -768,24 +676,40 @@ console.log(JSONShops);
 		* render start
 		*/
 		renderRegions(){
-		 this._regions.forEach((el)=>{
-			 this.renderOptions(this._elements.$selectRegion, el)
-		 })
+			this.renderOptions(this._elements.$selectRegion, this._regions.all)
+			for (const key in this._sortedShopByRegion) {
+				if (this._sortedShopByRegion.hasOwnProperty(key)) {
+					const element = this._regions[key];
+					this.renderOptions(this._elements.$selectRegion, element)
+				}
+			}
+
+		//  this._regions.forEach((el)=>{
+		// 	 this.renderOptions(this._elements.$selectRegion, el)
+		//  })
 		}
 		renderShopList(){
 			this._elements.$resList.innerHTML = '';
+			this.deleteGoogleMapMarker();
+			
 			this._shops.forEach((el) => {
-				this.renderShopItem(this._elements.$resList, el)
+				this.renderShopItem(this._elements.$resList, el);
+				const [lat, lng] = el.coords.replace(/\s/g, '').split(',')
+				/*  */
+				this.addGoogleMapMarker(lat, lng, el.address)
+
 			})
 		}
 
 
-		renderShopItem(parentList, { site, address, name, tel }) {
+		renderShopItem(parentList, {coords, site, address, name, tel }) {
+			const [lat, lng] = coords.replace(/\s/g, '').split(',');
+			
 			const markupShopItem = `
-				<li class="buy__tabs-filtered__item">
+				<li data-label='${name}' data-lat='${lat}' data-lng='${lng}' class=" buy__tabs-filtered__item js-buy__tabs-filtered__item" >
 					<div class="buy__tabs-filtered__item-block">
 						<a class="buy__tabs-filtered-phone buy__tabs-filtered-link" href="tel:${tel}">${tel}</a>
-						<a class="buy__tabs-filtered-link buy__tabs-filtered-site shop-link" href="${site}"><span>${site}</span</a>
+						<a class="buy__tabs-filtered-link buy__tabs-filtered-site shop-link" href="${site}"><span>${site}</span></a>
 					</div>
 					<div class="buy__tabs-filtered__item-block">
 						<div class="buy__tabs-filtered-name">${name}</div>
@@ -807,31 +731,61 @@ console.log(JSONShops);
 		/**********************************/
 
 		 init(){
+			this.initGoogleMap();
 			this.setEvent();
+			this.sortedShopByRegion();
+
 			this.renderRegions();
 
 			this.renderShopList();
-			this.sortedShopByRegion();
+
+
+
 		 }
-	 }
+	}
 	
-	 FilterShops.prototype.langDetect = function () {
+	FilterShops.prototype.langDetect = function () {
 
 	 	if (window.location.pathname.match(/\/ru\//)) return 'ru';
 	 	if (window.location.pathname.match(/\/en\//)) return 'en';
 	 	return 'ua'
-	 };
+	};
 	
 	
-	console.log(_shops[1]);
 		const filterTikkurila = new FilterShops({
-				data: _shops[1],
-				elements: {
-					$selectRegion: document.querySelector('.js-tikkurila-region'),
-					$selectCity: document.querySelector('.js-tikkurila-city'),
-					$resList: document.querySelector('.js-tikkurila-res-list')
-				}
-			});
+			data: _shops[1],
+			elements: {
+				$selectRegion: document.querySelector('.js-tikkurila-region'),
+				$selectCity: document.querySelector('.js-tikkurila-city'),
+				$resList: document.querySelector('.js-tikkurila-res-list'),
+				$resItem: '.js-buy__tabs-filtered__item',
+				$googleMap: document.querySelector('.js-tikkurila-google-map-init'),
+			}
+		});
+
+		const filterFarba = new FilterShops({
+			data: _shops[2],
+			elements: {
+				$selectRegion: document.querySelector('.js-farba-region'),
+				$selectCity: document.querySelector('.js-farba-city'),
+				$resList: document.querySelector('.js-farba-res-list'),
+				$resItem: '.js-buy__tabs-filtered__item',
+
+				$googleMap: document.querySelector('.js-farba-google-map-init'),
+			}
+		});
+
+		const filterPartner = new FilterShops({
+			data: _shops[3],
+			elements: {
+				$selectRegion: document.querySelector('.js-partner_shop-region'),
+				$selectCity: document.querySelector('.js-partner_shop-city'),
+				$resList: document.querySelector('.js-partner_shop-res-list'),
+				$resItem: '.js-buy__tabs-filtered__item',
+
+				$googleMap: document.querySelector('.js-partner_shop-google-map-init'),
+			}
+		});
 	
 	
 	
@@ -856,7 +810,119 @@ console.log(JSONShops);
 	
 	
 	
+	/**********************************/
+	/*
+	* map contact start
+	*/
+	const styleGoogleMap = [{
+			"featureType": "all",
+			"stylers": [{
+					"saturation": 0
+				},
+				{
+					"hue": "#e7ecf0"
+				}
+			]
+		},
+		{
+			"featureType": "road",
+			"stylers": [{
+				"saturation": -70
+			}]
+		},
+		{
+			"featureType": "transit",
+			"stylers": [{
+				"visibility": "off"
+			}]
+		},
+		{
+			"featureType": "poi",
+			"stylers": [{
+				"visibility": "off"
+			}]
+		},
+		{
+			"featureType": "water",
+			"stylers": [{
+					"visibility": "simplified"
+				},
+				{
+					"saturation": -60
+				}
+			]
+		}
+	]
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	function initGoogleMap(obj) {
+		const googleMarkers = []
+		const googleMarkersData = [
+			{
+				lat: 50.425556, 
+				lng: 30.336031,
+				label: 'офис',
+			},
+			{
+				lat: 50.498278, 
+				lng: 30.471512,
+				label: 'производство',
+			},
+		]
+		const googleMap = new google.maps.Map(obj.$container, {
+			center: {
+				lat: obj.lat,
+				lng: obj.lng
+			},
+			zoom: 10,
+			disableDefaultUI: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			styles: styleGoogleMap
+		});
+
+		googleMarkersData.forEach(({lat, lng, label})=>{
+			addGoogleMapMarker(lat, lng, label);
+		});
+		
+		function addGoogleMapMarker(lat, lng, label) {
+			// const category = marker[4];
+			// const content = "<p class='content'>" + marker[6] + "</p>";
+			const title = label;
+			const pos = new google.maps.LatLng(lat, lng);
+			const markerIcon = {
+				url: './assets/images/buy/marker.svg'
+			};
+			const marker = new google.maps.Marker({
+				title: title,
+				position: pos,
+				map: googleMap,
+				icon: markerIcon,
+				// category: category,
+				// animation: google.maps.Animation.DROP,
+			});
+			googleMarkers.push(marker)
+			marker.setMap(googleMap);
+		}
+	}
+
+
+	const mapContact1 = initGoogleMap({
+		$container: document.querySelector('.js-buy-message-map'),
+		lat: 50.422954,
+		lng: 30.522
+	});
+	/*
+	* map contact end
+	*/
+	/**********************************/
 	
 	
 	

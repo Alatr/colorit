@@ -1026,7 +1026,9 @@
 }
 
 
-
+.buy__message-left{
+	flex-direction: column;
+}
 
 .buy-btn-content-item--active:not(#h){
 	    color: #17315B;
@@ -1074,7 +1076,10 @@
 	// width: 120px;
 }
 
-
+.js-buy-message-map > div{
+	width: 100%;
+	height: 100%;
+}
 .shop-link:hover span {
 	background-image: linear-gradient(#C11426, #C11426);
 }
@@ -1090,4 +1095,9 @@
 	background-repeat: no-repeat;
 	background-size: 100% 1.5px;
 	transition: background-size .3s;
+}
+
+.buy__tabs-right > div{
+	width: 100%;
+	height: 100%;
 }
