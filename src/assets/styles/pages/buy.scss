@@ -135,6 +135,7 @@
         line-height: 2.8em;
         margin: 9px 0;
         text-align: center;
+        padding: 0 10px;
       }
       &--active {
         color: #17315B;
@@ -147,6 +148,9 @@
         height: 100%;
         width: 1px;
         background-color: #F0F1F8;
+      }
+      &:last-child::after{
+        display: none;
       }
     }
 
@@ -167,10 +171,13 @@
       padding: 18px 0px;
       display: flex;
       background-color: #F0F1F8;
+      @include to(1100px){
+        padding: 18px 30px;
+      }
       @include to(768px){
         justify-content: space-between;
       }
-      @include to(480px){
+      @include to(640px){
         width: calc(100vw - 20px);
         position: relative;
         z-index: 2;
@@ -388,6 +395,9 @@
           width: 200px;
           @include to(768px){
             margin-right: 0;
+          }
+          @include to(480px){
+            width: 100%;
           }
           &:last-child {
             margin-right: 0;
@@ -730,6 +740,10 @@
       padding-right: 60px;
       margin-right: 55px;
       border-right: 1px solid #F0F1F8;
+      @include to(640px){
+        padding-right: 30px;
+        margin-right: 30px;
+      }
       @include to(480px){
         padding-right: 16px;
         margin-right: 0;
@@ -740,6 +754,12 @@
         padding-right: 0;
         padding-left: 16px;
         border-right: none;
+        @include to(640px){
+          padding-left: 0;
+        }
+        @include to(480px){
+          padding-left: 16px;
+        }
       }
       
       &--active {
@@ -1056,14 +1076,24 @@
 	height: 36px;
 	background: #F0F1F8;
 	font-size: 12px;
-	color: #000C31;
+  color: #000C31;
+  @include to(992px){
+    width: 100px;
+  }
+  @include to(480px){
+    width: 90px;
+  }
+  
 }
 
 
 .buy__tabs-filter-block{
 	margin: 0 30px;
 	display: flex;
-	align-items: center;
+  align-items: center;
+  @include to(1100px){
+    margin: 0;
+  }
 }
 .buy__tabs-filtered{
 	height: 428px;
