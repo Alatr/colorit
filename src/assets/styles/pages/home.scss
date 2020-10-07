@@ -503,6 +503,10 @@
 .second-slide-home .slide-content__bucket {
 
 	max-width: 471px;
+
+	@include to(1440px){
+		max-width: 400px;
+	}
 }
 .third-slide-content__1 .slide-content__bucket {
 	top: 130px;
@@ -716,11 +720,11 @@ span.word-animate{
 		
 	}
 	&__text-wrapper{	
-		margin: 130px 0 0 11%;
+		margin: 130px 0 0 calc(11% + 90px);
 		position: relative;
 		z-index: 2;
 		@include to(1440px){
-			margin: 75px 0 0 11%;
+			margin: 75px 0 0 calc(11% + 90px);
 		}
 		@include to(768px){
 			margin-top: 40px;
@@ -987,7 +991,7 @@ span.word-animate{
 		}
 	}
 	&__discounts-can{
-		margin-left: 11%;
+		margin-left: calc(11% + 90px);
 		@include to(768px){
 			display: flex;
 		}
@@ -1132,7 +1136,7 @@ span.word-animate{
 
 .main-section{
 	// padding-top: var(--header_h);
-	padding-left: var(--sidebar_w);
+	// padding-left: var(--sidebar_w);
 	position: relative;
 	// height: calc(100vh - var(--header_h));
 	margin: 0 auto;
@@ -1311,6 +1315,7 @@ span.word-animate{
 	// height: calc(100% - var(--header_h));
 	height: 100%;
 	background: #F6F7FC;
+	z-index: 2;
 	@include to(480px){
 		background: transparent;
 		z-index: 2;
@@ -1968,7 +1973,7 @@ span.word-animate{
 .container-section-slaider-wrap{
 	max-width: none;
 	margin: 0 auto;
-	@include to(1440px){
+	@include to(1200px){
 
 		max-width: 1200px;
 	}

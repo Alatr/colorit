@@ -697,6 +697,7 @@
 			overflow: hidden;
 			padding: 10px 10px;
 			transition: all 0.3s;
+			cursor: pointer;
 			@include to(768px){
 				height: auto;
 				display: flex;

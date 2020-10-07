@@ -709,7 +709,7 @@ console.log(JSONShops);
 				<li data-label='${name}' data-lat='${lat}' data-lng='${lng}' class=" buy__tabs-filtered__item js-buy__tabs-filtered__item" >
 					<div class="buy__tabs-filtered__item-block">
 						<a class="buy__tabs-filtered-phone buy__tabs-filtered-link" href="tel:${tel}">${tel}</a>
-						<a class="buy__tabs-filtered-link buy__tabs-filtered-site shop-link" href="${site}"><span>${site}</span></a>
+						<a class="buy__tabs-filtered-link buy__tabs-filtered-site shop-link" href="${site}" target="_blank"><span>${site}</span></a>
 					</div>
 					<div class="buy__tabs-filtered__item-block">
 						<div class="buy__tabs-filtered-name">${name}</div>
