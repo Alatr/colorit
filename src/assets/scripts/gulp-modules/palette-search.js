@@ -46,7 +46,7 @@ class PaletteSearch{
             const name = this.removeSpaceInStr(color.name.toLowerCase());
 
             if (name.indexOf(text, 0) !== -1) {
-                if(colorsFound.length >= 5) return;
+                if(colorsFound.length >= 15) return;
                 colorsFound.push(color)
             }
         })
