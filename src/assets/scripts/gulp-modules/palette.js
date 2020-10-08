@@ -11,7 +11,7 @@ class TabSelect extends Tab {
 		const self = this;
 		this.btn.on('change', function (e) {
 			const inx = e.target.value;
-			const data = $(e.target).find("[value='"+inx+"']").data('pal');
+			const data = $(e.target).find(`[value=${inx}]`).data('pal');
 			PubSub.publish(self.event, { inx });
 
 			callback(data);
@@ -42,7 +42,6 @@ class TabSelect extends Tab {
 	let paletteSearch = new PaletteSearch();
 	paletteSearch.init();
 	document.addEventListener('onReadyJSONColor', function (e) {
-		console.log(paletteCreate);
 		paletteSearch.update(paletteCreate.colors, paletteCreate.type)
 	});
 
