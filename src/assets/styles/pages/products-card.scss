@@ -538,6 +538,7 @@
 	}
 	&__key{
 		min-width: 160px;
+		max-width: 160px;
 		margin-right: 32px;
 		font-weight: 500;
 		font-size: 12px;
@@ -956,6 +957,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	display: none;
 	&__num{
 		font-size: 10px;
 		line-height: lh(15, 10);

@@ -162,6 +162,13 @@
 		display: none;
 	}
 }
+#sredstva-podgotovki-poverhnosti, #shpatlevki, #kleya-dlya-steklooboev, #laki-i-emali{
+	.products-item:nth-child(1){
+		.products-item__decor-img{
+			width: min(vw(375), 375px);
+		}
+	}
+}
 .products-item:nth-child(1){
 	margin-top: 35px;
 	.products-item-l {

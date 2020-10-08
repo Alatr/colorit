@@ -683,9 +683,11 @@ if (screen.width <= 1024) {
 
 const labelEffects = (inputName, labelName, inputGroupName)=>{
 	$(`.${inputName}`).on('focus', function() {
+		let labelTarget = $(this).attr('name')
         $(`.${labelName}`).removeClass(`${labelName}_active`);
         $(`.${inputGroupName}`).removeClass(`${inputGroupName}_active`);
-		$(this).prev().addClass(`${labelName}_active`);
+		$(this).siblings('.modal-form__label').addClass(`${labelName}_active`);
+		console.log($(this).siblings())
         $(this).parent().addClass(`${inputGroupName}_active`);
     });
     $(`.${inputName}`).on('focusout', function() {

@@ -119,6 +119,14 @@ html.has-scroll-dragging {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		height: 250px;
+		justify-content: space-between;
+		.modal-form__input[name="name"]{
+			display: none;
+		}
+		.modal-form__input[name="phone"]{
+			display: none;
+		}
 	}
 }
 .modal-form-popup-result{
