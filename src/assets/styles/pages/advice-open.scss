@@ -151,7 +151,10 @@
 		@include shift-left(1);
 		@include shift-xs-left(0);
 		@include size(4);
-		@include size-xs(12);
+		@include size-xs(8);
+		@include to(560px){
+			margin: 0 auto 20px;
+		}
 	}
 	&__content{
 		@include col();

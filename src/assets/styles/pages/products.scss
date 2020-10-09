@@ -24,6 +24,7 @@
 	&-l{
 		position: relative;
 		padding-top: 45px;
+		background-size: cover;
 		@include to(992px){
 			padding-top: 39px;
 		}
@@ -196,7 +197,7 @@
 	.products-item-l {
 		background-color: #F6F7FC;
 		background-repeat: no-repeat;
-		background-position: right center;
+		background-position: center;
 		padding-left: min(vw(58), 58px);
 		@include to(992px){
 
@@ -249,7 +250,7 @@
 		padding-left: min(vw(59), 59px);
 		background-color: #E0E5EB;
 		background-repeat: no-repeat;
-		background-position: right center;
+		background-position: center;
 		@include to(992px){
 			// background-position: 53% 50%;
 			padding-left: min(vw(92), 92px);
@@ -290,7 +291,7 @@
 
 		background-color: #F0F1F8;
 		background-repeat: no-repeat;
-		// background-position: right center;
+		background-position: center;
 		@include to(992px){
 			// background-position: right 53% 50%;
 			padding-left: min(vw(92), 92px);
