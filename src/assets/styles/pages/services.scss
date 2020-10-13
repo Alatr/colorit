@@ -66,12 +66,13 @@
 	flex-direction: column;
 	&__image-wrapper{
 		margin-bottom: 25px;
+		height: 286px;
 		@include to(768px){
 			margin-bottom: 20px;
 		}
 		img{
 			max-width: 100%;
-			height: auto;
+			height: 100%;
 			object-fit: cover;
 		}
 	}
