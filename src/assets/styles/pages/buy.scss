@@ -157,6 +157,7 @@
         right: 0;
         height: 100%;
         width: 1px;
+        top: 0;
         background-color: #F0F1F8;
       }
       &:last-child::after{
@@ -882,6 +883,9 @@
 
   .banner-2{
     display: flex;
+    .link-arrow-type{
+      display: flex;
+    }
     .underline-link{
       text-decoration: none;
       &:hover{
@@ -996,7 +1000,7 @@
     position: relative;
     @include to(480px){
       padding-bottom: 45px;
-      flex-direction: column;
+      // flex-direction: column;
       width: 100%;
     }
     &::before{
@@ -1017,6 +1021,7 @@
       align-items: center;
       @include to(480px){
         margin-bottom: 22px;
+        flex-basis: 100%;
       }
       &:nth-child(2n){
         padding-left: 50px;
@@ -1085,14 +1090,15 @@
 	opacity: 1;
 	visibility: visible;
 	pointer-events: auto;
-	
+	display: flex;
 }
 
 .buy__tabs-content {
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
-	pointer-events: none;
+  pointer-events: none;
+  display: none;
 }
 
 .buy__tabs-filter-block select,

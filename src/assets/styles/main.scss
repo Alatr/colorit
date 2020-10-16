@@ -107,7 +107,9 @@ html.has-scroll-dragging {
 @import "./pages/buy";
 
 
-
+.page__inner{
+	overflow-x: hidden;
+}
 .result-block-right{
 	align-self: flex-end;
 	width: 43%;

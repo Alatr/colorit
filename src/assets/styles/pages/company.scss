@@ -14,12 +14,13 @@
 // }
 
 .link-with-circle{
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	text-decoration: none;
 	transition: all 0.3s;
 	flex-direction: row;
 	position: relative;
+	cursor: pointer;
 
 	&:hover{
 		svg{

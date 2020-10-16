@@ -2,7 +2,6 @@
 
 (function ($) {
 	
-	
 
 	
 	/**********************************/
@@ -575,7 +574,27 @@ console.log(JSONShops);
 				this._sortedShopByRegionAndCity = _sortedShopByRegionAndCityCopy;
 			}
 
-		changeRegion = (event)=>{
+		// changeRegion = (event)=> {
+		// 	this._filterState.region = event.target.value
+		// 	/*  */
+		// 		this._elements.$selectCity.innerHTML = '';
+		// 	/*  */
+		// 	this.renderOptions(this._elements.$selectCity, {label: this._regions.all.label[this._lang], value: 'all'}, false) // false it's not parse label language
+		// 	for (const key in this._sortedShopByRegionAndCity[event.target.value]) {
+		// 		if (this._sortedShopByRegionAndCity[event.target.value].hasOwnProperty(key)) {
+		// 			const element = this._sortedShopByRegionAndCity[event.target.value][key];
+		// 			let label = element[0].city.name;
+		// 			let value = key;
+		// 			this.renderOptions(this._elements.$selectCity, {label, value}, false) // false it's not parse label language
+					
+		// 		}
+		// 	}
+		// 	/* this._sortedShopByRegionAndCityCopy[event.target.value].forEach((el) => {
+		// 	}); */
+		// 	this.startFilterShops();
+		// }
+
+		changeRegion(event) {
 			this._filterState.region = event.target.value
 			/*  */
 				this._elements.$selectCity.innerHTML = '';
@@ -595,7 +614,12 @@ console.log(JSONShops);
 			this.startFilterShops();
 		}
 		
-		changeCity = (event)=> {
+		// changeCity = (event)=> {
+		// 	this._filterState.city = event.target.value
+		// 	this.startFilterShops();
+		// }
+
+		changeCity(event){
 			this._filterState.city = event.target.value
 			this.startFilterShops();
 		}
@@ -628,7 +652,8 @@ console.log(JSONShops);
 			const title = label;
 			const pos = new google.maps.LatLng(lat, lng);
 			const markerIcon = {
-				url: './assets/images/buy/marker.svg'
+				url: '../wp-content/themes/kolorit/assets/images/buy/marker.svg'
+				// url: './assets/images/buy/marker.svg'
 			};
 			const marker = new google.maps.Marker({
 				title: title,
@@ -649,7 +674,22 @@ console.log(JSONShops);
 					}
 				})(marker, title)); */
 		}
-		showItemInMap = (e)=>{
+		// showItemInMap = (e)=>{
+		// 	const target = e.target.closest(this._elements.$resItem);
+		// 	const items = [...this._elements.$resList.querySelectorAll(this._elements.$resItem)];
+		// 	const activeClass = 'buy__tabs-filtered__item--active';
+		// 	items.forEach(el => el.classList.remove(activeClass));
+		// 	/*  */
+		// 	const label = target.getAttribute('data-label');
+		// 	const lat = target.getAttribute('data-lat');
+		// 	const lng = target.getAttribute('data-lng');
+		// 	if (target !== null) {
+		// 		target.classList.add(activeClass)
+		// 		this.deleteGoogleMapMarker();
+		// 		this.addGoogleMapMarker(lat, lng, label)
+		// 	}
+		// }
+		showItemInMap(e){
 			const target = e.target.closest(this._elements.$resItem);
 			const items = [...this._elements.$resList.querySelectorAll(this._elements.$resItem)];
 			const activeClass = 'buy__tabs-filtered__item--active';
@@ -666,9 +706,10 @@ console.log(JSONShops);
 		}
 		
 		setEvent(){
-			this._elements.$selectCity.addEventListener('change', this.changeCity);
-			this._elements.$selectRegion.addEventListener('change', this.changeRegion);
-			this._elements.$resList.addEventListener('click', this.showItemInMap);
+			const self = this;
+			this._elements.$selectCity.addEventListener('change', this.changeCity.bind(self));
+			this._elements.$selectRegion.addEventListener('change', this.changeRegion.bind(self));
+			this._elements.$resList.addEventListener('click', this.showItemInMap.bind(self));
 		}
 		
 		/**********************************/
@@ -898,7 +939,8 @@ console.log(JSONShops);
 			const title = label;
 			const pos = new google.maps.LatLng(lat, lng);
 			const markerIcon = {
-				url: './assets/images/buy/marker.svg'
+				url: '../wp-content/themes/kolorit/assets/images/buy/marker.svg'
+				// url: './assets/images/buy/marker.svg'
 			};
 			const marker = new google.maps.Marker({
 				title: title,
