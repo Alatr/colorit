@@ -13,7 +13,6 @@ class TabSelect extends Tab {
 			const inx = e.target.value;
 			const data = $(e.target).find(`[value=${inx}]`).data('pal');
 			PubSub.publish(self.event, { inx });
-
 			callback(data);
 		});
 	}
