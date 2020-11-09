@@ -10,7 +10,7 @@ class PaletteCreate {
     }
 
     init(type) {
-
+        this.lang = document.querySelector('html').lang
         this.productChangeListeners(); // add custom event for onload json color
         this.getColors('/assets/jsons/','colorCode', (reject) => {
         // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
@@ -158,6 +158,7 @@ class PaletteCreate {
         `;
 
         tabsInfo.forEach( (name, i) => {
+
             selected += `<option class="palette-item__select-item ${ i === 0 ? selected='selected':'' }" >${name.name[this.lang]}</option>`;
             buttons += `<li class="palette-tab-btns-item">
                         <button class="palette-tab-btn js-palette-color-tab-btn btn--res" type="button">${name.name[this.lang]}<span class="line"></span></button>
@@ -261,7 +262,7 @@ class PaletteCreate {
         let name = el.name.replace(' ', '-');
         return `
             <li class='color-shade-item' style="background: rgb(${el.r},${el.g},${el.b})">
-                <a href='/palette?style=${this.type}&color=${name}' ></a>
+                <a href='/${this.lang}/palette?style=${this.type}&color=${name}' ></a>
             </li>
         `
     }

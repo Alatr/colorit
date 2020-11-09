@@ -16,7 +16,7 @@ class PaletteSearch{
 
     templatePalette(data) {
         return `
-    <li class="pallete-search__result-item"> <a href="/${this.lang}/palette?style=${this.currentSelectPalette}&color=${data.name.replace(' ', '-')}"> 
+    <li class="pallete-search__result-item"> <a href="/palette?style=${this.currentSelectPalette}&color=${data.name.replace(' ', '-')}"> 
         <div class="pallete-search__color" style="background: rgb(${data.r}, ${data.g}, ${data.b})"></div><span class="pallete-search__color-name"> ${data.name}</span></a>
     </li>
     `
@@ -46,7 +46,7 @@ class PaletteSearch{
             const name = this.removeSpaceInStr(color.name.toLowerCase());
 
             if (name.indexOf(text, 0) !== -1) {
-                if(colorsFound.length >= 15) return;
+                if(colorsFound.length >= 5) return;
                 colorsFound.push(color)
             }
         })
@@ -60,7 +60,6 @@ class PaletteSearch{
     }
 
     init(){
-        this.lang = document.querySelector('html').lang
         $('[data-search="palette"]').on('keyup', e => {
             let value = e.target.value;
             if (value.length >= 3) {
