@@ -44,7 +44,7 @@ block content
 						select.palette-item__select.js-palette-item__select.calculator-item__select
 							each v, j in ['Symphony', 'Deco Grey', 'RAL Effect', 'RAL Classic', 'VALTTI -  лазури для дерева', 'Лаки для интерьера', 'Краски для мебели', 'Miranol и Unica', 'Почувствуй цвет']
 								if j == 0
-									option.palette-item__select-item(data-pal="palette"+j  selected="selected" data-descr='1')= v
+									option.palette-item__select-item(data-pal="palette"+j  selected data-descr='1')= v
 								else
 									option.palette-item__select-item(data-pal="palette"+j data-descr=v)= v
 					.pallete-search-wrapper.js-pallete-search-wrapper
