@@ -62,8 +62,11 @@
 		
 	}
 	&__text{
-		font-size: 12px;
+		font-size: 14px;
 		line-height: lh(22, 12);
+		@include to(1140px){
+			font-size: 12px;
+		}
 		@include to(700px){
 			color: #000C31!important;
 		}
@@ -219,11 +222,14 @@
 		min-height: 22px;
 	}
 	&__text{
-		font-size: 12px;
+		font-size: 14px;
 		line-height: lh(22, 12);
 		/* текст */
 
 		color: #586386;
+		@include to(1140px){
+			font-size: 12px;
+		}
 	}
 }
 
@@ -312,10 +318,13 @@
 	width: 210px;
 	text-align: center;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: lh(24, 12);
 	letter-spacing: 0.08em;
 	color: #C11426;
+	@include to(1140px){
+		font-size: 12px;
+	}
 	@include to(768px){
 		width: 186px;
 	}
@@ -475,6 +484,7 @@
 	margin-bottom: 105px;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 0px 5px 40px rgba(23, 49, 91, 0.1);
 		@include to(700px) {
 			padding-bottom: 60px;
 			margin-bottom: 60px;
@@ -638,9 +648,12 @@
 }
 
 .products-card-form__subtitle {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: lh(22, 12);
 	color: #586386;
+	@include to(1140px){
+		font-size: 12px;
+	}
 	@include to(700px){
 		margin-bottom: 30px;
 	}

@@ -303,6 +303,7 @@
 		@include to(1440px){
 			font-size: 45px;
 			margin-bottom: 20px;
+			max-width: 300px;
 
 		}
 		@include to(992px){
@@ -326,12 +327,14 @@
 		line-height: lh(26,16);
 		color: #F0F1F8;
 		@include to(1440px){
-			font-size: 12px;
+			font-size: 14px;
 			line-height: 1.6em;
 
 		}
-		@include to(992px){
+		@include to(1140px){
 			font-size: 12px;
+		}
+		@include to(992px){
 			margin-bottom: 40px;
 		}
 		@include to(700px){
@@ -495,9 +498,9 @@
 	}
 }
 .second-slide-content__3 .slide-content__bucket{
-	top: 30px;
-	right: 80px;
-		max-width: 371px;
+	top: 90px;
+	right: 50px;
+	max-width: 315px;
 
 	@include to(992px){
 		display: none;
@@ -505,10 +508,12 @@
 }
 .second-slide-home .slide-content__bucket {
 
-	max-width: 471px;
 
 	@include to(1440px){
-		max-width: 400px;
+		max-width: 300px;
+	}
+	@include to(1100px){
+		max-width: 225px;
 	}
 }
 .third-slide-content__1 .slide-content__bucket {
@@ -1252,7 +1257,7 @@ span.word-animate{
 	&__text{
 		font-size: 12px;
 		line-height: 22px;
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 			margin-bottom: 5px;
 		}
@@ -1846,7 +1851,7 @@ span.word-animate{
 	&__text{
 		padding-right: 50%;
 		margin-bottom: 50px;
-		font-size: 12px;
+		font-size: 14px;
 		line-height: lh(22,12);
 
 		color: #586386;
@@ -1854,6 +1859,9 @@ span.word-animate{
 		@include from(1441px){
 			font-size: 16px;
 			line-height: 1.6em;
+		}
+		@include to(1140px){
+			font-size: 12px;
 		}
 		@include to(992px){
 			margin-bottom: 40px;
@@ -1899,8 +1907,8 @@ span.word-animate{
 			font-size: 12px;
 		}
 		@include to(700px){
-				width: 210px;
-				height: 48px;
+			width: 210px;
+			height: 48px;
 			font-size: 15px;
 		}
 	}
@@ -2344,13 +2352,16 @@ span.word-animate{
 		}
 	}
 	&__text{
-		font-size: 12px;
+		font-size: 14px;
 		line-height: lh(22,12);
 		margin-bottom: 50px;
 		color: #586386;
 		@include from(1441px){
 			font-size: 16px;
 			line-height: 26px;
+		}
+		@include to(1140px){
+			font-size: 12px;
 		}
 		@include to(992px){
 			margin-bottom: 40px;
@@ -2866,7 +2877,7 @@ span.word-animate{
 		line-height: vh(22,12);
 		transition: all 0.3s;
 		color: #9AB4C1;
-		@include to(1440px){
+		@include to(1140px){
 			font-size: 12px;
 		}
 		@include to(992px){

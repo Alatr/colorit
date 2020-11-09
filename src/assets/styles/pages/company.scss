@@ -145,8 +145,9 @@
 		color: #F0F1F8;
 		max-width: 310px;
 		margin-bottom: 50px;
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
+			max-width: 375px;
 		}
 		@include to(768px){
 			margin-bottom: 25px;
@@ -186,7 +187,7 @@
 		}
 	}
 	&__text{
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 		}
 		font-size: 12px;
@@ -322,7 +323,7 @@
 			color: #586386;
 			position: relative;
 			margin-bottom: 10px;
-			@include from(1441px){
+			@include from(1140px){
 				font-size: 14px;
 			}
 			@include to(768px){
@@ -444,7 +445,7 @@
 		}
 	}
 	&_1{
-		min-height: 700px;
+		min-height: 770px;
 		.company__title{
 			@include to(480px){
 				font-size: 28px;
@@ -508,9 +509,10 @@
 		@include to(768px){
 			padding-top: 80px;
 			padding-bottom: 0;
-			@include to(640px){
-				padding-top: 40px;
-			}
+			
+		}
+		@include to(640px){
+			padding-top: 0;
 		}
 		.company-advantages__inner{
 			overflow: hidden;

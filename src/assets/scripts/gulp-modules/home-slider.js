@@ -592,12 +592,13 @@ imagesLoaded(document.querySelectorAll('.main-slide__slide-bg'), () => {
 Array.from(document.querySelectorAll('.js-main-slide__slide-bg-wrap')).forEach((el) => {
 	const imgs = Array.from(el.querySelectorAll('img'));
 
-	const imagesRatioNum = ($(el).height() / $(el).width()).toFixed(3);
+	// const imagesRatioNum = ($(el).height() / $(el).width());
+	const imagesRatioNum = ($(el).width() / $(el).height());
 	const hoverEffectInstatse = new hoverEffect({
 			parent: el,
 			intensity: el.dataset.intensity || undefined,
 			easing: el.dataset.easing || undefined,
-			imagesRatio: imagesRatioNum || undefined,
+			imagesRatio: 1.1 || undefined,
 			hover: false,
 			image1: imgs[0].getAttribute('src'),
 			image2: imgs[1].getAttribute('src'),

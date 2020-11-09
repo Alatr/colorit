@@ -17,7 +17,7 @@
 	}
 }
 .advice-open-text{
-	@include from(1441px){
+	@include from(1140px){
 		font-size: 14px;
 	}
 	font-size: 12px;
@@ -526,7 +526,7 @@
 		}
 	}
 	&__text-block{
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 		}
 		font-size: 12px;
@@ -852,6 +852,9 @@
 		color: #586386;
 		position: relative;
 		padding-left: 25px;
+		@include from(1140px){
+			font-size: 14px;
+		}
 		@include to(768px){
 			line-height: 1.75em;
 		}

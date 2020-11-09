@@ -100,8 +100,11 @@
 		max-width: 250px;
 		width: 100%;
 		margin-bottom: 24px;
-		font-size: 12px;
+		font-size: 14px;
 		line-height: lh(22, 12);
+		@include to(1140px){
+			font-size: 12px;
+		}
 
 
 
@@ -151,6 +154,9 @@
 		img {
 			height: 100%;
 			object-fit: cover;
+			@include to(480px){
+				filter: blur(3px);
+			}
 		}
 	}
 
@@ -185,6 +191,9 @@
 			left: 50%;
 			transform: translate(-50%,-100%);
 		}
+		@include to(480px){
+			z-index: 1;
+		}
 	}
 	
 	.products-single-item__logo {
@@ -216,6 +225,9 @@
 			left: 50%;
 			transform: translate(-50%,-100%);
 		}
+		@include to(480px){
+			z-index: 1;
+		}
 	}
 	.products-single-item__logo {
 		right: 40px;
@@ -232,5 +244,11 @@
 		@include to(700px){
 			align-items: flex-start;
 		}
+	}
+}
+
+#kleya-dlya-steklooboev{
+	.quiz-row{
+		display: none;
 	}
 }

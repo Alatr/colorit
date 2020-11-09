@@ -28,6 +28,7 @@
 	const $questionList = $('.js-quiz__question');
 	const line = '#' + $('body').attr('id');
 	let result = {};
+	console.log(line);
 	/* QUESTION DATA LIST */
 	const dataQuestionList = {
 		firstQuestion: {
@@ -40,11 +41,11 @@
 				{
 					title: {
 						rus: 'Любое',
-						ua: 'Любое',
+						ua: 'Будь-яке',
 					},
 					questionId: 'permises',
 					answerId: 'all',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-any.jpg'
 				},
 				{	
 					title: {
@@ -53,25 +54,25 @@
 					},
 					questionId: 'permises',
 					answerId: 'kitchen',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-kitchen.jpg'
 				},
 				{	
 					title: {
 						rus: 'Ванная',
-						ua: 'Ванная',
+						ua: 'Ванна',
 					},
 					questionId: 'permises',
 					answerId: 'bathroom',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bath.jpg'
 				},
 				{	
 					title: {
 						rus: 'Детская ',
-						ua: 'Детская ',
+						ua: 'Дитяча ',
 					},
 					questionId: 'permises',
 					answerId: 'childroom',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-child.jpg'
 				},
 				{	
 					title: {
@@ -80,25 +81,25 @@
 					},
 					questionId: 'permises',
 					answerId: 'bedroom',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bed.jpg'
 				},
 				{	
 					title: {
 						rus: 'Гостинная',
-						ua: 'Гостинная',
+						ua: 'Вітальня',
 					},
 					questionId: 'permises',
 					answerId: 'livingroom',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-living.jpg'
 				},
 				{	
 					title: {
 						rus: 'Гардероб/холл',
-						ua: 'Гардероб/холл',
+						ua: 'Гардероб/хол',
 					},
 					questionId: 'permises',
 					answerId: 'hall',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-hall.jpg'
 				},
 				{	
 					title: {
@@ -107,43 +108,43 @@
 					},
 					questionId: 'permises',
 					answerId: 'balcony',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-balcony.jpg'
 				},
 				{	
 					title: {
 						rus: 'Офис/магазин',
-						ua: 'Офис/магазин',
+						ua: 'Офіс/магазин',
 					},
 					questionId: 'permises',
 					answerId: 'office',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-office.jpg'
 				},
 				{	
 					title: {
 						rus: 'Пищевое производство',
-						ua: 'Пищевое производство',
+						ua: 'Харчове виробництво',
 					},
 					questionId: 'permises',
 					answerId: 'foodprod',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-food.jpg'
 				},
 				{	
 					title: {
 						rus: 'Складское помещение',
-						ua: 'Складское помещение',
+						ua: 'Складське приміщення',
 					},
 					questionId: 'permises',
 					answerId: 'warehouse ',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-sklad.jpg'
 				},
 				{	
 					title: {
 						rus: 'Мед учереждение',
-						ua: 'Мед учереждение',
+						ua: 'Мед заклад',
 					},
 					questionId: 'permises',
 					answerId: 'medical',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-med.jpg'
 				},
 				{	
 					title: {
@@ -152,16 +153,16 @@
 					},
 					questionId: 'permises',
 					answerId: 'mall',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-shopping.jpg'
 				},
 				{	
 					title: {
 						rus: 'Школа/детский сад',
-						ua: 'Школа/детский сад'
+						ua: 'Школа/дитячий садочок'
 					},
 					questionId: 'permises',
 					answerId: 'school',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-school.jpg'
 				}
 			]
 
@@ -169,63 +170,63 @@
 		secondQustion: {
 			title: {
 				rus: 'Какую поверхность планируете покрывать?',
-				ua: 'Какую поверхность планируете покрывать?',
+				ua: 'Яку поверхню плануєте покривати?',
 			},
 			lines: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#kleya-dlya-steklooboev', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
 						rus: 'Любая',
-						ua: 'Любая',
+						ua: 'Будь-яка',
 					},
 					questionId: 'surface',
 					answerId: 'all',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Стены',
-						ua: 'Стены',
+						ua: 'Стіни',
 					},
 					questionId: 'surface',
 					answerId: 'walls',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Потолок',
-						ua: 'Потолок',
+						ua: 'Стеля',
 					},
 					questionId: 'surface',
 					answerId: 'ceiling',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Элементы интерьера ',
-						ua: 'Элементы интерьера ',
+						ua: 'Елементи інтер`єру ',
 					},
 					questionId: 'surface',
 					answerId: 'interior',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 			]
 		},
 		thirdQustion: {
 			title: {
 				rus: 'Какой материал покрываемой поверхности?',
-				ua: 'Какой материал покрываемой поверхности?',
+				ua: 'Який матеріал поверхні, що покривається?',
 			},
 			lines: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#kleya-dlya-steklooboev', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
 						rus: 'Любой',
-						ua: 'Любой',
+						ua: 'Будь-який',
 					},
 					questionId: 'material',
 					answerId: 'all',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
@@ -234,43 +235,43 @@
 					},
 					questionId: 'material',
 					answerId: 'concrete',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Гипсокартон',
-						ua: 'Гипсокартон',
+						ua: 'Гіпсокартон',
 					},
 					questionId: 'material',
 					answerId: 'drywall',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Кирпич',
-						ua: 'Кирпич',
+						ua: 'Цегла',
 					},
 					questionId: 'material',
 					answerId: 'brick',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Обои',
-						ua: 'Обои',
+						ua: 'Шпалери',
 					},
 					questionId: 'material',
 					answerId: 'wallpapers',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Шпатлевка',
-						ua: 'Шпатлевка',
+						ua: 'Шпаклівка',
 					},
 					questionId: 'material',
 					answerId: 'putty',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
@@ -279,16 +280,16 @@
 					},
 					questionId: 'material',
 					answerId: 'chipboard',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Минеральная штукатурка',
-						ua: 'Минеральная штукатурка',
+						ua: 'Мінеральна штукатурка',
 					},
 					questionId: 'material',
 					answerId: 'minplaster',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
@@ -297,16 +298,16 @@
 					},
 					questionId: 'material',
 					answerId: 'wood',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Металл',
-						ua: 'Металл',
+						ua: 'Метал',
 					},
 					questionId: 'material',
 					answerId: 'metal',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
@@ -315,16 +316,16 @@
 					},
 					questionId: 'material',
 					answerId: 'tile',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Стекло',
-						ua: 'Стекло',
+						ua: 'Скло',
 					},
 					questionId: 'material',
 					answerId: 'glass',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
@@ -333,115 +334,124 @@
 					},
 					questionId: 'material',
 					answerId: 'plastic',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 			]
 		},
 		fourthQustion: {
 			title: {
 				rus: 'Особенности',
-				ua: 'Особенности',
+				ua: 'Особливості',
 			},
 			lines: ['#home-linejka', '#professional-linejka', '#shpatlevki', '#laki-i-emali'],
 			answers: [
 				{
 					title: {
+						rus: 'Любые',
+						ua: 'Будь-які',
+					},
+					questionId: 'features',
+					answerId: 'all',
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+				},
+				{
+					title: {
 						rus: 'Защита от плесени и грибка',
-						ua: 'Защита от плесени и грибка',
+						ua: 'Захист від плісняви та грибку',
 					},
 					questionId: 'features',
 					answerId: 'mold',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Антимикробная',
-						ua: 'Антимикробная',
+						ua: 'Антимікробна',
 					},
 					questionId: 'features',
 					answerId: 'microb',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Повышенная кроющая способность',
-						ua: 'Повышенная кроющая способность',
+						ua: 'Підвищена покриваюча здатність',
 					},
 					questionId: 'features',
 					answerId: 'covering ',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Подчеркивающая рельеф',
-						ua: 'Подчеркивающая рельеф',
+						ua: 'Підкреслююча рельєф',
 					},
 					questionId: 'features',
 					answerId: 'relief',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Идеально гладкая',
-						ua: 'Идеально гладкая',
+						ua: 'Ідеально гладка',
 					},
 					questionId: 'features',
 					answerId: 'smooth',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Для влажных помещений',
-						ua: 'Для влажных помещений',
+						ua: 'Для вологих приміщень',
 					},
 					questionId: 'features',
 					answerId: 'wet',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Ремонтная',
-						ua: 'Ремонтная',
+						ua: 'Ремонтна',
 					},
 					questionId: 'features',
 					answerId: 'repair',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Ультралегкая',
-						ua: 'Ультралегкая',
+						ua: 'Ультралегка',
 					},
 					questionId: 'features',
 					answerId: 'light',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Идеально белая',
-						ua: 'Идеально белая',
+						ua: 'Ідеально біла',
 					},
 					questionId: 'features',
 					answerId: 'white',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
-						rus: 'антикоррозионная',
-						ua: 'антикоррозионная',
+						rus: 'Антикоррозионная',
+						ua: 'Антикорозійна',
 					},
 					questionId: 'features',
 					answerId: 'anticorossion',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 				{	
 					title: {
 						rus: 'Колеруемая',
-						ua: 'Колеруемая',
+						ua: 'Колеруюма',
 					},
 					questionId: 'features',
 					answerId: 'color',
-					img: './assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
 				},
 			]
 		}
@@ -456,7 +466,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'microb', 'relief', 'smooth', 'wet', 'color']	
+			features: ['all','mold', 'microb', 'relief', 'smooth', 'wet', 'color']	
 		},
 		{
 			name : 'Kolorit Legenda',
@@ -465,7 +475,7 @@
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['smooth', 'color']	
+			features: ['all','smooth', 'color']	
 		},
 		{
 			name : 'Kolorit Family',
@@ -474,7 +484,7 @@
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['covering', 'white', 'color']	
+			features: ['all','covering', 'white', 'color']	
 		},
 		{
 			name: 'Kolorit Idol',
@@ -483,7 +493,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'relief', 'wet', 'color']
+			features: ['all','mold', 'relief', 'wet', 'color']
 		},
 		{
 			name: 'Kolorit Dynasty',
@@ -492,7 +502,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'relief', 'wet', 'color']
+			features: ['all','mold', 'relief', 'wet', 'color']
 		},
 		{
 			name: 'Kolorit History',
@@ -501,7 +511,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'relief', 'wet', 'color']
+			features: ['all','mold', 'relief', 'wet', 'color']
 		},
 		{
 			name: 'Kolorit STANDART 3',
@@ -510,7 +520,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['color']
+			features: ['all','color']
 		},
 		{
 			name: 'Kolorit STANDART 5',
@@ -519,7 +529,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'wet', 'color']
+			features: ['all','mold', 'wet', 'color']
 		},
 		{
 			name: 'Kolorit STANDART H',
@@ -528,7 +538,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['relief', 'white', 'color']
+			features: ['all','relief', 'white', 'color']
 		},
 		{
 			name: 'Kolorit STANDART M',
@@ -537,7 +547,7 @@
 			permises: ['all', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['covering', 'repair', 'color']
+			features: ['all','covering', 'repair', 'color']
 		},
 		{
 			name: 'Kolorit Silanit',
@@ -546,7 +556,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'putty', 'minplaster'],
-			features: ['microb', 'wet']
+			features: ['all','microb', 'wet']
 		},
 		{
 			name: 'Kolorit STANDART G',
@@ -565,7 +575,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['mold', 'wet']	
+			features: ['all','mold', 'wet']	
 		},
 		{
 			name: 'Kolorit Beton K',
@@ -583,7 +593,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'putty', 'chipboard', 'minplaster'],
-			features: ['white']	
+			features: ['all','white']	
 		},
 		{
 			name: 'Kolorit STANDART LH',
@@ -592,7 +602,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'putty', 'chipboard', 'minplaster'],
-			features: ['light', 'color']
+			features: ['all','light', 'color']
 		},
 		{
 			name: 'Kolorit Strong Adhesive',
@@ -610,7 +620,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'putty', 'chipboard', 'wood', 'metal'],
-			features: ['mold', 'relief', 'anticorossion', 'color']	
+			features: ['all','mold', 'relief', 'anticorossion', 'color']	
 
 
 		},
@@ -621,7 +631,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'putty', 'chipboard', 'wood', 'metal'],
-			features: ['mold', 'relief', 'anticorossion', 'color']	
+			features: ['all','mold', 'relief', 'anticorossion', 'color']	
 		},
 		{
 			name: 'Kolorit Radiator Enamel',
@@ -630,7 +640,7 @@
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'metal'],
-			features: ['anticorossion', 'color']	
+			features: ['all','anticorossion', 'color']	
 
 
 
@@ -642,15 +652,13 @@
 			permises: ['all', 'kitchen', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'interior'],
 			material: ['all', 'concrete', 'brick', 'wood'],
-			features: ['color']	
+			features: ['all','color']	
 		},
 
 	]
 
 	function langDetect(){
-		return 'rus';
 		if (window.location.pathname.match(/\/ru\//)) return 'rus';
-		if (window.location.pathname.match(/\/en\//)) return 'en';
 		return  'ua'
 	}
 
@@ -674,7 +682,7 @@
 		  			</li>`
 		} ,
 		preloader: function(){
-			return `<img src="./assets/images/preloader.svg" alt="preloader">`
+			return `<img src="../../wp-content/themes/kolorit/assets/images/preloader.svg" alt="preloader">`
 		} ,
 	}
 
@@ -744,7 +752,11 @@
 				
 
 				} else {
-					$('.js-quiz__result').html('<p> Не найдено </p><button class="quiz__reset">Еще раз</button>');
+					const lang = langDetect();
+					const dontFind = lang === 'ua' ? 'Не знайдено' : 'Не найдено';
+					const oncoMore = lang === 'ua' ? 'Ще раз' : 'Еще раз';
+					
+					$('.js-quiz__result').html(`<p> ${dontFind} </p><button class="quiz__reset">${oncoMore}</button>`);
 				}
 				
 
