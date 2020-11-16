@@ -177,6 +177,16 @@
     &-right {
       width: 50%;
     }
+    &-left{
+      @include to(640px){
+        width: 35%;
+      }
+    }
+    &-right{
+      @include to(640px){
+        width: 65%;
+      }
+    }
 
     &-filter {
       padding: 18px 0px;
@@ -732,7 +742,7 @@
       width: 50%;
       @include to(480px){
         width: 100%;
-        min-height: 122px;
+        min-height: 235px;
       }
      
     }

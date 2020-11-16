@@ -3040,3 +3040,16 @@ span.word-animate{
 		max-width: 320px;
 	}
 }
+
+@media screen and (max-height: 640px){
+	.main-slide__paints{
+		bottom: 20px;
+		width: 35vw;
+		&_single-can{
+			width: 20vw;
+		}
+	}
+	.main-slide--2 .main-slide__paints{
+		width: 45vw;
+	}
+}

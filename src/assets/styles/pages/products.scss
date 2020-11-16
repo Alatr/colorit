@@ -501,6 +501,11 @@
 			opacity: 1;
 			pointer-events: all;
 		}
+		&_features{
+			.quiz__answer-img{
+				object-fit: contain;
+			}
+		}
 	}
 	&__quest{
 		font-weight: 500;

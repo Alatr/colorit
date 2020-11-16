@@ -45,7 +45,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-any.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-any.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -54,7 +55,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'kitchen',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-kitchen.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-kitchen.jpg',
+					skipLine: ['#shpatlevki']
 				},
 				{	
 					title: {
@@ -63,7 +65,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'bathroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bath.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-bath.jpg',
+					skipLine: ['#shpatlevki']
 				},
 				{	
 					title: {
@@ -72,7 +75,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'childroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-child.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-child.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -81,7 +85,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'bedroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bed.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-bed.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -90,7 +95,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'livingroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-living.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-living.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -99,7 +105,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'hall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-hall.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-hall.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -108,7 +115,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'balcony',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-balcony.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-balcony.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -117,7 +125,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'office',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-office.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-office.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -126,7 +135,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'foodprod',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-food.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-food.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -134,8 +144,9 @@
 						ua: 'Складське приміщення',
 					},
 					questionId: 'permises',
-					answerId: 'warehouse ',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-sklad.jpg'
+					answerId: 'warehouse',
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-sklad.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -144,7 +155,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'medical',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-med.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-med.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -153,7 +165,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'mall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-shopping.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-shopping.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -162,7 +175,8 @@
 					},
 					questionId: 'permises',
 					answerId: 'school',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-school.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-school.jpg',
+					skipLine: []
 				}
 			]
 
@@ -181,7 +195,8 @@
 					},
 					questionId: 'surface',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-any.jpg',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -190,7 +205,8 @@
 					},
 					questionId: 'surface',
 					answerId: 'walls',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-wall.jpg',
+					skipLine: ['#laki-i-emali']
 				},
 				{	
 					title: {
@@ -199,7 +215,8 @@
 					},
 					questionId: 'surface',
 					answerId: 'ceiling',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-ceiling.jpg',
+					skipLine: ['#laki-i-emali']
 				},
 				{	
 					title: {
@@ -208,7 +225,8 @@
 					},
 					questionId: 'surface',
 					answerId: 'interior',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-interior.jpg',
+					skipLine: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki']
 				},
 			]
 		},
@@ -226,7 +244,8 @@
 					},
 					questionId: 'material',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img.png',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -235,7 +254,8 @@
 					},
 					questionId: 'material',
 					answerId: 'concrete',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img2.png',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -244,7 +264,8 @@
 					},
 					questionId: 'material',
 					answerId: 'drywall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img3.png',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -253,7 +274,8 @@
 					},
 					questionId: 'material',
 					answerId: 'brick',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img4.png',
+					skipLine: ['#shpatlevki']
 				},
 				{	
 					title: {
@@ -262,7 +284,8 @@
 					},
 					questionId: 'material',
 					answerId: 'wallpapers',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img5.png',
+					skipLine: ['#laki-i-emali', '#shpatlevki']
 				},
 				{	
 					title: {
@@ -271,7 +294,8 @@
 					},
 					questionId: 'material',
 					answerId: 'putty',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img6.png',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -280,7 +304,8 @@
 					},
 					questionId: 'material',
 					answerId: 'chipboard',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img7.png',
+					skipLine: []
 				},
 				{	
 					title: {
@@ -289,7 +314,8 @@
 					},
 					questionId: 'material',
 					answerId: 'minplaster',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img8.png',
+					skipLine: ['#laki-i-emali']
 				},
 				{	
 					title: {
@@ -298,7 +324,8 @@
 					},
 					questionId: 'material',
 					answerId: 'wood',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img9.png',
+					skipLine: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki']
 				},
 				{	
 					title: {
@@ -307,7 +334,8 @@
 					},
 					questionId: 'material',
 					answerId: 'metal',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img10.png',
+					skipLine: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki']
 				},
 				{	
 					title: {
@@ -316,7 +344,8 @@
 					},
 					questionId: 'material',
 					answerId: 'tile',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img11.png',
+					skipLine: ['#home-linejka', '#professional-linejka', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -325,7 +354,8 @@
 					},
 					questionId: 'material',
 					answerId: 'glass',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img12.png',
+					skipLine: ['#home-linejka', '#professional-linejka', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -334,7 +364,8 @@
 					},
 					questionId: 'material',
 					answerId: 'plastic',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img13.png',
+					skipLine: ['#home-linejka', '#professional-linejka', '#shpatlevki', '#laki-i-emali']
 				},
 			]
 		},
@@ -352,7 +383,8 @@
 					},
 					questionId: 'features',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/features-any.svg',
+					skipLine: []
 				},
 				{
 					title: {
@@ -361,7 +393,8 @@
 					},
 					questionId: 'features',
 					answerId: 'mold',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/mold and mildew.svg',
+					skipLine: ['#shpatlevki']
 				},
 				{	
 					title: {
@@ -370,7 +403,8 @@
 					},
 					questionId: 'features',
 					answerId: 'microb',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Antibacterial.svg',
+					skipLine: ['#professional-linejka', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -379,7 +413,8 @@
 					},
 					questionId: 'features',
 					answerId: 'covering ',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Econom_consumption.svg',
+					skipLine: ['#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -388,7 +423,8 @@
 					},
 					questionId: 'features',
 					answerId: 'relief',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Accentuating_relief.svg',
+					skipLine: ['#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki']
 				},
 				{	
 					title: {
@@ -397,7 +433,8 @@
 					},
 					questionId: 'features',
 					answerId: 'smooth',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Perfectly_smooth.svg',
+					skipLine: ['#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -406,7 +443,8 @@
 					},
 					questionId: 'features',
 					answerId: 'wet',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Wet_room.svg',
+					skipLine: ['#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -415,7 +453,8 @@
 					},
 					questionId: 'features',
 					answerId: 'repair',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Repair.svg',
+					skipLine: ['#sredstva-podgotovki-poverhnosti', '#shpatlevki', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -424,7 +463,8 @@
 					},
 					questionId: 'features',
 					answerId: 'light',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Light.svg',
+					skipLine: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#laki-i-emali']
 				},
 				{	
 					title: {
@@ -433,7 +473,9 @@
 					},
 					questionId: 'features',
 					answerId: 'white',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Perfect_white.svg',
+					skipLine: ['#sredstva-podgotovki-poverhnosti', '#laki-i-emali']
+
 				},
 				{	
 					title: {
@@ -442,7 +484,9 @@
 					},
 					questionId: 'features',
 					answerId: 'anticorossion',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/features-anticorossion.svg',
+					skipLine: ['#home-linejka', '#professional-linejka', '#sredstva-podgotovki-poverhnosti', '#shpatlevki']
+
 				},
 				{	
 					title: {
@@ -451,7 +495,8 @@
 					},
 					questionId: 'features',
 					answerId: 'color',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Tinted.svg',
+					skipLine: ['#sredstva-podgotovki-poverhnosti']
 				},
 			]
 		}
@@ -520,7 +565,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['all','color']
+			features: ['all','color', 'smooth']
 		},
 		{
 			name: 'Kolorit STANDART 5',
@@ -529,7 +574,7 @@
 			permises: ['all', 'kitchen', 'bathroom', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['all','mold', 'wet', 'color']
+			features: ['all','mold', 'wet', 'color', 'smooth']
 		},
 		{
 			name: 'Kolorit STANDART H',
@@ -538,7 +583,7 @@
 			permises: ['all', 'childroom', 'bedroom', 'livingroom', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['all','relief', 'white', 'color']
+			features: ['all','relief', 'white', 'color', 'smooth']
 		},
 		{
 			name: 'Kolorit STANDART M',
@@ -547,7 +592,7 @@
 			permises: ['all', 'hall', 'balcony', 'office', 'foodprod', 'warehouse', 'medical', 'mall', 'school'],
 			surface: ['all', 'walls', 'ceiling'],
 			material: ['all', 'concrete', 'drywall', 'brick', 'wallpapers', 'putty', 'chipboard', 'minplaster'],
-			features: ['all','covering', 'repair', 'color']
+			features: ['all','covering', 'repair', 'color', 'smooth', 'wet']
 		},
 		{
 			name: 'Kolorit Silanit',
@@ -693,8 +738,11 @@
 		let markup = '';
 		if(dataQuestionList[question].lines.includes(line)){
 			dataQuestionList[question].answers.forEach(element => {
-				const title = element.title[lang];
-				markup += dataQuestionMarkup.itemQustion(title, element); // Collect all answers html in one variable
+				if(!element.skipLine.includes(line)){
+					const title = element.title[lang];
+					markup += dataQuestionMarkup.itemQustion(title, element); // Collect all answers html in one variable
+				}
+				
 			});
 
 			$answerList.eq(cntquestionLoop).html(markup); // Additon of dynamic HTML with variatons of answers
@@ -731,7 +779,7 @@
 		result[question] = answer; // Adding answers to result object
 		
 		qustionCounter++;
-		
+		console.log(result)
 		if ($($('.quiz__answers')[qustionCounter]).children().length === 0){
 			qustionCounter++;
 			$(`.quiz__number[data-number="${qustionCounter-1}"]`).addClass('quiz__number_done');

@@ -1,3 +1,5 @@
+let sesPal = sessionStorage.getItem('palette');
+
 class TabSelect extends Tab {
 	constructor(props) {
 		super(props);
@@ -9,12 +11,12 @@ class TabSelect extends Tab {
 	}
 	initEvent(callback = function () { }) {
 		const self = this;
+
 		this.btn.on('change', function (e) {
 			const inx = e.target.value;
 			const data = $(e.target).find(`[value=${inx}]`).data('pal');
 			PubSub.publish(self.event, { inx });
-
-			callback(data);
+			callback(data);		
 		});
 	}
 }
@@ -29,13 +31,24 @@ class TabSelect extends Tab {
 		event: 'changeTabSelect'
 	});
 
+	
+	
+	$(document).find(`.palette-item__select-item[data-pal=${sesPal}]`).click();
+
+	$(`.palette-item__select-item[data-pal=${sesPal}]`).prop('selected', true);
+	// $(`.js-palette-item__select`).trigger('change')
+	// console.log($('.js-palette-item__select option')[0])
+	// console.log($('.js-palette-item__select'))
+	// console.log($('.js-palette-item__select option')[0].value)
+	// $('.js-palette-item__select').val(0)
 	const paletteCreate = new PaletteCreate({
 		tab: true,
 		description: $('.palette-item__select-item')[0].dataset.descr || '',
 		wrap: '.js-palette-block-body-item'
-	});
+	}, sesPal ? sesPal : 'palette0');
 
 	tabSelect.initEvent(e => {
+
 		paletteCreate.update(e,$('.palette-item__select-item[data-pal='+ e +']').data('descr') || '', true )
 	});
 

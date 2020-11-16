@@ -45,7 +45,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-any.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-any.jpg'
 				},
 				{	
 					title: {
@@ -54,7 +54,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'kitchen',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-kitchen.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-kitchen.jpg'
 				},
 				{	
 					title: {
@@ -63,7 +63,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'bathroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bath.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-bath.jpg'
 				},
 				{	
 					title: {
@@ -72,7 +72,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'childroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-child.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-child.jpg'
 				},
 				{	
 					title: {
@@ -81,7 +81,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'bedroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-bed.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-bed.jpg'
 				},
 				{	
 					title: {
@@ -90,7 +90,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'livingroom',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-living.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-living.jpg'
 				},
 				{	
 					title: {
@@ -99,7 +99,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'hall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-hall.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-hall.jpg'
 				},
 				{	
 					title: {
@@ -108,7 +108,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'balcony',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-balcony.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-balcony.jpg'
 				},
 				{	
 					title: {
@@ -117,7 +117,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'office',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-office.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-office.jpg'
 				},
 				{	
 					title: {
@@ -126,7 +126,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'foodprod',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-food.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-food.jpg'
 				},
 				{	
 					title: {
@@ -135,7 +135,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'warehouse ',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-sklad.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-sklad.jpg'
 				},
 				{	
 					title: {
@@ -144,7 +144,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'medical',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-med.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-med.jpg'
 				},
 				{	
 					title: {
@@ -153,7 +153,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'mall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-shopping.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-shopping.jpg'
 				},
 				{	
 					title: {
@@ -162,7 +162,7 @@
 					},
 					questionId: 'permises',
 					answerId: 'school',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-school.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/permises-school.jpg'
 				}
 			]
 
@@ -181,7 +181,7 @@
 					},
 					questionId: 'surface',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-any.jpg'
 				},
 				{	
 					title: {
@@ -190,7 +190,7 @@
 					},
 					questionId: 'surface',
 					answerId: 'walls',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-wall.jpg'
 				},
 				{	
 					title: {
@@ -199,7 +199,7 @@
 					},
 					questionId: 'surface',
 					answerId: 'ceiling',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-ceiling.jpg'
 				},
 				{	
 					title: {
@@ -208,7 +208,7 @@
 					},
 					questionId: 'surface',
 					answerId: 'interior',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/surface-interior.jpg'
 				},
 			]
 		},
@@ -226,7 +226,7 @@
 					},
 					questionId: 'material',
 					answerId: 'all',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img.png'
 				},
 				{	
 					title: {
@@ -235,7 +235,7 @@
 					},
 					questionId: 'material',
 					answerId: 'concrete',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img2.png'
 				},
 				{	
 					title: {
@@ -244,7 +244,7 @@
 					},
 					questionId: 'material',
 					answerId: 'drywall',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img3.png'
 				},
 				{	
 					title: {
@@ -253,7 +253,7 @@
 					},
 					questionId: 'material',
 					answerId: 'brick',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img4.png'
 				},
 				{	
 					title: {
@@ -262,7 +262,7 @@
 					},
 					questionId: 'material',
 					answerId: 'wallpapers',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img5.png'
 				},
 				{	
 					title: {
@@ -271,7 +271,7 @@
 					},
 					questionId: 'material',
 					answerId: 'putty',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img6.png'
 				},
 				{	
 					title: {
@@ -280,7 +280,7 @@
 					},
 					questionId: 'material',
 					answerId: 'chipboard',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img7.png'
 				},
 				{	
 					title: {
@@ -289,7 +289,7 @@
 					},
 					questionId: 'material',
 					answerId: 'minplaster',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img8.png'
 				},
 				{	
 					title: {
@@ -298,7 +298,7 @@
 					},
 					questionId: 'material',
 					answerId: 'wood',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img9.png'
 				},
 				{	
 					title: {
@@ -307,7 +307,7 @@
 					},
 					questionId: 'material',
 					answerId: 'metal',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img10.png'
 				},
 				{	
 					title: {
@@ -316,7 +316,7 @@
 					},
 					questionId: 'material',
 					answerId: 'tile',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img11.png'
 				},
 				{	
 					title: {
@@ -325,7 +325,7 @@
 					},
 					questionId: 'material',
 					answerId: 'glass',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img12.png'
 				},
 				{	
 					title: {
@@ -334,7 +334,7 @@
 					},
 					questionId: 'material',
 					answerId: 'plastic',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz3-img13.png'
 				},
 			]
 		},
@@ -361,7 +361,7 @@
 					},
 					questionId: 'features',
 					answerId: 'mold',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/mold and mildew.svg'
 				},
 				{	
 					title: {
@@ -370,7 +370,7 @@
 					},
 					questionId: 'features',
 					answerId: 'microb',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Antibacterial.svg'
 				},
 				{	
 					title: {
@@ -379,7 +379,7 @@
 					},
 					questionId: 'features',
 					answerId: 'covering ',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Econom_consumption.svg'
 				},
 				{	
 					title: {
@@ -388,7 +388,7 @@
 					},
 					questionId: 'features',
 					answerId: 'relief',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Accentuating_relief.svg'
 				},
 				{	
 					title: {
@@ -397,7 +397,7 @@
 					},
 					questionId: 'features',
 					answerId: 'smooth',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Perfectly_smooth.svg'
 				},
 				{	
 					title: {
@@ -406,7 +406,7 @@
 					},
 					questionId: 'features',
 					answerId: 'wet',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Wet_room.svg'
 				},
 				{	
 					title: {
@@ -415,7 +415,7 @@
 					},
 					questionId: 'features',
 					answerId: 'repair',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Repair.svg'
 				},
 				{	
 					title: {
@@ -424,7 +424,7 @@
 					},
 					questionId: 'features',
 					answerId: 'light',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Light.svg'
 				},
 				{	
 					title: {
@@ -433,7 +433,7 @@
 					},
 					questionId: 'features',
 					answerId: 'white',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Perfect_white.svg'
 				},
 				{	
 					title: {
@@ -451,7 +451,7 @@
 					},
 					questionId: 'features',
 					answerId: 'color',
-					img: '../../wp-content/themes/kolorit/assets/images/quiz/quiz1.jpg'
+					img: '../../wp-content/themes/kolorit/assets/images/quiz/Tinted.svg'
 				},
 			]
 		}

@@ -14,4 +14,8 @@ miniImg.on('click', function () {
 	mainImg.attr('src', urlImgMini)
 })
 
+let url = location.search;
+let pal = url.split(/\W/g).filter(item => item.includes('palette')).toString();
+sessionStorage.setItem('palette', pal)
+
 })(jQuery);
