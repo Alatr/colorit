@@ -1,3 +1,5 @@
+let sesPal = sessionStorage.getItem('palette');
+
 class TabSelect extends Tab {
 	constructor(props) {
 		super(props);
@@ -20,16 +22,15 @@ class TabSelect extends Tab {
 }
 
 (function ($) {
+
 	const tabSelect = new TabSelect({
 		$btn: $('.js-palette-item__select'),
 		$content: $('.js-palette-block-body-item'),
 		btnActiveClass: 'palette-btn-content-item--active',
 		contentActiveClass: 'palette-tab-content-item--active',
-		active: 0,
+		active: 3,
 		event: 'changeTabSelect'
 	});
-
-
 
 	$(document).find(`.palette-item__select-item[data-pal=${sesPal}]`).click();
 
