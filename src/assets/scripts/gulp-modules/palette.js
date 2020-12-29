@@ -28,9 +28,6 @@ class TabSelect extends Tab {
 		event: 'changeTabSelect'
 	});
 	$('.js-palette-item__select option')[0].click()
-	// console.log($('.js-palette-item__select option')[0])
-	// console.log($('.js-palette-item__select'))
-	// console.log($('.js-palette-item__select option')[0].value)
 	// $('.js-palette-item__select').val(0)
 	const paletteCreate = new PaletteCreate({
 		tab: true,
