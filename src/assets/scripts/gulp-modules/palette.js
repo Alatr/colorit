@@ -22,19 +22,30 @@ class TabSelect extends Tab {
 }
 
 (function ($) {
+	let regexp = new RegExp(/(?<=style=)(\w)+(?=(&|\b))/)
+
+	if(location.search.match(regexp)) {
+		sesPal = location.search.match(regexp)[0]
+	} else if (sessionStorage.getItem('palette')) {
+		sesPal = sessionStorage.getItem('palette')
+	} else {
+		sesPal = 'palette0'
+	}
+	sessionStorage.setItem('palette', sesPal);
 
 	const tabSelect = new TabSelect({
 		$btn: $('.js-palette-item__select'),
 		$content: $('.js-palette-block-body-item'),
 		btnActiveClass: 'palette-btn-content-item--active',
 		contentActiveClass: 'palette-tab-content-item--active',
-		active: 3,
+		active: sesPal,
 		event: 'changeTabSelect'
 	});
 
 	$(document).find(`.palette-item__select-item[data-pal=${sesPal}]`).click();
 
-	$(`.palette-item__select-item[data-pal=${sesPal}]`).prop('selected', true);
+	const currentElem = $(`.palette-item__select-item[data-pal=${sesPal}]`)
+	currentElem.prop('selected', true);
 	// $(`.js-palette-item__select`).trigger('change')
 	// console.log($('.js-palette-item__select option')[0])
 	// console.log($('.js-palette-item__select'))
@@ -42,12 +53,14 @@ class TabSelect extends Tab {
 	// $('.js-palette-item__select').val(0)
 	const paletteCreate = new PaletteCreate({
 		tab: true,
-		description: $('.palette-item__select-item')[0].dataset.descr || '',
+		description: currentElem.data('descr') || '',
 		wrap: '.js-palette-block-body-item'
 	}, sesPal ? sesPal : 'palette0');
 
 	tabSelect.initEvent(e => {
-
+		sesPal = location.search.replace(regexp, e)
+		window.history.pushState( '', '', sesPal)
+		sessionStorage.setItem('palette', sesPal);
 		paletteCreate.update(e,$('.palette-item__select-item[data-pal='+ e +']').data('descr') || '', true )
 	});
 

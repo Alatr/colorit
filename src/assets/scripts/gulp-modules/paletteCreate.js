@@ -96,13 +96,19 @@ class PaletteCreate {
     }
 
     getColors(url, type, callback) {
+        const self = this
         $.ajax({
             url:url+type+'.json',
             success: function (responsive) {
                 callback(responsive, type);
             },
             error: function (error) {
-
+                if(type !== 'palette0') {
+                    console.log('if(type !== \'palette0\')')
+                    self.getColors(url, 'palette0', callback)
+                } else {
+                    console.log(error)
+                }
             }
         })
     }

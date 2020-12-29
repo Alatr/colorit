@@ -473,7 +473,6 @@ class Tab {
 			btnDataName: 'data-indx'
 		}
 
-
 		this.init()
 	}
 
