@@ -127,10 +127,13 @@
 .palette-block-body-item__text{
 	margin-bottom: 45px;
 	max-width: 540px;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: lh(22, 12);
 	margin-left: min(vw(107), 90px);
 	color: #586386;
+	@include to(1140px){
+		font-size: 12px;
+	}
 	@include to(992px){
 		margin-left: 32px;
 		margin-bottom: 27px;
@@ -163,7 +166,9 @@
 		
 	}
 	@include to(480px){
-		width: 74px;
+		width: 125px;
+		overflow: hidden;
+		word-wrap: normal;
 	}
 	select,
 	input {

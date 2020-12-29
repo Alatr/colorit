@@ -230,7 +230,7 @@
 		&:hover{
 			color: #000C31 !important;
 		}
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 		}
 		@include to(992px){
@@ -505,7 +505,7 @@ ul.header-submenu {
 
 }
 header .header__text {
-	@include from(1441px){
+	@include from(1140px){
 		font-size: 14px;
 	}
 	@include to(992px){
@@ -581,7 +581,7 @@ header .header__text {
 			line-height: 1.5em;
 			text-transform: uppercase;
 			color: #000C31;
-			@include from(1441px){
+			@include from(1140px){
 				font-size: 14px;
 			}
 			@include to(992px) {

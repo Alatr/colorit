@@ -47,7 +47,7 @@
 	line-height: lh(22, 12);
 	color: #586386;
 	text-decoration: none;
-	@include from(1441px){
+	@include from(1140px){
 		font-size: 14px;
 	}
 	@include to(700px){
@@ -204,7 +204,7 @@
 		display: inline-block;
 		font-weight: 500;
 		padding-right: 10px;
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 		}
 		@include to(700px){
@@ -245,7 +245,7 @@
 		padding-right: 15px;
 		display: flex;
 		margin-bottom: 5px;
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 			line-height: 1.6em;
 		}
@@ -308,7 +308,7 @@
 }
 
 .footer-menu-info-item__title{
-	@include from(1441px){
+	@include from(1140px){
 		font-size: 14px;
 	}
 	text-transform: uppercase;
@@ -336,7 +336,7 @@
 		border: none;
 		font-size: 12px;
 		line-height: 22px;
-		@include from(1441px){
+		@include from(1140px){
 			font-size: 14px;
 		}
 

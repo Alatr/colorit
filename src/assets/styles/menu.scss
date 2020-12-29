@@ -46,6 +46,11 @@
 	.lang-list-vertical-wrap svg{
 		margin: 3px 5px 0;
 	}
+	.lang-list-vertical-wrap{
+		@include to(700px){
+			display: none;
+		}
+	}
 }
 .menu-title{
 	font-weight: 500;

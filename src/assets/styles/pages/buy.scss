@@ -103,7 +103,7 @@
     }
 
     &-desc {
-      @include from(1441px){
+      @include from(1140px){
         font-size: 14px;
       }
       font-size: 12px;
@@ -177,6 +177,16 @@
     &-right {
       width: 50%;
     }
+    &-left{
+      @include to(640px){
+        width: 35%;
+      }
+    }
+    &-right{
+      @include to(640px){
+        width: 65%;
+      }
+    }
 
     &-filter {
       padding: 18px 0px;
@@ -221,7 +231,9 @@
         line-height: 1.9em;
         color: #9AB4C1;
         padding-right: 10px;
-
+        @include from(1140px){
+          font-size: 14px;
+        }
         &::after {
           content: "";
           position: absolute;
@@ -516,7 +528,7 @@
     }
 
     &-desc {
-      @include from(1441px){
+      @include from(1140px){
         font-size: 14px;
       }
       margin-bottom: 25px;
@@ -664,6 +676,9 @@
       font-size: 12px;
       line-height: 1.9em;
       color: #586386;
+      @include from(1140px){
+        font-size: 14px;
+      }
       @include to(480px){
         margin-bottom: 22px;
       }
@@ -727,7 +742,7 @@
       width: 50%;
       @include to(480px){
         width: 100%;
-        min-height: 122px;
+        min-height: 235px;
       }
      
     }
@@ -1048,6 +1063,9 @@
       text-transform: uppercase;
       color: #17315B;
       margin-bottom: -6px;
+      @include from(1140px){
+        font-size: 12px;
+      }
     }
     &__link{
       color: #C11426;
@@ -1056,6 +1074,9 @@
       font-weight: 500;
       font-size: 12px;
       line-height: 2em;
+      @include from(1140px){
+        font-size: 14px;
+      }
     }
     &__img{
       max-width: 180px;
@@ -1108,8 +1129,11 @@
 	border: none;
 	height: 36px;
 	background: #F0F1F8;
-	font-size: 12px;
+	font-size: 14px;
   color: #000C31;
+  @include to(1140px){
+    font-size: 12px;
+  }
   @include to(992px){
     width: 100px;
   }

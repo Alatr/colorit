@@ -1,22 +1,23 @@
 class PaletteCreate {
-    constructor(data){
+    constructor(data, sesPal){
         this.tab = data.tab || true;
         this.description = data.description;
         this.wrap = data.wrap || '';
         this.lang = 'ru';
         this.type = 'palette0';
-        this.init('palette0');
+        this.init(sesPal);
+       
         // this.event = null;
     }
 
     init(type) {
         this.lang = document.querySelector('html').lang
         this.productChangeListeners(); // add custom event for onload json color
-        this.getColors('/assets/jsons/','colorCode', (reject) => {
-        // this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
+        // this.getColors('/assets/jsons/','colorCode', (reject) => {
+        this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
         });
-
+        console.log(type)
         this.createContent('.palette-block-body', this.description);
         this.update(type , this.description, this.tab);
     }
@@ -27,8 +28,8 @@ class PaletteCreate {
         this.type = type;
         this.tab = tabs;
         this.description = description;
-        this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
-        // this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
+        // this.getColors('/assets/jsons/',type, this.setContentPalette.bind(this));
+        this.getColors('/wp-content/themes/kolorit/assets/jsons/',type, this.setContentPalette.bind(this));
 
         $('.js-palette-tab').on('DOMMouseScroll wheel', '.js-horizontal-scroll',function (e) {
             let delta = e.originalEvent.deltaY;
