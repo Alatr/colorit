@@ -22,10 +22,13 @@ class TabSelect extends Tab {
 }
 
 (function ($) {
-	let regexp = new RegExp(/(?<=style=)(\w)+(?=(&|\b))/)
-
+	// const dataAttr = window.location.search.replace(/(\?|#)(?:style=)/, '').split('&');
+	// let regexp = new RegExp(/(?<=style=)(\w)+(?=(&|\b))/)
+	let regexp = new RegExp(/(palette)+(&|\d)/)
 	if(location.search.match(regexp)) {
+	// if(dataAttr) {
 		sesPal = location.search.match(regexp)[0]
+		// sesPal = dataAttr[0]
 	} else if (sessionStorage.getItem('palette')) {
 		sesPal = sessionStorage.getItem('palette')
 	} else {
