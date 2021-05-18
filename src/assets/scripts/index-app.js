@@ -2,4 +2,4 @@ import hallo from './modules/slider'
 
 hallo()
 
-console.log('add fearure line')
+console.log('add stash')
