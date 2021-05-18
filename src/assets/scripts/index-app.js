@@ -1,3 +1,5 @@
 import hallo from './modules/slider'
 
-hallo();
+hallo()
+
+console.log('add dima line')
