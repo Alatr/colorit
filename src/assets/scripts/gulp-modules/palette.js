@@ -24,7 +24,7 @@ class TabSelect extends Tab {
 (function ($) {
 	// const dataAttr = window.location.search.replace(/(\?|#)(?:style=)/, '').split('&');
 	// let regexp = new RegExp(/(?<=style=)(\w)+(?=(&|\b))/)
-	let regexp = new RegExp(/(palette)+(&|\d)/)
+	let regexp = new RegExp(/(palette)+(&|\d+)/)
 	if(location.search.match(regexp)) {
 	// if(dataAttr) {
 		sesPal = location.search.match(regexp)[0]
