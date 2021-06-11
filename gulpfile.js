@@ -170,6 +170,20 @@ function styles() {
 		.pipe(gulp.dest(paths.styles.dest))
 }
 
+function customStyles() {
+	return gulp.src('./src/assets/styles/pages/symbols.scss')
+	.pipe(sourcemaps.init()) // инциализация sourcemap'ов
+	.pipe(sass({
+					outputStyle: 'expanded' // компиляции в CSS с отступами
+	}))
+	.on('error', notify.onError({
+					title: 'SCSS',
+					message: '<%= error.message %>' // вывод сообщения об ошибке
+	}))
+	.pipe(rename("symbols.min.css"))
+	.pipe(gulp.dest(paths.styles.dest))
+}
+
 // fonts
 function fonts() {
 		return gulp.src(paths.fonts.src)
@@ -291,6 +305,7 @@ exports.svgSprite = svgSprite;
 exports.libs = libs;
 exports.json = json;
 exports.static = static;
+exports.customStyles = customStyles;
 
 gulp.task('default', gulp.series(
 		svgSprite,

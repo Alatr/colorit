@@ -1,0 +1,197 @@
+extends ../layout/main
+block variable1
+	-
+		var title_page = 'Узнать о символах на этикетках'
+		var breadcrumbsSubitem = [
+				{
+					label: 'Краски kolorit',
+					link: "/"
+				},
+			];
+		
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='https://www.youtube.com/iframe_api')
+	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/symbols.js')
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+
+
+block content
+	.container
+		include ../includes/breadcrumbs.pug
+	.symbols 
+		.symbols__scr1.scr1
+			.scr1__container.container
+				.scr1__inner.symbols-inner
+					.scr1__col.symbols-col-6
+						.scr1__title-wrapper
+							h1.scr1__title.symbols-title Символы на этикетке
+							p.scr1__subtitle.symbols-subtitle Что означают специальные символы и знаки на этикетках продуктов Kolorit
+					.scr1__col.symbols-col-6
+						.scr1__text-wrapper
+							p.scr1__text Каждая банка краски - это уникальный продукт с определенным набором свойств и правилами использования. Это разработка компании, которая вкладывает в каждое наименование свое видение и философию. И рассказать обо всех нюансах производитель должен на упаковке продукции. 
+							p.scr1__text Удобнее всего для вас, потребителей, сделать это в виде графических обозначений, которые расскажут больше о компании-производителе краски, ее качестве, безопасности и особенностях применения. На этой странице мы хотим помочь вам разобраться с символами и знаками встречающимися на продуктах Kolorit и рассказать, что означает каждый из них. 
+		.symbols__scr2.scr2
+			.scr2__container.container
+				h4.scr2__title.symbols-subtitle Расшифровка символов на этикетке
+				.scr2__inner.symbols-inner
+					.scr2__col.symbols-col-6
+						<svg width="100%" height="100%" version="1.1" viewBox="0 0 270 172" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="scr2__can">
+							<g transform="translate(0,-125)">
+								<image x=".33978" y="125.03" width="269.61" height="171.71" preserveAspectRatio="none" xlink:href="./assets/images/symbols/banka.png"/>
+									<a href="#num6" class="scr2__can-number can-number js-symbol-can"> 
+										<circle cx="55.5" cy="240" r="13.363" />
+										<text>
+											<tspan x="52" y="245" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">6</tspan>
+										</text>
+									</a>
+									<a href="#num3" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="19.5" cy="197" r="13.363"/>
+										<text>
+											<tspan x="16" y="202" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">3</tspan>
+										</text>
+									</a>
+									<a href="#num7" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="92.518" cy="278.5" r="13.363"/>
+											<text>
+												<tspan x="90" y="283" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">7</tspan>
+											</text>
+									</a>
+									<a href="#num4" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="159.47" cy="278" r="13.363"/>
+										<text>
+											<tspan x="155" y="282" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">4</tspan>
+										</text>
+									</a>
+									<a href="#num5" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="214.4" cy="236.8" r="13.363"/>
+										<text>
+											<tspan x="211" y="241" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">5</tspan>
+										</text>
+									</a>
+
+									<a href="#num2" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="251.94" cy="215.4" r="13.363"/>
+										<text>
+											<tspan x="248.5" y="220" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">2</tspan>
+										</text>
+									</a>
+									<a href="#num1" class="scr2__can-number can-number js-symbol-can">
+										<circle cx="251.41" cy="177.5" r="13.363"/>
+										<text>
+											<tspan x="249.68784" y="182" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26458">1</tspan>
+										</text>
+									</a>
+							</g>
+						</svg>
+					.scr2__col.symbols-col-6
+						ol.scr2__list.symbols-list
+							li.symbols-list__item(data-can="num1") Награды
+							li.symbols-list__item(data-can="num2") Степень блеска
+							li.symbols-list__item(data-can="num3") Назначение
+							li.symbols-list__item(data-can="num4") Сертификаты и экологические знаки 
+							li.symbols-list__item(data-can="num5") Обьем и база для колеровки
+							li.symbols-list__item(data-can="num6") Характеристики и особенности
+							li.symbols-list__item(data-can="num7") Система колеровки и количество цветов
+		.symbols__scr3.scr3
+			.scr3__container.container
+				.scr3__inner.symbols-inner 	
+						.scr3__col.symbols-col-6
+							ol.scr3__list.symbols-list
+								li.symbols-list__item(data-can="num8") Функциональные символы
+								li.symbols-list__item(data-can="num9") Знак международного стандарта ISO
+								li.symbols-list__item(data-can="num10") QR код со ссылкой на техническую документацию и характеристики
+								li.symbols-list__item(data-can="num11") Расход продукта с 1 литра и площадь покрытия с тары
+						.scr3__col.symbols-col-6
+							<svg width="100%" height="100%" version="1.1" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="scr3__can-back">
+								<g transform="translate(0,-117)">
+									<image x=".0079779" y="117.36" width="200" height="180" preserveAspectRatio="none" xlink:href="./assets/images/symbols/banka-back.png"/>
+									<a href="#num8" class="scr3__can-number can-number js-symbol-can">
+										<ellipse transform="scale(1,-1)" cx="92.484" cy="-221.2" rx="13.364" ry="13.364" fill-rule="evenodd" stroke-width=".31461"/>
+										<text>
+											<tspan x="89" y="226" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26427">8</tspan>
+										</text>
+									</a>
+									<a href="#num9" class="scr3__can-number can-number js-symbol-can">
+										<ellipse transform="scale(1,-1)" cx="164.72" cy="-222.54" rx="13.364" ry="13.364" fill-rule="evenodd" stroke-width=".31461"/>
+										<text>
+											<tspan x="161" y="227" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26427">9</tspan>
+										</text>
+									</a>
+									<a href="#num11" class="scr3__can-number can-number js-symbol-can">
+										<ellipse transform="scale(1,-1)" cx="183.11" cy="-141.29" rx="13.364" ry="13.364" fill-rule="evenodd" stroke-width=".31461"/>
+										<text>
+											<tspan x="178" y="146" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26427">11</tspan>
+										</text>
+									</a>
+									<a href="#num10" class="scr3__can-number can-number js-symbol-can">
+										<ellipse transform="scale(1,-1)" cx="152.2" cy="-256.73" rx="13.364" ry="13.364" fill-rule="evenodd" stroke-width=".31461"/>
+										<text>
+											<tspan x="146" y="261" fill="#fff6f7" fill-opacity=".98824" stroke-width=".26427">10</tspan>
+										</text>
+									</a>
+								</g>
+							</svg>
+		.symbols__scr4.scr4
+			.scr4__container.container 
+				.scr4__title.symbols-subtitle Характеристики и особенности применения продукта 
+				.scr4__inner.symbols-inner
+					.scr4__col 
+						ul.symbol-specs-list.scr4__list
+							each val in [{img: 1, text: 'Знак международного стандарта ISO подтверждает, что производственные процессы настроенны согласно системе управления качеством.'}, {img: 2, text: 'Продукт предназначен для окрашивания внутренних помещений. '},{img: 3, text: 'Продукт необходимо перемешать перед использованием.  '}, {img: 4, text: 'Продукт подходит для нанесения валиком.'}, {img: 5, text: 'Продукт подходит для нанесения безвоздушным распылением.'}, {img: 6, text: 'Продукт подходит для нанесения кистью. '}]
+								li.symbol-specs-list__item
+									.symbol-specs-list__img-wrapper 
+										+img('symbols/spec' + val.img + '.svg')
+									.symbol-specs-list__text-wrapper 
+										p= val.text
+					.scr4__col 
+						ul.symbol-specs-list.scr4__list
+							each val in [{img: 7, text: 'Продукту можно придать один из 50000 цветов расширенной палитры согласно профессиональной тонировке по системе Avatint Tikkurila.'}, {img: 8, text: 'База А используется как белая краска или для получения светлых оттенков; База С - для темных и насыщенных оттенков. Не предназначена для использования без колеровки.'},{img: 9, text: 'Обозначение массы продукта, в килограммах.'}, {img: 10, text: 'Обозначение объема продукта, в литрах.'}, {img: 11, text: 'Обозначение площади поверхности, которую можно покрыть данным продуктом в один слой.'}, {img: 12, text: 'QR код для получения технических характеристик и дополнительной информации о продукте.'}, ]
+								li.symbol-specs-list__item
+									.symbol-specs-list__img-wrapper.symbol-specs-list__img-wrapper__long
+										+img('symbols/spec' + val.img + '.svg')
+									.symbol-specs-list__text-wrapper 
+										p= val.text
+		.symbols__scr5.scr5
+			.scr5__container.container 
+				.scr5__title.symbols-subtitle Символы экологической безопасности
+				ul.scr5__list.eco-list
+					each val in [{img: 1, text: 'Экологический сертификат <span class="eco-list__text_bold">"Жива планета"</span> и знак экологической маркировки, подтверждающий присвоение высокой компетентной оценки продукта и соответствие установленным критериям ISO 14024. Свидетельствует о безопасном влиянии на окружающую среду и здоровье человека.'}, {img: 2, text: 'Маркировка означает, что в составе продукта отсутствуют вещества легколетучих органических растворителей, тяжелых металлов, фенолов, алкилфенолэтоксилата и аммиака, которые загрязняют воздушную среду помещений и несут в себе риск для здоровья человека. '}, {img: 3, text: 'Вывод "Асоціації алергологів України" и Института гигиенты и токсикологии выдается продуктам, которые разрешены для применения в помещениях, где находятся склонные к аллергии люди.'}, {img: 4, text: 'Этот символ говорит о соответствие продукта Директиве 2004/42/ЕС по содержанию VOC (летучих органических соединений). А именно отсутствие или наличие VOC в составе в безопасном количестве. Помимо данного обозначения на упаковке указано максимальное количество ЛОС в готовом к применению продукте. '}] 
+						li.eco-list__item.eco-list__item_6
+							.eco-list__img-wrapper 
+								+img('symbols/eco' + val.img + '.svg')
+							.eco-list__text-wrapper
+								p !{val.text} 
+		.symbols__scr6.scr6 
+			.scr6__container.container 
+				.scr6__title.symbols-subtitle Специальные символы и технологии, используемые в продуктах Kolorit
+				ul.scr6__eco-list.eco-list
+					each val in [{img: 1, text: '<span class="eco-list__text_bold">Extra Wetting</span> - революционная технология, обеспечивающая глубокое проникновение продукта в поверхность. Позволяет защитить ее от негативного воздействия влаги. Применяется при производстве средств подготовки поверхности и лаков.'},{img: 2, text: '<span class="eco-list__text_bold">Argentum Protect</span> - инновационная разработка Kolorit - антимикробная технология на основе наносеребра, препятствующая развитию более 99% патогенных микроорганизмов на обрабатываемой поверхности. Используется в средствах подготовки поверхности и интерьерных красках. '},{img: 3, text: '<span class="eco-list__text_bold">Full Contact Technology</span> - уникальная технология, обеспечивающая исключительную адгезию продукта с поверхностью. Применяется для клеёв. '}]
+						li.eco-list__item.eco-list__item_4.eco-list__item_column
+							.eco-list__img-wrapper.eco-list__img-wrapper_tech
+								+img('symbols/tech' + val.img + '.svg')
+							.eco-list__text-wrapper
+								p !{val.text} 
+		.symbols__scr7.scr7 
+			.scr7__container.container 
+				.scr7__title.symbols-subtitle Наши награды
+				ul.scr7__eco-list.eco-list
+					each val in [{img: 1, text: 'Подтверждение "Корпоративно-социального соответствия" (Corporate Social Responsibility, CSR) компании - производителя краски. Это международные правила, определяющие высокое качество продукции и ее безопасное влияние на потребителя и окружающую среду. "Золотой символ качества" подтверждает, что предприятие следует этим правилам.', title: 'Золотой символ качества'}, {img: 2, text: 'Национальная награда для лучших товаров и услуг на украинском рынке, подтверждающая высокие стандарты качества продукции, надежность и стабильность компании, лидерские позиции в своей области. Победитель определяется при помощи всеукраинского маркетингового исследования и экспертного совета. ', title: 'Выбор Украины'},{img: 3, text: 'Самая престижная европейская награда от Европейского фонда управления качеством, штаб-квартира которого расположена в Оксфорде (Великобритания), подтверждающая соответствие продукции европейским стандартам качества и преимущество компании в бизнесе. ', title: 'Европейский знак качества'}, {img: 4, text: '"Лидером года" становится компания, занявшая ведущие позиции в профильном рейтинге по результатам анализа финансово-экономических показателей. Как правило, это ведущие украинские предприятия, достигшие финансовых успехов и завоевавшие абсолютное доверие потребителей и партнеров.   ', title: 'Лидер года 2017'}, {img: 5, text: 'Награда, присуждаемая лучшим украинским брендам - победителям Всеукраинского бизнес-конкурса “Бренд года”, проводимого при поддержке Кабинета министров Украины и Совета предпринимателей Украины. Конкурс призван выявить лучшие бренды и помочь потребителю сделать выбор в большом разнообразии предложений на рынке.', title: 'Бренд года 2013-2018'}, {img: 6, text: 'Медаль «Выбор года» - атрибут успешного бренда, который безошибочно узнают миллионы украинцев. Самая престижная и узнаваемая награда, подтверждающая народное и профессиональное призвание. Это символ доверия потребителей и убедительное доказательство профессионализма всех, кто вкладывает силы и талант в развитие бизнеса в Украине.', title: 'Выбор года 2020'}]
+						li.eco-list__item.eco-list__item_4.eco-list__item_column
+							.eco-list__top
+								.eco-list__img-wrapper.eco-list__img-wrapper
+									+img('symbols/award' + val.img + '.svg')
+							h5.eco-list__title #{val.title}
+							.eco-list__text-wrapper
+								p !{val.text} 
