@@ -436,29 +436,6 @@ async function getPromise(data, url, parse) {
 */
 /**********************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Tab {
 	constructor(obj) {
 		this.btn = obj.$btn
@@ -491,7 +468,7 @@ class Tab {
 		this.btn.on('click', function (e) {
 			const inx = $(this).attr(self.data.btnDataName);
 			PubSub.publish(self.event, {inx} );
-			// 
+			//
 			callback();
 		});
 	}
@@ -518,7 +495,7 @@ Tab.prototype.listeners = function (callback = function () {}) {
 		self.content.removeClass(self.contentActiveClass);
 		self.content.eq(data.inx).addClass(self.contentActiveClass);
 	
-		// 
+		//
 		callback();
 	});
 

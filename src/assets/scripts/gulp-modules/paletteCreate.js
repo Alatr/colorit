@@ -13,13 +13,12 @@ class PaletteCreate {
     init(type) {
         this.lang = document.querySelector('html').lang
         this.productChangeListeners(); // add custom event for onload json color
-        // this.getColors('/assets/jsons/','colorCode', (reject) => {
+        // this.getColors('./assets/jsons/','colorCode', (reject) => {
         this.getColors('/wp-content/themes/kolorit/assets/jsons/','colorCode', (reject) => {
             this.tabsInfo = reject;
+            this.createContent('.palette-block-body', this.description);
+            this.update(type , this.description, this.tab);
         });
-        console.log(type)
-        this.createContent('.palette-block-body', this.description);
-        this.update(type , this.description, this.tab);
     }
 
     update(type,description, tabs) {
@@ -56,7 +55,7 @@ class PaletteCreate {
         document.dispatchEvent(this.event);
         this.updateDescription();
         if(type === 'palette0') {
-            this.createTab('.js-palette-tab',this.changeListForSymphony(list));
+            this.createTab('.js-palette-tab',this.changeListForSymphony(list), 'symphony');
             if (screen.width > 700) {
                 const tab = new Tab({
                     $btn: $('.js-palette-color-tab-btn'),
@@ -78,7 +77,28 @@ class PaletteCreate {
 
         } else if(type === 'palette2'){
             this.createNoTab('.js-palette-tab',this.changeListForSymphony(list), 'symphony');
-        }else{
+        } else if(type === 'palette10') {
+            this.createTab('.js-palette-tab',this.changeListForHome(list), 'home');
+            if (screen.width > 700) {
+                const tab = new Tab({
+                    $btn: $('.js-palette-color-tab-btn'),
+                    $content: $('.js-palette-tab-content-item'),
+                    btnActiveClass: 'palette-tab-btn--active',
+                    contentActiveClass: 'palette-color-tab-content-item--active',
+                    active: 0
+                });
+            } else {
+                const tabSelectPalette = new TabSelect({
+                    $btn: $('.js-palette-color-item__select'),
+                    $content: $('.js-palette-tab-content-item'),
+                    btnActiveClass: 'palette-tab-btn--active',
+                    contentActiveClass: 'palette-color-tab-content-item--active',
+                    active: 0,
+                    event: 'changeTabSelectPallete'
+                });
+            }
+        
+        } else{
             this.createNoTab('.js-palette-tab',list.colors, type);
         }
     }
@@ -91,6 +111,16 @@ class PaletteCreate {
                 obj[el.type] = {};
                 obj[el.type][el.code] = el;
             }
+        });
+        return obj;
+    }
+    changeListForHome(list) {
+        const obj = {};
+        list.colors.forEach(el => {
+            if(!obj[el.type]) {
+                obj[el.type] = {};
+            }
+            obj[el.type][el.code] = el;
         });
         return obj;
     }
@@ -128,9 +158,9 @@ class PaletteCreate {
         $('.palette-block-body-item__text').html(this.description);
     }
 
-    createTab(wrap,list) {
-        $(wrap).append(this.tabHtmlSelect(this.tabsInfo));
-        $(wrap).append(this.createTabContent(list, this.tabsInfo));
+    createTab(wrap,list, typeTabs) {
+        $(wrap).append(this.tabHtmlSelect(this.tabsInfo[typeTabs]));
+        $(wrap).append(this.createTabContent(list, this.tabsInfo[typeTabs], typeTabs));
     }
 
     createNoTab(wrap, list, type) {
@@ -141,13 +171,19 @@ class PaletteCreate {
         $(wrap).append(this.createColorList(list) );
     }
 
-    createTabContent(list, tabsInfo) {
+    createTabContent(list, tabsInfo, typeTabs) {
         const content = document.createElement('ul');
         content.classList = 'palette-tab-content';
         content.innerHTML = `
         `;
+
+        const handlerCreateColor = (typeTabs === 'home' ? this.createColorTableHome.bind(this) : this.createColorTableSymphony.bind(this))
+        // const handlerCreateColor = this[`createColorTable${capitalizeFirstLetter(typeTabs)}`]
+        // console.log(handlerCreateColor);
+        console.log(list, tabsInfo);
         tabsInfo.forEach( name => {
-            const html = this.createColorTableSymphony(list, name);
+            const html = handlerCreateColor(list, name);
+            // const html = this.createColorTableSymphony(list, name);
             content.innerHTML += `
             <li class="js-palette-tab-content-item palette-color-tab-content-item custom-scroll js-horizontal-scroll" >
                 ${html}
@@ -165,17 +201,18 @@ class PaletteCreate {
         `;
 
         tabsInfo.forEach( (name, i) => {
-
             selected += `<option class="palette-item__select-item ${ i === 0 ? selected='selected':'' }" >${name.name[this.lang]}</option>`;
             buttons += `<li class="palette-tab-btns-item">
-                        <button class="palette-tab-btn js-palette-color-tab-btn btn--res" type="button">${name.name[this.lang]}<span class="line"></span></button>
+                        <button class="palette-tab-btn js-palette-color-tab-btn btn--res" type="button">${name.name[this.lang]}
+                        <span class="line" style="background: ${name.color}!important"></span>
+                        </button>
                       </li>`
         });
         return `
             <div class="calculator-item-select-wrap palette-color-item-select-wrap">
-                      <select class="palette-item__select js-palette-color-item__select calculator-item__select">
-                       ${selected}
-                      </select>
+              <select class="palette-item__select js-palette-color-item__select calculator-item__select">
+               ${selected}
+              </select>
             </div>
             <ul class="palette-tab-btns">
                       ${buttons}
@@ -195,6 +232,18 @@ class PaletteCreate {
 
         return content;
     }
+    createColorTableHome(list, name) {
+        let row = `
+        `;
+        let content = `
+        `;
+        for(let el in list){
+            row += this.createHomeColorRow(list[el], name);
+        }
+        content += `<ul class='color-list'>${row}</ul>`;
+
+        return content;
+    }
     createColorTable(list) {
         let row = `
         `;
@@ -203,8 +252,6 @@ class PaletteCreate {
         for(let el in list){
             row += this.createTableColorRow(list[el]);
         }
-
-
         content += `<div class="color-shade-table custom-scroll js-horizontal-scroll"><ul class='color-list'>${row}</ul></div>`;
 
         return content;
@@ -222,6 +269,24 @@ class PaletteCreate {
             }
         }
 
+        return `
+            <li class='color-item' data-letter="${type}">
+                <ul class='color-shade-list'>
+                    ${elem}
+                </ul>
+            </li>
+        `
+    }
+    createHomeColorRow(list, name) {
+        let elem = `
+        `;
+        let type = '';
+        for(let el in list) {
+            type = list[el].type;
+            if(type === name.type) {
+                elem += this.createColorEl(list[el]);
+            }
+        }
         return `
             <li class='color-item' data-letter="${type}">
                 <ul class='color-shade-list'>
@@ -249,8 +314,7 @@ class PaletteCreate {
             </li>
         `
     }
-
-
+    
     createColorList(list) {
         let row = `
         `;

@@ -50,9 +50,6 @@ class TabSelect extends Tab {
 	const currentElem = $(`.palette-item__select-item[data-pal=${sesPal}]`)
 	currentElem.prop('selected', true);
 	// $(`.js-palette-item__select`).trigger('change')
-	// console.log($('.js-palette-item__select option')[0])
-	// console.log($('.js-palette-item__select'))
-	// console.log($('.js-palette-item__select option')[0].value)
 	// $('.js-palette-item__select').val(0)
 	const paletteCreate = new PaletteCreate({
 		tab: true,
