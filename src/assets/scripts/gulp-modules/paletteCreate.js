@@ -283,7 +283,7 @@ class PaletteCreate {
         let type = '';
         for(let el in list) {
             type = list[el].type;
-            if(type === name.type) {
+            if(type === name.type || name.type === 'all') {
                 elem += this.createColorEl(list[el]);
             }
         }
